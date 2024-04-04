@@ -9,7 +9,7 @@ import { Link } from "@/navigation";
 export async function Header() {
   const t = await getTranslate();
   return (
-    <header className="fixed w-full bg-black py-4 backdrop-blur xl:py-9">
+    <header className="fixed z-50 w-full  py-4 backdrop-blur xl:py-9">
       <div className="container flex w-full items-center justify-between">
         <Link href="/">
           <Image
