@@ -11,5 +11,9 @@ dev:
 	npm run dev
 prettier:
 	npm run prettier
+add:
+	npx shadcn-ui@latest add ${comp}
+intoc:
+	npm run interface-toc
 
 .PHONY: all install build lint start dev

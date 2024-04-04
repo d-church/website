@@ -6,7 +6,8 @@ import "./globals.css";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
-import { Header } from "@/components/header/Header";
+import { Footer } from "@/components/footer/footer-site";
+import { Header } from "@/components/header/header-site";
 import { TolgeeNextProvider } from "@/lib/tolgee/client";
 import { ALL_LOCALES, getStaticData } from "@/lib/tolgee/shared";
 import { cn } from "@/lib/utils";
@@ -37,12 +38,14 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "flex min-h-screen flex-col bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
         <TolgeeNextProvider locale={locale} locales={locales}>
-          {children}
+          <Header />
+          <main className="flex-[1_0_auto]">{children}</main>
+          <Footer />
         </TolgeeNextProvider>
       </body>
     </html>
