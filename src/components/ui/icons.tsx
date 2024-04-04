@@ -1,6 +1,23 @@
 type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
+  youtubeStrokeLine: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
+    </svg>
+  ),
   youtube: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -427,6 +444,18 @@ export const Icons = {
           <rect width="318" height="61" fill="white" />
         </clipPath>
       </defs>
+    </svg>
+  ),
+  play: (props: IconProps) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="white"
+      {...props}
+    >
+      <path d="M14.7692 6.07527C16.4103 6.9307 16.4103 9.0693 14.7692 9.92473L3.69231 15.6989C2.05128 16.5544 -6.76874e-07 15.4851 -6.02089e-07 13.7742L-9.72931e-08 2.22581C-2.25084e-08 0.514932 2.05128 -0.554364 3.69231 0.301072L14.7692 6.07527Z" />
     </svg>
   ),
 };

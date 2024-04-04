@@ -37,8 +37,8 @@ export async function MobileNav() {
             />
           </Button>
         </SheetTrigger>
-        <SheetContent className="container flex w-full flex-col border-none bg-[#232323] p-0 pb-12">
-          <SheetHeader className="border-b border-[#0E9398] py-4">
+        <SheetContent className="bg-graphite container flex w-full flex-col border-none p-0 pb-12">
+          <SheetHeader className="border-hover-blue border-b py-4">
             <div className="container flex items-center justify-between">
               <Link href="/">
                 <Image

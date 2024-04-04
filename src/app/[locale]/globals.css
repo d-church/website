@@ -33,6 +33,9 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --graphite: 0 0 14%;
+    --hover-blue: 182 83% 33%;
   }
 
   .dark {

@@ -11,7 +11,7 @@ import { clientUrl } from "@/utils/clientUrl";
 export async function Footer() {
   const t = await getTranslate();
   return (
-    <footer className="bg-[#232323] py-[100px] text-white xl:py-[72px]">
+    <footer className="bg-graphite py-[100px] text-white xl:py-[72px]">
       <div className="container flex flex-col items-center justify-between space-y-[100px] xl:flex-row xl:space-y-0">
         <div className="flex flex-col items-center space-y-5 xl:w-[23%]">
           <Image
@@ -60,7 +60,7 @@ export async function Footer() {
         <div className="space-y-12 xl:w-[24%]">
           <div className="flex justify-center space-x-5">
             <Button
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              className="hover:bg-graphite group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0"
               asChild
             >
               <Link href={clientUrl.youtube} target="_blank">
@@ -68,15 +68,15 @@ export async function Footer() {
               </Link>
             </Button>
             <Button
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              className="hover:bg-graphite group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0"
               asChild
             >
               <Link href={clientUrl.facebook} target="_blank">
-                <Icons.facebook className="fill-[#232323] group-hover:fill-[#ffff]" />
+                <Icons.facebook className="fill-graphite group-hover:fill-[#ffff]" />
               </Link>
             </Button>
             <Button
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              className="hover:bg-graphite group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0"
               asChild
             >
               <Link href={clientUrl.instagram} target="_blank">
