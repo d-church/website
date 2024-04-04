@@ -1,11 +1,12 @@
-// server.tsx
-
-import { createServerInstance } from "@tolgee/react/server";
+import { createServerInstance as originalCreateServerInstance } from "@tolgee/react/server";
 import { useLocale } from "next-intl";
 
+import { TCreateServerInstance } from "@/types/toglee-service-instance";
 import { ALL_LOCALES, getStaticData, TolgeeBase } from "./shared";
 
-export const { getTolgee, getTranslate, T } = createServerInstance({
+const createServerInstance =
+  originalCreateServerInstance as TCreateServerInstance;
+const instance = createServerInstance({
   getLocale: useLocale,
   createTolgee: async (locale) =>
     TolgeeBase().init({
@@ -21,3 +22,7 @@ export const { getTolgee, getTranslate, T } = createServerInstance({
       },
     }),
 });
+
+export const getTranslate = instance.getTranslate;
+export const getTolgee = instance.getTolgee;
+export const T = instance.T;
