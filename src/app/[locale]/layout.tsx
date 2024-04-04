@@ -4,7 +4,7 @@ import { Montserrat as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { notFound } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
@@ -42,11 +42,13 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <TolgeeNextProvider locale={locale} locales={locales}>
-          <Header />
-          <main className="flex-[1_0_auto]">{children}</main>
-          <Footer />
-        </TolgeeNextProvider>
+        <Suspense fallback={"loading..."}>
+          <TolgeeNextProvider locale={locale} locales={locales}>
+            <Header />
+            <main className="flex-[1_0_auto]">{children}</main>
+            <Footer />
+          </TolgeeNextProvider>
+        </Suspense>
       </body>
     </html>
   );

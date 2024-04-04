@@ -21,6 +21,12 @@ interface Resources {
     };
     email: "d.church.lviv@gmail.com";
   };
+  "preview-section": {
+    title: "Dжерело життя";
+    "under-title": "Церква Львів";
+    "welcome-text": "Ласкаво просимо";
+    "hash-tag": "#d.church";
+  };
 }
 
 export default Resources;
