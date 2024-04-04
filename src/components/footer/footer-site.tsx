@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
 
 import { getTranslate } from "@/lib/tolgee/server";
+import { clientUrl } from "@/utils/clientUrl";
 
 export async function Footer() {
   const t = await getTranslate();
@@ -58,14 +59,29 @@ export async function Footer() {
         </div>
         <div className="space-y-12 xl:w-[24%]">
           <div className="flex justify-center space-x-5">
-            <Button className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]">
-              <Icons.youtube color="#232323" />
+            <Button
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              asChild
+            >
+              <Link href={clientUrl.youtube} target="_blank">
+                <Icons.youtube color="#232323" />
+              </Link>
             </Button>
-            <Button className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]">
-              <Icons.facebook className="fill-[#232323] group-hover:fill-[#ffff]" />
+            <Button
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              asChild
+            >
+              <Link href={clientUrl.facebook} target="_blank">
+                <Icons.facebook className="fill-[#232323] group-hover:fill-[#ffff]" />
+              </Link>
             </Button>
-            <Button className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]">
-              <Icons.instagram color="#232323" />
+            <Button
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-[#232323]"
+              asChild
+            >
+              <Link href={clientUrl.instagram} target="_blank">
+                <Icons.instagram color="#232323" />
+              </Link>
             </Button>
           </div>
           <Button

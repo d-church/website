@@ -1,7 +1,7 @@
 import { createServerInstance as originalCreateServerInstance } from "@tolgee/react/server";
 import { useLocale } from "next-intl";
 
-import { TCreateServerInstance } from "@/types/toglee-service-instance";
+import { TCreateServerInstance } from "@/types/toglee-service-instance.types";
 import { ALL_LOCALES, getStaticData, TolgeeBase } from "./shared";
 
 const createServerInstance =
