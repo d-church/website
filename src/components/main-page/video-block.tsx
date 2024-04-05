@@ -35,7 +35,7 @@ export async function VideoBlock() {
   const t = await getTranslate();
   return (
     <div className="container">
-      <Separator className="bg-graphite hidden xl:mb-[68px] xl:mt-[100px] xl:block" />
+      <Separator className="hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
       <Accordion
         type="single"
         collapsible
@@ -58,7 +58,7 @@ export async function VideoBlock() {
                 >
                   <Link href={link} target="_blank">
                     <div className="flex items-center space-x-[30px] xl:flex-col xl:space-x-0">
-                      <Icons.play className="group-hover:fill-hover-blue size-2 xl:size-auto" />
+                      <Icons.play className="size-2 group-hover:fill-hover-blue xl:size-auto" />
                       <p className="text-sm xl:mt-[5px] xl:text-2xl">
                         Богослужіння
                       </p>
@@ -76,7 +76,7 @@ export async function VideoBlock() {
                 target="_blank"
                 className="group flex h-auto items-center justify-start space-x-5 rounded-3xl bg-black px-9 py-[14px] text-xl xl:justify-between xl:py-6"
               >
-                <Icons.youtubeStrokeLine className="group-hover:stroke-hover-blue size-8 xl:size-20" />
+                <Icons.youtubeStrokeLine className="size-8 group-hover:stroke-hover-blue xl:size-20" />
                 <p className="text-sm xl:text-2xl">
                   {t("main-page.video-block.button-go-to-chanel")}
                 </p>
