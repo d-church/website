@@ -13,7 +13,7 @@ export async function MainNav() {
             <li key={`${href}_${i}`}>
               <Button
                 variant="link"
-                className="p-0 text-xl text-[#129297]"
+                className="p-0 text-xl text-white hover:text-hover-blue"
                 asChild
               >
                 <a href={href}>{t(`header.links.${key}`)}</a>

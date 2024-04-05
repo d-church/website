@@ -1,6 +1,9 @@
-import { AboutBlock } from "@/components/main-page/about-block";
-import { PreviewBlock } from "@/components/main-page/preview-block";
-import { VideoBlock } from "@/components/main-page/video-block";
+import {
+  AboutBlock,
+  ChurchTeamBlock,
+  PreviewBlock,
+  VideoBlock,
+} from "@/components/main-page";
 
 export default async function Home() {
   return (
@@ -8,6 +11,7 @@ export default async function Home() {
       <PreviewBlock />
       <VideoBlock />
       <AboutBlock />
+      <ChurchTeamBlock />
     </>
   );
 }
