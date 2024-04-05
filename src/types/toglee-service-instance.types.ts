@@ -1,7 +1,7 @@
 import { type TProps } from "@tolgee/react";
 import { type TolgeeInstance } from "@tolgee/web";
 
-import type Resources from "./resources";
+import Resource from "../lib/i18n/uk.json";
 
 type Path<T, Key extends keyof T = keyof T> = Key extends string
   ? T[Key] extends Record<string, any>
@@ -11,7 +11,7 @@ type Path<T, Key extends keyof T = keyof T> = Key extends string
     : Key
   : never;
 
-export type TResourcePaths = (value: Path<Resources>) => string;
+export type TResourcePaths = (value: Path<typeof Resource>) => string;
 export type CreateServerInstanceOptions = {
   createTolgee: (locale: string) => Promise<TolgeeInstance>;
   getLocale: () => string;

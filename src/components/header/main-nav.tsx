@@ -22,9 +22,7 @@ export async function MainNav() {
           ))}
         </ul>
       </nav>
-      <Button className="rounded-[22px] border border-white bg-inherit text-xl text-white hover:bg-white hover:text-black">
-        {t("header.button-donate")}
-      </Button>
+      <Button variant="standard">{t("header.button-donate")}</Button>
     </div>
   );
 }
