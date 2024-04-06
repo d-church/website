@@ -3,6 +3,7 @@ import {
   ChurchTeamBlock,
   PreviewBlock,
   ServeGodBlock,
+  ShareBlock,
   VideoBlock,
 } from "@/components/main-page";
 
@@ -14,6 +15,7 @@ export default async function Home() {
       <AboutBlock />
       <ChurchTeamBlock />
       <ServeGodBlock />
+      <ShareBlock />
     </>
   );
 }
