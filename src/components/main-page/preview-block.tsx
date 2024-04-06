@@ -13,6 +13,7 @@ export async function PreviewBlock() {
           autoPlay
           muted
           loop
+          playsInline
           className="absolute left-0 top-0 min-h-full min-w-full object-cover"
         >
           <source src="/static/preview-block-video.mp4" type="video/mp4" />
