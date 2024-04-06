@@ -6,7 +6,6 @@ import { getTranslate } from "@/lib/tolgee/server";
 import { Link } from "@/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
-//background-share-block.webp
 export async function ShareBlock() {
   const t = await getTranslate();
   return (
