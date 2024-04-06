@@ -32,7 +32,7 @@ export function WriteUsForm() {
   function onSubmit(data: TSendMessageSchema) {
     console.log("12");
   }
-  console.log(form.formState.errors.name);
+
   return (
     <Form {...form}>
       <form
