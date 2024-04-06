@@ -11,7 +11,7 @@ export async function ServeGodBlock() {
   return (
     <div className="relative after:absolute after:top-0 after:-z-[1] after:h-full after:w-full after:bg-black/70">
       <Image
-        src="/static/background-serve-god.webp"
+        src="/static/background-serve-god-block.webp"
         fill
         alt="Serve God"
         className="absolute -z-10 h-full w-full object-cover"
