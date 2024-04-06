@@ -1,5 +1,3 @@
-// middleware.ts
-
 import { ALL_LOCALES, DEFAULT_LOCALE } from "@lib/tolgee/shared";
 import createMiddleware from "next-intl/middleware";
 
