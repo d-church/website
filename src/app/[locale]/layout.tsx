@@ -35,10 +35,10 @@ export default async function RootLayout({
 
   const locales = await getStaticData([locale]);
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={cn(
-          "flex min-h-screen flex-col bg-background font-sans antialiased",
+          "flex min-h-screen flex-col bg-background font-sans antialiased ",
           fontSans.variable
         )}
       >

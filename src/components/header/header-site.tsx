@@ -7,7 +7,7 @@ import { Link } from "@/navigation";
 
 export async function Header() {
   return (
-    <header className="fixed z-50 w-full  bg-black/60 py-4 backdrop-blur xl:py-9">
+    <header className="fixed z-50 w-full  bg-black/60 py-4 backdrop-blur xl:py-6 2xl:py-9">
       <div className="container flex w-full items-center justify-between">
         <Link href="/">
           <Image
@@ -17,7 +17,7 @@ export async function Header() {
             height={80}
             priority={true}
             loading="eager"
-            className="w-[93px] xl:w-[187.33px]"
+            className="w-[93px] xl:w-[147px] 2xl:w-[187.33px]"
           />
         </Link>
         <MobileNav />

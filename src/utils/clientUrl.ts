@@ -6,6 +6,7 @@ export const clientUrl: TClientUrl = {
   contacts: ["", "contacts"].join("/"),
   ministry: ["", "ministry"].join("/"),
   video: "#video",
+  event: ["", "event"].join("/"),
   donate: (domainName) => `https://donate.${domainName}.com.ua/ministries`,
   instagram: "https://www.instagram.com/d.church.lviv?igsh=Z2MzNmRjY2V3MXNm",
   facebook: "https://www.facebook.com/d.church.lviv",

@@ -1,20 +1,19 @@
 import { X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "../ui/button";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
 import { headersLinks } from "./links";
 
 import { getTranslate } from "@/lib/tolgee/server";
-import { Link } from "@/navigation";
+import { clientUrl } from "@/utils/clientUrl";
 
 export async function MobileNav() {
   const t = await getTranslate();
@@ -37,8 +36,8 @@ export async function MobileNav() {
             />
           </Button>
         </SheetTrigger>
-        <SheetContent className="bg-graphite container flex w-full flex-col border-none p-0 pb-12">
-          <SheetHeader className="border-hover-blue border-b py-4">
+        <SheetContent className="container flex w-full flex-col border-none bg-graphite p-0 pb-12">
+          <SheetHeader className="border-b border-hover-blue py-4">
             <div className="container flex items-center justify-between">
               <Link href="/">
                 <Image
@@ -64,8 +63,10 @@ export async function MobileNav() {
                 </Link>
               ))}
             </div>
-            <Button className="rounded-[22px] border border-white bg-inherit text-xl text-white hover:bg-white hover:text-black">
-              {t("header.button-donate")}
+            <Button variant="standard" asChild>
+              <Link href={clientUrl.donate("8")}>
+                {t("header.button-donate")}
+              </Link>
             </Button>
           </div>
         </SheetContent>
