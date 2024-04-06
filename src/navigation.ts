@@ -1,5 +1,3 @@
-// navigation.ts
-
 import { ALL_LOCALES } from "@lib/tolgee/shared";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 
