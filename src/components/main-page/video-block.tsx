@@ -34,8 +34,8 @@ const videos = [
 export async function VideoBlock() {
   const t = await getTranslate();
   return (
-    <div className="container" id="video">
-      <Separator className="hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
+    <div className="container xl:pb-[100px]" id="video">
+      <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
       <Accordion
         type="single"
         collapsible
@@ -45,9 +45,11 @@ export async function VideoBlock() {
         <AccordionItem value="item-1">
           <AccordionTrigger className="flex w-1/2 justify-between">
             <span></span>
-            <h2 className="uppercase">{t("main-page.video-block.title")}</h2>
+            <h2 className="text-xl font-bold uppercase text-graphite">
+              {t("main-page.video-block.title")}
+            </h2>
           </AccordionTrigger>
-          <AccordionContent className="flex h-full flex-col md:flex-row md:justify-center md:space-x-8 xl:px-[138px]">
+          <AccordionContent className="mt-5 flex h-full flex-col md:flex-row md:justify-center md:space-x-8 xl:mt-[50px] xl:px-[138px]">
             <Video />
             <div className="mt-[10px] space-y-[10px] text-white md:space-y-5 xl:mt-0">
               {videos.map(({ link, date }, i) => (
