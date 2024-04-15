@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer/footer-site";
+import { Header } from "@/components/header/header-site";
 import {
   AboutBlock,
   ChurchTeamBlock,
@@ -11,13 +13,17 @@ import {
 export default async function Home() {
   return (
     <>
-      <PreviewBlock />
-      <VideoBlock />
-      <AboutBlock />
-      <ChurchTeamBlock />
-      <ServeGodBlock />
-      <ShareBlock />
-      <WriteUsBlock />
+      <Header />
+      <main className="flex-[1_0_auto]">
+        <PreviewBlock />
+        <VideoBlock />
+        <AboutBlock />
+        <ChurchTeamBlock />
+        <ServeGodBlock />
+        <ShareBlock />
+        <WriteUsBlock />
+      </main>
+      <Footer />
     </>
   );
 }

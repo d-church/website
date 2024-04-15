@@ -6,8 +6,9 @@ import "./globals.css";
 import { notFound } from "next/navigation";
 import { ReactNode, Suspense } from "react";
 
-import { Footer } from "@/components/footer/footer-site";
-import { Header } from "@/components/header/header-site";
+import Providers from "./providers";
+
+import { Icons } from "@/components/ui/icons";
 import { TolgeeNextProvider } from "@/lib/tolgee/client";
 import { ALL_LOCALES, getStaticData } from "@/lib/tolgee/shared";
 import { cn } from "@/lib/utils";
@@ -38,15 +39,19 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={cn(
-          "flex min-h-screen flex-col bg-background font-sans antialiased ",
+          "flex min-h-screen flex-col bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
-        <Suspense fallback={"loading..."}>
+        <Suspense
+          fallback={
+            <div className="flex h-screen items-start justify-center bg-black">
+              <Icons.spinner className="size-8 animate-spin" />
+            </div>
+          }
+        >
           <TolgeeNextProvider locale={locale} locales={locales}>
-            <Header />
-            <main className="flex-[1_0_auto]">{children}</main>
-            <Footer />
+            <Providers>{children}</Providers>
           </TolgeeNextProvider>
         </Suspense>
       </body>
