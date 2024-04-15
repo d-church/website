@@ -1,14 +1,19 @@
+"use client";
+
+import { useTranslate } from "@tolgee/react";
 import Link from "next/link";
 
 import { Button } from "../ui/button";
 import { headersLinks } from "./links";
 
-import { getTranslate } from "@/lib/tolgee/server";
+import { cn } from "@/lib/utils";
 import { Link as LinkNav, usePathname } from "@/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function MainNav() {
-  const t = await getTranslate();
+export function MainNav() {
+  const { t } = useTranslate();
+  const pathName = usePathname();
+
   return (
     <div className="hidden w-[70%] items-center justify-between xl:flex">
       <nav>
@@ -18,7 +23,12 @@ export async function MainNav() {
               <li key={`${href}_${i}`}>
                 <Button
                   variant="link"
-                  className="p-0 text-xl text-white hover:text-hover-blue"
+                  className={cn(
+                    "p-0 text-xl text-white hover:text-hover-blue",
+                    {
+                      "text-hover-blue": pathName === href,
+                    }
+                  )}
                   asChild
                 >
                   <LinkNav href={href}>{t(`header.links.${key}`)}</LinkNav>
@@ -28,7 +38,12 @@ export async function MainNav() {
               <li key={`${href}_${i}`}>
                 <Button
                   variant="link"
-                  className="p-0 text-xl text-white hover:text-hover-blue"
+                  className={cn(
+                    "p-0 text-xl text-white hover:text-hover-blue",
+                    {
+                      "text-hover-blue": pathName === href,
+                    }
+                  )}
                   asChild
                 >
                   <a href={href}>{t(`header.links.${key}`)}</a>
