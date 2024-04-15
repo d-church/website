@@ -8,10 +8,10 @@ export async function DescriptionBlock() {
     <div className="container mb-[100px] mt-[100px] flex flex-col md:max-w-[795px] xl:max-w-full xl:flex-row xl:justify-center">
       <div className="flex max-w-[795px] flex-col justify-center text-[20px]/[26px] 2xl:text-[22px]/[30px]">
         <p className="mb-[30px]">
-          {t("contacts-page.description-block.text-1")}
+          {t("church-page.description-block.text-1")}
         </p>
         <p className="mb-[30px] 2xl:mb-0">
-          {t("contacts-page.description-block.text-2")}
+          {t("church-page.description-block.text-2")}
         </p>
       </div>
       <Image
