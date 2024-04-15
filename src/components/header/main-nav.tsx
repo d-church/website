@@ -13,14 +13,12 @@ import { clientUrl } from "@/utils/clientUrl";
 export function MainNav() {
   const { t } = useTranslate();
   const pathName = usePathname();
-  console.log(pathName);
 
   return (
     <div className="hidden w-[70%] items-center justify-between xl:flex">
       <nav>
         <ul className="flex space-x-10">
           {headersLinks.map(({ href, key }, i) => {
-            console.log();
             return key !== "video-and-stream" ? (
               <li key={`${href}_${i}`}>
                 <Button
