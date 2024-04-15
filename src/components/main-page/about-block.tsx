@@ -31,7 +31,7 @@ export async function AboutBlock() {
           <p>{t("main-page.about-block.text-3")}</p>
         </div>
         <Button variant="standard">
-          <Link href={clientUrl.about}>
+          <Link href={clientUrl.church}>
             {t("main-page.about-block.button-details")}
           </Link>
         </Button>

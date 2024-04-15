@@ -2,7 +2,7 @@ import type { TClientUrl } from "@/types/client-url.types";
 
 export const clientUrl: TClientUrl = {
   jesus: ["", "jesus"].join("/"),
-  about: ["", "about"].join("/"),
+  church: ["", "church"].join("/"),
   contacts: ["", "contacts"].join("/"),
   ministry: ["", "ministry"].join("/"),
   video: "#video",

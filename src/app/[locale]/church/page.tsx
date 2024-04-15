@@ -1,4 +1,4 @@
-import { DescriptionBlock, HeadingBlock } from "@/components/contacts-page";
+import { DescriptionBlock, HeadingBlock } from "@/components/church-page";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import {
@@ -7,7 +7,7 @@ import {
   WriteUsBlock,
 } from "@/components/main-page";
 
-export default async function ContactsPage() {
+export default async function ChurchPage() {
   return (
     <>
       <Header />

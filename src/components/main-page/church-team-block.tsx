@@ -1,18 +1,15 @@
-"use client";
-
-import { useTranslate } from "@tolgee/react";
-
 import { Separator } from "../ui/separator";
 import { ChurchEmployeeBlock } from "./church-employee-block";
 
+import { getTranslate } from "@/lib/tolgee/server";
 import { cn } from "@/lib/utils";
 
 interface IChurchTeamBlockProps {
   className?: string;
 }
 
-export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
-  const { t } = useTranslate();
+export async function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
+  const t = await getTranslate();
   const team = Array.from({ length: 4 });
   return (
     <div
@@ -27,9 +24,9 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
 
       <div className="mt-[30px] flex flex-col items-center xl:mt-[50px]">
         <div className="flex w-full justify-center xl:space-x-[57px]">
-          <Separator className="relative top-[95px] hidden w-[500px] bg-graphite xl:block" />
+          <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
           <ChurchEmployeeBlock />
-          <Separator className="relative top-[95px] hidden w-[500px] bg-graphite xl:block" />
+          <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
         </div>
       </div>
 
