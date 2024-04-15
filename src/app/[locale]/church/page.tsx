@@ -1,11 +1,11 @@
-import { DescriptionBlock, HeadingBlock } from "@/components/church-page";
+import {
+  DescriptionBlock,
+  HeadingBlock,
+  PreviewBlock,
+} from "@/components/church-page";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
-import {
-  ChurchTeamBlock,
-  PreviewBlock,
-  WriteUsBlock,
-} from "@/components/main-page";
+import { ChurchTeamBlock, WriteUsBlock } from "@/components/main-page";
 
 export default async function ChurchPage() {
   return (
