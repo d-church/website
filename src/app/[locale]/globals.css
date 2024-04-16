@@ -36,6 +36,8 @@
 
     --graphite: 0 0 14%;
     --hover-blue: 182 83% 33%;
+
+    --gray: 0 0% 54%;
   }
 
   .dark {
