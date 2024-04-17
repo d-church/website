@@ -10,7 +10,7 @@ import {
 } from "@components/ui/form";
 import { Input } from "@components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 
 import { Textarea } from "../ui/textarea";
@@ -19,7 +19,7 @@ import { sendMessageSchema, TSendMessageSchema } from "./send-message.schema";
 import { cn } from "@/lib/utils";
 
 export function WriteUsForm() {
-  const { t } = useTranslate();
+  const t = useTranslations();
   const form = useForm<TSendMessageSchema>({
     resolver: zodResolver(sendMessageSchema),
     defaultValues: {
@@ -32,7 +32,6 @@ export function WriteUsForm() {
   function onSubmit(data: TSendMessageSchema) {
     console.log("12");
   }
-  console.log(form.formState.errors.name);
   return (
     <Form {...form}>
       <form

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { TPayments } from "@/types/payments.types";
@@ -8,7 +8,7 @@ import { PaymentCredentials } from "./payment-credentials";
 import { PaymentMethods } from "./payment-methods";
 
 export function OtherDonateMethods() {
-  const { t } = useTranslate();
+  const t = useTranslations();
   const [currentPaymentMethod, setCurrentPaymentMethod] = useState(
     t("donate-page.other-donate-methods.credentials.header")
   );

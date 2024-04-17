@@ -1,13 +1,13 @@
 "use client";
 
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { VideoTimer } from "../timer/video-timer";
 import { Button } from "../ui/button";
 
 export function Video() {
-  const { t } = useTranslate();
+  const t = useTranslations();
   const [isEnded, setIsEnded] = useState(false);
   return (
     <div className="w-full md:max-w-[400px] xl:min-w-[800px] 2xl:min-w-[1070px]">

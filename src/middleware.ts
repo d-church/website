@@ -1,13 +1,13 @@
-import { ALL_LOCALES, DEFAULT_LOCALE } from "@lib/tolgee/shared";
 import createMiddleware from "next-intl/middleware";
 
+import { localePrefix, locales } from "./app/navigation";
+
 export default createMiddleware({
-  locales: ALL_LOCALES,
-  defaultLocale: DEFAULT_LOCALE,
-  localePrefix: "as-needed",
+  locales,
+  defaultLocale: "uk",
+  localePrefix,
 });
 
 export const config = {
-  // Skip all paths that should not be internationalized
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: ["/", "/(en|uk)/:path*", "/((?!api|_next|_vercel|.*\\..*).*)"],
 };

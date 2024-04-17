@@ -1,4 +1,5 @@
 import { Calendar } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { VideoTimer } from "../timer/video-timer";
@@ -13,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getTranslate } from "@/lib/tolgee/server";
 import { clientUrl } from "@/utils/clientUrl";
 
 const videos = [
@@ -31,8 +31,8 @@ const videos = [
   },
 ];
 
-export async function VideoBlock() {
-  const t = await getTranslate();
+export function VideoBlock() {
+  const t = useTranslations();
   return (
     <div className="container xl:pb-[100px]" id="video">
       <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />

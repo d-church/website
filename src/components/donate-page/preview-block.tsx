@@ -1,14 +1,14 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
 import { WrapperPreviewBlock } from "../wrapper-preview-block/wrapper-preview-block";
 
-import { getTranslate } from "@/lib/tolgee/server";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function PreviewBlock() {
-  const t = await getTranslate();
+export function PreviewBlock() {
+  const t = useTranslations();
   return (
     <WrapperPreviewBlock>
       <div className="container absolute z-10 flex h-full flex-col items-center py-[100px] text-white xl:py-0">

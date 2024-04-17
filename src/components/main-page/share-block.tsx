@@ -1,13 +1,13 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "../ui/button";
 
-import { getTranslate } from "@/lib/tolgee/server";
-import { Link } from "@/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function ShareBlock() {
-  const t = await getTranslate();
+export function ShareBlock() {
+  const t = useTranslations();
   return (
     <div className="relative py-[125px] xl:py-[230px]">
       <Image
