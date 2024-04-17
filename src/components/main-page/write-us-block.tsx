@@ -1,12 +1,11 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Icons } from "../ui/icons";
 import { WriteUsForm } from "../write-us-form/form";
 
-import { getTranslate } from "@/lib/tolgee/server";
-
-export async function WriteUsBlock() {
-  const t = await getTranslate();
+export function WriteUsBlock() {
+  const t = useTranslations();
   return (
     <div className="relative py-[60px] after:absolute after:top-0 after:-z-[1] after:h-full after:w-full after:bg-black/70">
       <Image

@@ -1,14 +1,13 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Icons } from "../ui/icons";
 
-import { getTranslate } from "@/lib/tolgee/server";
-
-export async function QrCodesBlock() {
-  const t = await getTranslate();
+export function QrCodesBlock() {
+  const t = useTranslations();
   return (
     <div className="container mb-[100px] flex flex-col items-center">
-      <p className="text-gray mt-[50px] w-[1070px] text-center text-[20px]/[30px] font-medium">
+      <p className="mt-[50px] w-[1070px] text-center text-[20px]/[30px] font-medium text-gray">
         {t("donate-page.qr-codes-block.intro")}
       </p>
       <div className="mt-[100px] flex gap-[305px]">
@@ -21,7 +20,7 @@ export async function QrCodesBlock() {
             width={118}
             height={118}
           />
-          <p className="text-gray text-center text-[20px]/[30px]">
+          <p className="text-center text-[20px]/[30px] text-gray">
             {t("donate-page.qr-codes-block.ua-qr")}
           </p>
         </div>
@@ -34,7 +33,7 @@ export async function QrCodesBlock() {
             width={118}
             height={118}
           />
-          <p className="text-gray text-center text-[20px]/[30px]">
+          <p className="text-center text-[20px]/[30px] text-gray">
             {t("donate-page.qr-codes-block.usa-qr")}
           </p>
         </div>

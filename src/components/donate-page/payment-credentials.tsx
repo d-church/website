@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 
 import { TPayments } from "@/types/payments.types";
 
@@ -11,7 +11,7 @@ interface IPaymentCredentialsProps {
 export function PaymentCredentials({
   currentPaymentMethod,
 }: IPaymentCredentialsProps) {
-  const { t } = useTranslate();
+  const t = useTranslations();
 
   return (
     <div className="mb-[100px] h-[200px] text-center text-[20px]/[30px]">

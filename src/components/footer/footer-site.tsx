@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,11 +6,10 @@ import { footersLink } from "../header/links";
 import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
 
-import { getTranslate } from "@/lib/tolgee/server";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function Footer() {
-  const t = await getTranslate();
+export function Footer() {
+  const t = useTranslations();
   return (
     <footer className="bg-[#232323] py-[100px] text-white xl:py-[72px]">
       <div className="container flex flex-col items-center justify-between space-y-[100px] xl:flex-row xl:space-y-0">

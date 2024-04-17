@@ -1,7 +1,7 @@
-import { getTranslate } from "@/lib/tolgee/server";
+import { useTranslations } from "next-intl";
 
-export async function HeadingBlock() {
-  const t = await getTranslate();
+export function HeadingBlock() {
+  const t = useTranslations();
   return (
     <div className="container flex justify-center">
       <h3 className="text-3xl font-bold uppercase text-graphite">

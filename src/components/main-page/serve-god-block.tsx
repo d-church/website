@@ -1,13 +1,13 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "../ui/button";
 
-import { getTranslate } from "@/lib/tolgee/server";
-import { Link } from "@/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function ServeGodBlock() {
-  const t = await getTranslate();
+export function ServeGodBlock() {
+  const t = useTranslations();
   return (
     <div className="relative after:absolute after:top-0 after:-z-[1] after:h-full after:w-full after:bg-black/70">
       <Image

@@ -1,3 +1,5 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+
 import {
   DescriptionBlock,
   HeadingBlock,
@@ -7,7 +9,12 @@ import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { ChurchTeamBlock, WriteUsBlock } from "@/components/main-page";
 
-export default async function ChurchPage() {
+export default function ChurchPage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
   return (
     <>
       <Header />

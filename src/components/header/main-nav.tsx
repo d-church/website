@@ -1,17 +1,17 @@
 "use client";
 
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Button } from "../ui/button";
 import { headersLinks } from "./links";
 
 import { cn } from "@/lib/utils";
-import { Link as LinkNav, usePathname } from "@/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
 export function MainNav() {
-  const { t } = useTranslate();
+  const t = useTranslations();
   const pathName = usePathname();
 
   return (
@@ -31,7 +31,7 @@ export function MainNav() {
                   )}
                   asChild
                 >
-                  <LinkNav href={href}>{t(`header.links.${key}`)}</LinkNav>
+                  <Link href={href}>{t(`header.links.${key}`)}</Link>
                 </Button>
               </li>
             ) : (

@@ -7,9 +7,7 @@ interface IWrapperPreviewBlockProps {
   children: React.ReactNode;
 }
 
-export async function WrapperPreviewBlock({
-  children,
-}: IWrapperPreviewBlockProps) {
+export function WrapperPreviewBlock({ children }: IWrapperPreviewBlockProps) {
   const pathname = usePathname();
   return (
     <div className="relative flex h-full min-h-screen items-center justify-center">
