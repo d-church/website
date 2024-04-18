@@ -37,6 +37,10 @@ export default function RootLayout({
 }: Readonly<Props>) {
   unstable_setRequestLocale(locale);
   if (!locales.includes(locale)) {
+<<<<<<< HEAD
+=======
+    console.log(locale);
+>>>>>>> main
     notFound();
   }
   const messages = useMessages();
@@ -49,7 +53,11 @@ export default function RootLayout({
         )}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
+<<<<<<< HEAD
           <Providers>{children}</Providers>
+=======
+          {children}
+>>>>>>> main
         </NextIntlClientProvider>
       </body>
     </html>
