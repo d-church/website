@@ -9,7 +9,7 @@ import { Icons } from "../ui/icons";
 import { clientUrl } from "@/utils/clientUrl";
 
 export function Footer() {
-  const t = useTranslations();
+  const t = useTranslations("footer");
   return (
     <footer className="bg-[#232323] py-[100px] text-white xl:py-[72px]">
       <div className="container flex flex-col items-center justify-between space-y-[100px] xl:flex-row xl:space-y-0">
@@ -21,7 +21,7 @@ export function Footer() {
             width={80}
             height={80}
           />
-          <p className="text-center uppercase">{t("footer.address")}</p>
+          <p className="text-center uppercase">{t("address")}</p>
         </div>
         <div className="flex flex-col justify-between space-y-7 xl:w-[34%] xl:flex-row xl:space-y-0">
           <div className="flex flex-col items-center justify-between space-y-7 xl:items-start">
@@ -33,7 +33,7 @@ export function Footer() {
                 className="max-w-max p-0 text-xl text-white"
               >
                 <a href={href} className="hover:text-[#129297]">
-                  {t(`footer.links.${key}`)}
+                  {t(`links.${key}`)}
                 </a>
               </Button>
             ))}
@@ -51,7 +51,7 @@ export function Footer() {
                   href={href}
                   className="hover:text-[#129297]"
                 >
-                  {t(`footer.links.${key}`)}
+                  {t(`links.${key}`)}
                 </a>
               </Button>
             ))}
@@ -89,10 +89,10 @@ export function Footer() {
             asChild
           >
             <Link
-              href={`mailto:${t("footer.email")}`}
+              href={`mailto:${t("email")}`}
               className="uppercase hover:bg-white hover:text-black"
             >
-              {t("footer.email")}
+              {t("email")}
             </Link>
           </Button>
         </div>
