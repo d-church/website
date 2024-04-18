@@ -10,7 +10,7 @@ export function QrCodesBlock() {
       <p className="mt-[50px] w-[1070px] text-center text-[20px]/[30px] font-medium text-gray">
         {t("donate-page.qr-codes-block.intro")}
       </p>
-      <div className="mt-[100px] flex gap-[305px]">
+      <div className="mt-[100px] flex flex-wrap justify-center gap-[100px] xl:justify-normal xl:gap-[305px]">
         <div className="flex w-[434px] flex-col items-center">
           <Icons.textUA className="mb-[18px]" />
           <Image

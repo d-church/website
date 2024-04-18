@@ -22,7 +22,7 @@ export function PreviewBlock() {
         </div>
         <Icons.textMobile className="w-full xl:hidden" />
         <Button
-          className="mt-[100px] py-[19px] xl:py-[38px] xl:text-[38px]/[46px] xl:font-medium"
+          className="mt-[100px] py-[19px] 2xl:py-[38px] 2xl:text-[38px]/[46px] 2xl:font-medium"
           variant="standard"
           asChild
         >
@@ -34,7 +34,7 @@ export function PreviewBlock() {
           </Link>
         </Button>
         <div className="mt-[168px] mb-[50px] flex gap-[50px]">
-          <Link href={clientUrl.donateUA("")}>
+          <Link href={clientUrl.donateTransfer}>
             <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
               <p>
                 {t("donate-page.preview-block.button-donate-ministries.part-1")}
@@ -45,7 +45,7 @@ export function PreviewBlock() {
             </div>
           </Link>
           <div>
-            <Link href="/donate#other-payment-methods">
+            <Link href="#other-payment-methods">
               <div className="flex h-[100px] w-[248px] rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
                 {t("donate-page.preview-block.button-donate-all")}
               </div>
