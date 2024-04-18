@@ -1,10 +1,10 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
 import { WrapperPreviewBlock } from "../wrapper-preview-block/wrapper-preview-block";
 
+import { Link } from "@/app/navigation";
 import { clientUrl } from "@/utils/clientUrl";
 
 export function PreviewBlock() {
@@ -33,12 +33,15 @@ export function PreviewBlock() {
             {t("donate-page.preview-block.button-donate")}
           </Link>
         </Button>
-        <div className="mt-[168px] flex gap-[50px]">
+        <div className="mt-[168px] mb-[50px] flex gap-[50px]">
           <Link href={clientUrl.donateUA("")}>
             <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
-              {t("donate-page.preview-block.button-donate-ministries.part-1")}
-              <br />
-              {t("donate-page.preview-block.button-donate-ministries.part-2")}
+              <p>
+                {t("donate-page.preview-block.button-donate-ministries.part-1")}
+              </p>
+              <p>
+                {t("donate-page.preview-block.button-donate-ministries.part-2")}
+              </p>
             </div>
           </Link>
           <div>
@@ -50,14 +53,17 @@ export function PreviewBlock() {
           </div>
           <div>
             <Link href="/">
-              <div className="flex h-[100px] w-[248px] items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
-                {t(
-                  "donate-page.preview-block.button-return-to-main-page.part-1"
-                )}
-                <br />
-                {t(
-                  "donate-page.preview-block.button-return-to-main-page.part-2"
-                )}
+              <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
+                <p>
+                  {t(
+                    "donate-page.preview-block.button-return-to-main-page.part-1"
+                  )}
+                </p>
+                <p>
+                  {t(
+                    "donate-page.preview-block.button-return-to-main-page.part-2"
+                  )}
+                </p>
               </div>
             </Link>
           </div>

@@ -2,10 +2,10 @@
 
 import { useTranslations } from "next-intl";
 
-import { TPayments } from "@/types/payments.types";
+import { payments } from "./payments";
 
 interface IPaymentCredentialsProps {
-  currentPaymentMethod: TPayments;
+  currentPaymentMethod: string;
 }
 
 export function PaymentCredentials({
@@ -15,11 +15,11 @@ export function PaymentCredentials({
 
   return (
     <div className="mb-[100px] h-[200px] text-center text-[20px]/[30px]">
-      <p className="mb-[20px] text-[20px]/[24px] font-bold">
-        {currentPaymentMethod}
-      </p>
-      {currentPaymentMethod === "РЕКВІЗИТИ В UAH" ? (
+      {currentPaymentMethod === payments[0].name ? (
         <>
+          <p className="mb-[20px] text-[20px]/[24px] font-bold">
+            {payments[0].text}
+          </p>
           <p>{t("donate-page.other-donate-methods.credentials.org-name")}</p>
           <p>{t("donate-page.other-donate-methods.credentials.edrpou")}</p>
           <p>{t("donate-page.other-donate-methods.credentials.bank-name")}</p>
