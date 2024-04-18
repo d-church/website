@@ -6,7 +6,7 @@ import { Icons } from "../ui/icons";
 export function QrCodesBlock() {
   const t = useTranslations();
   return (
-    <div className="container mb-[100px] flex flex-col items-center">
+    <div className="container pb-[100px] flex flex-col items-center">
       <p className="mt-[50px] w-[1070px] text-center text-[20px]/[30px] font-medium text-gray">
         {t("donate-page.qr-codes-block.intro")}
       </p>

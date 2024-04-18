@@ -11,18 +11,18 @@ export function PreviewBlock() {
   const t = useTranslations();
   return (
     <WrapperPreviewBlock>
-      <div className="container absolute z-10 flex h-full flex-col items-center py-[100px] text-white xl:py-0">
+      <div className="container absolute z-10 flex justify-between pt-[9rem] pb-[3rem] h-full flex-col items-center text-white">
         <h1 className="hidden">{t("main-page.preview-block.title")}</h1>
         <p className="hidden">{t("main-page.preview-block.under-title")}</p>
         <p className="hidden">{t("main-page.preview-block.welcome-text")}</p>
-        <div className="mt-[150px] hidden xl:block">
+        <div className="hidden xl:block">
           <Icons.textTitle className="w-full" />
           <Icons.textUnderTitle className="w-full xl:mt-[50px]" />
           <Icons.textWelcome className="w-full xl:mt-[30px]" />
         </div>
         <Icons.textMobile className="w-full xl:hidden" />
         <Button
-          className="mt-[100px] py-[19px] 2xl:py-[38px] 2xl:text-[38px]/[46px] 2xl:font-medium"
+          className="py-[19px] 2xl:py-[38px] 2xl:text-[38px]/[46px] 2xl:font-medium"
           variant="standard"
           asChild
         >
@@ -33,7 +33,7 @@ export function PreviewBlock() {
             {t("donate-page.preview-block.button-donate")}
           </Link>
         </Button>
-        <div className="mt-[168px] mb-[50px] flex gap-[50px]">
+        <div className="flex gap-[50px]">
           <Link href={clientUrl.donateTransfer}>
             <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
               <p>
