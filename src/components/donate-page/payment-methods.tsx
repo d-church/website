@@ -1,15 +1,15 @@
 "use client";
 
-import { Dispatch, SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 
-import { TPayments } from "@/types/payments.types";
+import { type TPaymentOption } from "@/types/payments.types";
 import { Button } from "../ui/button";
+import { payments } from "./payments";
 
 import { cn } from "@/lib/utils";
-import { payments } from "@/utils/payments";
 
 interface IPaymentMethodsProps {
-  currentPaymentMethod: TPayments;
+  currentPaymentMethod: string;
   setCurrentPaymentMethod: Dispatch<SetStateAction<string>>;
 }
 
@@ -17,21 +17,24 @@ export function PaymentMethods({
   currentPaymentMethod,
   setCurrentPaymentMethod,
 }: IPaymentMethodsProps) {
+  function changePaymentMethodHandler(paymentOption: TPaymentOption) {
+    if (!(paymentOption.name === currentPaymentMethod)) {
+      setCurrentPaymentMethod(paymentOption.name);
+    }
+  }
   return (
     <div className="mb-[100px] flex gap-[22px]">
       {payments.map((payment, index) => (
         <Button
           className={cn("px-[20px] py-[10px]", {
             "cursor-default bg-white text-black":
-              currentPaymentMethod === payment,
+              currentPaymentMethod === payment.name,
           })}
           variant="standard"
-          onClick={() => {
-            setCurrentPaymentMethod(payment);
-          }}
+          onClick={() => changePaymentMethodHandler(payment)}
           key={index}
         >
-          {payment}
+          {payment.text}
         </Button>
       ))}
     </div>
