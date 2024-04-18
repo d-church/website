@@ -628,4 +628,74 @@ export const Icons = {
       />
     </svg>
   ),
+  clock: (props: IconProps) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M12 1C5.9 1 1 5.9 1 12C1 18.1 5.9 23 12 23C18.1 23 23 18.1 23 12C23 5.9 18.1 1 12 1ZM12 21C7 21 3 17 3 12C3 7 7 3 12 3C17 3 21 7 21 12C21 17 17 21 12 21ZM15.7 15.7C16.1 15.3 16.1 14.7 15.7 14.3L13 11.6V6C13 5.4 12.6 5 12 5C11.4 5 11 5.4 11 6V12C11 12.3 11.1 12.5 11.3 12.7L14.3 15.7C14.5 15.9 14.7 16 15 16C15.3 16 15.5 15.9 15.7 15.7Z"
+        fill="#8A8A8A"
+      />
+      <mask
+        id="mask0_914_1355"
+        maskUnits="userSpaceOnUse"
+        x="1"
+        y="1"
+        width="22"
+        height="22"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 1C5.9 1 1 5.9 1 12C1 18.1 5.9 23 12 23C18.1 23 23 18.1 23 12C23 5.9 18.1 1 12 1ZM12 21C7 21 3 17 3 12C3 7 7 3 12 3C17 3 21 7 21 12C21 17 17 21 12 21ZM15.7 15.7C16.1 15.3 16.1 14.7 15.7 14.3L13 11.6V6C13 5.4 12.6 5 12 5C11.4 5 11 5.4 11 6V12C11 12.3 11.1 12.5 11.3 12.7L14.3 15.7C14.5 15.9 14.7 16 15 16C15.3 16 15.5 15.9 15.7 15.7Z"
+          fill="white"
+        />
+      </mask>
+      <g mask="url(#mask0_914_1355)">
+        <rect width="24" height="24" fill="#232323" />
+      </g>
+    </svg>
+  ),
+  calendar: (props: IconProps) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M19 3H17V2C17 1.4 16.6 1 16 1C15.4 1 15 1.4 15 2V3H9V2C9 1.4 8.6 1 8 1C7.4 1 7 1.4 7 2V3H5C3.3 3 2 4.3 2 6V20C2 21.7 3.3 23 5 23H19C20.7 23 22 21.7 22 20V6C22 4.3 20.7 3 19 3ZM5 5H7V6C7 6.6 7.4 7 8 7C8.6 7 9 6.6 9 6V5H15V6C15 6.6 15.4 7 16 7C16.6 7 17 6.6 17 6V5H19C19.6 5 20 5.4 20 6V9H4V6C4 5.4 4.4 5 5 5ZM5 21H19C19.6 21 20 20.6 20 20V11H4V20C4 20.6 4.4 21 5 21Z"
+        fill="#8A8A8A"
+      />
+      <mask
+        id="mask0_914_1352"
+        maskUnits="userSpaceOnUse"
+        x="2"
+        y="1"
+        width="20"
+        height="22"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19 3H17V2C17 1.4 16.6 1 16 1C15.4 1 15 1.4 15 2V3H9V2C9 1.4 8.6 1 8 1C7.4 1 7 1.4 7 2V3H5C3.3 3 2 4.3 2 6V20C2 21.7 3.3 23 5 23H19C20.7 23 22 21.7 22 20V6C22 4.3 20.7 3 19 3ZM5 5H7V6C7 6.6 7.4 7 8 7C8.6 7 9 6.6 9 6V5H15V6C15 6.6 15.4 7 16 7C16.6 7 17 6.6 17 6V5H19C19.6 5 20 5.4 20 6V9H4V6C4 5.4 4.4 5 5 5ZM5 21H19C19.6 21 20 20.6 20 20V11H4V20C4 20.6 4.4 21 5 21Z"
+          fill="white"
+        />
+      </mask>
+      <g mask="url(#mask0_914_1352)">
+        <rect width="24" height="24" fill="#232323" />
+      </g>
+    </svg>
+  ),
 };

@@ -5,6 +5,7 @@ import { Header } from "@/components/header/header-site";
 import {
   AboutBlock,
   ChurchTeamBlock,
+  ImportantInformationBlock,
   PreviewBlock,
   ServeGodBlock,
   ShareBlock,
@@ -23,6 +24,7 @@ export default function HomePage({
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />
+        <ImportantInformationBlock />
         <VideoBlock />
         <AboutBlock />
         <ChurchTeamBlock />
