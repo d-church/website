@@ -8,6 +8,8 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
+import Providers from "./providers";
+
 import { locales } from "@/lib/i18n/i18n";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +37,6 @@ export default function RootLayout({
 }: Readonly<Props>) {
   unstable_setRequestLocale(locale);
   if (!locales.includes(locale)) {
-    console.log(locale);
     notFound();
   }
   const messages = useMessages();
@@ -43,12 +44,12 @@ export default function RootLayout({
     <html lang={locale} className="scroll-smooth">
       <body
         className={cn(
-          "flex min-h-screen flex-col bg-background font-sans antialiased ",
+          "flex min-h-screen flex-col bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -6,4 +6,4 @@ export const sendMessageSchema = z.object({
   message: z.string().min(5).max(500),
 });
 
-export type TSendMessageSchema = z.infer<typeof sendMessageSchema>;
+export type TSendMessage = z.infer<typeof sendMessageSchema>;
