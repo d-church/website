@@ -7,9 +7,7 @@ interface IWrapperPreviewBlockProps {
   children: React.ReactNode;
 }
 
-export async function WrapperPreviewBlock({
-  children,
-}: IWrapperPreviewBlockProps) {
+export function WrapperPreviewBlock({ children }: IWrapperPreviewBlockProps) {
   const pathname = usePathname();
   return (
     <div className="relative flex h-full min-h-screen items-center justify-center">
@@ -23,6 +21,13 @@ export async function WrapperPreviewBlock({
           >
             <source src="/static/preview-block-video.mp4" type="video/mp4" />
           </video>
+        ) : pathname === "/donate" ? (
+          <Image
+            src="/static/donate-preview-block-picture.webp"
+            alt="Preview section picture"
+            fill
+            className="object-cover"
+          />
         ) : (
           <Image
             src="/static/preview-block-picture.webp"

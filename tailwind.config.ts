@@ -26,6 +26,7 @@ const config = {
         foreground: "hsl(var(--foreground))",
         graphite: "hsl(var(--graphite))",
         "hover-blue": "hsl(var(--hover-blue))",
+        gray: "hsl(var(--gray))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

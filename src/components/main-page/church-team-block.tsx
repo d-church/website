@@ -1,15 +1,16 @@
+import { useTranslations } from "next-intl";
+
 import { Separator } from "../ui/separator";
 import { ChurchEmployeeBlock } from "./church-employee-block";
 
-import { getTranslate } from "@/lib/tolgee/server";
 import { cn } from "@/lib/utils";
 
 interface IChurchTeamBlockProps {
   className?: string;
 }
 
-export async function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
-  const t = await getTranslate();
+export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
+  const t = useTranslations();
   const team = Array.from({ length: 4 });
   return (
     <div

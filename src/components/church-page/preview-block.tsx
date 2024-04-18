@@ -1,10 +1,10 @@
+import { useTranslations } from "next-intl";
+
 import { Icons } from "../ui/icons";
 import { WrapperPreviewBlock } from "../wrapper-preview-block/wrapper-preview-block";
 
-import { getTranslate } from "@/lib/tolgee/server";
-
-export async function PreviewBlock() {
-  const t = await getTranslate();
+export function PreviewBlock() {
+  const t = useTranslations();
   return (
     <WrapperPreviewBlock>
       <div className="container absolute z-10 flex h-full flex-col items-center justify-between py-[100px] text-white xl:justify-center xl:py-0">

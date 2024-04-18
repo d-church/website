@@ -1,11 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 
-import { Link } from "@/navigation";
-
-export async function Header() {
+export function Header() {
   return (
     <header className="fixed z-50 w-full  bg-black/60 py-4 backdrop-blur xl:py-6 2xl:py-9">
       <div className="container flex w-full items-center justify-between">
