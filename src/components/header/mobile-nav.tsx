@@ -1,4 +1,6 @@
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,11 +14,10 @@ import {
 } from "../ui/sheet";
 import { headersLinks } from "./links";
 
-import { getTranslate } from "@/lib/tolgee/server";
 import { clientUrl } from "@/utils/clientUrl";
 
 export async function MobileNav() {
-  const t = await getTranslate();
+  const t = await getTranslations();
   return (
     <div className=" text-white xl:hidden">
       <Sheet>
