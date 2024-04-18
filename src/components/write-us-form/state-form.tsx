@@ -1,4 +1,4 @@
-import { useTranslate } from "@tolgee/react";
+import { useTranslations } from "next-intl";
 
 import { Icons } from "../ui/icons";
 
@@ -13,7 +13,7 @@ interface IStateFormProps {
 }
 
 export function StateForm({ states }: IStateFormProps) {
-  const { t } = useTranslate();
+  const t = useTranslations();
   return (
     <div
       className={cn(

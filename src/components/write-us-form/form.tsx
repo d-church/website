@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 
 import { Textarea } from "../ui/textarea";
-import { sendMessageSchema, TSendMessageSchema } from "./send-message.schema";
+import { sendMessageSchema, type TSendMessage } from "./send-message.schema";
 import { StateForm } from "./state-form";
 
 import { useSendEmail } from "@/hooks/use-send-email.hook";
@@ -22,7 +22,8 @@ import { cn } from "@/lib/utils";
 
 export function WriteUsForm() {
   const t = useTranslations();
-  const form = useForm<TSendMessageSchema>({
+  const { isPending, mutate, isSuccess, isError } = useSendEmail();
+  const form = useForm<TSendMessage>({
     resolver: zodResolver(sendMessageSchema),
     defaultValues: {
       name: "",
@@ -30,13 +31,9 @@ export function WriteUsForm() {
       message: "",
     },
   });
-  function onSubmit(data: TSendMessageSchema) {
+  function onSubmit(data: TSendMessage) {
     mutate(data);
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 6da1fdb (switch new internalization)
   return (
     <div className="relative">
       <StateForm states={{ isPending, isSuccess, isError }} />

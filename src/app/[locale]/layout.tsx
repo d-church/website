@@ -35,7 +35,6 @@ export default function RootLayout({
 }: Readonly<Props>) {
   unstable_setRequestLocale(locale);
   if (!locales.includes(locale)) {
-    console.log(locale);
     notFound();
   }
   const messages = useMessages();
