@@ -43,13 +43,12 @@ export function VideoBlock() {
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger className="flex w-1/2 justify-between">
-            <span></span>
+          <AccordionTrigger className="flex w-1/2 justify-center">
             <h2 className="text-xl font-bold uppercase text-graphite">
               {t("main-page.video-block.title")}
             </h2>
           </AccordionTrigger>
-          <AccordionContent className="mt-5 flex h-full flex-col md:flex-row md:justify-center md:space-x-8 xl:mt-[50px] xl:px-[138px]">
+          <AccordionContent className="mt-1 flex h-full flex-col md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px]">
             <Video />
             <div className="mt-[10px] space-y-[10px] text-white md:space-y-5 xl:mt-0">
               {videos.map(({ link, date }, i) => (

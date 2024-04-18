@@ -26,13 +26,13 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 flex-col-reverse items-center justify-between py-4 font-medium transition-all hover:underline xl:flex-row [&[data-state=open]>div>svg]:rotate-180",
+        "relative flex flex-1 flex-col-reverse items-center justify-between py-4 font-medium transition-all hover:underline xl:flex-row [&[data-state=open]>div>svg]:rotate-180",
         className
       )}
       {...props}
     >
       {children}
-      <div className="relative flex w-full items-center space-x-5 xl:w-auto">
+      <div className="relative flex w-full items-center space-x-5 xl:absolute xl:right-[40px] xl:w-auto">
         <Separator className="shrink bg-graphite xl:hidden" />
         <Minus className="shrink-0 rotate-90 transition-transform duration-200" />
         <Minus className="absolute right-0 top-1/2 -z-10 -translate-y-1/2" />
