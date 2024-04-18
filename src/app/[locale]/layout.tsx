@@ -8,6 +8,8 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
+import Providers from "./providers";
+
 import { locales } from "@/lib/i18n/i18n";
 import { cn } from "@/lib/utils";
 
@@ -46,23 +48,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-<<<<<<< HEAD
-        <Suspense
-          fallback={
-            <div className="flex h-screen items-start justify-center bg-black">
-              <Icons.spinner className="size-8 animate-spin" />
-            </div>
-          }
-        >
-          <TolgeeNextProvider locale={locale} locales={locales}>
-            <Providers>{children}</Providers>
-          </TolgeeNextProvider>
-        </Suspense>
-=======
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
->>>>>>> 6da1fdb (switch new internalization)
       </body>
     </html>
   );

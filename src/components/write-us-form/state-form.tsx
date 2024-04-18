@@ -13,7 +13,7 @@ interface IStateFormProps {
 }
 
 export function StateForm({ states }: IStateFormProps) {
-  const t = useTranslations();
+  const t = useTranslations("main-page");
   return (
     <div
       className={cn(
@@ -37,12 +37,12 @@ export function StateForm({ states }: IStateFormProps) {
           )}
           <p className="mt-[10px] text-white">
             {t(
-              `main-page.write-us-block.statuses.${states.isSuccess ? "success" : "error"}.title`
+              `write-us-block.statuses.${states.isSuccess ? "success" : "error"}.title`
             )}
           </p>
           <p className="mt-5 text-center leading-6 text-[#8A8A8A]">
             {t(
-              `main-page.write-us-block.statuses.${states.isSuccess ? "success" : "error"}.text`
+              `write-us-block.statuses.${states.isSuccess ? "success" : "error"}.text`
             )}
           </p>
         </div>
