@@ -23,7 +23,7 @@ export function PaymentMethods({
     }
   }
   return (
-    <div className="mb-[100px] flex gap-[22px]">
+    <div className="mb-[100px] flex flex-wrap gap-[22px]">
       {payments.map((payment, index) => (
         <Button
           className={cn("px-[20px] py-[10px]", {
