@@ -1,12 +1,9 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
-import {
-  OtherDonateMethods,
-  PreviewBlock,
-  QrCodesBlock,
-} from "@/components/donate-page";
+import { PreviewBlock } from "@/components/donation-ministry";
+import { SuccessBlock } from "@/components/statuses-page/success-block";
 
-export default function DonatePage({
+export default function SuccessPage({
   params: { locale },
 }: {
   params: { locale: string };
@@ -15,8 +12,7 @@ export default function DonatePage({
   return (
     <>
       <PreviewBlock />
-      <QrCodesBlock />
-      <OtherDonateMethods />
+      <SuccessBlock />
     </>
   );
 }

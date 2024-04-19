@@ -13,8 +13,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 
+import {
+  sendMessageSchema,
+  type TSendMessage,
+} from "../../schema/send-message.schema";
 import { Textarea } from "../ui/textarea";
-import { sendMessageSchema, type TSendMessage } from "./send-message.schema";
 import { StateForm } from "./state-form";
 
 import { useSendEmail } from "@/hooks/use-send-email.hook";

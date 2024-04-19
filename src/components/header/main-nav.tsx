@@ -13,7 +13,7 @@ import { clientUrl } from "@/utils/clientUrl";
 export function MainNav() {
   const t = useTranslations();
   const pathName = usePathname();
-
+  console.log(pathName);
   return (
     <div className="hidden w-[70%] items-center justify-between xl:flex">
       <nav>
