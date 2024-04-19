@@ -1,6 +1,7 @@
+"use client";
+
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,15 +15,18 @@ import {
 } from "../ui/sheet";
 import { headersLinks } from "./links";
 
+import { usePathname } from "@/app/navigation";
+import { cn } from "@/lib/utils";
 import { clientUrl } from "@/utils/clientUrl";
 
-export async function MobileNav() {
-  const t = await getTranslations();
+export function MobileNav() {
+  const t = useTranslations();
+  const pathname = usePathname();
   return (
     <div className=" text-white xl:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <Button className="z-10 flex h-6 w-6 cursor-pointer flex-col flex-wrap justify-around bg-transparent p-0 lg:hidden">
+          <Button className="z-10 flex h-6 w-6 cursor-pointer flex-col flex-wrap justify-around bg-transparent p-0">
             <div
               className={`"rotate-0" block h-[2px] w-full origin-[1px] rounded bg-white transition-all duration-500
               `}
@@ -59,7 +63,13 @@ export async function MobileNav() {
           <div className="container flex flex-grow flex-col justify-between pt-12">
             <div className="space-y-12 text-xl text-white">
               {headersLinks.map(({ href, key }) => (
-                <Link key={href} href={href} className="block">
+                <Link
+                  key={href}
+                  href={href}
+                  className={cn("block", {
+                    "text-hover-blue": href === pathname
+                  })}
+                >
                   {t(`header.links.${key}`)}
                 </Link>
               ))}

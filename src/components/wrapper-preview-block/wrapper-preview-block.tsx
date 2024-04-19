@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useParams, usePathname } from "next/navigation";
 
+import { usePathname } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 interface IWrapperPreviewBlockProps {
@@ -15,7 +15,6 @@ export function WrapperPreviewBlock({
   className,
 }: IWrapperPreviewBlockProps) {
   const pathname = usePathname();
-  const params = useParams();
   return (
     <div
       className={cn(
@@ -33,8 +32,7 @@ export function WrapperPreviewBlock({
           >
             <source src="/static/preview-block-video.mp4" type="video/mp4" />
           </video>
-        ) : pathname === "/donate" ||
-          pathname === `/${params.locale}/donate` ? (
+        ) : pathname.startsWith("/donate") ? (
           <Image
             src="/static/donate-preview-block-picture.webp"
             alt="Preview section picture"
