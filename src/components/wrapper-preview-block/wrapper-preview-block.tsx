@@ -33,11 +33,8 @@ export function WrapperPreviewBlock({
           >
             <source src="/static/preview-block-video.mp4" type="video/mp4" />
           </video>
-<<<<<<< HEAD
-        ) : pathname.startsWith("/donate") ? (
-=======
-        ) : pathname === "/donate" || pathname === `/${params.locale}/donate` ? (
->>>>>>> main
+        ) : pathname === "/donate" ||
+          pathname === `/${params.locale}/donate` ? (
           <Image
             src="/static/donate-preview-block-picture.webp"
             alt="Preview section picture"
