@@ -27,7 +27,9 @@ export function MainNav() {
                   className={cn(
                     "p-0 text-xl text-white hover:text-hover-blue",
                     {
-                      "text-hover-blue": pathname === href || "/" + params.locale + href === pathname,
+                      "text-hover-blue":
+                        pathname === href ||
+                        "/" + params.locale + href === pathname,
                     }
                   )}
                   asChild
@@ -42,7 +44,9 @@ export function MainNav() {
                   className={cn(
                     "p-0 text-xl text-white hover:text-hover-blue",
                     {
-                      "text-hover-blue": pathname === href || "/" + params.locale + href === pathname,
+                      "text-hover-blue":
+                        pathname === href ||
+                        "/" + params.locale + href === pathname,
                     }
                   )}
                   asChild

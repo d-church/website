@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
-import { type TSendMessage } from "@/components/write-us-form/send-message.schema";
+import { type TSendMessage } from "@/schema/send-message.schema";
 import { MainPageService } from "@/service/main-page.service";
 import { apiUrls } from "@/utils/apiUrl";
 

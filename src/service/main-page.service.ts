@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-import { type TSendMessage } from "@/components/write-us-form/send-message.schema";
+import { type TSendMessage } from "@/schema/send-message.schema";
 import { apiUrls } from "@/utils/apiUrl";
 
 export const MainPageService = {
