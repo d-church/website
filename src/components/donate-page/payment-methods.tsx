@@ -23,11 +23,11 @@ export function PaymentMethods({
     }
   }
   return (
-    <div className="mb-[100px] flex flex-wrap gap-[22px]">
+    <div className="mb-[50px] lg:mb-[100px] flex flex-col items-center lg:flex-row gap-[22px]">
       {payments.map((payment, index) => (
         <Button
-          className={cn("px-[20px] py-[10px]", {
-            "cursor-default bg-white text-black":
+          className={cn("px-[20px] font-bold text-[20px]/[24px] w-fit py-[10px]", {
+            "cursor-default bg-white text-graphite":
               currentPaymentMethod === payment.name,
           })}
           variant="standard"
