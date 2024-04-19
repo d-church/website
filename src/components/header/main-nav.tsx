@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 import { Button } from "../ui/button";
 import { headersLinks } from "./links";
@@ -12,7 +12,8 @@ import { clientUrl } from "@/utils/clientUrl";
 
 export function MainNav() {
   const t = useTranslations();
-  const pathName = usePathname();
+  const pathname = usePathname();
+  const params = useParams();
 
   return (
     <div className="hidden w-[70%] items-center justify-between xl:flex">
@@ -26,7 +27,7 @@ export function MainNav() {
                   className={cn(
                     "p-0 text-xl text-white hover:text-hover-blue",
                     {
-                      "text-hover-blue": pathName === href,
+                      "text-hover-blue": pathname === href || "/" + params.locale + href === pathname,
                     }
                   )}
                   asChild
@@ -41,7 +42,7 @@ export function MainNav() {
                   className={cn(
                     "p-0 text-xl text-white hover:text-hover-blue",
                     {
-                      "text-hover-blue": pathName === href,
+                      "text-hover-blue": pathname === href || "/" + params.locale + href === pathname,
                     }
                   )}
                   asChild

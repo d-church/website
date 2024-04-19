@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 interface IWrapperPreviewBlockProps {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ interface IWrapperPreviewBlockProps {
 
 export function WrapperPreviewBlock({ children }: IWrapperPreviewBlockProps) {
   const pathname = usePathname();
+  const params = useParams();
   return (
     <div className="relative flex h-full min-h-screen items-center justify-center">
       <div className="absolute h-full w-full overflow-hidden after:absolute after:h-full after:w-full after:bg-black/70">
@@ -21,7 +22,7 @@ export function WrapperPreviewBlock({ children }: IWrapperPreviewBlockProps) {
           >
             <source src="/static/preview-block-video.mp4" type="video/mp4" />
           </video>
-        ) : pathname === "/donate" ? (
+        ) : pathname === "/donate" || pathname === `/${params.locale}/donate` ? (
           <Image
             src="/static/donate-preview-block-picture.webp"
             alt="Preview section picture"
