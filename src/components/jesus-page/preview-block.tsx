@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Icons } from "../ui/icons";
-import { WrapperPreviewBlock } from "../wrapper-preview-block/wrapper-preview-block";
 
 export function PreviewBlock() {
   const t = useTranslations();
@@ -16,7 +15,7 @@ export function PreviewBlock() {
           className="object-cover"
         />
 
-        <div className="container flex justify-center max-w-full absolute z-10 pt-[220px] 2xl:pt-[250px] text-white">
+        <div className="container absolute z-10 flex max-w-full justify-center pt-[220px] text-white 2xl:pt-[250px]">
           <Icons.textJesusMobile className="md:hidden" />
           <Icons.textJesus className="hidden md:block" />
         </div>

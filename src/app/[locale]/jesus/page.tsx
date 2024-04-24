@@ -1,10 +1,10 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
+import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { PreviewBlock } from "@/components/jesus-page";
+import { PrayerBlock } from "@/components/jesus-page/prayer-block";
 import { WriteUsBlock } from "@/components/main-page";
-import { Footer } from "@/components/footer/footer-site";
-import { PrayerBlock } from "@/components/church-page/prayer-block";
 
 export default function JesusPage({
   params: { locale },
@@ -14,11 +14,11 @@ export default function JesusPage({
   unstable_setRequestLocale(locale);
   return (
     <>
-    <Header/>
-    <PreviewBlock/>
-    <PrayerBlock/>
-    <WriteUsBlock/>
-    <Footer/>
+      <Header />
+      <PreviewBlock />
+      <PrayerBlock />
+      <WriteUsBlock />
+      <Footer />
     </>
   );
 }
