@@ -37,14 +37,9 @@ export function PreviewBlock() {
           <div className="flex flex-col gap-[20px] xl:flex-row xl:gap-[50px]">
             <Link href={clientUrl.donateTransfer}>
               <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase transition-colors hover:bg-opacity-25">
-                <p>
+                <p className="whitespace-pre-wrap">
                   {t(
-                    "donate-page.preview-block.button-donate-ministries.part-1"
-                  )}
-                </p>
-                <p>
-                  {t(
-                    "donate-page.preview-block.button-donate-ministries.part-2"
+                    "donate-page.preview-block.button-donate-ministries"
                   )}
                 </p>
               </div>
@@ -56,14 +51,9 @@ export function PreviewBlock() {
             </Link>
             <Link href="/">
               <div className="flex h-[100px] w-[248px] flex-col items-center  justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase transition-colors hover:bg-opacity-25">
-                <p>
+                <p className="whitespace-pre-wrap">
                   {t(
-                    "donate-page.preview-block.button-return-to-main-page.part-1"
-                  )}
-                </p>
-                <p>
-                  {t(
-                    "donate-page.preview-block.button-return-to-main-page.part-2"
+                    "donate-page.preview-block.button-return-to-main-page"
                   )}
                 </p>
               </div>
