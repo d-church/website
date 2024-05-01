@@ -11,13 +11,13 @@ export function PreviewBlock() {
   const t = useTranslations();
   return (
     <WrapperPreviewBlock>
-      <div className="container absolute z-10 flex h-full flex-col items-center pb-[3rem] pt-[3rem] text-white xl:justify-between xl:pt-[9rem]">
+      <div className="container absolute z-10 flex h-full flex-col items-center pb-[3rem] pt-[3rem] text-white xl:justify-between xl:pt-[150px]">
         <h1 className="hidden">{t("main-page.preview-block.title")}</h1>
         <p className="hidden">{t("main-page.preview-block.under-title")}</p>
         <p className="hidden">{t("main-page.preview-block.welcome-text")}</p>
         <div className="hidden xl:block">
           <Icons.textTitle className="w-full" />
-          <Icons.textUnderTitle className="w-full xl:mt-[50px]" />
+          <Icons.textUnderTitle className="w-full xl:mt-[20px]" />
           <Icons.textWelcome className="w-full xl:mt-[30px]" />
         </div>
         <Icons.textMobile className="w-full xl:hidden" />
