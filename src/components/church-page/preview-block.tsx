@@ -17,7 +17,7 @@ export function PreviewBlock() {
         <div>
           <Icons.textMobileForChurch className="w-full xl:hidden" />
         </div>
-        <p className="mt-[111px] whitespace-pre-wrap text-center text-[22px]/[30px] md:w-[80%] xl:max-w-[1070px]">
+        <p className="mt-[111px] whitespace-pre-wrap text-center text-[1.375rem]/[1.875rem] md:w-[80%] xl:max-w-[1070px]">
           {t("church-page.preview-block")}
         </p>
       </div>

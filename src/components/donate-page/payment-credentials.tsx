@@ -14,13 +14,13 @@ export function PaymentCredentials({
   const t = useTranslations();
 
   return (
-    <div className="text-center text-[20px]/[30px] h-[300px] lg:h-[200px]">
+    <div className="h-[300px] text-center text-xl/[1.875rem] lg:h-[200px]">
       {currentPaymentMethod === payments[0].name ? (
         <>
-          <p className="mb-[20px] text-[20px]/[24px] font-bold">
+          <p className="mb-[20px] text-xl/[1.5rem] font-bold">
             {payments[0].text}
           </p>
-          <div className="text-[18px]/[30px] lg:text-[20px]/[30px]">
+          <div className="text-lg/[1.75rem] lg:text-xl/[1.875rem]">
             <p>{t("donate-page.other-donate-methods.credentials.org-name")}</p>
             <p>{t("donate-page.other-donate-methods.credentials.edrpou")}</p>
             <p>{t("donate-page.other-donate-methods.credentials.bank-name")}</p>

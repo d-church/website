@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 export function PrayerBlock() {
   const t = useTranslations();
   return (
-    <div className="text-center whitespace-pre-wrap text-[32px]/[38px]">
+    <div className="whitespace-pre-wrap text-center text-[2rem]/[2.375rem]">
       <div className="container flex justify-center py-[160px]">
         <p className="w-[795px]">{t("jesus-page.prayer-1")}</p>
       </div>
