@@ -28,7 +28,7 @@ export function PreviewBlock() {
             asChild
           >
             <Link
-              className="rounded-[42px]  uppercase"
+              className="h-[3.125rem] rounded-[42px] uppercase  xl:h-[5.25rem]"
               href={clientUrl.donateUA("")}
             >
               {t("donate-page.preview-block.button-donate")}
@@ -38,23 +38,19 @@ export function PreviewBlock() {
             <Link href={clientUrl.donateTransfer}>
               <div className="flex h-[100px] w-[248px] flex-col items-center justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase transition-colors hover:bg-opacity-25">
                 <p className="whitespace-pre-wrap">
-                  {t(
-                    "donate-page.preview-block.button-donate-ministries"
-                  )}
+                  {t("donate-page.preview-block.button-donate-ministries")}
                 </p>
               </div>
             </Link>
             <Link href="#other-payment-methods">
-              <div className="flex h-[100px] w-[248px] rounded-[20px] bg-white bg-opacity-10 py-[26px] transition-colors  text-center text-[20px]/[24px] font-medium uppercase hover:bg-opacity-25">
+              <div className="flex h-[100px] w-[248px] rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center  text-[20px]/[24px] font-medium uppercase transition-colors hover:bg-opacity-25">
                 {t("donate-page.preview-block.button-donate-all")}
               </div>
             </Link>
             <Link href="/">
               <div className="flex h-[100px] w-[248px] flex-col items-center  justify-center rounded-[20px] bg-white bg-opacity-10 py-[26px] text-center text-[20px]/[24px] font-medium uppercase transition-colors hover:bg-opacity-25">
                 <p className="whitespace-pre-wrap">
-                  {t(
-                    "donate-page.preview-block.button-return-to-main-page"
-                  )}
+                  {t("donate-page.preview-block.button-return-to-main-page")}
                 </p>
               </div>
             </Link>
