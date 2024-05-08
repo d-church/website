@@ -23,7 +23,7 @@ export function MainNav() {
                 <Button
                   variant="link"
                   className={cn(
-                    "p-0 text-xl text-white hover:text-hover-blue",
+                    "p-0 text-xl text-white hover:text-hover-blue hover:no-underline",
                     {
                       "text-hover-blue": pathname === href,
                     }
@@ -37,7 +37,7 @@ export function MainNav() {
           })}
         </ul>
       </nav>
-      <Button variant="standard" asChild>
+      <Button variant="standard" className="uppercase" asChild>
         <Link href={clientUrl.donate("")}>{t("header.button-donate")}</Link>
       </Button>
     </div>

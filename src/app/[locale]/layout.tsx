@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat as FontSans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 
@@ -13,9 +13,9 @@ import Providers from "./providers";
 import { locales } from "@/lib/i18n/i18n";
 import { cn } from "@/lib/utils";
 
-const fontSans = FontSans({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,13 +41,8 @@ export default function RootLayout({
   }
   const messages = useMessages();
   return (
-    <html lang={locale} className="scroll-smooth">
-      <body
-        className={cn(
-          "flex min-h-screen flex-col bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+    <html lang={locale} className={cn("scroll-smooth", montserrat.className)}>
+      <body className="flex min-h-screen flex-col bg-background antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>

@@ -5,10 +5,10 @@ export interface TClientUrl {
    */
   jesus: string;
   /**
-   * Get url of the page church
-   * @returns /church
+   * Get url of the page about
+   * @returns /about
    */
-  church: string;
+  about: string;
   /**
    * Get url of the page contacts
    * @returns /contacts

@@ -17,13 +17,13 @@ export function ServeGodBlock() {
         className="absolute -z-10 h-full w-full object-cover"
       />
       <div className="container flex min-h-screen max-w-[670px] flex-col items-center justify-between space-y-[30px] py-[104px] text-center text-white xl:min-h-full xl:max-w-[1070px] xl:justify-center xl:py-[175px]">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold uppercase">
           {t("main-page.serving-god-block.title")}
         </h2>
         <p className="hidden text-xl md:block">
           {t("main-page.serving-god-block.text")}
         </p>
-        <Button variant="standard">
+        <Button variant="standard" className="uppercase">
           <Link href={clientUrl.ministry}>
             {t("main-page.serving-god-block.button-details")}
           </Link>

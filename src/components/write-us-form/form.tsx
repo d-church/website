@@ -53,11 +53,11 @@ export function WriteUsForm() {
                 <FormControl>
                   <Input
                     className={cn(
-                      "h-auto rounded-[30px] bg-[#8A8A8A] bg-opacity-40 py-[18px] pl-[30px] text-xl text-white placeholder:text-white",
+                      "h-[3.75rem] rounded-[30px] bg-white bg-opacity-40 py-[18px] pl-[30px] text-xl text-white placeholder:text-white",
                       {
-                        "border border-red-500":
+                        "border-2 border-error-red text-error-red placeholder:text-error-red":
                           form.formState.errors.name?.message,
-                        "border-transparent":
+                        "border-2 border-transparent":
                           !form.formState.errors.name?.message,
                       }
                     )}
@@ -76,11 +76,11 @@ export function WriteUsForm() {
                 <FormControl>
                   <Input
                     className={cn(
-                      "h-auto rounded-[30px] bg-[#8A8A8A] bg-opacity-40 py-[18px] pl-[30px] text-xl text-white placeholder:text-white",
+                      "h-[3.75rem] rounded-[30px] border-2 bg-white bg-opacity-40 py-[18px] pl-[30px] text-xl text-white placeholder:text-white",
                       {
-                        "border border-red-500":
+                        "border-2 border-error-red text-error-red placeholder:text-error-red":
                           form.formState.errors.email?.message,
-                        "border-transparent":
+                        "border-2 border-transparent":
                           !form.formState.errors.email?.message,
                       }
                     )}
@@ -99,9 +99,9 @@ export function WriteUsForm() {
                 <FormControl>
                   <Textarea
                     className={cn(
-                      "no-scrollbar min-h-[120px] resize-none rounded-[30px] bg-[#8A8A8A] bg-opacity-40 pl-[30px] pt-[18px] text-xl text-white placeholder:text-white",
+                      "no-scrollbar min-h-[120px] resize-none rounded-[30px] bg-white bg-opacity-40 pl-[30px] pt-[18px] text-xl text-white placeholder:text-white",
                       {
-                        "border border-red-500":
+                        "border-2 border-error-red text-error-red placeholder:text-error-red":
                           form.formState.errors.message?.message,
                         "border-transparent":
                           !form.formState.errors.message?.message,
@@ -117,7 +117,7 @@ export function WriteUsForm() {
           <Button
             variant="standard"
             type="submit"
-            className={cn("max-w-max self-end", {
+            className={cn("max-w-max self-end uppercase", {
               "self-center": isSuccess || isPending || isError,
             })}
           >

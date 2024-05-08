@@ -42,7 +42,7 @@ export function MobileNav() {
           </Button>
         </SheetTrigger>
         <SheetContent className="container flex w-full flex-col border-none bg-[#232323] p-0 pb-12">
-          <SheetHeader className="border-b border-hover-blue py-4">
+          <SheetHeader className="border-b border-hover-blue py-2.5">
             <div className="container flex items-center justify-between">
               <Link href="/">
                 <Image
@@ -56,7 +56,7 @@ export function MobileNav() {
                 />
               </Link>
               <SheetClose className="">
-                <X className="h-8 w-8" color="white" />
+                <X className="h-6 w-6" color="white" />
               </SheetClose>
             </div>
           </SheetHeader>
@@ -67,14 +67,18 @@ export function MobileNav() {
                   key={href}
                   href={href}
                   className={cn("block", {
-                    "text-hover-blue": href === pathname
+                    "text-hover-blue": href === pathname,
                   })}
                 >
                   {t(`header.links.${key}`)}
                 </Link>
               ))}
             </div>
-            <Button variant="standard" asChild>
+            <Button
+              variant="standard"
+              className="w-fit self-center uppercase"
+              asChild
+            >
               <Link href={clientUrl.donate("8")}>
                 {t("header.button-donate")}
               </Link>

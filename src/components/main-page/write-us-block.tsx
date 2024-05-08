@@ -14,14 +14,14 @@ export function WriteUsBlock() {
         alt="Background write us block"
         className="absolute -z-10 h-full w-full object-cover"
       />
-      <div className="container flex flex-col justify-center space-y-[60px] md:max-w-[520px] xl:max-w-full xl:flex-row xl:space-x-[167px] xl:space-y-0 xl:py-[60px]">
-        <div className="flex flex-col items-center space-y-[38px] xl:w-1/2">
+      <div className="container flex flex-col space-y-[60px] md:max-w-[520px] xl:max-w-[1660px] xl:flex-row xl:space-x-[167px] xl:space-y-0 xl:py-[60px]">
+        <div className="flex flex-col items-center space-y-[38px] xl:w-1/2 xl:max-w-[658px]">
           <Icons.message />
-          <p className="text-xl font-medium text-white">
+          <p className="text-[1.25rem]/[1.875rem] font-medium text-white">
             {t("main-page.write-us-block.text")}
           </p>
         </div>
-        <div className="xl:w-1/2">
+        <div className="xl:w-1/2 xl:max-w-[658px]">
           <WriteUsForm />
         </div>
       </div>

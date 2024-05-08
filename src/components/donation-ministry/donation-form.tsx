@@ -60,7 +60,7 @@ export function DonationForm() {
                   <Button
                     type="button"
                     className={cn(
-                      "h-full w-[248px] text-pretty rounded-3xl bg-[#8A8A8A]/30 py-[26px] text-xl uppercase text-[#232323]",
+                      "h-full w-[248px] whitespace-pre-wrap text-pretty rounded-3xl bg-[#8A8A8A]/30 py-[26px] text-xl uppercase text-[#232323]",
                       {
                         "cursor-default bg-[#232323] font-bold text-white":
                           field.value === "once",
@@ -75,7 +75,7 @@ export function DonationForm() {
                   <Button
                     type="button"
                     className={cn(
-                      "h-full w-[248px] text-pretty rounded-3xl bg-[#8A8A8A]/30 py-[26px] text-xl uppercase text-[#232323]",
+                      "h-full w-[248px] whitespace-pre-wrap text-pretty rounded-3xl bg-[#8A8A8A]/30 py-[26px] text-xl uppercase text-[#232323]",
                       {
                         "cursor-default bg-[#232323] font-bold text-white":
                           field.value === "monthly",

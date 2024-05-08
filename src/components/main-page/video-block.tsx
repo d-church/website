@@ -34,7 +34,7 @@ const videos = [
 export function VideoBlock() {
   const t = useTranslations();
   return (
-    <div className="container xl:pb-[100px]" id="video">
+    <div className="container pb-[100px]" id="video">
       <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
       <Accordion
         type="single"
@@ -77,7 +77,7 @@ export function VideoBlock() {
                 target="_blank"
                 className="group flex h-auto items-center justify-start space-x-5 rounded-3xl bg-black px-9 py-[14px] text-xl xl:justify-between xl:py-6"
               >
-                <Icons.youtubeStrokeLine className="size-8 group-hover:stroke-hover-blue xl:size-20" />
+                <Icons.youtubeStrokeLine className="size-8 fill-white group-hover:fill-hover-blue xl:size-20" />
                 <p className="text-sm xl:text-2xl">
                   {t("main-page.video-block.button-go-to-chanel")}
                 </p>

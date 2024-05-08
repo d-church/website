@@ -13,7 +13,7 @@ export function PreviewBlock() {
         <p className="hidden">{t("main-page.preview-block.welcome-text")}</p>
         <div className="hidden md:block">
           <Icons.textTitle className="w-full" />
-          <Icons.textUnderTitle className="w-full xl:mt-[50px]" />
+          <Icons.textUnderTitle className="w-full xl:mt-[20px]" />
           <Icons.textWelcome className="w-full xl:mt-[30px]" />
         </div>
         <Icons.textMobile className="w-full md:hidden" />
