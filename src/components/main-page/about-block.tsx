@@ -17,7 +17,7 @@ export function AboutBlock() {
         height={750}
         className="absolute left-0 top-0 -z-[1] h-full w-full object-cover"
       />
-      <div className="container flex flex-col items-center justify-center space-y-[50px] py-[35px] xl:flex-row xl:gap-[160px] xl:space-y-0 xl:py-[135px] 2xl:justify-normal 2xl:gap-0">
+      <div className="container flex flex-col items-center justify-center space-y-[50px] py-[30px] xl:flex-row xl:gap-[160px] xl:space-y-0 xl:py-[135px] 2xl:justify-normal 2xl:gap-0">
         <Image
           src="/static/logo-about-block.webp"
           alt="Background about block"
