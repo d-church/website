@@ -29,13 +29,13 @@ export function StateForm({ states }: IStateFormProps) {
           color="white"
         />
       ) : (
-        <div className="flex max-w-[280px] flex-col items-center text-xl sm:max-w-[397px]">
+        <div className="flex max-w-[280px] flex-col items-center whitespace-pre-wrap text-xl sm:max-w-[397px]">
           {states.isSuccess ? (
             <Icons.sendMessageSuccess />
           ) : (
             <Icons.sendMessageError />
           )}
-          <p className="mt-[10px] text-white">
+          <p className="mt-[10px] font-bold text-white">
             {t(
               `write-us-block.statuses.${states.isSuccess ? "success" : "error"}.title`
             )}

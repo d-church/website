@@ -21,7 +21,7 @@ export function Video() {
         ></iframe>
       ) : (
         <div className="flex h-full w-full flex-col items-center justify-between space-y-3 rounded-3xl bg-[#232323] px-[47px] pb-[10px] pt-5 text-white xl:space-y-0 xl:px-[100px] xl:py-[90px] 2xl:px-[190px] 2xl:py-[90px]">
-          <p className="text-sm font-medium uppercase xl:text-5xl">
+          <p className="text-sm font-medium uppercase xl:text-4xl 2xl:text-5xl">
             {t("video-block.start-stream")}
           </p>
           <VideoTimer setIsEnded={setIsEnded} />

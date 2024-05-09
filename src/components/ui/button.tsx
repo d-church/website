@@ -14,11 +14,11 @@ const buttonVariants = cva(
         outline: "border border-input bg-background",
         secondary: "bg-secondary text-secondary-foreground",
         standard:
-          "rounded-[22px] border border-white bg-inherit text-base xl:text-xl text-white hover:bg-white hover:text-black",
+          "rounded-[22px] border border-white bg-inherit text-base xl:h-11 xl:text-xl text-white hover:bg-white hover:text-black",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-10 px-5 py-2.5",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",

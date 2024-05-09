@@ -10,7 +10,7 @@ export function ErrorBlock() {
       <div className="flex w-full max-w-[520px] flex-col items-center space-y-5 rounded-[30px] bg-[#232323] py-[50px] xl:py-[62px]">
         <div className="flex flex-col items-center space-y-[10px]">
           <Icons.errorCross />
-          <p className="text-white">{t("title")}</p>
+          <p className="text-xl/[1.5rem] font-bold text-white">{t("title")}</p>
         </div>
         <p className="whitespace-pre-wrap text-center text-xl font-medium text-[#8A8A8A]">
           {t("text")}

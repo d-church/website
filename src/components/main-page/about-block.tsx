@@ -17,21 +17,21 @@ export function AboutBlock() {
         height={750}
         className="absolute left-0 top-0 -z-[1] h-full w-full object-cover"
       />
-      <div className="container flex flex-col items-center justify-center space-y-[50px] py-[35px] xl:flex-row xl:space-x-[160px] xl:space-y-0 xl:py-[135px] 2xl:space-x-[200px]">
+      <div className="container flex flex-col items-center justify-center space-y-[50px] py-[30px] xl:flex-row xl:gap-[160px] xl:space-y-0 xl:py-[135px] 2xl:justify-normal 2xl:gap-0">
         <Image
           src="/static/logo-about-block.webp"
           alt="Background about block"
           width={230}
           height={230}
-          className="size-[180px] object-cover xl:size-[230px]"
+          className="size-[180px] object-cover xl:size-[230px] 2xl:ml-[8.5rem]"
         />
-        <div className="text-center text-[30px] font-thin uppercase text-white xl:text-6xl">
+        <div className="text-center text-[30px] font-thin uppercase text-white xl:text-left xl:text-[3.75rem]/[4.57rem] 2xl:ml-[13.2rem]">
           <p>{t("main-page.about-block.text-1")}</p>
           <p>{t("main-page.about-block.text-2")}</p>
           <p>{t("main-page.about-block.text-3")}</p>
         </div>
-        <Button variant="standard">
-          <Link href={clientUrl.church}>
+        <Button variant="standard" className="uppercase 2xl:ml-[14.2rem]">
+          <Link href={clientUrl.about}>
             {t("main-page.about-block.button-details")}
           </Link>
         </Button>

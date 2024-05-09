@@ -30,23 +30,27 @@ export function ImportantInformationBlock() {
               {t("important-information.title")}
             </h2>
           </AccordionTrigger>
-          <AccordionContent className="mt-1 flex flex-col justify-between space-y-2 md:mt-[34px] md:flex-row md:space-x-[40px] md:space-y-0">
+          <AccordionContent className="mt-1 flex flex-col justify-between space-y-[30px] pb-[100px] md:mt-[34px] md:flex-row md:space-x-[40px] md:space-y-0">
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
-                className="cursor-pointer space-y-[30px] rounded-[20px] border border-[#8A8A8A] px-[22px] pb-[19px] pt-[15px] hover:border-hover-blue xl:space-y-[60px] xl:px-[47px] xl:pb-[38px] xl:pt-[30px]"
+                className="cursor-pointer space-y-[36px] rounded-[20px] border border-[#8A8A8A] px-[22px] pb-[28px] pt-[20px] hover:border-hover-blue xl:space-y-[60px] xl:px-[47px] xl:pb-[38px] xl:pt-[30px]"
               >
-                <p className="text-center text-xl text-[#8A8A8A]">
+                <p className="text-center text-xl/[1.5rem] font-medium text-[#8A8A8A]">
                   Збір членів церкви відбудеться в основному залі
                 </p>
                 <div className="flex justify-between xl:justify-around">
                   <div className="flex items-center space-x-[5px]">
                     <Icons.calendar />
-                    <p className="text-xl text-[#8A8A8A]">7 Лютого</p>
+                    <p className="text-xl/[1.5rem] font-bold text-[#8A8A8A]">
+                      7 Лютого
+                    </p>
                   </div>
                   <div className="flex items-center space-x-[5px]">
                     <Icons.clock />
-                    <p className="text-xl text-[#8A8A8A]">11:30</p>
+                    <p className="text-xl/[1.5rem] font-bold text-[#8A8A8A]">
+                      11:30
+                    </p>
                   </div>
                 </div>
               </div>

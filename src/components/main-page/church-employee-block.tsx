@@ -18,7 +18,7 @@ export function ChurchEmployeeBlock() {
           Ім&apos;я Призвище
         </p>
       </div>
-      <p className="mt-[10px] text-base font-normal text-[#8A8A8A] xl:mt-[20px] xl:text-[22px]">
+      <p className="mt-[10px] text-base font-normal text-[#8A8A8A] xl:text-[22px]">
         Пастор
       </p>
     </div>

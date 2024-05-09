@@ -14,18 +14,16 @@ export function OtherDonateMethods() {
     <div className="bg-graphite">
       <div
         id="other-payment-methods"
-        className="container flex w-full flex-col items-center pt-[40px] lg:pt-[50px] pb-[50px] lg:pb-[100px] text-white"
+        className="container flex w-full flex-col items-center pb-[50px] pt-[40px] text-white lg:pb-[100px] lg:pt-[50px]"
       >
-        <p className="mb-[30px] text-[30px]/[36px] text-center lg:text-[40px]/[49px] font-bold uppercase">
+        <p className="mb-[30px] text-center text-3xl font-bold uppercase lg:text-[2.5rem]/[3rem]">
           {t("donate-page.other-donate-methods.header")}
         </p>
         <PaymentMethods
           currentPaymentMethod={currentPaymentMethod}
           setCurrentPaymentMethod={setCurrentPaymentMethod}
         />
-        <PaymentCredentials
-          currentPaymentMethod={currentPaymentMethod}
-        />
+        <PaymentCredentials currentPaymentMethod={currentPaymentMethod} />
       </div>
     </div>
   );

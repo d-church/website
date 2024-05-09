@@ -10,7 +10,7 @@ export function SuccessBlock() {
       <div className="flex w-full max-w-[520px] flex-col items-center space-y-5 rounded-[30px] bg-[#232323] px-[10px] py-[50px] xl:py-[62px]">
         <div className="flex flex-col items-center space-y-[10px]">
           <Icons.successCheck />
-          <p className="text-white">{t("title")}</p>
+          <p className="text-xl/[1.5rem] font-bold text-white">{t("title")}</p>
         </div>
         <p className="whitespace-pre-wrap text-center text-xl font-medium text-[#8A8A8A]">
           {t("text")}
