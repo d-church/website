@@ -4,9 +4,6 @@ export const apiUrls = {
   sendEmailJS: ["https://api.emailjs.com", "api", "v1.0", "email", "send"].join(
     "/"
   ),
-  sendEmail: generateURL(),
+  sendEmail: [BASE_URL, "api", "send-email"].join("/"),
 };
 
-function generateURL() {
-  return new URL([location.origin, "api", "send-email"].join("/"));
-}
