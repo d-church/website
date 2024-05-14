@@ -18,7 +18,7 @@ export function GoogleMapBlock() {
         <Map
           defaultZoom={17.2}
           defaultCenter={mapFocus}
-          mapId={process.env.NEXT_PUBLIC_MAP_ID_2}
+          mapId={process.env.NEXT_PUBLIC_MAP_ID}
         >
           <AdvancedMarker position={churchLocation}>
             <Icons.googleMapPin/>
