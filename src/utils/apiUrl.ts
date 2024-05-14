@@ -6,3 +6,4 @@ export const apiUrls = {
   ),
   sendEmail: [BASE_URL, "api", "send-email"].join("/"),
 };
+
