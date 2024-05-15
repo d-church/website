@@ -1,6 +1,10 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
-import { FillSpaceBlock, GoogleMapBlock, ScheduleBlock } from "@/components/contacts-page";
+import {
+  FillSpaceBlock,
+  GoogleMapBlock,
+  ScheduleBlock,
+} from "@/components/contacts-page";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 
@@ -13,7 +17,7 @@ export default function ContactsPage({
   return (
     <>
       <Header />
-      <FillSpaceBlock/>
+      <FillSpaceBlock />
       <ScheduleBlock />
       <GoogleMapBlock />
       <Footer />

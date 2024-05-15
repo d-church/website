@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  AdvancedMarker,
-  APIProvider,
-  Map,
-  Pin,
-} from "@vis.gl/react-google-maps";
+import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
+
 import { Icons } from "../ui/icons";
 
 export function GoogleMapBlock() {
@@ -16,12 +12,13 @@ export function GoogleMapBlock() {
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}>
       <div className="h-[650px] xl:h-[500px]">
         <Map
+          reuseMaps={true}
           defaultZoom={17.2}
           defaultCenter={mapFocus}
           mapId={process.env.NEXT_PUBLIC_MAP_ID}
         >
           <AdvancedMarker position={churchLocation}>
-            <Icons.googleMapPin/>
+            <Icons.googleMapPin />
           </AdvancedMarker>
         </Map>
       </div>
