@@ -17,7 +17,7 @@ export function StateForm({ states }: IStateFormProps) {
   return (
     <div
       className={cn(
-        "absolute flex h-full w-full items-center justify-center rounded-[30px] bg-[#232323]",
+        "absolute flex h-[300px] w-full items-center justify-center rounded-[30px] bg-[#232323]",
         {
           "hidden ": !states.isPending && !states.isSuccess && !states.isError,
         }

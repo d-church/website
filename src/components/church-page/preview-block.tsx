@@ -7,11 +7,11 @@ export function PreviewBlock() {
   const t = useTranslations();
   return (
     <WrapperPreviewBlock>
-      <div className="container absolute z-10 flex h-full flex-col items-center justify-between py-[100px] text-white xl:justify-center xl:py-0">
+      <div className="container absolute z-10 flex h-full flex-col items-center justify-between py-[100px] text-white xl:justify-normal xl:py-0">
         <h1 className="hidden">{t("main-page.preview-block.title")}</h1>
         <p className="hidden">{t("main-page.preview-block.under-title")}</p>
-        <div className="hidden xl:block">
-          <Icons.textTitle className="w-full xl:mt-[60px]" />
+        <div className="hidden xl:mt-[20rem] xl:block">
+          <Icons.textTitle className="w-full" />
           <Icons.textUnderTitle className="w-full xl:mt-[20px]" />
         </div>
         <div>
