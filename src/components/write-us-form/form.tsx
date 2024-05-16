@@ -43,7 +43,9 @@ export function WriteUsForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col space-y-8"
+          className={cn("flex flex-col space-y-[1.875rem]", {
+            invisible: isPending || isSuccess || isError,
+          })}
         >
           <FormField
             control={form.control}

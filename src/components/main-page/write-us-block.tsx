@@ -12,9 +12,9 @@ export function WriteUsBlock() {
         src="/static/background-write-us-block.webp"
         fill
         alt="Background write us block"
-        className="absolute -z-10 h-full w-full object-cover"
+        className="absolute -z-10 h-full w-full object-cover object-[50%_45%]"
       />
-      <div className="container flex flex-col space-y-[60px] md:max-w-[520px] xl:max-w-[1660px] xl:flex-row xl:space-x-[167px] xl:space-y-0 xl:py-[60px]">
+      <div className="container flex flex-col space-y-[60px] md:max-w-[520px] xl:max-w-[1660px] xl:flex-row xl:space-x-[167px] xl:space-y-0 ">
         <div className="flex flex-col items-center space-y-[38px] xl:w-1/2 xl:max-w-[658px]">
           <Icons.message />
           <p className="text-[1.25rem]/[1.875rem] font-medium text-white">

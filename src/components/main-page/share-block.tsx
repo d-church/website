@@ -17,9 +17,9 @@ export function ShareBlock() {
         className="absolute -z-10 h-full w-full object-cover opacity-10"
       />
       <div className="container flex flex-col items-center justify-center space-y-10 text-center xl:space-y-[45px]">
-        <h2 className="text-[26px] font-thin uppercase tracking-[15px] text-graphite md:text-5xl xl:ml-[1.25rem] xl:text-[70px]/[80px] xl:tracking-[40px] 2xl:ml-[1.5rem]">
+        <p className="w-[320px] text-[1.625rem]/[2rem] font-[250] uppercase tracking-[15px] text-graphite md:w-fit md:text-5xl md:font-thin xl:ml-[1.25rem] xl:text-[70px]/[80px] xl:tracking-[40px] 2xl:ml-[1.5rem]">
           {t("main-page.share-block.title")}
-        </h2>
+        </p>
         <p className="max-w-[275px] text-lg font-medium text-[#8A8A8A] md:max-w-[578px] md:text-xl">
           {t("main-page.share-block.text")}
         </p>

@@ -13,8 +13,7 @@ export function AboutBlock() {
       <Image
         src="/static/background-about-block.webp"
         alt="Background about block"
-        width={1920}
-        height={750}
+        fill
         className="absolute left-0 top-0 -z-[1] h-full w-full object-cover"
       />
       <div className="container flex flex-col items-center justify-center space-y-[50px] py-[30px] xl:flex-row xl:gap-[160px] xl:space-y-0 xl:py-[135px] 2xl:justify-normal 2xl:gap-0">
