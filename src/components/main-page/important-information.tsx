@@ -26,7 +26,7 @@ export function ImportantInformationBlock() {
       >
         <AccordionItem value="item-1">
           <AccordionTrigger className="mt-[50px] flex w-1/2 justify-center py-0 xl:mt-0">
-            <h2 className="mt-[30px] text-xl/[1.5rem] font-bold uppercase text-graphite xl:mt-0">
+            <h2 className="mt-[18px] text-xl/[1.5rem] font-bold uppercase text-graphite xl:mt-0">
               {t("important-information.title")}
             </h2>
           </AccordionTrigger>
