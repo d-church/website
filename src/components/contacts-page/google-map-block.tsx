@@ -4,13 +4,13 @@ import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
 
 import { Icons } from "../ui/icons";
 
-export function GoogleMapBlock() {
+export default function GoogleMapBlock() {
   const mapFocus = { lat: 49.85378, lng: 24.027624359133462 };
   const churchLocation = { lat: 49.85337, lng: 24.02763 };
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}>
-      <div className="h-[650px] xl:h-[500px]">
+      <div className="h-full">
         <Map
           reuseMaps={true}
           defaultZoom={17.2}

@@ -17,20 +17,20 @@ export function ImportantInformationBlock() {
   const t = useTranslations("main-page");
   return (
     <div className="container">
-      <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
+      <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[120px] xl:block" />
       <Accordion
         type="single"
         collapsible
-        className="w-full"
+        className="w-full pb-[72px] lg:pb-7 xl:pb-0"
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger className="flex w-1/2 justify-center">
-            <h2 className="text-xl font-bold uppercase text-graphite">
+          <AccordionTrigger className="mt-[50px] flex w-1/2 justify-center py-0 xl:mt-0">
+            <h2 className="mt-[18px] text-xl/[1.5rem] font-bold uppercase text-graphite xl:mt-0">
               {t("important-information.title")}
             </h2>
           </AccordionTrigger>
-          <AccordionContent className="mt-1 flex flex-col justify-between space-y-[30px] pb-[100px] md:mt-[34px] md:flex-row md:space-x-[40px] md:space-y-0">
+          <AccordionContent className="mt-[30px] flex flex-col justify-between space-y-[30px] pb-0 lg:flex-row lg:space-x-[40px] lg:space-y-0 xl:mt-[50px]">
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
