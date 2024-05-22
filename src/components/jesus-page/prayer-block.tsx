@@ -7,7 +7,7 @@ export function PrayerBlock() {
       <div className="container flex justify-center py-[160px]">
         <p className="w-[795px]">{t("jesus-page.prayer-1")}</p>
       </div>
-      <div className="bg-graphite/10 py-[140px]">
+      <div className="bg-graphite-hsl/10 py-[140px]">
         <div className="container flex justify-center">
           <p className="w-[795px]">{t("jesus-page.prayer-2")}</p>
         </div>
@@ -15,7 +15,7 @@ export function PrayerBlock() {
       <div className="container flex justify-center py-[140px]">
         <p className="w-[795px]">{t("jesus-page.prayer-3")}</p>
       </div>
-      <div className="bg-graphite/10 py-[160px]">
+      <div className="bg-graphite-hsl/10 py-[160px]">
         <div className="container flex justify-center">
           <p className="w-[795px]">{t("jesus-page.prayer-4")}</p>
         </div>
