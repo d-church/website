@@ -33,7 +33,7 @@ const AccordionTrigger = React.forwardRef<
     >
       {children}
       <div className="relative flex w-full items-center space-x-5 xl:absolute xl:right-[40px] xl:w-auto">
-        <Separator className="shrink bg-graphite xl:hidden" />
+        <Separator className="shrink border-b border-graphite xl:hidden" />
         <Minus className="shrink-0 rotate-90 transition-transform duration-200" />
         <Minus className="absolute right-0 top-1/2 -z-10 -translate-y-1/2" />
       </div>

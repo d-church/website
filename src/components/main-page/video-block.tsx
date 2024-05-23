@@ -75,7 +75,7 @@ export function VideoBlock() {
               <Link
                 href={clientUrl.youtube}
                 target="_blank"
-                className="group pl-4 flex items-center justify-start space-x-5 rounded-[0.75rem] bg-graphite py-[14px] text-xl xl:justify-between xl:rounded-[1.25rem] xl:px-6 2xl:py-9"
+                className="group flex items-center justify-start space-x-5 rounded-[0.75rem] bg-graphite py-[14px] pl-4 text-xl xl:justify-between xl:rounded-[1.25rem] xl:px-6 2xl:py-9"
               >
                 <Icons.youtubeStrokeLine className="size-8 fill-white group-hover:fill-hover-blue xl:size-20 2xl:h-[4rem] 2xl:w-[6.25rem]" />
                 <p className="text-sm font-medium xl:w-fit xl:text-2xl/[1.75rem]">
