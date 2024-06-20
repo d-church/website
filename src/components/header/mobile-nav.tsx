@@ -76,7 +76,7 @@ export function MobileNav() {
             </div>
             <Button
               variant="standard"
-              className="w-fit self-center uppercase"
+              className="w-fit self-center uppercase invisible"
               asChild
             >
               <Link href={clientUrl.donate("8")}>

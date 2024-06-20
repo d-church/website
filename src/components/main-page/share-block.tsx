@@ -25,7 +25,7 @@ export function ShareBlock() {
         </p>
         <Button
           variant="standard"
-          className="border-graphite uppercase text-graphite hover:bg-graphite hover:text-hover-blue"
+          className="invisible border-graphite uppercase text-graphite hover:bg-graphite hover:text-hover-blue"
         >
           <Link href={clientUrl.donate("")}>
             {t("main-page.share-block.button-donate")}
