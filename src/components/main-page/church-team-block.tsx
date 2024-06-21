@@ -11,7 +11,6 @@ interface IChurchTeamBlockProps {
 
 export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
   const t = useTranslations();
-  const team = Array.from({ length: 4 });
   return (
     <div
       className={cn(
@@ -26,21 +25,59 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
       <div className="mt-[30px] flex flex-col items-center xl:mt-[50px]">
         <div className="flex w-full justify-center xl:space-x-[57px]">
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
-          <ChurchEmployeeBlock />
+          <ChurchEmployeeBlock
+            src="/static/employees/bilyk-v-d.webp"
+            fullName={t(
+              "main-page.church-team-block.church-employees.employee-1.full-name"
+            )}
+            position={t(
+              "main-page.church-team-block.church-employees.employee-1.position"
+            )}
+          />
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
         </div>
       </div>
 
       <div className="mt-[73px] flex flex-wrap items-center justify-center space-y-[50px] min-[680px]:space-x-5 min-[700px]:space-y-0 xl:space-x-[100px]">
         <div className="flex space-x-5 xl:space-x-[100px]">
-          {team.slice(0, 2).map((_, index) => (
-            <ChurchEmployeeBlock key="index" />
-          ))}
+          <ChurchEmployeeBlock
+            src="/static/employees/novoseltsev-i-i.webp"
+            fullName={t(
+              "main-page.church-team-block.church-employees.employee-2.full-name"
+            )}
+            position={t(
+              "main-page.church-team-block.church-employees.employee-2.position"
+            )}
+          />
+          <ChurchEmployeeBlock
+            src="/static/employees/denisyuk-s-s.webp"
+            fullName={t(
+              "main-page.church-team-block.church-employees.employee-3.full-name"
+            )}
+            position={t(
+              "main-page.church-team-block.church-employees.employee-3.position"
+            )}
+          />
         </div>
         <div className="flex space-x-5 xl:space-x-[100px]">
-          {team.slice(2, 4).map((_, index) => (
-            <ChurchEmployeeBlock key="index" />
-          ))}
+          <ChurchEmployeeBlock
+            src="/static/employees/ronchkovsky-a-b.webp"
+            fullName={t(
+              "main-page.church-team-block.church-employees.employee-4.full-name"
+            )}
+            position={t(
+              "main-page.church-team-block.church-employees.employee-4.position"
+            )}
+          />
+          <ChurchEmployeeBlock
+            src="/static/employees/kohut-o-v.webp"
+            fullName={t(
+              "main-page.church-team-block.church-employees.employee-5.full-name"
+            )}
+            position={t(
+              "main-page.church-team-block.church-employees.employee-5.position"
+            )}
+          />
         </div>
       </div>
     </div>

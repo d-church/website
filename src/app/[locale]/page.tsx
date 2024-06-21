@@ -24,7 +24,7 @@ export default function HomePage({
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />
-        <ImportantInformationBlock />
+        {/* <ImportantInformationBlock /> */}
         <VideoBlock />
         <AboutBlock />
         <ChurchTeamBlock />

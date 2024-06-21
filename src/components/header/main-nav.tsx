@@ -37,7 +37,7 @@ export function MainNav() {
           })}
         </ul>
       </nav>
-      <Button variant="standard" className="uppercase" asChild>
+      <Button variant="standard" className="invisible uppercase" asChild>
         <Link href={clientUrl.donate("")}>{t("header.button-donate")}</Link>
       </Button>
     </div>
