@@ -1,15 +1,19 @@
 import Image from "next/image";
 
+import { cn } from "@/lib/utils";
+
 interface IChurchEmployeeBlockProps {
   src: string;
   fullName: string;
   position: string;
+  className?: string;
 }
 
 export function ChurchEmployeeBlock({
   src,
   fullName,
   position,
+  className,
 }: IChurchEmployeeBlockProps) {
   return (
     <div className="flex flex-col items-center">
@@ -21,14 +25,17 @@ export function ChurchEmployeeBlock({
             width={160}
             height={160}
             alt="icon"
-            className="size-[126px] rounded-full object-cover object-[70%_30%] xl:size-[160px]"
+            className={cn(
+              "size-[126px] rounded-full object-cover object-[70%_30%] xl:size-[160px]",
+              className
+            )}
           />
         </div>
         <p className="mt-[10px] whitespace-pre-wrap text-center text-base font-bold xl:mt-[20px] xl:text-[22px]">
           {fullName}
         </p>
       </div>
-      <p className="mt-[10px] text-base font-normal text-[#8A8A8A] xl:text-[22px]">
+      <p className="mt-[10px] whitespace-pre-line text-center font-normal text-[#8A8A8A] xl:text-[22px]">
         {position}
       </p>
     </div>

@@ -30,9 +30,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
             fullName={t(
               "main-page.church-team-block.church-employees.employee-1.full-name"
             )}
-            position={t(
-              "main-page.church-team-block.church-employees.employee-1.position"
-            )}
+            position={t("main-page.church-team-block.church-positions.bishop")}
           />
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
         </div>
@@ -45,9 +43,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
             fullName={t(
               "main-page.church-team-block.church-employees.employee-2.full-name"
             )}
-            position={t(
-              "main-page.church-team-block.church-employees.employee-2.position"
-            )}
+            position={t("main-page.church-team-block.church-positions.pastor")}
           />
           <ChurchEmployeeBlock
             src="/static/employees/denisyuk-s-s.webp"
@@ -55,7 +51,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
               "main-page.church-team-block.church-employees.employee-3.full-name"
             )}
             position={t(
-              "main-page.church-team-block.church-employees.employee-3.position"
+              "main-page.church-team-block.church-positions.presbyter"
             )}
           />
         </div>
@@ -65,18 +61,14 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
             fullName={t(
               "main-page.church-team-block.church-employees.employee-4.full-name"
             )}
-            position={t(
-              "main-page.church-team-block.church-employees.employee-4.position"
-            )}
+            position={t("main-page.church-team-block.church-positions.deacon")}
           />
           <ChurchEmployeeBlock
             src="/static/employees/kohut-o-v.webp"
             fullName={t(
               "main-page.church-team-block.church-employees.employee-5.full-name"
             )}
-            position={t(
-              "main-page.church-team-block.church-employees.employee-5.position"
-            )}
+            position={t("main-page.church-team-block.church-positions.deacon")}
           />
         </div>
       </div>
