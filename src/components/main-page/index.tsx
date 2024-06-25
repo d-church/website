@@ -6,3 +6,4 @@ export { ServeGodBlock } from "./serve-god-block";
 export { ShareBlock } from "./share-block";
 export { WriteUsBlock } from "./write-us-block";
 export { ImportantInformationBlock } from "./important-information";
+export { MainHeaderBlock } from "./main-header-block";
