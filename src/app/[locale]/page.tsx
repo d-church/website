@@ -6,6 +6,7 @@ import {
   AboutBlock,
   ChurchTeamBlock,
   ImportantInformationBlock,
+  MainHeaderBlock,
   PreviewBlock,
   ServeGodBlock,
   ShareBlock,
@@ -21,6 +22,7 @@ export default function HomePage({
   unstable_setRequestLocale(locale);
   return (
     <>
+      <MainHeaderBlock />
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />

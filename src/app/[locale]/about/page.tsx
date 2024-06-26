@@ -1,13 +1,15 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import {
+  ChurchTeamBlock,
   DescriptionBlock,
   HeadingBlock,
+  MainHeaderBlock,
   PreviewBlock,
 } from "@/components/church-page";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
-import { ChurchTeamBlock, WriteUsBlock } from "@/components/main-page";
+import { WriteUsBlock } from "@/components/main-page";
 
 export default function ChurchPage({
   params: { locale },
@@ -17,6 +19,7 @@ export default function ChurchPage({
   unstable_setRequestLocale(locale);
   return (
     <>
+      <MainHeaderBlock />
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />

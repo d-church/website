@@ -1,3 +1,4 @@
+import { MainHeaderBlock } from "@components/contacts-page/main-header-block";
 import { unstable_setRequestLocale } from "next-intl/server";
 import dynamic from "next/dynamic";
 
@@ -24,6 +25,7 @@ export default function ContactsPage({
   unstable_setRequestLocale(locale);
   return (
     <>
+      <MainHeaderBlock />
       <Header />
       <FillSpaceBlock />
       <ScheduleBlock />
