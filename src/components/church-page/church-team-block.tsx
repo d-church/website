@@ -36,7 +36,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
         </div>
       </div>
 
-      <div className="mt-[73px] grid grid-cols-2 gap-x-[20px] gap-y-[50px] lg:grid-cols-[repeat(4,minmax(0,200px))] lg:gap-x-[50px] xl:gap-x-[100px]">
+      <div className="mt-[73px] grid grid-cols-2 gap-x-[20px] gap-y-[50px] lg:grid-cols-4 lg:gap-x-[50px] xl:gap-x-[100px]">
         <ChurchEmployeeBlock
           src="/static/employees/novoseltsev-i-i.webp"
           fullName={t(
