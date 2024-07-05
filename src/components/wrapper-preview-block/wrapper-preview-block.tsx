@@ -26,6 +26,7 @@ export function WrapperPreviewBlock({
         {pathname === "/" ? (
           <video
             autoPlay
+            playsInline
             muted
             loop
             className="absolute left-0 top-0 min-h-full min-w-full object-cover"
