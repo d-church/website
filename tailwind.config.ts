@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "2xl": "1660px",
+        "3xl": "2020px",
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

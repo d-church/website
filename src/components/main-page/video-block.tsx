@@ -19,18 +19,18 @@ import { clientUrl } from "@/utils/clientUrl";
 
 const videos = [
   {
-    link: "https://www.youtube.com/watch?v=BJWeW6JxZyU",
-    date: "14.06.2024",
+    link: "https://www.youtube.com/watch?v=R5yc5KEtaEU",
+    date: "22.06.2024",
     thumbnail: "/static/video-thumbnails/video-thumbnail-0.webp",
   },
   {
-    link: "https://www.youtube.com/watch?v=OssT5UKJu6w",
-    date: "30.05.2024",
+    link: "https://www.youtube.com/watch?v=ejos3w2BnVE",
+    date: "17.06.2024",
     thumbnail: "/static/video-thumbnails/video-thumbnail-1.webp",
   },
   {
-    link: "https://www.youtube.com/watch?v=JIURd8f7pMw",
-    date: "25.05.2024",
+    link: "https://www.youtube.com/watch?v=BJWeW6JxZyU",
+    date: "14.06.2024",
     thumbnail: "/static/video-thumbnails/video-thumbnail-2.webp",
   },
 ];
@@ -58,7 +58,7 @@ export function VideoBlock() {
             <div className="h-[180px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
               <iframe
                 className="h-full w-full grow rounded-[0.75rem] xl:rounded-[1.25rem]"
-                src="https://www.youtube.com/embed/ejos3w2BnVE"
+                src="https://www.youtube.com/embed/ePItijlRAgg"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
