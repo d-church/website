@@ -28,7 +28,12 @@ export interface TClientUrl {
    * @param domainName - The domain name
    * @returns https://donate.{{name_domain}}.com.ua/ministries
    */
-  donate: (domainName: string) => string;
+  donate: () => string;
+  /**
+   * Get url of the domain
+   * @returns domain
+   */
+  domain: string;
   /**
    * Get url of the page donate
    * @returns /donate-transfer
