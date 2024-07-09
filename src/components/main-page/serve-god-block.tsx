@@ -20,7 +20,7 @@ export function ServeGodBlock() {
         <h2 className="text-3xl font-bold uppercase">
           {t("main-page.serving-god-block.title")}
         </h2>
-        <p className="hidden text-xl md:block">
+        <p className="text-[18px]/[30px] md:text-xl">
           {t("main-page.serving-god-block.text")}
         </p>
         <Button variant="standard" className="invisible uppercase">
