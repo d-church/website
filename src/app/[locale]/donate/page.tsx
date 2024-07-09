@@ -1,9 +1,9 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import {
-  OtherDonateMethods,
+  // OtherDonateMethods,
   PreviewBlock,
-  QrCodesBlock,
+  WrapperQuoteBlock,
 } from "@/components/donate-page";
 
 export default function DonatePage({
@@ -15,8 +15,8 @@ export default function DonatePage({
   return (
     <>
       <PreviewBlock />
-      <QrCodesBlock />
-      <OtherDonateMethods />
+      <WrapperQuoteBlock />
+      {/* <OtherDonateMethods /> */}
     </>
   );
 }

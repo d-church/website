@@ -76,12 +76,10 @@ export function MobileNav() {
             </div>
             <Button
               variant="standard"
-              className="w-fit self-center uppercase invisible"
+              className="w-fit self-center uppercase"
               asChild
             >
-              <Link href={clientUrl.donate("8")}>
-                {t("header.button-donate")}
-              </Link>
+              <Link href={clientUrl.donate()}>{t("header.button-donate")}</Link>
             </Button>
           </div>
         </SheetContent>
