@@ -1,10 +1,6 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
-import {
-  // OtherDonateMethods,
-  PreviewBlock,
-  WrapperQuoteBlock,
-} from "@/components/donate-page";
+import { MainHeaderBlock, PreviewBlock } from "@/components/donate-page";
 
 export default function DonatePage({
   params: { locale },
@@ -14,9 +10,8 @@ export default function DonatePage({
   unstable_setRequestLocale(locale);
   return (
     <>
+      <MainHeaderBlock />
       <PreviewBlock />
-      <WrapperQuoteBlock />
-      {/* <OtherDonateMethods /> */}
     </>
   );
 }
