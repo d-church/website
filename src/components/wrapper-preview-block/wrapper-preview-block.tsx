@@ -23,7 +23,15 @@ export function WrapperPreviewBlock({
       )}
     >
       <div className="absolute h-full w-full overflow-hidden after:absolute after:h-full after:w-full after:bg-black/70">
-        {pathname === "/" ? (
+        {pathname.startsWith("/donate") ? (
+          <Image
+            src="/static/donate-preview-block-picture.webp"
+            alt="Preview section picture"
+            fill
+            className="object-cover"
+          />
+        ) : (
+          // ) : pathname === "" ? (
           <video
             autoPlay
             playsInline
@@ -33,20 +41,13 @@ export function WrapperPreviewBlock({
           >
             <source src="/static/preview-block-video.mp4" type="video/mp4" />
           </video>
-        ) : pathname.startsWith("/donate") ? (
-          <Image
-            src="/static/donate-preview-block-picture.webp"
-            alt="Preview section picture"
-            fill
-            className="object-cover"
-          />
-        ) : (
-          <Image
-            src="/static/preview-block-picture.webp"
-            alt="Preview section picture"
-            fill
-            className="object-cover"
-          />
+          // ) : (
+          //   <Image
+          //     src="/static/preview-block-picture.webp"
+          //     alt="Preview section picture"
+          //     fill
+          //     className="object-cover"
+          //   />
         )}
       </div>
       {children}

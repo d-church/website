@@ -45,17 +45,19 @@ export function MobileNav() {
           <SheetHeader className="border-b border-hover-blue py-2.5">
             <div className="container flex items-center justify-between">
               <Link href="/">
-                <Image
-                  src="/static/logo-header.webp"
-                  alt="Logo of the church"
-                  width={187.33}
-                  height={80}
-                  priority={true}
-                  loading="eager"
-                  className="w-[93px] xl:w-[187.33px]"
-                />
+                <SheetClose asChild>
+                  <Image
+                    src="/static/logo-header.webp"
+                    alt="Logo of the church"
+                    width={187.33}
+                    height={80}
+                    priority={true}
+                    loading="eager"
+                    className="w-[93px] xl:w-[187.33px]"
+                  />
+                </SheetClose>
               </Link>
-              <SheetClose className="">
+              <SheetClose>
                 <X className="h-6 w-6" color="white" />
               </SheetClose>
             </div>
@@ -70,7 +72,9 @@ export function MobileNav() {
                     "text-hover-blue": href === pathname,
                   })}
                 >
-                  {t(`header.links.${key}`)}
+                  <SheetClose className="w-full text-left">
+                    <p className="inline-block">{t(`header.links.${key}`)}</p>
+                  </SheetClose>
                 </Link>
               ))}
             </div>
