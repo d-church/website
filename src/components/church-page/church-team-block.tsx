@@ -13,6 +13,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
   const t = useTranslations();
   return (
     <div
+      id="church-team"
       className={cn(
         "container flex flex-col items-center pb-[100px] pt-[100px] xl:pt-[167px]",
         className

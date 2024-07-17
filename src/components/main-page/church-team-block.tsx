@@ -1,8 +1,10 @@
 import { useTranslations } from "next-intl";
 
+import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { ChurchEmployeeBlock } from "./church-employee-block";
 
+import { Link } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 interface IChurchTeamBlockProps {
@@ -72,6 +74,13 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
           />
         </div>
       </div>
+      <Button
+        variant="standard"
+        className="mt-[40px] border-graphite uppercase text-graphite hover:bg-graphite hover:text-hover-blue"
+        asChild
+      >
+        <Link href="/about#church-team">{t("church-page.show-full-team")}</Link>
+      </Button>
     </div>
   );
 }
