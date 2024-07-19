@@ -2,13 +2,13 @@ import { clientUrl } from "@/utils/clientUrl";
 
 type THeadersLink = {
   href: string;
-  key: "jesus" | "about" | "video-and-stream" | "contact"; // | "ministry"
+  key: "jesus" | "about" | "video-and-stream" | "contact" | "ministry";
 };
 
 interface TFootersLink {
   firstBlock: {
     href: string;
-    key: "jesus" | "about"; // | "ministry"
+    key: "jesus" | "about" | "ministry";
   }[];
   secondBlock: {
     href: string;
@@ -25,10 +25,10 @@ export const headersLinks: THeadersLink[] = [
     href: clientUrl.about,
     key: "about",
   },
-  // {
-  //   href: clientUrl.ministry,
-  //   key: "ministry",
-  // },
+  {
+    href: clientUrl.ministry,
+    key: "ministry",
+  },
   {
     href: clientUrl.video,
     key: "video-and-stream",
@@ -49,10 +49,10 @@ export const footersLink: TFootersLink = {
       href: clientUrl.about,
       key: "about",
     },
-    // {
-    //   href: clientUrl.ministry,
-    //   key: "ministry",
-    // },
+    {
+      href: clientUrl.ministry,
+      key: "ministry",
+    },
   ],
   secondBlock: [
     {
