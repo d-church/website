@@ -31,7 +31,6 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
           <div className="flex flex-col items-center">
             <div className="group flex flex-col items-center">
               <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4  border-hover-blue bg-white xl:size-[190px]">
-                <div className="after:absolute after:bottom-[21px] after:right-[19px] after:size-4 after:rounded-full after:bg-black after:bg-hover-blue after:xl:bottom-[28px] after:xl:right-[26px]" />
                 <Image
                   src="/static/employees/bilyk-v-d.webp"
                   width={160}
