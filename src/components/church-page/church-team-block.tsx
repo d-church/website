@@ -1,5 +1,6 @@
 import { ChurchEmployeeBlock } from "@components/main-page/church-employee-block";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Separator } from "../ui/separator";
 
@@ -26,13 +27,28 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
       <div className="mt-[30px] flex flex-col items-center xl:mt-[50px]">
         <div className="flex w-full justify-center xl:space-x-[57px]">
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
-          <ChurchEmployeeBlock
-            src="/static/employees/bilyk-v-d.webp"
-            fullName={t(
-              "main-page.church-team-block.church-employees.employee-1.full-name"
-            )}
-            position={t("main-page.church-team-block.church-positions.bishop")}
-          />
+          <div className="flex flex-col items-center">
+            <div className="group flex flex-col items-center">
+              <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4  border-hover-blue bg-white xl:size-[190px]">
+                <div className="after:absolute after:bottom-[21px] after:right-[19px] after:size-4 after:rounded-full after:bg-black after:bg-hover-blue after:xl:bottom-[28px] after:xl:right-[26px]" />
+                <Image
+                  src="/static/employees/bilyk-v-d.webp"
+                  width={160}
+                  height={160}
+                  alt="icon"
+                  className="size-[126px] rounded-full object-cover object-[70%_30%] xl:size-[160px]"
+                />
+              </div>
+              <p className="mt-[10px] whitespace-pre-wrap text-center text-base font-bold xl:mt-[20px] xl:text-[22px]">
+                {t(
+                  "main-page.church-team-block.church-employees.employee-1.full-name"
+                )}
+              </p>
+            </div>
+            <p className="mt-[10px] whitespace-pre-line text-center font-normal text-[#8A8A8A] xl:text-[22px]">
+              {t("main-page.church-team-block.church-positions.bishop")}
+            </p>
+          </div>
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
         </div>
       </div>

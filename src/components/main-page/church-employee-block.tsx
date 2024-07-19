@@ -17,9 +17,9 @@ export function ChurchEmployeeBlock({
 }: IChurchEmployeeBlockProps) {
   return (
     <div className="flex flex-col items-center">
-      <div className="group flex cursor-pointer flex-col items-center">
-        <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] group-hover:border-hover-blue group-hover:bg-white xl:size-[190px]">
-          <div className="after:absolute after:bottom-[21px] after:right-[19px] after:size-4 after:rounded-full after:bg-black group-hover:after:bg-hover-blue after:xl:bottom-[28px] after:xl:right-[26px]" />
+      <div className="flex flex-col items-center">
+        <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] xl:size-[190px]">
+          <div className="after:absolute after:bottom-[21px] after:right-[19px] after:size-4 after:rounded-full after:bg-black after:xl:bottom-[28px] after:xl:right-[26px]" />
           <Image
             src={src}
             width={160}
