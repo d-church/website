@@ -3,7 +3,11 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
-import { MainHeaderBlock, PreviewBlock } from "@/components/ministry-page";
+import {
+  MainHeaderBlock,
+  MinistryTypesBlock,
+  PreviewBlock,
+} from "@/components/ministry-page";
 
 export default function MinistryPage({
   params: { locale },
@@ -16,6 +20,7 @@ export default function MinistryPage({
       <MainHeaderBlock />
       <Header />
       <PreviewBlock />
+      <MinistryTypesBlock />
       <WriteUsBlock />
       <Footer />
     </>

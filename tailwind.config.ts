@@ -30,7 +30,10 @@ const config = {
         foreground: "var(--foreground)",
         graphite: "var(--graphite)",
         "graphite-hsl": "hsl(var(--graphite-hsl))",
-        "hover-blue": "var(--hover-blue)",
+        "hover-blue": {
+          DEFAULT: "var(--hover-blue)",
+          300: "var(--hover-blue-300)",
+        },
         "error-red": "var(--error-red)",
         gray: "var(--gray)",
         primary: {
@@ -80,6 +83,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      boxShadow: {
+        "custom-hover-blue": "0 4px 30px 0 #0E93984D",
       },
     },
   },
