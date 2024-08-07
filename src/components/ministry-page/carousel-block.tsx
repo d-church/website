@@ -81,7 +81,7 @@ export default function CarouselBlock({
             </CarouselContent>
             <CarouselPrevious
               color="gray"
-              className="-left-[133px] hidden xl:block"
+              className="-left-[143px] hidden xl:block"
             />
             <CarouselNext
               color="gray"

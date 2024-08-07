@@ -65,7 +65,7 @@ export function GalleryCarouselBlock({
         </CarouselContent>
         <CarouselPrevious
           color="white"
-          className="-left-[55px] hidden 2xl:block"
+          className="-left-[65px] hidden 2xl:block"
         />
         <CarouselNext
           color="white"
