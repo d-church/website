@@ -8,12 +8,12 @@ export function PreviewBlock() {
       <div className="absolute h-full w-full after:absolute after:h-full after:w-full after:overflow-hidden after:bg-black/70">
         <Image
           className="object-cover"
-          src="/static/ministry-preview-block-photo.webp"
+          src="/static/ministry-preview-block-picture.webp"
           alt="The Preview an Image of the page"
           fill
         />
       </div>
-      <div className="z-[1] max-w-[1077px] text-center  text-white max-lg:max-w-[90%]">
+      <div className="z-[1] max-w-[1077px] text-center text-white  max-lg:max-w-[90%] max-sm:py-[75px]">
         <p className="mb-[30px] text-[1.875rem]/[2.28rem] font-bold uppercase max-lg:mb-[22px]">
           {t("preview.title")}
         </p>

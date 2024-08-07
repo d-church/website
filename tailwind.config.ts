@@ -85,7 +85,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       boxShadow: {
-        "custom-hover-blue": "0 4px 30px 0 #0E93984D",
+        "custom-hover-blue": "0px 4px 30px 0 #0e93987f",
       },
     },
   },

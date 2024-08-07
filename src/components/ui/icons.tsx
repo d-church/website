@@ -883,6 +883,47 @@ export const Icons = {
       />
     </svg>
   ),
+  carouselNextArrow: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="50"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M.283.287a.956.956 0 0 1 1.366 0L26 25 1.65 49.713a.956.956 0 0 1-1.367 0 .99.99 0 0 1 0-1.387L23.268 25 .283 1.674a.99.99 0 0 1 0-1.387Z"
+        clipRule="evenodd"
+        className="transition-colors group-hover:fill-hover-blue"
+      />
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+        d="m11 17 8 8-8 8"
+        className="transition-colors group-hover:stroke-hover-blue"
+      />
+    </svg>
+  ),
+  carouselPrevArrow: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="50"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M25.717.287a.956.956 0 0 0-1.366 0L0 25l24.35 24.713a.956.956 0 0 0 1.367 0 .99.99 0 0 0 0-1.387L2.732 25 25.717 1.674a.99.99 0 0 0 0-1.387Z"
+        clipRule="evenodd"
+        className="transition-colors group-hover:fill-hover-blue"
+      />
+    </svg>
+  ),
   googleMapPin: (props: IconProps) => (
     <svg
       width="60"
