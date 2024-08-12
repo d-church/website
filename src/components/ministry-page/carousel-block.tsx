@@ -3,6 +3,7 @@
 import Image from "next/image";
 import * as React from "react";
 
+import { ICRMImage } from "@/types/crm-image.types";
 import { Separator } from "../ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
 
@@ -17,16 +18,14 @@ import {
 import { cn } from "@/lib/utils";
 
 interface ICarouselBlockProps {
-  title: string;
   textModal: string;
-  lengthOfImages: number;
+  carouselImages: ICRMImage[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function CarouselBlock({
-  title,
   textModal,
-  lengthOfImages,
+  carouselImages,
   setOpen,
 }: ICarouselBlockProps) {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -45,7 +44,7 @@ export default function CarouselBlock({
   }, [api]);
   return (
     <>
-      {lengthOfImages === 0 ? (
+      {carouselImages.length === 0 ? (
         <></>
       ) : (
         <>
@@ -54,23 +53,20 @@ export default function CarouselBlock({
             className="relative mx-auto h-[160px] w-full max-w-[795px]"
           >
             <CarouselContent>
-              {Array.from({ length: lengthOfImages }).map((_, index) => (
+              {carouselImages.map((carouselImage, index) => (
                 <CarouselItem
                   key={index}
                   className="basis-1/1 relative w-[245px] lg:basis-1/3"
                 >
                   <GalleryModalBlock
-                    title={title}
                     initialIndex={index}
-                    lengthOfImages={lengthOfImages}
+                    carouselImages={carouselImages}
                     setOpenFirstModal={setOpen}
                   >
                     <Image
                       width={245}
                       height={160}
-                      src={cn(
-                        `/static/ministry-page-images/gallery/${title}/${index + 1}.webp`
-                      )}
+                      src={carouselImage.downloadLink}
                       className="h-[160px] object-cover"
                       alt="Gallery image"
                     />
@@ -81,7 +77,7 @@ export default function CarouselBlock({
             </CarouselContent>
             <CarouselPrevious
               color="gray"
-              className="-left-[143px] hidden xl:block"
+              className="-left-[124px] hidden xl:block"
             />
             <CarouselNext
               color="gray"
@@ -89,7 +85,7 @@ export default function CarouselBlock({
             />
           </Carousel>
           <div className="flex justify-center gap-[10px] pt-[30px] xl:hidden">
-            {Array.from({ length: lengthOfImages }).map((_, index) => (
+            {carouselImages.map((_, index) => (
               <Separator
                 key={index}
                 className={cn(
@@ -103,9 +99,12 @@ export default function CarouselBlock({
           </div>
         </>
       )}
-      <p className="mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px]">
-        {textModal}
-      </p>
+      <div
+        className="mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px]"
+        dangerouslySetInnerHTML={{
+          __html: textModal,
+        }}
+      ></div>
     </>
   );
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import * as React from "react";
 
+import { ICRMImage } from "@/types/crm-image.types";
 import { Separator } from "../ui/separator";
 
 import {
@@ -16,14 +17,12 @@ import {
 import { cn } from "@/lib/utils";
 
 interface IGalleryBlockProps {
-  title: string;
-  lengthOfImages: number;
+  carouselImages: ICRMImage[];
   initialIndex: number;
 }
 
 export function GalleryCarouselBlock({
-  title,
-  lengthOfImages,
+  carouselImages,
   initialIndex,
 }: IGalleryBlockProps) {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -49,14 +48,12 @@ export function GalleryCarouselBlock({
         className="relative mx-auto my-auto w-full max-xl:max-w-[90%] xl:max-w-[1070px]"
       >
         <CarouselContent>
-          {Array.from({ length: lengthOfImages }).map((_, index) => (
+          {carouselImages.map((carouselImage, index) => (
             <CarouselItem key={index} className="relative">
               <Image
                 width={1070}
                 height={696}
-                src={cn(
-                  `/static/ministry-page-images/gallery/${title}/${index + 1}.webp`
-                )}
+                src={carouselImage.downloadLink}
                 className="h-[210px] object-cover min-[400px]:h-[300px] min-[500px]:h-[400px] sm:h-[600px] xl:h-[696px]"
                 alt="Gallery image"
               />
@@ -69,11 +66,11 @@ export function GalleryCarouselBlock({
         />
         <CarouselNext
           color="white"
-          className="-right-[55px] hidden 2xl:block"
+          className="-right-[75px] hidden 2xl:block"
         />
       </Carousel>
       <div className="flex justify-center gap-[10px] max-xl:mb-[30px] xl:mt-[30px]">
-        {Array.from({ length: lengthOfImages }).map((_, index) => (
+        {carouselImages.map((_, index) => (
           <Separator
             key={index}
             className={cn(

@@ -11,7 +11,7 @@ import { Icons } from "./icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-useEmblaCarousel.globalOptions = { loop: true };
+useEmblaCarousel.globalOptions = { loop: true, skipSnaps: true, duration: 60 };
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
