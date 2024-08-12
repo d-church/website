@@ -3,6 +3,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 
+import { ICRMImage } from "@/types/crm-image.types";
 import {
   Sheet,
   SheetClose,
@@ -15,17 +16,15 @@ import { GalleryCarouselBlock } from "./gallery-carousel-block";
 
 interface IGalleryBlockProps {
   children: React.ReactNode;
-  title: string;
   initialIndex: number;
-  lengthOfImages: number;
+  carouselImages: ICRMImage[];
   setOpenFirstModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function GalleryModalBlock({
   children,
-  title,
   initialIndex,
-  lengthOfImages,
+  carouselImages,
   setOpenFirstModal,
 }: IGalleryBlockProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,8 +48,7 @@ export function GalleryModalBlock({
           side="innerCenter"
         >
           <GalleryCarouselBlock
-            title={title}
-            lengthOfImages={lengthOfImages}
+            carouselImages={carouselImages}
             initialIndex={initialIndex}
           />
           <SheetClose className="absolute right-0 top-0 outline-none">

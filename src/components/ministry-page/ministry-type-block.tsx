@@ -1,10 +1,12 @@
 "use client";
 
+import parse from "html-react-parser";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
 
+import type { ICRMImage } from "@/types/crm-image.types";
 import {
   Sheet,
   SheetClose,
@@ -23,22 +25,23 @@ const CarouselBlock = dynamic(
 
 interface IMinistryTypeBlockProps {
   title: string;
-  text: string;
+  subtitle: string;
   src: string;
   textModal: string;
   imgPosition?: string;
-  lengthOfImages: number;
+  carouselImages: ICRMImage[];
 }
 
 export function MinistryTypeBlock({
   title,
-  text,
+  subtitle,
   textModal,
   src,
   imgPosition,
-  lengthOfImages,
+  carouselImages,
 }: IMinistryTypeBlockProps) {
   const [open, setOpen] = useState(false);
+  const parsedSubtitile = parse(subtitle);
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <div className="h-full">
@@ -57,9 +60,9 @@ export function MinistryTypeBlock({
             </div>
           </div>
         </SheetTrigger>
-        <p className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium max-md:text-[1.25rem]/[1.5rem]">
-          {text}
-        </p>
+        <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium max-md:text-[1.25rem]/[1.5rem]">
+          {parsedSubtitile}
+        </div>
       </div>
 
       <SheetOverlay className="bg-black/50 backdrop-blur-sm" />
@@ -93,9 +96,8 @@ export function MinistryTypeBlock({
           <div className="relative h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-[20px] lg:h-[590px]">
             <div className="ml-[1px] h-[calc(100%)] w-full rounded-b-[20px] bg-white pt-[50px]">
               <CarouselBlock
-                title={title}
                 textModal={textModal}
-                lengthOfImages={lengthOfImages}
+                carouselImages={carouselImages}
                 setOpen={setOpen}
               />
             </div>

@@ -24,15 +24,17 @@ export default function ContactsPage({
 }) {
   unstable_setRequestLocale(locale);
   return (
-    <>
+    <div className="grid min-h-[100dvh] grid-rows-[1fr_auto]">
       <MainHeaderBlock />
       <Header />
-      <FillSpaceBlock />
-      <ScheduleBlock />
-      <div className="h-[650px] xl:h-[500px]">
-        <GoogleMapBlock />
+      <div>
+        <FillSpaceBlock />
+        <ScheduleBlock />
+        <div className="h-[650px] xl:h-[500px]">
+          <GoogleMapBlock />
+        </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

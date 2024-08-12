@@ -79,10 +79,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0", display: "none" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-out": "fade-out 1s forwards",
       },
       boxShadow: {
         "custom-hover-blue": "0px 4px 30px 0 #0e93987f",
