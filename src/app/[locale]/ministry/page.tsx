@@ -12,6 +12,8 @@ import {
   PreviewBlock,
 } from "@/components/ministry-page";
 
+export const revalidate = 60;
+
 export default function MinistryPage({
   params: { locale },
 }: {
@@ -26,7 +28,9 @@ export default function MinistryPage({
         {/* <LoadingBackdrop /> */}
         <PreviewBlock />
       </Suspense>
-      <MinistryTypesBlock />
+      <Suspense fallback={<Loading />}>
+        <MinistryTypesBlock />
+      </Suspense>
       <WriteUsBlock />
       <Footer />
     </>

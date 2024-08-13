@@ -5,7 +5,7 @@ const OneEntryProjectLink = "https://sourceoflife.oneentry.cloud";
 
 export const fetchProducts = () => {
   const { Products } = defineOneEntry(OneEntryProjectLink, {
-    token: process.env.NEXT_PUBLIC_NEENTRY_API_KEY,
+    token: process.env.NEXT_PUBLIC_ONEENTRY_API_KEY,
   });
 
   const body: IFilterParams[] = [
