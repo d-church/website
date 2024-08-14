@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 import { ICRMImage } from "@/types/crm-image.types";
+import Loading from "../common/loading";
 import { Separator } from "../ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
 
@@ -28,10 +29,19 @@ export default function CarouselBlock({
   carouselImages,
   setOpen,
 }: ICarouselBlockProps) {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [isCaruselItemsLoads, setIsCarouselItemsLoads] = useState(
+    Array(carouselImages.length).fill(true)
+  );
 
-  React.useEffect(() => {
+  function onLoadingCompleteHandler(index: number) {
+    setIsCarouselItemsLoads((prev) =>
+      prev.map((state, i) => (i === index ? false : state))
+    );
+  }
+
+  useEffect(() => {
     if (!api) {
       return;
     }
@@ -58,6 +68,9 @@ export default function CarouselBlock({
                   key={index}
                   className="basis-1/1 relative w-[245px] lg:basis-1/3"
                 >
+                  {isCaruselItemsLoads[index] && (
+                    <Loading className="relative h-[160px]" />
+                  )}
                   <GalleryModalBlock
                     initialIndex={index}
                     carouselImages={carouselImages}
@@ -67,7 +80,11 @@ export default function CarouselBlock({
                       width={245}
                       height={160}
                       src={carouselImage.downloadLink}
-                      className="h-[160px] object-cover"
+                      onLoadingComplete={() => onLoadingCompleteHandler(index)}
+                      className={cn(
+                        "h-[160px] object-cover transition-opacity",
+                        `${isCaruselItemsLoads[index] ? "opacity-0" : "opacity-100"}`
+                      )}
                       alt="Gallery image"
                     />
                     <div className="after:absolute after:left-0 after:top-0 after:h-full after:w-full after:transition-colors hover:cursor-pointer hover:after:bg-white/15"></div>
