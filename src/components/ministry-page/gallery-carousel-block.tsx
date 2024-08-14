@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 import { ICRMImage } from "@/types/crm-image.types";
 import { Separator } from "../ui/separator";
@@ -25,10 +25,10 @@ export function GalleryCarouselBlock({
   carouselImages,
   initialIndex,
 }: IGalleryBlockProps) {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(initialIndex + 1);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(initialIndex + 1);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) {
       return;
     }
