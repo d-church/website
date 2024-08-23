@@ -1,0 +1,49 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+import Loading from "@/components/common/loading";
+import { LoadingBackdrop } from "@/components/common/loading-backdrop";
+import { SkeletonCard } from "@/components/common/skeleton-loader";
+import {
+  BlogsBlock,
+  LazyLoadBlock,
+  MainHeaderBlock,
+  PaginationBlock,
+  PreviewBlock,
+} from "@/components/events-and-blog-page";
+import { Footer } from "@/components/footer/footer-site";
+import { Header } from "@/components/header/header-site";
+import { WriteUsBlock } from "@/components/main-page";
+
+const PaginationProvider = dynamic(
+  () => import("@components/events-and-blog-page/pagination-provider"),
+  { ssr: false }
+);
+
+export const revalidate = 300;
+export default function EventsAndBlogPage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
+  return (
+    <>
+      <MainHeaderBlock />
+      <Header />
+      <PreviewBlock />
+      <div className="relative min-h-[504px] w-full max-md:flex max-md:flex-col max-md:justify-center lg:h-[1085px] xl:h-[840px] 2xl:h-[1152px]">
+        <PaginationProvider>
+          <Suspense fallback={<SkeletonCard />}>
+            <BlogsBlock />
+            <PaginationBlock />
+            <LazyLoadBlock />
+          </Suspense>
+        </PaginationProvider>
+      </div>
+      <WriteUsBlock />
+      <Footer />
+    </>
+  );
+}

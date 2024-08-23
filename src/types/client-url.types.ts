@@ -55,7 +55,7 @@ export interface TClientUrl {
    * Get url of the page event
    * @returns /event
    */
-  event: string;
+  events: string;
   /**
    * Get url of the page instagram
    * @returns https://www.instagram.com/d.church.lviv?igsh=Z2MzNmRjY2V3MXNm

@@ -12,7 +12,7 @@ import {
   PreviewBlock,
 } from "@/components/ministry-page";
 
-export const revalidate = 60;
+export const revalidate = 300;
 
 export default function MinistryPage({
   params: { locale },

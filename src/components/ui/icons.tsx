@@ -926,6 +926,40 @@ export const Icons = {
       />
     </svg>
   ),
+  paginationNextArrow: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="30"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M.771.172a.574.574 0 0 1 .82 0L16.201 15 1.592 29.828a.574.574 0 0 1-.82 0 .594.594 0 0 1 0-.832L14.562 15 .772 1.004a.594.594 0 0 1 0-.832Z"
+        clipRule="evenodd"
+        className="group-hover:fill-hover-blue transition-colors"
+      />
+    </svg>
+  ),
+  paginationPrevArrow: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="30"
+      {...props}
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M16.229 29.828a.574.574 0 0 1-.82 0L.799 15 15.408.172a.574.574 0 0 1 .82 0 .594.594 0 0 1 0 .832L2.438 15l13.79 13.996a.594.594 0 0 1 0 .832Z"
+        clipRule="evenodd"
+        className="group-hover:fill-hover-blue transition-colors"
+      />
+    </svg>
+  ),
   googleMapPin: (props: IconProps) => (
     <svg
       width="60"
