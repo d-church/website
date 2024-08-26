@@ -251,6 +251,9 @@
       "button": "Показати ще"
     },
     "blog-page": {
+      "blog": {
+        "author": "Автор:"
+      },
       "recommendations": "Рекомендовані"
     }
   },

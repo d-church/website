@@ -41,7 +41,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
             <Link href={href}>{t("button")}</Link>
           </Button>
         </div>
-        <div className="flex items-center gap-[13px] overflow-hidden pt-[10px] text-[#D9D9D9] max-xl:gap-[11px]">
+        <div className="text-gray-light flex items-center gap-[13px] overflow-hidden pt-[10px] max-xl:gap-[11px]">
           <p className="text-[1rem]/[1.21rem] 2xl:text-[1.125rem]/[1.375rem]">
             {date}
           </p>
