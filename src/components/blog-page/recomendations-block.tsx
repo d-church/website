@@ -12,7 +12,7 @@ export function RecomendationsBlock() {
       <p className="text-center text-[1.875rem] font-bold uppercase max-lg:text-[1.25rem]">
         {t("recommendations")}
       </p>
-      <div className="grid grid-cols-[minmax(0_,320px)] justify-center pt-[30px] max-lg:gap-y-[30px] max-lg:pt-[20px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] xl:grid-cols-[repeat(3,_minmax(0_,320px))] 2xl:grid-cols-[repeat(3,_minmax(0_,520px))]">
+      <div className="grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px] pt-[30px] max-lg:pt-[20px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] xl:grid-cols-[repeat(3,_minmax(0_,320px))] 2xl:grid-cols-[repeat(3,_minmax(0_,520px))]">
         {blogs
           .toReversed()
           .slice(0, 3)
