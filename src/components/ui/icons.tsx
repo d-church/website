@@ -939,24 +939,19 @@ export const Icons = {
         fillRule="evenodd"
         d="M.771.172a.574.574 0 0 1 .82 0L16.201 15 1.592 29.828a.574.574 0 0 1-.82 0 .594.594 0 0 1 0-.832L14.562 15 .772 1.004a.594.594 0 0 1 0-.832Z"
         clipRule="evenodd"
-        className="group-hover:fill-hover-blue transition-colors"
+        className="transition-colors group-hover:fill-hover-blue"
       />
     </svg>
   ),
   paginationPrevArrow: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="17"
-      height="30"
-      {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" {...props}>
       <path
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         fillRule="evenodd"
         d="M16.229 29.828a.574.574 0 0 1-.82 0L.799 15 15.408.172a.574.574 0 0 1 .82 0 .594.594 0 0 1 0 .832L2.438 15l13.79 13.996a.594.594 0 0 1 0 .832Z"
         clipRule="evenodd"
-        className="group-hover:fill-hover-blue transition-colors"
+        className="transition-colors group-hover:fill-hover-blue"
       />
     </svg>
   ),
@@ -988,6 +983,51 @@ export const Icons = {
       </g>
       <circle opacity="0.5" cx="30" cy="90" r="24" fill="#0E9398" />
       <circle cx="30" cy="90" r="10" fill="#0E9398" />
+    </svg>
+  ),
+  whiteFacebook: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="50"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M29.84 25.227h-3.022v10.228h-4.545V25.227H20v-3.409h2.273v-2.273c0-2.84 1.273-4.545 4.909-4.545h3.045v3.42H28.33c-1.42 0-1.51.49-1.51 1.41v1.988h3.408l-.386 3.41Zm1.181-5.107a1.875 1.875 0 0 0 1.081-1.7V15c0-1.036-.84-1.875-1.875-1.875h-3.045c-2.074 0-3.885.484-5.151 1.764-1.265 1.278-1.633 2.995-1.633 4.657v.397H20c-1.035 0-1.875.84-1.875 1.875v3.41c0 1.035.84 1.874 1.875 1.874h.398v8.353c0 1.035.84 1.875 1.875 1.875h4.545c1.036 0 1.875-.84 1.875-1.875v-8.353h1.148c.954 0 1.756-.716 1.863-1.663l.386-3.41a1.874 1.874 0 0 0-1.069-1.91Z"
+        clipRule="evenodd"
+        className="transition-colors group-hover:fill-hover-blue"
+      />
+      <path
+        fill="#000"
+        d="M25 0C11.193 0 0 11.193 0 25s11.193 25 25 25 25-11.193 25-25S38.807 0 25 0Zm0 47.727C12.448 47.727 2.273 37.552 2.273 25S12.448 2.273 25 2.273 47.727 12.448 47.727 25 37.552 47.727 25 47.727Z"
+      />
+    </svg>
+  ),
+  whiteInstagram: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="50"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="#000"
+        d="M25 0C11.193 0 0 11.193 0 25s11.193 25 25 25 25-11.193 25-25S38.807 0 25 0Zm0 47.727C12.448 47.727 2.273 37.552 2.273 25S12.448 2.273 25 2.273 47.727 12.448 47.727 25 37.552 47.727 25 47.727Z"
+      />
+      <path
+        fill="#000"
+        d="M30.938 13.125H19.063c-3.325 0-5.938 2.613-5.938 5.938v11.875c0 3.325 2.613 5.937 5.938 5.937h11.875c3.325 0 5.937-2.612 5.937-5.938V19.063c0-3.325-2.612-5.937-5.938-5.937ZM34.5 30.938c0 2.018-1.544 3.562-3.563 3.562H19.063c-2.018 0-3.562-1.544-3.562-3.563V19.063c0-2.018 1.544-3.562 3.563-3.562h11.875c2.018 0 3.562 1.544 3.562 3.563v11.875Z"
+        className="transition-colors group-hover:fill-hover-blue"
+      />
+      <path
+        fill="#000"
+        d="M25 19.063c-3.325 0-5.938 2.612-5.938 5.937s2.613 5.938 5.938 5.938c3.325 0 5.938-2.613 5.938-5.938 0-3.325-2.613-5.938-5.938-5.938Zm0 9.5c-2.019 0-3.563-1.544-3.563-3.563s1.544-3.563 3.563-3.563 3.563 1.544 3.563 3.563-1.544 3.563-3.563 3.563ZM30.938 20.25a1.188 1.188 0 1 0 0-2.375 1.188 1.188 0 0 0 0 2.375Z"
+        className="transition-colors group-hover:fill-hover-blue"
+      />
     </svg>
   ),
 };

@@ -249,6 +249,9 @@
     },
     "lazy-load": {
       "button": "Показати ще"
+    },
+    "blog-page": {
+      "recommendations": "Рекомендовані"
     }
   },
   "contacts-page": {

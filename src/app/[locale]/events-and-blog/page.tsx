@@ -32,7 +32,9 @@ export default function EventsAndBlogPage({
     <>
       <MainHeaderBlock />
       <Header />
-      <PreviewBlock />
+      <Suspense fallback={<Loading />}>
+        <PreviewBlock />
+      </Suspense>
       <div className="relative min-h-[504px] w-full max-md:flex max-md:flex-col max-md:justify-center lg:h-[1085px] xl:h-[840px] 2xl:h-[1152px]">
         <PaginationProvider>
           <Suspense fallback={<SkeletonCard />}>
