@@ -41,7 +41,6 @@ export function PaginationBlock() {
       pages.push(ellipsisMarker);
     }
 
-    // Always show the last page
     if (currentPage < lastPage - pageLimit) {
       pages.push(lastPage);
     }
@@ -56,7 +55,9 @@ export function PaginationBlock() {
       setCurrentPage(page);
     }
   };
-
+  if (lastPage === 1) {
+    return null;
+  }
   return (
     <Pagination className="pb-[50px] pt-[50px] max-md:hidden xl:pb-[100px]">
       <PaginationContent>

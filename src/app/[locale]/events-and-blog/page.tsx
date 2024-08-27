@@ -1,10 +1,6 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
-import Loading from "@/components/common/loading";
-import { LoadingBackdrop } from "@/components/common/loading-backdrop";
-import { SkeletonCard } from "@/components/common/skeleton-loader";
 import {
   BlogsBlock,
   LazyLoadBlock,
@@ -37,11 +33,9 @@ export default function EventsAndBlogPage({
       </div>
       <div className="relative min-h-[504px] w-full max-md:flex max-md:flex-col max-md:justify-center lg:h-[1085px] xl:h-[840px] 2xl:h-[1152px]">
         <PaginationProvider>
-          <Suspense fallback={<SkeletonCard />}>
-            <BlogsBlock />
-            <PaginationBlock />
-            <LazyLoadBlock />
-          </Suspense>
+          <BlogsBlock />
+          <PaginationBlock />
+          <LazyLoadBlock />
         </PaginationProvider>
       </div>
       <WriteUsBlock />

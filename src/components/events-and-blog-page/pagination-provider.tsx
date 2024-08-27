@@ -1,10 +1,17 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-import { dataBlogs as blogs } from "./data-blogs";
+import { SkeletonCard } from "../common/skeleton-loader";
 
-// Define the context
+import { fetchProducts } from "@/oneentry/fetch-products";
+
 interface PaginationContextProps {
   currentPage: number;
   setCurrentPage: (page: number) => void;
@@ -18,7 +25,6 @@ const PaginationContext = createContext<PaginationContextProps | undefined>(
   undefined
 );
 
-// Context provider component
 export default function PaginationProvider({
   children,
 }: {
@@ -29,10 +35,28 @@ export default function PaginationProvider({
   const firstPage = 1;
   const [currentPage, setCurrentPage] = useState(firstPage);
   const [perPage, setPerPage] = useState(windowSize >= mdWindowWidth ? 6 : 4);
-  const allElements = blogs.length;
+  const [allElements, setAllElements] = useState(0);
+  const [lastPage, setLastPage] = useState(0);
 
-  // Assume that blogs data is available here
-  const lastPage = Math.ceil(blogs.length / perPage);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchProducts("Blogs");
+        setAllElements(result.length);
+        setLastPage(Math.ceil(result.length / perPage));
+      } catch (error) {
+        console.error(
+          "Failed to fetch products in pagination-provider:",
+          error
+        );
+      }
+    };
+    fetchData();
+  });
+
+  if (lastPage === 0) {
+    return <SkeletonCard />;
+  }
 
   return (
     <PaginationContext.Provider
@@ -50,7 +74,6 @@ export default function PaginationProvider({
   );
 }
 
-// Hook to use the context
 export function usePagination() {
   const context = useContext(PaginationContext);
   if (!context) {
