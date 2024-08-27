@@ -26,7 +26,7 @@ export function MainNav() {
                     className={cn(
                       "p-0 text-xl text-white hover:text-hover-blue hover:no-underline",
                       {
-                        "text-hover-blue": pathname === href,
+                        "text-hover-blue": pathname.includes(href),
                       }
                     )}
                     asChild

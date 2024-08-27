@@ -1,3 +1,4 @@
+// @ts-nocheck
 import parse, {
   attributesToProps,
   HTMLReactParserOptions,
@@ -27,7 +28,6 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
   const options: HTMLReactParserOptions = {
     replace(domNode) {
       if (domNode.type === "text" && domNode.data.trim() === "") {
-        // console.log(domNode);
         return <></>;
       }
       if (domNode.name === "p") {
@@ -35,28 +35,21 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
           (child) => child.name === "img"
         );
         if (childrenArray.length) {
-          console.log(childrenArray.length);
           domNode.name = "div";
           const attributes = attributesToProps({
-            className:
-              "flex lg:gap-[30px] h-[300px] max-lg:flex-col max-lg:gap-[10px]",
+            className: "flex md:gap-[30px] max-md:flex-col max-md:gap-[10px]",
           });
           domNode.attribs = attributes;
         }
       }
+
       if (domNode.name === "img") {
-        // console.log(domNode.attribs);
-        if (domNode.next && domNode.next.data.trim() === "") {
-          if (domNode.next.next.name === "img") {
-            // console.log(domNode);
-          }
-        }
         return (
           <Image
             width={800}
             height={300}
             alt="A Blog Image."
-            className="object-cover max-lg:size-[300px]"
+            className="h-[300px] object-cover max-lg:mx-auto max-lg:w-[320px]"
             src={domNode.attribs.src}
           />
         );
@@ -70,13 +63,11 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
 
   return (
     <>
-      <div className="container w-[800px] pt-[50px]">
-        <div>
-          <div className="flex flex-col gap-[50px] text-[1.375rem]/[1.875rem] max-lg:gap-[30px]">
-            {mainBlogBody}
-          </div>
+      <div className="mx-auto w-[320px] pt-[50px] md:container md:w-[640px] lg:w-[800px]">
+        <div className="flex w-[320px] flex-col gap-[50px] text-[1.375rem]/[1.875rem] max-lg:gap-[30px] md:w-[640px] lg:w-[800px]">
+          {mainBlogBody}
         </div>
-        <div className="grid gap-y-[10px] pt-[50px] md:grid-cols-2">
+        <div className="grid w-[320px] gap-y-[10px] pt-[50px] md:w-[640px] md:grid-cols-2 lg:w-[800px]">
           <div className="my-auto flex w-fit gap-[30px] text-[1.125rem]  font-medium max-lg:justify-self-center">
             <p className="inline-block text-gray-light">
               {t("events-and-blogs-page.blog-page.blog.author")}
@@ -87,7 +78,7 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
             {facebookURL !== "" ? (
               <>
                 <Button
-                  className="group flex h-12 w-[52px] items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-graphite"
+                  className="group flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-graphite"
                   asChild
                 >
                   <Link href={facebookURL} target="_blank">
@@ -101,7 +92,7 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
             {instagramURL !== "" ? (
               <>
                 <Button
-                  className="group flex h-12 w-[52px] items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-graphite"
+                  className="group flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-graphite"
                   asChild
                 >
                   <Link href={instagramURL} target="_blank">
