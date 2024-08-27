@@ -8,7 +8,9 @@ interface IPreviewBlockProps {
 
 export async function PreviewBlock({ id }: IPreviewBlockProps) {
   const previewBlockData = await fetchProducts("Blogs");
-  const date = previewBlockData[id].attributeValues.date.value.formattedValue;
+  const date = previewBlockData[id].attributeValues.date.value.formattedValue
+    .split("-")
+    .join(".");
   // in CMS AUTOR NOT AUTHOR
   const author = previewBlockData[id].attributeValues.autor.value;
   const imageSrc =

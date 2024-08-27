@@ -37,7 +37,8 @@ export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
         if (childrenArray.length) {
           domNode.name = "div";
           const attributes = attributesToProps({
-            className: "flex md:gap-[30px] max-md:flex-col max-md:gap-[10px]",
+            className:
+              "flex h-[300px] max-w-[800px] md:gap-[30px] max-md:flex-col max-md:gap-[10px]",
           });
           domNode.attribs = attributes;
         }
