@@ -18,7 +18,7 @@ interface IBlogBodyBlockProps {
 }
 
 export async function BlogBodyBlock({ id }: IBlogBodyBlockProps) {
-  const blog = await fetchProducts("EventsAndBlog");
+  const blog = await fetchProducts("Blogs");
   const t = await getTranslations();
   //  IN CMS IT IS AUTOR NOT AUTHOR
   const facebookURL = blog[id].attributeValues.autorfacebook.value;
