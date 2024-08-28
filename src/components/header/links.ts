@@ -2,7 +2,13 @@ import { clientUrl } from "@/utils/clientUrl";
 
 type THeadersLink = {
   href: string;
-  key: "jesus" | "about" | "video-and-stream" | "contact" | "ministry";
+  key:
+    | "jesus"
+    | "about"
+    | "video-and-stream"
+    | "contact"
+    | "ministry"
+    | "events-and-blog";
 };
 
 interface TFootersLink {
@@ -12,7 +18,7 @@ interface TFootersLink {
   }[];
   secondBlock: {
     href: string;
-    key: "video-and-stream" | "contact"; // "event-and-blog"
+    key: "video-and-stream" | "contact" | "events-and-blog";
   }[];
 }
 
@@ -32,6 +38,10 @@ export const headersLinks: THeadersLink[] = [
   {
     href: clientUrl.video,
     key: "video-and-stream",
+  },
+  {
+    href: clientUrl.events,
+    key: "events-and-blog",
   },
   {
     href: clientUrl.contacts,
@@ -59,10 +69,10 @@ export const footersLink: TFootersLink = {
       href: clientUrl.video,
       key: "video-and-stream",
     },
-    // {
-    //   href: clientUrl.event,
-    //   key: "event-and-blog",
-    // },
+    {
+      href: clientUrl.events,
+      key: "events-and-blog",
+    },
     {
       href: clientUrl.contacts,
       key: "contact",

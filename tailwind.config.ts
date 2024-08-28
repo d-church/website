@@ -35,7 +35,7 @@ const config = {
           300: "var(--hover-blue-300)",
         },
         "error-red": "var(--error-red)",
-        gray: "var(--gray)",
+        gray: { DEFAULT: "var(--gray)", light: "var(--gray-light)" },
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",

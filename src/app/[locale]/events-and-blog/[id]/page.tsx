@@ -1,35 +1,30 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
+import {
+  BlogBodyBlock,
+  PreviewBlock,
+  RecomendationsBlock,
+} from "@/components/blog-page";
 import Loading from "@/components/common/loading";
-import { LoadingBackdrop } from "@/components/common/loading-backdrop";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
-import {
-  MainHeaderBlock,
-  MinistryTypesBlock,
-  PreviewBlock,
-} from "@/components/ministry-page";
 
 export const revalidate = 300;
-
-export default function MinistryPage({
-  params: { locale },
+export default function EventsAndBlogPage({
+  params: { locale, id },
 }: {
-  params: { locale: string };
+  params: { locale: string; id: number };
 }) {
   unstable_setRequestLocale(locale);
   return (
     <>
-      <MainHeaderBlock />
       <Header />
       <Suspense fallback={<Loading />}>
-        {/* <LoadingBackdrop /> */}
-        <PreviewBlock />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <MinistryTypesBlock />
+        <PreviewBlock id={id} />
+        <BlogBodyBlock id={id} />
+        <RecomendationsBlock />
       </Suspense>
       <WriteUsBlock />
       <Footer />
