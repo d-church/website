@@ -1,12 +1,16 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  frontend-dc-church:
+  app:
+    container_name: frontend-dc-church
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: frontend-dc-church
+    volumes:
+      - .:/app
+      - /app/node_modules
     ports:
       - "3000:3000"
-    environment:
-      NODE_ENV: production
+    command: npm run start
+    restart: always
+
+
