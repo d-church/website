@@ -23,8 +23,6 @@ export function ScheduleBlock() {
       setUrl(`https://www.google.com/maps/dir/?api=1&destination=${cords}`)
     }
   }, []);
-  navigator.userAgent.match("Android") ? "" :
-    navigator.userAgent.match("Android") ? "" : ''
 
   return (
     <div className="container flex flex-col items-center justify-center gap-[50px] pb-[53px] pt-[40px] text-center lg:flex-row lg:justify-around lg:text-start xl:gap-[295px] 2xl:items-baseline 2xl:justify-normal">
