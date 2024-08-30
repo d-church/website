@@ -1,6 +1,14 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import { MainHeaderBlock, PreviewBlock } from "@/components/donate-page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Церква - Джерело життя | Публічна оферта",
+  description:
+    "Публічна оферта",
+};
 
 export default function DonatePage({
   params: { locale },
