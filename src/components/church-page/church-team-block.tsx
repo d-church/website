@@ -1,3 +1,4 @@
+"use client";
 import { ChurchEmployeeBlock } from "@components/main-page/church-employee-block";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -5,12 +6,42 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { fetchProducts } from "@/oneentry/fetch-products";
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 
 interface IChurchTeamBlockProps {
   className?: string;
 }
 
 export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
+  const [mainPerson, setMainPerson] = useState<IProductsEntity>()
+  const [persons, setPersons] = useState<IProductsEntity[]>([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchProducts("ChurchTeam");
+        response.map((item) => {
+          if ((item.attributeValues.position.value).toLowerCase().includes("єпископ")) {
+            setMainPerson(item)
+          }
+          else {    
+            setPersons(prevPersons => {
+              if (!prevPersons.some(person => person.id === item.id)) {
+                return [...prevPersons, item];
+              }
+              return prevPersons;
+            });
+          }
+        })
+
+      } catch (error) {
+        console.error("Failed to fetch products in church-block: ", error)
+      }
+    }
+    fetchData()
+  }, [])
+
   const t = useTranslations();
   return (
     <div
@@ -31,7 +62,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
             <div className="group flex flex-col items-center">
               <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4  border-hover-blue bg-white xl:size-[190px]">
                 <Image
-                  src="/static/employees/bilyk-v-d.webp"
+                  src={mainPerson?.attributeValues.photo.value.downloadLink}
                   width={160}
                   height={160}
                   alt="icon"
@@ -39,13 +70,15 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
                 />
               </div>
               <p className="mt-[10px] whitespace-pre-wrap text-center text-base font-bold xl:mt-[20px] xl:text-[22px]">
-                {t(
-                  "main-page.church-team-block.church-employees.employee-1.full-name"
-                )}
+                {
+                  mainPerson?.attributeValues.fio.value
+                }
               </p>
             </div>
             <p className="mt-[10px] whitespace-pre-line text-center font-normal text-[#8A8A8A] xl:text-[22px]">
-              {t("main-page.church-team-block.church-positions.bishop")}
+              {
+                mainPerson?.attributeValues.position.value
+              }
             </p>
           </div>
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
@@ -53,106 +86,13 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
       </div>
 
       <div className="mt-[73px] grid grid-cols-2 gap-x-[20px] gap-y-[50px] lg:grid-cols-4 lg:gap-x-[50px] xl:gap-x-[100px]">
-        <ChurchEmployeeBlock
-          src="/static/employees/novoseltsev-i-i.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-2.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.pastor")}
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/denisyuk-s-s.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-3.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.presbyter")}
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/ronchkovsky-a-b.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-4.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/kohut-o-v.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-5.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/motkalyuk-o-s.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-6.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-          className="object-[93%_7%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/dovga-v-v.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-7.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deaconess")}
-          className="object-[81%_9%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/kuzyo-u-ya.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-8.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-        />
-        {/* <ChurchEmployeeBlock
-          src="/static/employees/bilyk-i-u.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-9.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.pastoress")}
-        /> */}
-        <ChurchEmployeeBlock
-          src="/static/employees/vasilkiv-u-v.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-10.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-          className="object-[60%_40%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/petrilak-r.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-11.full-name"
-          )}
-          position={t(
-            "main-page.church-team-block.church-positions.missionary"
-          )}
-          className="object-[50%_50%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/gorshko-u-e.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-12.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-          className="object-[65%_45%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/tuzyak-s-u.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-13.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deaconess")}
-          className="object-[65%_45%]"
-        />
-        <ChurchEmployeeBlock
-          src="/static/employees/gavrishishin-s-e.webp"
-          fullName={t(
-            "main-page.church-team-block.church-employees.employee-14.full-name"
-          )}
-          position={t("main-page.church-team-block.church-positions.deacon")}
-          className="object-[30%_70%]"
-        />
+        {persons.map(item => <ChurchEmployeeBlock
+          key={item.id}
+          src={item.attributeValues.photo.value.downloadLink}
+          fullName={item.attributeValues.fio.value}
+          position={item.attributeValues.position.value}
+        />)}
+
       </div>
     </div>
   );
