@@ -1,5 +1,8 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
@@ -9,6 +12,17 @@ import { clientUrl } from "@/utils/clientUrl";
 
 export function ScheduleBlock() {
   const t = useTranslations("contacts-page");
+  const [url, setUrl] = useState("")
+
+  useEffect(() => {
+    const cords = '49.85353036071642, 24.02772840908155'
+    if (navigator.userAgent.match("/iPhone|iPad|iPod/i")) {
+      setUrl(`http://maps.apple.com/?daddr=${cords}`)
+    }
+    else {
+      setUrl(`https://www.google.com/maps/dir/?api=1&destination=${cords}`)
+    }
+  }, []);
 
   return (
     <div className="container flex flex-col items-center justify-center gap-[50px] pb-[53px] pt-[40px] text-center lg:flex-row lg:justify-around lg:text-start xl:gap-[295px] 2xl:items-baseline 2xl:justify-normal">
@@ -30,10 +44,16 @@ export function ScheduleBlock() {
         </div>
       </div>
       <div className="mt-[10px] w-[335px] text-[1.25rem]/[1.625rem] font-medium">
-        <p className="whitespace-pre-wrap">{t("adress")}</p>
+        <a href={url}>
+          <p className="whitespace-pre-wrap">{t("adress")}</p>
+        </a>
         <Separator className="my-[12px] w-full border-b border-gray lg:w-[237px]" />
-        <p>{t("phone-number")}</p>
-        <p className="uppercase">{t("email")}</p>
+        <a href={`tel:${t("phone-number-call")}`}>
+          <p>{t("phone-number")}</p>
+        </a>
+        <a href={`mailto:${t('email')}`}>
+          <p className="uppercase">{t("email")}</p>
+        </a>
         <div className="mt-[10px] flex justify-center gap-[24px] lg:justify-normal">
           <Button
             className="group flex h-8 w-8 items-center justify-center bg-white p-0"
