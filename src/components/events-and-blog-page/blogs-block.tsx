@@ -25,6 +25,7 @@ export function BlogsBlock() {
   }, []);
 
   const { currentPage, perPage } = usePagination();
+
   const currentSliceStart = (currentPage - 1) * perPage;
   const currentSliceEnd = currentSliceStart + perPage;
 
@@ -32,16 +33,16 @@ export function BlogsBlock() {
     return <SkeletonCard />;
   } else {
     return (
-      <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px] max-lg:min-h-[240px] max-lg:pb-[20px] max-lg:pt-[30px] md:min-h-[945px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:min-h-[650px] xl:grid-cols-[repeat(3,_minmax(0_,320px))] 2xl:min-h-[962px] 2xl:grid-cols-[repeat(3,_minmax(0_,520px))]">
-        {blogs.slice(currentSliceStart, currentSliceEnd).map((blog, index) => {
+      <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px]  max-lg:pb-[20px] max-lg:pt-[30px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:grid-cols-[repeat(3,_minmax(0_,320px))]  2xl:grid-cols-[repeat(3,_minmax(0_,520px))]">
+        {blogs.slice(currentSliceStart, currentSliceEnd).map((blog) => {
           return (
             <BlogBlock
-              key={blog.attributeValues.title.value + index}
+              key={blog.id}
               title={blog.attributeValues.title.value}
               date={blog.attributeValues.date.value.formattedValue
                 .split("-")
                 .join(".")}
-              id={index}
+              id={blog.id}
               imgSrc={blog.attributeValues.images.value[0].downloadLink}
             />
           );

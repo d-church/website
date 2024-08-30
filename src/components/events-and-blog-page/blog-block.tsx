@@ -13,7 +13,7 @@ interface IBlogBlockProps {
   id: number;
 }
 
-export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
+export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {  
   const href = `/events-and-blog/${id}`;
   const t = useTranslations("events-and-blogs-page.blogs");
   return (
