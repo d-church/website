@@ -36,6 +36,7 @@ export function PaymentMethods({
           variant="standard"
           onClick={() => changePaymentMethodHandler(payment)}
           key={index}
+          disabled={currentPaymentMethod !== payment.name ? true : false}
         >
           {payment.text}
         </Button>

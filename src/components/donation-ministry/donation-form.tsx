@@ -37,7 +37,7 @@ export function DonationForm() {
       typeDonate: "once",
       typeMinistry: "destiny",
       amount: "1000",
-      currency: "usd",
+      currency: "uah",
       messages: "",
     },
   });
@@ -214,12 +214,12 @@ export function DonationForm() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectItem value="usd">
+                          {/* <SelectItem value="usd">
                             {t("form-payment-block.form.inputs.currencies.USD")}
                           </SelectItem>
                           <SelectItem value="eur">
                             {t("form-payment-block.form.inputs.currencies.EUR")}
-                          </SelectItem>
+                          </SelectItem> */}
                           <SelectItem value="uah">
                             {t("form-payment-block.form.inputs.currencies.UAH")}
                           </SelectItem>
