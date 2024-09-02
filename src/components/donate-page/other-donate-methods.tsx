@@ -11,7 +11,7 @@ export function OtherDonateMethods() {
   const [currentPaymentMethod, setCurrentPaymentMethod] = useState("default");
 
   return (
-    <div className="bg-graphite">
+    <div className="bg-graphite" id="OtherDonateMethods">
       <div
         id="other-payment-methods"
         className="container flex w-full flex-col items-center pb-[50px] pt-[40px] text-white lg:pb-[100px] lg:pt-[50px]"
