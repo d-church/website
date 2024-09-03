@@ -19,7 +19,7 @@ export function Offer() {
         <p className='uppercase font-bold'>{t("title")}</p>
         <p>{t("text")}</p>
       </div>
-      <Link href="/public-offer" className='h-[44px] w-[184px] text-white uppercase text-center py-[5px] px-[20px] border rounded-[22px] border-white'>
+      <Link href="/public-offer" className='h-[44px] w-[184px] text-white uppercase text-center py-[5px] px-[20px] border rounded-[22px] border-white hover:bg-white hover:text-[#0E9398]'>
         {t("btn")}
       </Link>
     </div>
