@@ -27,7 +27,7 @@ export function PreviewBlock() {
             <Icons.textWelcome className="w-full xl:mt-[15px]" />
           </div>
         </div>
-        <Link href={clientUrl.donateTransfer} className="z-10 text-white flex justify-center items-center uppercase py-[10px] lg:py-[20px] px-[20px] lg:px-[40px] rounded-[42px] text-[24px] lg:text-[38px] bg-transparent border border-white mb-[190px] lg:mb-[170px]">{t('donate-page.preview-block.button-donate')}</Link>
+        <Link href={clientUrl.donateTransfer} className="z-10 text-white flex justify-center items-center uppercase py-[10px] lg:py-[20px] px-[20px] lg:px-[40px] rounded-[42px] text-[24px] lg:text-[38px] bg-transparent hover:bg-white hover:text-[#0E9398] border border-white mb-[190px] lg:mb-[170px] ">{t('donate-page.preview-block.button-donate')}</Link>
         <DonationVariants />
       </WrapperPreviewBlock>
 
