@@ -23,8 +23,6 @@ interface IBlogBodyBlockProps {
 }
 
 export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
-  console.log(data);
-
   const [blog, setBlog] = useState<IProductBlock>(data);
   const [mainBlogBody, setMainBlogBody] = useState()
 
@@ -79,11 +77,10 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
       }
     },
   };
+console.log(mainBlogBody);
 
   return (
-    <>
-        <div className="mx-auto w-[320px] pt-[50px] md:container md:w-[640px] lg:w-[800px]">
-
+        <div className="mx-auto w-[320px] pt-[50px] md:container md:w-[640px] lg:w-[800px] md:px-0">
           <div className="flex w-[320px] flex-col gap-[50px] text-[1.375rem]/[1.875rem] max-lg:gap-[30px] md:w-[640px] lg:w-[800px]">
             {mainBlogBody && mainBlogBody}
           </div>
@@ -119,6 +116,5 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
             <Separator className="w-full  shrink border-b border-graphite md:col-span-2 md:row-start-2 md:row-end-2" />
           </div>
         </div>
-    </>
   );
 }

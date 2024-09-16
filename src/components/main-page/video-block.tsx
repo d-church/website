@@ -1,3 +1,4 @@
+"use client";
 import { Calendar } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -16,6 +17,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { clientUrl } from "@/utils/clientUrl";
+import { useEffect, useState } from "react";
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
+import { fetchProducts } from "@/oneentry/fetch-products";
 
 const videos = [
   {
@@ -37,6 +41,25 @@ const videos = [
 
 export function VideoBlock() {
   const t = useTranslations();
+
+  const [video, setVideos] = useState<IProductsEntity[]>([]);
+  const [mainVideo, setMainVideo] = useState<IProductsEntity>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchProducts("MinistryLiveVideos");
+        setVideos(response.slice(0, 3));
+        setMainVideo(response[response.length - 1]);
+      } catch (error) {
+        console.error("Failed to fetch products in blogs-block:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  const date = new Date()
+  const mainVideoDate = new Date(mainVideo?.attributeValues.datewithtime.value.fullDate)
+
   return (
     <div className="container pb-[100px]" id="video">
       <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
@@ -55,14 +78,15 @@ export function VideoBlock() {
           <AccordionContent className="mt-1 flex h-full flex-col pb-0 md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px] 2xl:ml-[10px]">
             {/* instead of timer with livestream */}
             {/* <Video /> */}
-            <div className="h-[180px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
+            <div className="h-[180px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px] relative">
               <iframe
                 className="h-full w-full grow rounded-[0.75rem] xl:rounded-[1.25rem]"
-                src="https://www.youtube.com/embed/ePItijlRAgg"
+                src={mainVideo?.attributeValues.link.value}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              {(date < mainVideoDate) && <Video className="absolute top-0 left-0" endDate={mainVideoDate} />}
             </div>
             {/* instead of timer with livestream */}
             <div className="mt-[10px] space-y-[10px] text-white md:space-y-5 xl:mt-0 2xl:max-w-[248px]">

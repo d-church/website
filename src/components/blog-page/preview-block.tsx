@@ -19,8 +19,8 @@ export async function PreviewBlock({ id, data: previewBlockData }: IPreviewBlock
 
   return (
 
-        <div className="pointer-events-none relative bg-slate-200 max-lg:max-h-[400px] lg:max-h-[600px]">
-          <div className="after:absolute after:inset-0 after:z-[1] after:h-full after:w-full after:overflow-hidden after:bg-black/70 max-lg:h-[400px] lg:h-[600px]">
+        <div className="pointer-events-none relative bg-slate-200 max-lg:max-h-[400px] lg:max-h-[600px] ">
+      <div className="after:absolute after:inset-0 after:z-[1] after:h-full after:w-full after:overflow-hidden after:bg-black/70 max-lg:h-[400px] lg:h-[600px] flex justify-center lg:block">
             <Image
               fill
               src={imageSrc}
