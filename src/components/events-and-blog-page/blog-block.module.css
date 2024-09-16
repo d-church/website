@@ -1,0 +1,4 @@
+.link:hover ~ .container > .btnContainer > .btn {
+  color: var(--hover-blue);
+  background-color: var(--graphite);
+}
