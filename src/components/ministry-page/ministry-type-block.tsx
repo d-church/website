@@ -46,23 +46,25 @@ export function MinistryTypeBlock({
     <Sheet open={open} onOpenChange={setOpen}>
       <div className="h-full">
         <SheetTrigger asChild>
-          <div className="group rounded-[20px]">
-            <div className="relative inline-flex h-[270px] w-full items-center justify-center overflow-hidden rounded-[20px] px-[105px] py-[40px] text-center text-[1.5rem]/[1.875rem] font-medium hover:cursor-pointer max-sm:h-[160px]">
-              <p className="z-[1] text-white">{title}</p>
-              <Image
-                fill
-                src={src}
-                alt="Clickable picture!"
-                className={cn("z-[-1] object-cover", imgPosition)}
-              />
-              <div className="after:absolute after:left-0 after:top-[90px] after:h-[90px] after:w-full after:bg-black after:opacity-0 after:transition-opacity lg:group-hover:after:opacity-60"></div>
-              <div className="after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-black after:opacity-40"></div>
+          <div className="group">
+            <div className=" rounded-[20px]">
+              <div className="relative inline-flex h-[270px] w-full items-center justify-center overflow-hidden rounded-[20px] px-[105px] py-[40px] text-center text-[1.5rem]/[1.875rem] font-medium hover:cursor-pointer max-sm:h-[160px]">
+                <p className="z-[1] text-white">{title}</p>
+                <Image
+                  fill
+                  src={src}
+                  alt="Clickable picture!"
+                  className={cn("z-[-1] object-cover", imgPosition)}
+                />
+                <div className="after:absolute after:left-0 after:top-[90px] after:h-[90px] after:w-full after:bg-black after:opacity-0 after:transition-opacity lg:group-hover:after:opacity-60"></div>
+                <div className="after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-black after:opacity-40"></div>
+              </div>
+            </div>
+            <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium max-md:text-[1.25rem]/[1.5rem] group-hover:cursor-pointer">
+              {parsedSubtitile}
             </div>
           </div>
         </SheetTrigger>
-        <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium max-md:text-[1.25rem]/[1.5rem]">
-          {parsedSubtitile}
-        </div>
       </div>
 
       <SheetOverlay className="bg-black/50 backdrop-blur-sm" />

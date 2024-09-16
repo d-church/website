@@ -77,7 +77,6 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
       }
     },
   };
-console.log(mainBlogBody);
 
   return (
         <div className="mx-auto w-[320px] pt-[50px] md:container md:w-[640px] lg:w-[800px] md:px-0">
