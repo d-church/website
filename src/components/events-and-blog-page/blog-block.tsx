@@ -32,7 +32,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
         <div className={`flex justify-between gap-[20px] pt-[10px] xl:gap-[30px] xl:pt-[20px] ${s.btnContainer}`}>
           <Link href={href} className="peer">
             <p className="xl:text-[1rem]/[1.21rem] 2xl:text-[1.375rem]/[1.67rem] ">
-              {title}
+              {title.length > 27 ? `${title.split('').slice(0, 26).join('')}...` : title}
             </p>
           </Link>
           <Button
