@@ -21,34 +21,15 @@ import { useEffect, useState } from "react";
 import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 import { fetchProducts } from "@/oneentry/fetch-products";
 
-const videos = [
-  {
-    link: "https://www.youtube.com/watch?v=R5yc5KEtaEU",
-    date: "22.06.2024",
-    thumbnail: "/static/video-thumbnails/video-thumbnail-0.webp",
-  },
-  {
-    link: "https://www.youtube.com/watch?v=ejos3w2BnVE",
-    date: "17.06.2024",
-    thumbnail: "/static/video-thumbnails/video-thumbnail-1.webp",
-  },
-  {
-    link: "https://www.youtube.com/watch?v=BJWeW6JxZyU",
-    date: "14.06.2024",
-    thumbnail: "/static/video-thumbnails/video-thumbnail-2.webp",
-  },
-];
-
 export function VideoBlock() {
   const t = useTranslations();
 
   const [video, setVideos] = useState<IProductsEntity[]>([]);
   const [mainVideo, setMainVideo] = useState<IProductsEntity>();
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchProducts("MinistryLiveVideos");
+        const response = await fetchProducts("MinistryLiveVideos");        
         setVideos(response.slice(0, 3));
         setMainVideo(response[response.length - 1]);
       } catch (error) {
@@ -90,13 +71,13 @@ export function VideoBlock() {
             </div>
             {/* instead of timer with livestream */}
             <div className="mt-[10px] space-y-[10px] text-white md:space-y-5 xl:mt-0 2xl:max-w-[248px]">
-              {videos.map(({ link, thumbnail, date }, i) => (
+              {video?.map((item) => (
                 <div
-                  key={`${link}_${i}`}
+                  key={item.id}
                   className="relative after:absolute after:top-0 after:-z-[1] after:h-full after:w-full "
                 >
                   <Image
-                    src={thumbnail}
+                    src={item.attributeValues.image.value.downloadLink}
                     alt="video-thumbnail"
                     fill
                     className="absolute left-0 top-0 -z-[1] size-[320px] rounded-[0.75rem] object-cover xl:size-[275px] xl:rounded-[1.25rem]"
@@ -105,7 +86,7 @@ export function VideoBlock() {
                     className="group flex h-auto w-full items-center space-x-[30px] rounded-[0.75rem] bg-black/60 px-9 py-[21px] xl:flex-col xl:space-x-0 xl:rounded-[1.25rem] xl:py-6"
                     asChild
                   >
-                    <Link href={link} target="_blank">
+                    <Link href={item.attributeValues.link.value} target="_blank">
                       <div className="flex items-center space-x-[30px] xl:flex-col xl:space-x-0">
                         <Icons.play className="size-2 group-hover:fill-hover-blue xl:size-auto" />
                         <p className="text-sm xl:mt-[5px] xl:text-2xl">
@@ -114,7 +95,7 @@ export function VideoBlock() {
                       </div>
                       <div className="flex items-center space-x-1 xl:mt-[10px]">
                         <Calendar className="size-4 xl:size-auto" />
-                        <p className="text-[12px] xl:text-xl">{date}</p>
+                        <p className="text-[12px] xl:text-xl">{item.attributeValues.date.value.formattedValue}</p>
                       </div>
                     </Link>
                   </Button>
