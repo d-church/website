@@ -22,12 +22,15 @@ export function BlogsBlock() {
       }
     };
     fetchData();
-  }, []);
+  }, []);  
 
   const { currentPage, perPage } = usePagination();
 
   const currentSliceStart = (currentPage - 1) * perPage;
   const currentSliceEnd = currentSliceStart + perPage;
+
+  console.log(blogs);
+  
 
   if (blogs.length === 0) {
     return <SkeletonCard />;

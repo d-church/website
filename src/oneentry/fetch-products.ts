@@ -2,7 +2,7 @@ import { defineOneEntry } from "oneentry";
 import { IFilterParams } from "oneentry/dist/products/productsInterfaces";
 
 const OneEntryProjectLink = "https://sourceoflife.oneentry.cloud";
-type TKeyType = "Ministry" | "Blogs" | "BlogsCarousel" | "ChurchTeam" | "MinistryLiveVideos" | "ChurchVideo";
+type TKeyType = "Ministry" | "Blogs" | "BlogsCarousel" | "ChurchTeam" | "MinistryLiveVideos" | "ChurchVideo" | "Info";
 
 export const fetchProducts = (keyType: TKeyType = "Ministry") => {
   const { Products } = defineOneEntry(OneEntryProjectLink, {
@@ -55,7 +55,7 @@ export const fetchProducts = (keyType: TKeyType = "Ministry") => {
   if (keyType === "MinistryLiveVideos") {
     body = [
       {
-        pageUrls: ["ministrylivevideos","ministrylive"],
+        pageUrls: ["ministrylivevideos", "ministrylive"],
         // @ts-ignore
         attributeMarker: null,
         conditionValue: null,
@@ -67,6 +67,17 @@ export const fetchProducts = (keyType: TKeyType = "Ministry") => {
     body = [
       {
         pageUrls: ["churchvideo"],
+        // @ts-ignore
+        attributeMarker: null,
+        conditionValue: null,
+      },
+    ];
+  }
+  
+  if (keyType === "Info") {
+    body = [
+      {
+        pageUrls: ["info"],
         // @ts-ignore
         attributeMarker: null,
         conditionValue: null,
