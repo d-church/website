@@ -23,7 +23,7 @@ export function ServeGodBlock() {
         <p className="text-[18px]/[30px] md:text-xl">
           {t("main-page.serving-god-block.text")}
         </p>
-        <Button variant="standard" className="invisible uppercase">
+        <Button variant="standard" className="uppercase">
           <Link href={clientUrl.ministry}>
             {t("main-page.serving-god-block.button-details")}
           </Link>
