@@ -6,7 +6,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
 } from "@components/ui/form";
 import { Input } from "@components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,7 +15,7 @@ import { useForm } from "react-hook-form";
 import {
   sendMessageSchema,
   type TSendMessage,
-} from "../../schema/send-message.schema";
+} from "@/schema/send-message.schema";
 import { Textarea } from "../ui/textarea";
 import { StateForm } from "./state-form";
 
