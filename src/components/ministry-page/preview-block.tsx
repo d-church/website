@@ -1,10 +1,23 @@
+"use client"
 import parse from "html-react-parser";
 import Image from "next/image";
 
 import { fetchProducts } from "@/oneentry/fetch-products";
+import { useEffect, useState } from "react";
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 
-export async function PreviewBlock() {
-  const ministryCards = await fetchProducts();
+export function PreviewBlock() {
+  const [ministryCards, setMinistryCards] = useState<IProductsEntity[]>([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const products = await fetchProducts();
+      setMinistryCards(products);
+    };
+    getProducts();
+  }, []);
+
+  if (ministryCards.length === 0) return <div>Loading...</div>;
 
   const imageSrc = ministryCards[0].attributeValues.image.value.downloadLink;
   const title = ministryCards[0].attributeValues.title.value;

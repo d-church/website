@@ -6,15 +6,17 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { fetchProducts } from "@/oneentry/fetch-products";
 import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 
 interface IChurchTeamBlockProps {
   className?: string;
+  count?: number;
+  children?: ReactNode;
 }
 
-export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
+export function ChurchTeamBlock({ className, count, children }: IChurchTeamBlockProps) {
   const [mainPerson, setMainPerson] = useState<IProductsEntity>()
   const [persons, setPersons] = useState<IProductsEntity[]>([])
   useEffect(() => {
@@ -25,7 +27,7 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
           if ((item.attributeValues.position.value).toLowerCase().includes("єпископ")) {
             setMainPerson(item)
           }
-          else {    
+          else {
             setPersons(prevPersons => {
               if (!prevPersons.some(person => person.id === item.id)) {
                 return [...prevPersons, item];
@@ -40,6 +42,9 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
       }
     }
     fetchData()
+    if (count) {
+      setPersons(persons.slice(0, count))
+    }
   }, [])
 
   const t = useTranslations();
@@ -92,8 +97,8 @@ export function ChurchTeamBlock({ className }: IChurchTeamBlockProps) {
           fullName={item.attributeValues.fio.value}
           position={item.attributeValues.position.value}
         />)}
-
       </div>
+      {children}
     </div>
   );
 }

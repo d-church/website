@@ -15,11 +15,12 @@ interface CompletionsProps {
 
 interface IVideoTimerProps {
   setIsEnded: Dispatch<SetStateAction<boolean>>;
+  endDate: Date;
 }
 
-export function VideoTimer({ setIsEnded }: IVideoTimerProps) {
+export function VideoTimer({ setIsEnded, endDate }: IVideoTimerProps) {
   const timeStartNow = new Date().getTime();
-  const timeEnd = new Date().getTime() + 300000 - timeStartNow;
+  const timeEnd = endDate.getTime() - timeStartNow;
   const renderer = ({ minutes, seconds, completed }: CompletionsProps) => {
     if (completed) {
       setIsEnded(true);

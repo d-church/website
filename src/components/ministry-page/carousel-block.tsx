@@ -52,6 +52,8 @@ export default function CarouselBlock({
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+  console.log(carouselImages.length);
+  
   return (
     <>
       {carouselImages.length === 0 ? (
@@ -61,16 +63,20 @@ export default function CarouselBlock({
           <Carousel
             setApi={setApi}
             className="relative mx-auto h-[160px] w-full max-w-[795px]"
+              opts={{ loop: false, skipSnaps: false, containScroll: 'trimSnaps' }}
           >
-            <CarouselContent>
+              <CarouselContent className={`${carouselImages.length < 3 && 'justify-center'}  `}>
               {carouselImages.map((carouselImage, index) => (
+
                 <CarouselItem
                   key={index}
                   className="basis-1/1 relative w-[245px] lg:basis-1/3"
                 >
-                  {isCaruselItemsLoads[index] && (
-                    <Loading className="relative h-[160px]" />
-                  )}
+                  {
+                    isCaruselItemsLoads[index] && (
+                      <Loading className="relative h-[160px]" />
+                    )
+                  }
                   <GalleryModalBlock
                     initialIndex={index}
                     carouselImages={carouselImages}
@@ -100,7 +106,7 @@ export default function CarouselBlock({
               color="gray"
               className="-right-[124px] hidden xl:block"
             />
-          </Carousel>
+          </Carousel >
           <div className="flex justify-center gap-[10px] pt-[30px] xl:hidden">
             {carouselImages.map((_, index) => (
               <Separator
@@ -115,7 +121,8 @@ export default function CarouselBlock({
             ))}
           </div>
         </>
-      )}
+      )
+      }
       <div
         className="mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px]"
         dangerouslySetInnerHTML={{
