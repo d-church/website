@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 
 import { cn } from "@/lib/utils";
-import { ReactNode, useEffect, useState } from "react";
 import { fetchProducts } from "@/oneentry/fetch-products";
 import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
+import { ReactNode, useEffect, useState } from "react";
 
 interface IChurchTeamBlockProps {
   className?: string;
@@ -24,7 +24,7 @@ export function ChurchTeamBlock({ className, count, children }: IChurchTeamBlock
       try {
         const response = await fetchProducts("ChurchTeam");
         response.map((item) => {
-          if ((item.attributeValues.position.value).toLowerCase().includes("єпископ")) {
+          if ((item.attributeValues.position.value).toLowerCase().includes("старш")) {
             setMainPerson(item)
           }
           else {
