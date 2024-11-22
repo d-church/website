@@ -3,15 +3,21 @@ import parse from "html-react-parser";
 import Image from "next/image";
 
 import { fetchProducts } from "@/oneentry/fetch-products";
-import { useEffect, useState } from "react";
 import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
+import { useEffect, useState } from "react";
 
 export function PreviewBlock() {
   const [ministryCards, setMinistryCards] = useState<IProductsEntity[]>([]);
+  const [ministryHero, setMinistryHero] = useState<IProductsEntity>();
 
   useEffect(() => {
     const getProducts = async () => {
       const products = await fetchProducts();
+      products.forEach(el => {
+        if (el.attributeSetIdentifier === "MinistryHero") {
+          setMinistryHero(el);
+        }
+      });
       setMinistryCards(products);
     };
     getProducts();
@@ -19,12 +25,11 @@ export function PreviewBlock() {
 
   if (ministryCards.length === 0) return <div>Loading...</div>;
 
-  const imageSrc = ministryCards[0].attributeValues.image.value.downloadLink;
-  const title = ministryCards[0].attributeValues.title.value;
+  const imageSrc = ministryHero?.attributeValues.image?.value.downloadLink;
+  const title = ministryHero?.attributeValues.title.value;
   const parsedText = parse(
-    ministryCards[0].attributeValues.description.value.htmlValue
+    ministryHero?.attributeValues.description.value.htmlValue
   );
-
   return (
     <div className="lg:justify-baseline relative flex h-full min-h-screen items-center justify-center bg-slate-200">
       <>
