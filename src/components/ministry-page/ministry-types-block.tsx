@@ -12,7 +12,10 @@ export function MinistryTypesBlock() {
     const fetchData = async () => {
       try {
         const response = await fetchProducts();
-        setCards(response);
+        const filteredCards = response.filter(
+          el => el.attributeSetIdentifier !== "MinistryHero"
+        );
+        setCards(filteredCards);
       } catch (error) {
         console.error("Failed to fetch products in blogs-block:", error);
       }
