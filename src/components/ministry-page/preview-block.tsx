@@ -30,7 +30,6 @@ export function PreviewBlock() {
   const parsedText = parse(
     ministryHero?.attributeValues.description.value.htmlValue
   );
-  console.log(ministryCards);
   return (
     <div className="lg:justify-baseline relative flex h-full min-h-screen items-center justify-center bg-slate-200">
       <>
