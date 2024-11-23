@@ -23,8 +23,13 @@ export function PrayerBlock() {
       <div className="container flex justify-center py-[120px]">
         <p className="w-[795px]">{t("jesus-page.prayer-5")}</p>
       </div>
-      <div className="container flex justify-center pb-[530px]">
-        <p className="w-[795px]">{t("jesus-page.prayer-name")}</p>
+      <div className="bg-graphite-hsl/10 py-[20px]">
+        <div className="container flex justify-center py-[120px]">
+          <p className="w-[795px]">{t("jesus-page.prayer-6")}</p>
+        </div>
+      </div>
+      <div className="container flex justify-center py-[120px]">
+        <p className="w-[795px]">{t("jesus-page.prayer-7")}</p>
       </div>
     </div>
   );
