@@ -65,7 +65,7 @@ export function ChurchTeamBlock({ className, count, children }: IChurchTeamBlock
           <Separator className="relative top-[95px] hidden w-[470px] bg-graphite xl:block 2xl:w-[520px]" />
           <div className="flex flex-col items-center">
             <div className="group flex flex-col items-center">
-              <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4  border-hover-blue bg-white xl:size-[190px]">
+              <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] xl:size-[190px]">
                 <Image
                   src={mainPerson?.attributeValues.photo.value.downloadLink}
                   width={160}

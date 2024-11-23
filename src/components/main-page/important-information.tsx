@@ -1,6 +1,9 @@
 "use client"
 import { useTranslations } from "next-intl";
 
+import { fetchProducts } from "@/oneentry/fetch-products";
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +12,6 @@ import {
 } from "../ui/accordion";
 import { Icons } from "../ui/icons";
 import { Separator } from "../ui/separator";
-import { useEffect, useState } from "react";
-import { fetchProducts } from "@/oneentry/fetch-products";
-import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 
 
 
@@ -59,7 +59,7 @@ export function ImportantInformationBlock() {
             {cards?.map((item) => (
               <div
                 key={item.id}
-                className="cursor-pointer space-y-[36px] rounded-[20px] border border-[#8A8A8A] px-[22px] pb-[28px] pt-[20px] hover:border-hover-blue xl:space-y-[60px] xl:px-[47px] xl:pb-[38px] xl:pt-[30px]"
+                className="cursor-pointer space-y-[36px] rounded-[20px] border border-[#8A8A8A] px-[22px] pb-[28px] pt-[20px] hover:bg-[#E8E8E8] xl:space-y-[60px] xl:px-[47px] xl:pb-[38px] xl:pt-[30px]"
               >
                 <p className="text-center text-xl/[1.5rem] font-medium text-[#8A8A8A]">
                   {item.attributeValues.title.value}
