@@ -49,7 +49,7 @@ export function ScheduleBlock() {
       <Separator className="my-[12px] w-full border-b border-gray lg:w-[800px]" />
 
       <div className="mt-[10px] w-full text-[1.25rem]/[1.625rem] font-medium">
-        <div className="grid grid-cols-2 items-start justify-center text-center w-fit mx-auto gap-[30px]">
+        <div className="flex flex-col gap-[20px] sm:flex-row sm:justify-center sm:items-start sm:gap-[30px] w-fit mx-auto text-center">
           {/* First Column: Address */}
           <div className="flex flex-col justify-start space-y-[5px]">
             <p className="whitespace-pre-wrap">{t("adress")}</p>

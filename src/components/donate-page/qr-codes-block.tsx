@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { Icons } from "../ui/icons";
 
 export function QrCodesBlock() {
   const t = useTranslations();
