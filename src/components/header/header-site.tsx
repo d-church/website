@@ -21,8 +21,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed z-50 w-full border-b-[1px] bg-[#E8E8E8] bg-black bg-opacity-60 backdrop-blur ${isScrolled
-        ? "py-0.5 xl:py-1.5 2xl:py-2"
+      className={`fixed z-50 w-full border-b-[1px] border-transparent shadow-md bg-[#E8E8E8] bg-black bg-opacity-60 backdrop-blur ${isScrolled
+        ? "py-2 xl:py-3 2xl:py-4" // Increased padding for larger height
         : "py-2.5 xl:py-6 2xl:py-[1.25rem]"
         } transition-all duration-300`}
     >
@@ -36,7 +36,7 @@ export function Header() {
             priority={true}
             loading="eager"
             className={`${isScrolled
-              ? "w-[50px] xl:w-[80px] 2xl:w-[100px]"
+              ? "w-[60px] xl:w-[90px] 2xl:w-[110px]"
               : "w-[93px] xl:w-[147px] 2xl:w-[187.33px]"
               } transition-all duration-300`}
           />
