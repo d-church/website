@@ -52,8 +52,7 @@ export default function CarouselBlock({
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-  console.log(carouselImages.length);
-  
+
   return (
     <>
       {carouselImages.length === 0 ? (
@@ -63,9 +62,9 @@ export default function CarouselBlock({
           <Carousel
             setApi={setApi}
             className="relative mx-auto h-[160px] w-full max-w-[795px]"
-              opts={{ loop: false, skipSnaps: false, containScroll: 'trimSnaps' }}
+            opts={{ loop: false, skipSnaps: false, containScroll: 'trimSnaps' }}
           >
-              <CarouselContent className={`${carouselImages.length < 3 && 'justify-center'}  `}>
+            <CarouselContent className={`${carouselImages.length < 3 && 'justify-center'}  `}>
               {carouselImages.map((carouselImage, index) => (
 
                 <CarouselItem

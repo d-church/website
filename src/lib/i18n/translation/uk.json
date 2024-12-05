@@ -50,7 +50,7 @@
       "title": "Важлива інформація"
     },
     "video-block": {
-      "title": "Служіння наживо",
+      "title": "Проповіді та служіння",
       "button-go-to-chanel": "Перейти на канал",
       "start-stream": "До початку трансляції",
       "button-watch": "Дивитись наживо"
@@ -206,14 +206,18 @@
           },
           "type-donates": {
             "destiny": "Десятина",
-            "medical-chaplains": "Медичні капелани",
-            "prison-chaplains": "Тюремні капелани",
-            "military-chaplains": "Військові капелани",
-            "children-ministry": "Дитяче служіння",
-            "rehabilitation-service": "Служіння реабілітації",
-            "media-service": "Медіа служіння",
-            "music-service": "Музичне служіння",
-            "general-needs": "Загальні потреби"
+            "dworship": "D.Worhip",
+            "dyouth": "D.Youth",
+            "dyoung": "D.Young",
+            "dfamily": "D.Family",
+            "dmoms": "D.Moms",
+            "dkids": "D.Kids",
+            "dgirls": "D.Girls",
+            "dspecials": "D.Specials",
+            "dseniors": "D.Seniors",
+            "fusion": "Fusion",
+            "alpha": "Альфа курс",
+            "dcafe": "D.Cafe"
           }
         },
         "button-once-donate": "Одноразовий\nплатіж",
