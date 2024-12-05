@@ -3,7 +3,6 @@
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import * as React from "react";
 
 import { Icons } from "./icons";
@@ -14,7 +13,7 @@ import { cn } from "@/lib/utils";
 useEmblaCarousel.globalOptions = {
   loop: true,
   skipSnaps: true,
-  duration: 60,
+  duration: 20,
   containScroll: false,
 };
 
@@ -272,10 +271,7 @@ const CarouselNext = React.forwardRef<
 CarouselNext.displayName = "CarouselNext";
 
 export {
-  type CarouselApi,
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
+  CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi
 };

@@ -5,8 +5,7 @@ import {
   Form,
   FormControl,
   FormField,
-  FormItem,
-  FormMessage,
+  FormItem
 } from "@components/ui/form";
 import { Input } from "@components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -116,39 +115,59 @@ export function DonationForm() {
                             "form-payment-block.form.inputs.type-donates.destiny"
                           )}
                         </SelectItem>
-                        <SelectItem value="children-ministry">
+                        <SelectItem value="dworship">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.children-ministry"
+                            "form-payment-block.form.inputs.type-donates.dworship"
                           )}
                         </SelectItem>
-                        <SelectItem value="rehabilitation-service">
+                        <SelectItem value="dyouth">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.rehabilitation-service"
+                            "form-payment-block.form.inputs.type-donates.dyouth"
                           )}
                         </SelectItem>
-                        <SelectItem value="prison-chaplains">
+                        <SelectItem value="dfamily">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.prison-chaplains"
+                            "form-payment-block.form.inputs.type-donates.dfamily"
                           )}
                         </SelectItem>
-                        <SelectItem value="music-service">
+                        <SelectItem value="dmoms">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.music-service"
+                            "form-payment-block.form.inputs.type-donates.dmoms"
                           )}
                         </SelectItem>
-                        <SelectItem value="medical-chaplains">
+                        <SelectItem value="dkids">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.medical-chaplains"
+                            "form-payment-block.form.inputs.type-donates.dkids"
                           )}
                         </SelectItem>
-                        <SelectItem value="media-service">
+                        <SelectItem value="dgirls">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.media-service"
+                            "form-payment-block.form.inputs.type-donates.dgirls"
                           )}
                         </SelectItem>
-                        <SelectItem value="general-needs">
+                        <SelectItem value="dspecials">
                           {t(
-                            "form-payment-block.form.inputs.type-donates.general-needs"
+                            "form-payment-block.form.inputs.type-donates.dspecials"
+                          )}
+                        </SelectItem>
+                        <SelectItem value="dseniors">
+                          {t(
+                            "form-payment-block.form.inputs.type-donates.dseniors"
+                          )}
+                        </SelectItem>
+                        <SelectItem value="fusion">
+                          {t(
+                            "form-payment-block.form.inputs.type-donates.fusion"
+                          )}
+                        </SelectItem>
+                        <SelectItem value="alpha">
+                          {t(
+                            "form-payment-block.form.inputs.type-donates.alpha"
+                          )}
+                        </SelectItem>
+                        <SelectItem value="dcafe">
+                          {t(
+                            "form-payment-block.form.inputs.type-donates.dcafe"
                           )}
                         </SelectItem>
                       </SelectGroup>
@@ -262,6 +281,6 @@ export function DonationForm() {
           <p>{t("form-payment-block.form.button-donate")}</p>
         </Button>
       </form>
-    </Form>
+    </Form >
   );
 }

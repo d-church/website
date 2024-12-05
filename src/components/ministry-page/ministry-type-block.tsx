@@ -79,7 +79,7 @@ export function MinistryTypeBlock({
                 <div className="absolute top-0 z-[2] h-full w-full rounded-t-[20px]"></div>
                 <Image
                   fill
-                  src="/static/preview-block-picture.webp"
+                  src={src}
                   className="h-full w-full scale-x-[-1] rounded-t-[20px] object-cover object-[50%_50%]"
                   alt="Head picture"
                 />
