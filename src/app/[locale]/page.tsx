@@ -12,6 +12,7 @@ import {
   VideoBlock,
   WriteUsBlock
 } from "@/components/main-page";
+import { AboutChurch } from "@/components/main-page/about-church-block";
 
 export default function HomePage({
   params: { locale },
@@ -25,6 +26,7 @@ export default function HomePage({
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />
+        <AboutChurch/>
         {/* <ImportantInformationBlock /> */}
         <VideoBlock />
         <AboutBlock />
