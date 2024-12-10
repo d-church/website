@@ -42,7 +42,7 @@ export function VideoBlock() {
 
   return (
     <div className="container pb-[100px]" id="video">
-      <Separator className="mt-[50px] hidden bg-graphite xl:mb-[68px] xl:mt-[100px] xl:block" />
+      <Separator className="mt-[50px] hidden bg-white xl:mb-[0px] xl:mt-[100px] xl:block" />
       <Accordion
         type="single"
         collapsible
