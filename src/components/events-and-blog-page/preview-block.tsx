@@ -79,11 +79,11 @@ export function PreviewBlock() {
                     <p className="mb-[34px] text-[2.5rem]/[3rem] font-medium max-lg:mb-[30px] max-lg:text-[1.875rem]/[2.25rem]">
                       {carouselItem.attributeValues.title.value}
                     </p>
-                    <div className="text-[2.5rem]/[3rem] font-medium max-lg:text-[1.375rem]/[1.6rem]">
+                    {/* <div className="text-[2.5rem]/[3rem] font-medium max-lg:text-[1.375rem]/[1.6rem]">
                       {carouselItem.attributeValues.date.value.formattedValue
                         .split("-")
                         .join(".")}
-                    </div>
+                    </div> */}
                   </div>
                 </CarouselItem>
               ))}
