@@ -38,12 +38,11 @@ export function Carousel() {
             }}
           >
             {carouselImages.map((imageData) => (
-              <SwiperSlide>
+              <SwiperSlide key={imageData.name}>
                 <div className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-b from-blue-800 to-blue-400 text-white shadow-lg">
                   <Image
                     src={`/static/church-preview-carousel/${imageData.name}`}
                     alt={imageData.alt}
-                    key={imageData.name}
                     width={1200}
                     height={800}
                     className="h-auto w-full object-cover"
