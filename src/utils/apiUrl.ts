@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+import { BASE_URL } from "@/constants";
 
 export const apiUrls = {
   sendEmailJS: ["https://api.emailjs.com", "api", "v1.0", "email", "send"].join(
@@ -6,4 +6,3 @@ export const apiUrls = {
   ),
   sendEmail: [BASE_URL, "api", "send-email"].join("/"),
 };
-

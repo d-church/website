@@ -12,21 +12,7 @@ const nextConfig = withNextIntl({
         hostname: "sourceoflife.oneentry.cloud",
       },
     ],
-  },
-  async rewrites() {
-    return [
-      {
-        has: [{ type: "host", value: "donate.localhost" }],
-        source: "/:locale/:path*",
-        destination: "/:locale/donate/:path*",
-      },
-      {
-        has: [{ type: "host", value: "donate.dchurch.lviv.ua" }],
-        source: "/:locale/:path*",
-        destination: "/:locale/donate/:path*",
-      },
-    ];
-  },
+  }
 });
 
 export default nextConfig;
