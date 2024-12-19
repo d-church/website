@@ -39,7 +39,7 @@ export default function EventsAndBlogPage({
           variant="standard"
           className="transform scale-115 max-2lx:rounded-[20px] group flex items-center justify-center rounded-[22px] border border-graphite bg-white px-[10px] py-[10px] text-[1rem] uppercase text-black hover:bg-graphite hover:text-hover-blue peer-hover:bg-graphite peer-hover:text-hover-blue 2xl:px-[20px] 2xl:text-[1.25rem]"
         >
-          <Link href={clientUrl['events-and-blog']}>
+          <Link href="/events-and-blog">
             {t("events-and-blogs-page.button.button-main-page")}
           </Link>
         </Button>

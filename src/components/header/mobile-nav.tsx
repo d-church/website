@@ -17,7 +17,6 @@ import { headersLinks } from "./links";
 
 import { usePathname } from "@/app/navigation";
 import { cn } from "@/lib/utils";
-import { clientUrl } from "@/utils/clientUrl";
 
 export function MobileNav() {
   const t = useTranslations();
@@ -27,18 +26,9 @@ export function MobileNav() {
       <Sheet>
         <SheetTrigger asChild>
           <Button className="z-10 flex h-6 w-6 cursor-pointer flex-col flex-wrap justify-around bg-transparent p-0">
-            <div
-              className={`"rotate-0" block h-[2px] w-full origin-[1px] rounded bg-white transition-all duration-500
-              `}
-            />
-            <div
-              className={`"translate-x-0" block h-[2px] w-full origin-[1px] rounded bg-white transition-all  duration-500
-              `}
-            />
-            <div
-              className={`"rotate-0" block h-[2px] w-full origin-[1px] rounded bg-white transition-all  duration-500
-              `}
-            />
+            <div className="block h-[2px] w-full origin-[1px] rotate-0 rounded bg-white transition-all duration-500" />
+            <div className="block h-[2px] w-full origin-[1px] translate-x-0 rounded bg-white transition-all duration-500" />
+            <div className="block h-[2px] w-full origin-[1px] rotate-0 rounded bg-white transition-all duration-500" />
           </Button>
         </SheetTrigger>
         <SheetContent className="container flex w-full flex-col border-none bg-[#232323] p-0 pb-12">
@@ -83,7 +73,7 @@ export function MobileNav() {
               className="w-fit self-center uppercase"
               asChild
             >
-              <Link href={clientUrl.donate()}>{t("header.button-donate")}</Link>
+              <Link href="/donate">{t("header.button-donate")}</Link>
             </Button>
           </div>
         </SheetContent>

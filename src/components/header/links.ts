@@ -40,7 +40,7 @@ export const headersLinks: THeadersLink[] = [
     key: "video-and-stream",
   },
   {
-    href: clientUrl.events,
+    href: "/events-and-blog",
     key: "events-and-blog",
   },
   {
@@ -70,7 +70,7 @@ export const footersLink: TFootersLink = {
       key: "video-and-stream",
     },
     {
-      href: clientUrl.events,
+      href: "/events-and-blog",
       key: "events-and-blog",
     },
     {
