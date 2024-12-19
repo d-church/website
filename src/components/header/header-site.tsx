@@ -26,9 +26,6 @@ export function Header() {
         : "py-2.5 xl:py-6 2xl:py-[1.25rem]"
         } transition-all duration-300`}
     >
-      <div className="w-full bg-yellow-700 text-white text-center py-2">
-        <span className="text-lg font-bold">🛠️ Проводяться технічні роботи, деяка інформація може відображатися некоректно</span>
-      </div>
       <div className="container flex w-full items-center justify-between">
         <Link href="/">
           <Image

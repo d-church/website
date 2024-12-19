@@ -71,7 +71,7 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
   return (
     <div className="mx-auto max-w-7xl px-6 py-12">
       {/* Main Blog Body */}
-      <div className="flex flex-col gap-10 text-[1.5rem] leading-relaxed text-justify">
+      <div className="flex flex-col gap-10 text-[1.25rem] leading-relaxed">
         {mainBlogBody}
       </div>
 
