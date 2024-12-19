@@ -9,7 +9,7 @@ export const clientUrl = {
   ministry: ["", "ministry"].join("/"),
   video: "/#video",
   events: ["", "events-and-blog"].join("/"),
-  // donate: (domainName) => `https://donate.${domainName}.com.ua/ministries`,
+  'events-and-blog': ["", "events-and-blog"].join("/"), // Додайте цей рядок
   domain: ["", domainName].join(""),
   donate: () => ["//" + "donate" + "." + clientUrl.domain].join(""),
   donateTransfer: ["", "ministry"].join("/"),

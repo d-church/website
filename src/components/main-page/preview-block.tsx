@@ -16,7 +16,7 @@ export function PreviewBlock() {
           <Icons.textUnderTitle className="w-full xl:mt-[1rem]" />
           <Icons.textWelcome className="w-full xl:mt-[1.57rem]" />
         </div>
-        <Icons.textMobile className="w-full xl:hidden" />
+        <Icons.textMobile className="mt-[2rem] w-full xl:hidden" />
         <p className="mt-[4.5rem] text-2xl font-thin">
           {t("main-page.preview-block.hash-tag")}
         </p>

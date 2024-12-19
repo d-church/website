@@ -28,8 +28,10 @@ export default function ContactsPage({
       <MainHeaderBlock />
       <Header />
       <div>
-        <FillSpaceBlock />
+        {/* <FillSpaceBlock /> */}
+        <div className="mt-[150px] xl:mt-[190px] 2xl:mt-[190px]">
         <ScheduleBlock />
+        </div>
         <div className="h-[650px] xl:h-[500px]">
           <GoogleMapBlock />
         </div>

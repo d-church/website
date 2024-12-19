@@ -20,7 +20,7 @@ export function LazyLoadBlock() {
       <Button
         onClick={() => handlePageChange(perPage + perPage)}
         className={cn(
-          "mx-auto py-[10px] px-[20px] h-[2.75rem] flex items-center justify-center mb-[50px] max-md:block md:hidden rounded-[22px] border border-graphite bg-white text-[1.25rem]/[1.5rem] font-medium uppercase text-black transition-colors hover:bg-graphite hover:text-hover-blue",
+          "mx-auto py-[10px] px-[20px] h-[2.75rem] flex items-center justify-center mb-[0px] max-md:block md:hidden rounded-[22px] border border-graphite bg-white text-[1.25rem]/[1.5rem] font-medium uppercase text-black transition-colors hover:bg-graphite hover:text-hover-blue",
           perPage >= allElements ? "invisible" : ""
         )}
       >

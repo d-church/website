@@ -1,7 +1,9 @@
 import { unstable_setRequestLocale } from "next-intl/server";
+import EventsAndBlogPage from "@/components/main-page/events-and-blog";
 
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
+import { LazyLoadBlock } from "@/components/events-and-blog-page/lazy-load-block";
 import {
   AboutBlock,
   ChurchTeamBlock,
@@ -10,9 +12,11 @@ import {
   ServeGodBlock,
   ShareBlock,
   VideoBlock,
-  WriteUsBlock
+  WriteUsBlock,
 } from "@/components/main-page";
 import { AboutChurch } from "@/components/main-page/about-church-block";
+import { PaginationBlock } from "@/components/events-and-blog-page/pagination-block";
+import PaginationProvider from "@/components/events-and-blog-page/pagination-provider";
 
 export default function HomePage({
   params: { locale },
@@ -26,11 +30,12 @@ export default function HomePage({
       <Header />
       <main className="flex-[1_0_auto]">
         <PreviewBlock />
-        <AboutChurch/>
+        <AboutChurch />
         {/* <ImportantInformationBlock /> */}
         <VideoBlock />
-        <AboutBlock />
-        <ChurchTeamBlock />
+        {/* <AboutBlock /> */}
+        <EventsAndBlogPage params={{ locale }} />
+        {/* <ChurchTeamBlock /> */}
         <ServeGodBlock />
         <ShareBlock />
         <WriteUsBlock />
