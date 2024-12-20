@@ -31,7 +31,7 @@ export function PreviewBlock() {
     ministryHero?.attributeValues.description.value.htmlValue
   );
   return (
-    <div className="lg:justify-baseline relative flex h-full min-h-screen items-center justify-center bg-slate-200">
+    <div className="lg:justify-baseline relative flex h-full min-h-[50vh] max-h-[700px] items-center justify-center bg-slate-200">
       <>
         <div className="absolute h-full w-full after:absolute after:h-full after:w-full after:overflow-hidden after:bg-black/70">
           <Image
@@ -41,11 +41,11 @@ export function PreviewBlock() {
             fill
           />
         </div>
-        <div className="z-[1] max-w-[1077px] text-center text-white  max-lg:max-w-[90%] max-sm:py-[75px]">
-          <p className="mb-[30px] text-[1.875rem]/[2.28rem] font-bold uppercase max-lg:mb-[22px]">
+        <div className="z-[1] max-w-[1077px] sm:pt-[120px] xl:pt-[210px] md:pt-[140px] mt-[30px] sm:mt-[0px] md:mt-[0px] xl:mt-[0px] text-center text-white  max-lg:max-w-[90%] max-sm:py-[75px]">
+          <p className="mb-[30px] font-roboto text-[32px] font-bold font-thin uppercase tracking-[5px] text-white sm:text-[58px] sm:tracking-[15px] lg:text-[78.4px] lg:tracking-[28px]">
             {title}
           </p>
-          <div className="text-[1.25rem]/[1.875rem] font-medium max-lg:text-[1.125rem]/[1.875rem]">
+          <div className="font-montserrat sm:pb-[100px] md:pb-[130px] pb-[0px] mx-auto mt-4 max-w-[90%] text-[12px] leading-[1.6] text-white sm:mt-6 sm:max-w-[980px] sm:text-[18px] lg:text-[20px]">
             {parsedText}
           </div>
         </div>

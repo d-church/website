@@ -32,7 +32,8 @@ export function MobileNav() {
           </Button>
         </SheetTrigger>
         <SheetContent className="container flex w-full flex-col border-none bg-[#232323] p-0 pb-12">
-          <SheetHeader className="border-b border-hover-blue py-2.5">
+          <SheetHeader className="py-2.5"> 
+            {/* border-b border-hover-blue  */}
             <div className="container flex items-center justify-between">
               <Link href="/">
                 <SheetClose asChild>
@@ -43,7 +44,7 @@ export function MobileNav() {
                     height={80}
                     priority={true}
                     loading="eager"
-                    className="w-[93px] xl:w-[187.33px]"
+                    className="w-[130px] xl:w-[187.33px] pt-3"
                   />
                 </SheetClose>
               </Link>
@@ -52,7 +53,7 @@ export function MobileNav() {
               </SheetClose>
             </div>
           </SheetHeader>
-          <div className="container flex flex-grow flex-col justify-between pt-12">
+          <div className="container flex flex-grow flex-col justify-between pt-6">
             <div className="space-y-12 text-xl text-white">
               {headersLinks.map(({ href, key }) => (
                 <Link

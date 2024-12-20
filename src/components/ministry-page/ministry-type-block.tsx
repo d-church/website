@@ -69,12 +69,14 @@ export function MinistryTypeBlock({
 
       <SheetOverlay className="bg-black/50 backdrop-blur-sm" />
       <SheetContent
-        className="shadow-custom-hover-blue max-lg:my-[50px]"
+        className="max-lg:my-[50px]"
+        // shadow-custom-hover-blue
         side="center"
       >
         <div className="relative h-full w-full rounded-[21px] bg-gradient-to-b from-transparent to-hover-blue-300">
           <SheetHeader>
-            <div className="rounded-t-[20px] bg-gradient-to-b from-white to-[#282e2edb] p-[1px]">
+            <div className="rounded-t-[20px] bg-gradient-to-b from-white to-[#282e2edb]">
+            {/* p-[1px] */}
               <div className="relative z-[3] h-full w-full rounded-t-[20px] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rounded-t-[20px] after:bg-[#232323CC]">
                 <div className="absolute top-0 z-[2] h-full w-full rounded-t-[20px]"></div>
                 <Image

@@ -16,16 +16,16 @@ export function ChurchEmployeeBlock({
   className,
 }: IChurchEmployeeBlockProps) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center">
-        <div className="relative flex size-[150px] items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] xl:size-[190px]">
+    <div className="flex flex-col  items-center">
+      <div className="flex flex-col ml-50 mr-50 items-center">
+        <div className="relative flex size-[150px]  items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] xl:size-[190px]">
           <Image
             src={src}
             width={160}
             height={160}
             alt="icon"
             className={cn(
-              "size-[126px] rounded-full object-cover object-[70%_30%] xl:size-[160px]",
+              "size-[126px]  rounded-full object-cover object-[70%_30%] xl:size-[160px]",
               className
             )}
           />
