@@ -19,20 +19,17 @@ interface IBlogBodyBlockProps {
 
 export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
   const [blog, setBlog] = useState<IProductBlock>(data);
-  const [mainBlogBody, setMainBlogBody] = useState()
+  const [mainBlogBody, setMainBlogBody] = useState();
 
   useEffect(() => {
-    data.find(item => {
+    data.find((item) => {
       if (item.id == id) {
-
-        setMainBlogBody(parse(
-          item.attributeValues.description.value.htmlValue,
-          options
-        ));
-        return setBlog(item.attributeValues)
-
+        setMainBlogBody(
+          parse(item.attributeValues.description.value.htmlValue, options)
+        );
+        return setBlog(item.attributeValues);
       }
-    })
+    });
   }, []);
 
   const t = useTranslations();
@@ -49,7 +46,7 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
         if (hasImages) {
           domNode.name = "div";
           domNode.attribs = attributesToProps({
-            className: "flex flex-wrap md:flex-nowrap",
+            className: "flex flex-wrap md:flex-nowrap w-full",
           });
         }
       }
@@ -60,7 +57,7 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
             width={800}
             height={300}
             alt="Blog Image"
-            className="h-[300px] w-full object-cover"
+            className="h-auto w-full max-w-full object-contain md:object-cover"
             src={domNode.attribs.src}
           />
         );
@@ -69,25 +66,13 @@ export async function BlogBodyBlock({ id, data }: IBlogBodyBlockProps) {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12">
+    <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 py-6 sm:py-8 md:px-6 md:py-12 overflow-x-hidden">
       {/* Main Blog Body */}
-      <div className="flex flex-col gap-10 text-[1.25rem] leading-relaxed">
+      <div className="flex flex-col gap-6 text-base leading-relaxed sm:text-lg md:gap-10 md:text-[1.25rem] w-full">
         {mainBlogBody}
       </div>
-
-      {/* Author and Social Buttons Section */}
-      <div className="mt-16 flex flex-col items-center gap-10 md:flex-row md:justify-between">
-        {/* Author */}
-        <div className="flex items-center gap-4 text-lg font-medium">
-          <span className="text-gray-600">
-            {t("events-and-blogs-page.blog-page.blog.author")}
-          </span>
-          <span className="text-gray-900">{author}</span>
-        </div>
-      </div>
-
       {/* Separator */}
-      <Separator className="mt-12 border-gray-300" />
+      <Separator className="mt-10 border-gray-300 md:mt-12 w-full" />
     </div>
   );
 }
