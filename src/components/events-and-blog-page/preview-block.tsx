@@ -67,7 +67,7 @@ export function PreviewBlock() {
               {carouselItems.map((carouselItem, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-1/1 relative flex w-full flex-col after:pointer-events-none after:absolute after:inset-0 after:z-[1] after:h-full after:w-full after:overflow-hidden after:bg-black/70 max-lg:h-[400px] lg:h-[600px]"
+                  className="basis-1/1 relative flex w-full flex-col after:pointer-events-none after:absolute after:inset-0 after:z-[1] after:h-full after:w-full after:overflow-hidden after:bg-black/50 max-lg:h-[400px] lg:h-[600px]"
                 >
                   <Image
                     fill

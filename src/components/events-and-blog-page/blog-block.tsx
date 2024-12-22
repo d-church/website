@@ -2,10 +2,9 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Button } from "../ui/button";
-import { Separator } from "../ui/separator";
 
 import { Link } from "@/app/navigation";
-import s from './blog-block.module.css'
+import s from './blog-block.module.css';
 
 interface IBlogBlockProps {
   title: string;
@@ -32,7 +31,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
         <div className={`flex justify-between gap-[20px] pt-[10px] xl:gap-[30px] xl:pt-[20px] ${s.btnContainer}`}>
           <Link href={href} className="peer">
             <p className="xl:text-[1rem]/[1.21rem] 2xl:text-[1.375rem]/[1.67rem] ">
-              {title.length > 27 ? `${title.split('').slice(0, 26).join('')}...` : title}
+              {title.length > 100 ? `${title.split('').slice(0, 99).join('')}...` : title}
             </p>
           </Link>
           <Button
@@ -46,7 +45,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
           <p className="text-[1rem]/[1.21rem] 2xl:text-[1.125rem]/[1.375rem]">
             {date}
           </p>
-          <Separator className="w-full min-w-full max-w-full" />
+          {/* <Separator className="w-full min-w-full max-w-full" /> */}
         </div>
       </div>
     </div>

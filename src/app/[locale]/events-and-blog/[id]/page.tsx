@@ -3,8 +3,7 @@ import { Suspense } from "react";
 
 import {
   BlogBodyBlock,
-  PreviewBlock,
-  RecomendationsBlock,
+  PreviewBlock
 } from "@/components/blog-page";
 import Loading from "@/components/common/loading";
 import { Footer } from "@/components/footer/footer-site";
@@ -26,7 +25,7 @@ export default async function EventsAndBlogPage({
       <Suspense fallback={<Loading className="h-full overflow-hidden top-0 bottom-0" />}>
         <PreviewBlock id={id} data={response} />
         <BlogBodyBlock id={id} data={response} />
-        <RecomendationsBlock id={id} data={response} />
+        {/* <RecomendationsBlock id={id} data={response} /> */}
       </Suspense>
       <WriteUsBlock />
       <Footer />
