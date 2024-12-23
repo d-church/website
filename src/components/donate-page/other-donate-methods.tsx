@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { PaymentCredentials } from "./payment-credentials";
-import { PaymentMethods } from "./payment-methods";
 
 export function OtherDonateMethods() {
   const t = useTranslations();
@@ -19,10 +18,10 @@ export function OtherDonateMethods() {
         <p className="mb-[30px] text-center text-3xl font-bold uppercase lg:text-[2.5rem]/[3rem]">
           {t("donate-page.other-donate-methods.header")}
         </p>
-        <PaymentMethods
+        {/* <PaymentMethods
           currentPaymentMethod={currentPaymentMethod}
           setCurrentPaymentMethod={setCurrentPaymentMethod}
-        />
+        /> */}
         <PaymentCredentials currentPaymentMethod={currentPaymentMethod} />
       </div>
     </div>
