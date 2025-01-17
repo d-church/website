@@ -73,7 +73,7 @@ export const fetchProducts = (keyType: TKeyType = "Ministry") => {
       },
     ];
   }
-  
+
   if (keyType === "Info") {
     body = [
       {
@@ -88,4 +88,12 @@ export const fetchProducts = (keyType: TKeyType = "Ministry") => {
   const products = Products.getProducts(body);
 
   return products;
+};
+
+export const fetchBlogById = async (id: number) => {
+  const response = await fetchProducts("Blogs");
+
+  const blog = response.find((item) => item.id == id);
+
+  return blog;
 };

@@ -9,7 +9,7 @@ import Loading from "@/components/common/loading";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
-import { fetchProducts } from "@/oneentry/fetch-products";
+import { fetchBlogById } from "@/oneentry/fetch-products";
 
 export const revalidate = 300;
 export default async function EventsAndBlogPage({
@@ -18,13 +18,14 @@ export default async function EventsAndBlogPage({
   params: { locale: string; id: number };
 }) {
   unstable_setRequestLocale(locale);
-  const response = await fetchProducts("Blogs");
+
+  const blog = await fetchBlogById(id);
   return (
     <>
       <Header />
       <Suspense fallback={<Loading className="h-full overflow-hidden top-0 bottom-0" />}>
-        <PreviewBlock id={id} data={response} />
-        <BlogBodyBlock id={id} data={response} />
+        <PreviewBlock data={blog!} />
+        <BlogBodyBlock data={blog!} />
         {/* <RecomendationsBlock id={id} data={response} /> */}
       </Suspense>
       <WriteUsBlock />
