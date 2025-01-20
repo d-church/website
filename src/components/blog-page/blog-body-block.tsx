@@ -7,12 +7,9 @@ import parse, {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import {
-  IProductBlock,
   IProductsEntity,
 } from "oneentry/dist/products/productsInterfaces";
 import { useMemo } from "react";
-
-import { Separator } from "../ui/separator";
 
 interface IBlogBodyBlockProps {
   data: IProductsEntity;

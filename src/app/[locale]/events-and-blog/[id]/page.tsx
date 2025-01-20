@@ -26,7 +26,6 @@ export default async function EventsAndBlogPage({
       <Suspense fallback={<Loading className="h-full overflow-hidden top-0 bottom-0" />}>
         <PreviewBlock data={blog!} />
         <BlogBodyBlock data={blog!} />
-        {/* <RecomendationsBlock id={id} data={response} /> */}
       </Suspense>
       <WriteUsBlock />
       <Footer />
