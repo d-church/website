@@ -44,7 +44,7 @@ export function BlogsBlock() {
             id={blog.id}
             imgSrc={blog.attributeValues.images.value[0].downloadLink}
           />
-        ))};
+        ))}
       </div>
     );
   }

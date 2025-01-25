@@ -10,7 +10,6 @@ import {
   LazyLoadBlock,
   PaginationBlock,
 } from "@/components/events-and-blog-page";
-import { clientUrl } from "@/utils/clientUrl";
 
 const PaginationProvider = dynamic(
   () => import("@components/events-and-blog-page/pagination-provider"),
