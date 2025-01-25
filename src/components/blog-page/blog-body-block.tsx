@@ -38,12 +38,12 @@ const options: HTMLReactParserOptions = {
 
     // @ts-ignore
     if (domNode.name === "p") {
-       // @ts-ignore
+      // @ts-ignore
       const hasImages = domNode.children.some((child) => child.name === "img");
       if (hasImages) {
-         // @ts-ignore
+        // @ts-ignore
         domNode.name = "div";
-         // @ts-ignore
+        // @ts-ignore
         domNode.attribs = attributesToProps({
           className: "flex flex-wrap md:flex-nowrap w-full",
         });
@@ -57,7 +57,7 @@ const options: HTMLReactParserOptions = {
           height={300}
           alt="Blog Image"
           className="h-auto w-full max-w-full object-contain md:object-cover"
-           // @ts-ignore
+          // @ts-ignore
           src={domNode.attribs.src}
         />
       );
