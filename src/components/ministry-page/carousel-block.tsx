@@ -123,7 +123,7 @@ export default function CarouselBlock({
       )
       }
       <div
-        className="mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px]"
+        className="custom-scrollbar mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[150px] lg:mt-[50px] max-h-[300px] overflow-y-auto"
         dangerouslySetInnerHTML={{
           __html: textModal,
         }}
