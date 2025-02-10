@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin"; // Імпортуємо plugin для коректного типу
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -95,26 +94,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    plugin(({ addComponents }) => {
-      addComponents({
-        ".custom-scrollbar": {
-          "&::-webkit-scrollbar": {
-            width: "2px",
-            backgroundColor: 'rgba(138, 138, 138, 0.1)'
-          },
-          "&::-webkit-scrollbar-thumb": {
-            background: "rgba(138, 138, 138, 0.9)",
-            borderRadius: "4px",
-          },
-          "&::-webkit-scrollbar-track": {
-            background: "transparent",
-          },
-        },
-      });
-    }),
-  ],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
 
 export default config;
