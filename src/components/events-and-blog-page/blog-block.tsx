@@ -22,7 +22,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
         <Image
           src={imgSrc}
           alt="Blog preview image"
-          className={`rounded-[20px] max-2xl:h-[160px] max-2xl:w-[320px] max-xl:rounded-[12px] 2xl:h-[300px] 2xl:w-[520px] object-contain`}
+          className={`rounded-[20px] max-2xl:h-[188px] max-2xl:w-[320px] max-xl:rounded-[12px] 2xl:h-[300px] 2xl:w-[520px] object-cover`}
           width={320}
           height={160}
         />

@@ -31,9 +31,10 @@ export default function CarouselBlock({
 }: ICarouselBlockProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [isCaruselItemsLoads, setIsCarouselItemsLoads] = useState(
+  const [isCarouselItemsLoads, setIsCarouselItemsLoads] = useState(
     Array(carouselImages.length).fill(true)
   );
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   function onLoadingCompleteHandler(index: number) {
     setIsCarouselItemsLoads((prev) =>
@@ -42,92 +43,98 @@ export default function CarouselBlock({
   }
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCurrent(api.selectedScrollSnap() + 1);
-
     api.on("scroll", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
 
+  // Track window width to apply correct scrolling behavior
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      {carouselImages.length === 0 ? (
-        <></>
-      ) : (
+      {carouselImages.length > 0 && (
         <>
-          <Carousel
-            setApi={setApi}
-            className="relative mx-auto h-[160px] w-full max-w-[795px]"
-            opts={{ loop: false, skipSnaps: false, containScroll: 'trimSnaps' }}
-          >
-            <CarouselContent className={`${carouselImages.length < 3 && 'justify-center'}  `}>
-              {carouselImages.map((carouselImage, index) => (
+          <div className="relative mx-auto w-full max-w-[795px] pointer-events-auto">
+            <Carousel
+              setApi={setApi}
+              className="relative h-[160px]"
+              opts={{ loop: false, skipSnaps: false, containScroll: "trimSnaps" }}
+            >
+              <CarouselContent className={cn(carouselImages.length < 3 && "justify-center")}>
+                {carouselImages.map((carouselImage, index) => (
+                  <CarouselItem key={index} className="basis-1/1 relative w-[245px] lg:basis-1/3">
+                    {isCarouselItemsLoads[index] && <Loading className="absolute inset-0 h-full w-full" />}
+                    <GalleryModalBlock
+                      initialIndex={index}
+                      carouselImages={carouselImages}
+                      setOpenFirstModal={setOpen}
+                    >
+                      <div className="relative h-full w-full overflow-hidden pointer-events-auto">
+                        <Image
+                          width={245}
+                          height={160}
+                          src={carouselImage.downloadLink}
+                          onLoadingComplete={() => onLoadingCompleteHandler(index)}
+                          className={cn(
+                            "h-[160px] w-full object-cover transition-opacity",
+                            isCarouselItemsLoads[index] ? "opacity-0" : "opacity-100"
+                          )}
+                          alt="Gallery image"
+                        />
+                      </div>
+                      {/* Click Area Limited to Image */}
+                      <div className="absolute inset-0 pointer-events-none hover:pointer-events-auto hover:cursor-pointer hover:bg-white/15"></div>
+                    </GalleryModalBlock>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-[124px] hidden xl:block" />
+              <CarouselNext className="-right-[124px] hidden xl:block" />
+            </Carousel>
+          </div>
 
-                <CarouselItem
-                  key={index}
-                  className="basis-1/1 relative w-[245px] lg:basis-1/3"
-                >
-                  {
-                    isCaruselItemsLoads[index] && (
-                      <Loading className="relative h-[160px]" />
-                    )
-                  }
-                  <GalleryModalBlock
-                    initialIndex={index}
-                    carouselImages={carouselImages}
-                    setOpenFirstModal={setOpen}
-                  >
-                    <Image
-                      width={245}
-                      height={160}
-                      src={carouselImage.downloadLink}
-                      onLoadingComplete={() => onLoadingCompleteHandler(index)}
-                      className={cn(
-                        "h-[160px] object-cover transition-opacity",
-                        `${isCaruselItemsLoads[index] ? "opacity-0" : "opacity-100"}`
-                      )}
-                      alt="Gallery image"
-                    />
-                    <div className="after:absolute after:left-0 after:top-0 after:h-full after:w-full after:transition-colors hover:cursor-pointer hover:after:bg-white/15"></div>
-                  </GalleryModalBlock>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious
-              color="gray"
-              className="-left-[124px] hidden xl:block"
-            />
-            <CarouselNext
-              color="gray"
-              className="-right-[124px] hidden xl:block"
-            />
-          </Carousel >
+          {/* Pagination Indicators */}
           <div className="flex justify-center gap-[10px] pt-[30px] xl:hidden">
             {carouselImages.map((_, index) => (
               <Separator
                 key={index}
                 className={cn(
                   "w-[25px] sm:w-[40px]",
-                  current === index + 1
-                    ? "bg-graphite"
-                    : "bg-graphite opacity-20"
+                  current === index + 1 ? "bg-graphite" : "bg-graphite opacity-20"
                 )}
-              ></Separator>
+              />
             ))}
           </div>
         </>
-      )
-      }
+      )}
+
+      {/* Scrollable Text Content */}
       <div
-        className="mx-auto mt-[20px] max-w-[1070px] text-center text-[1.25rem]/[1.875rem] font-medium max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px] lg:max-h-[300px] lg:overflow-y-scroll lg:pr-[20px] custom-scrollbar"
-        dangerouslySetInnerHTML={{
-          __html: textModal,
-        }}
-      ></div>
+        className={cn(
+          "mx-auto mt-[20px] max-w-[1070px] text-center text-lg font-medium",
+          "max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px] lg:pr-[20px] custom-scrollbar",
+          {
+            "overflow-auto": windowWidth !== null && windowWidth < 600,
+            "max-h-[300px] overflow-auto": windowWidth !== null && windowWidth >= 600,
+          }
+        )}
+      >
+        <div className="px-4" dangerouslySetInnerHTML={{ __html: textModal }}></div>
+      </div>
     </>
   );
 }
