@@ -51,13 +51,11 @@ export default function CarouselBlock({
     });
   }, [api]);
 
-  // Track window width to apply correct scrolling behavior
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth);
     }
 
-    // Set initial value
     handleResize();
 
     window.addEventListener("resize", handleResize);
@@ -68,15 +66,18 @@ export default function CarouselBlock({
     <>
       {carouselImages.length > 0 && (
         <>
-          <div className="relative mx-auto w-full max-w-[795px] pointer-events-auto">
+          <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 pointer-events-auto">
             <Carousel
               setApi={setApi}
-              className="relative h-[160px]"
+              className="relative h-[300px]"
               opts={{ loop: false, skipSnaps: false, containScroll: "trimSnaps" }}
             >
-              <CarouselContent className={cn(carouselImages.length < 3 && "justify-center")}>
+              <CarouselContent className="justify-center">
                 {carouselImages.map((carouselImage, index) => (
-                  <CarouselItem key={index} className="basis-1/1 relative w-[245px] lg:basis-1/3">
+                  <CarouselItem 
+                    key={index} 
+                    className="relative w-[300px] sm:basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6"
+                  >
                     {isCarouselItemsLoads[index] && <Loading className="absolute inset-0 h-full w-full" />}
                     <GalleryModalBlock
                       initialIndex={index}
@@ -85,30 +86,28 @@ export default function CarouselBlock({
                     >
                       <div className="relative h-full w-full overflow-hidden pointer-events-auto">
                         <Image
-                          width={245}
-                          height={160}
+                          width={300}
+                          height={300}
                           src={carouselImage.downloadLink}
                           onLoadingComplete={() => onLoadingCompleteHandler(index)}
                           className={cn(
-                            "h-[160px] w-full object-cover transition-opacity",
+                            "h-[300px] w-[300px] object-cover transition-opacity",
                             isCarouselItemsLoads[index] ? "opacity-0" : "opacity-100"
                           )}
                           alt="Gallery image"
                         />
                       </div>
-                      {/* Click Area Limited to Image */}
                       <div className="absolute inset-0 pointer-events-none hover:pointer-events-auto hover:cursor-pointer hover:bg-white/15"></div>
                     </GalleryModalBlock>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-[124px] hidden xl:block" />
-              <CarouselNext className="-right-[124px] hidden xl:block" />
+              <CarouselPrevious className="left-4 block" />
+              <CarouselNext className="right-4 block" />
             </Carousel>
           </div>
 
-          {/* Pagination Indicators */}
-          <div className="flex justify-center gap-[10px] pt-[30px] xl:hidden">
+          <div className="flex justify-center gap-[10px] pt-[20px]">
             {carouselImages.map((_, index) => (
               <Separator
                 key={index}
@@ -122,7 +121,6 @@ export default function CarouselBlock({
         </>
       )}
 
-      {/* Scrollable Text Content */}
       <div
         className={cn(
           "mx-auto mt-[20px] max-w-[1070px] text-center text-lg font-medium",
