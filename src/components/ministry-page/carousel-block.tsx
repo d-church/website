@@ -102,13 +102,14 @@ export default function CarouselBlock({
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-[124px] hidden xl:block" />
-              <CarouselNext className="-right-[124px] hidden xl:block" />
+              {/* Updated styles to always show on all screen sizes */}
+              <CarouselPrevious className="left-2 sm:left-4 md:left-6 lg:-left-14" />
+              <CarouselNext className="right-2 sm:right-4 md:right-6 lg:-right-14" />
             </Carousel>
           </div>
 
           {/* Pagination Indicators */}
-          <div className="flex justify-center gap-[10px] pt-[30px] xl:hidden">
+          <div className="flex justify-center gap-[10px] pt-[30px]">
             {carouselImages.map((_, index) => (
               <Separator
                 key={index}
