@@ -43,7 +43,7 @@ export function VideoBlock() {
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-cover bg-center pb-[70px] pl-[40px] pr-[40px]"
+      className="relative w-full overflow-hidden bg-cover bg-center pb-[120px] pl-[20px] pr-[20px] pt-[40px] md:pt-[0px] md:pb-[70px]"
       id="video"
     >
       <div
@@ -66,7 +66,7 @@ export function VideoBlock() {
           <AccordionContent className="mt-1 flex h-full flex-col pb-0 md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px] 2xl:ml-[10px]">
             {/* instead of timer with livestream */}
             {/* <Video /> */}
-            <div className="relative h-[180px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
+            <div className="relative h-[280px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
               <iframe
                 className="h-full w-full grow rounded-[0.75rem] xl:rounded-[1.25rem]"
                 src={mainVideo?.attributeValues.link.value}
@@ -82,7 +82,7 @@ export function VideoBlock() {
               )}
             </div>
             {/* instead of timer with livestream */}
-            <div className="mt-[10px] space-y-[10px] text-white md:space-y-5 xl:mt-0 2xl:max-w-[248px]">
+            <div className="mt-[10px] space-y-[20px] text-white md:space-y-5 xl:mt-0 2xl:max-w-[248px]">
               {video
                 ?.sort((a, b) => {
                   const dateA = new Date(
@@ -105,7 +105,7 @@ export function VideoBlock() {
                       className="absolute left-0 top-0 -z-[1] size-[320px] rounded-[0.75rem] object-cover xl:size-[275px] xl:rounded-[1.25rem]"
                     />
                     <Button
-                      className="group flex h-auto w-full items-center space-x-[30px] rounded-[0.75rem] bg-black/60 px-9 py-[21px] xl:flex-col xl:space-x-0 xl:rounded-[1.25rem] xl:py-6"
+                      className="group flex h-[100px] w-full items-center space-x-[20px] rounded-[0.75rem] bg-black/60 px-4 py-4 md:px-9 md:py-[21px] xl:flex-col xl:space-x-0 xl:rounded-[1.25rem] xl:py-6"
                       asChild
                     >
                       <Link
