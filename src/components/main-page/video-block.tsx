@@ -66,7 +66,7 @@ export function VideoBlock() {
           <AccordionContent className="mt-1 flex h-full flex-col pb-0 md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px] 2xl:ml-[10px]">
             {/* instead of timer with livestream */}
             {/* <Video /> */}
-            <div className="relative h-[280px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
+            <div className="relative h-[180px] w-full md:h-[225px] md:max-w-[400px] xl:h-[450px] xl:min-w-[800px] 2xl:h-[604px] 2xl:min-w-[1070px]">
               <iframe
                 className="h-full w-full grow rounded-[0.75rem] xl:rounded-[1.25rem]"
                 src={mainVideo?.attributeValues.link.value}
