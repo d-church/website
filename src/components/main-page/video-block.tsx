@@ -105,7 +105,7 @@ export function VideoBlock() {
                       className="absolute left-0 top-0 -z-[1] size-[320px] rounded-[0.75rem] object-cover xl:size-[275px] xl:rounded-[1.25rem]"
                     />
                     <Button
-                      className="group flex h-[100px] w-full items-center space-x-[20px] rounded-[0.75rem] bg-black/60 px-4 py-4 md:px-9 md:py-[21px] xl:flex-col xl:space-x-0 xl:rounded-[1.25rem] xl:py-6"
+                      className="group flex h-auto w-full items-center space-x-[30px] rounded-[0.75rem] bg-black/60 px-9 py-[21px] xl:flex-col xl:space-x-0 xl:rounded-[1.25rem] xl:py-6"
                       asChild
                     >
                       <Link
