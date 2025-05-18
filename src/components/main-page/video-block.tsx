@@ -43,11 +43,11 @@ export function VideoBlock() {
 
   return (
     <div
-      className="relative w-full overflow-hidden bg-cover bg-center pb-[160px] pl-[20px] pr-[20px] pt-[60px] md:pt-[80px] md:pb-[100px]"
+      className="relative w-full overflow-hidden bg-cover bg-center pt-[40px] pb-[80px] md:pt-[60px] md:pb-[80px]"
       id="video"
     >
       <div
-        className="absolute inset-0 z-[-1] bg-[url('/static/background-about-block-dark.jpg')] bg-cover bg-center blur-sm brightness-140 filter"
+        className="absolute inset-0 z-[-1] bg-[url('/static/background-about-block-dark.jpg')] bg-cover bg-center blur-sm brightness-150 filter"
         style={{ transform: "scale(1.1)" }}
       ></div>
       <Accordion
@@ -66,7 +66,7 @@ export function VideoBlock() {
           <AccordionContent className="mt-1 flex h-full flex-col pb-0 md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px] 2xl:ml-[10px]">
             {/* instead of timer with livestream */}
             {/* <Video /> */}
-            <div className="relative h-[260px] w-full md:h-[300px] md:max-w-[600px] xl:h-[520px] xl:min-w-[960px] 2xl:h-[700px] 2xl:min-w-[1200px]">
+            <div className="relative aspect-[16/9] w-full md:max-w-[600px] xl:min-w-[960px] 2xl:min-w-[1200px]">
               <iframe
                 className="h-full w-full grow rounded-[0.75rem] xl:rounded-[1.25rem]"
                 src={mainVideo?.attributeValues.link.value}
