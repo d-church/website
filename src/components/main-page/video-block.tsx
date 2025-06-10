@@ -60,9 +60,9 @@ export function VideoBlock() {
           {/* <AccordionTrigger className="flex w-1/2 mt-[36px] justify-center relative before:content-[''] before:absolute before:h-[2px] before:bg-white before:top-0">
 
           </AccordionTrigger> */}
-          <h2 className="flex justify-center mt-[30px] mb-[10px] text-[15px] xl:text-xl xl:mt-[50px] xl:mb-[0px] text-xl/[1.5rem] font-medium uppercase text-white">
+          <h1 className="font-roboto mt-[30px] mb-[10px] text-center text-[36px] font-thin tracking-[10px] uppercase text-white xl:mt-[50px] xl:mb-[0px]">
             {t("main-page.video-block.title")}
-          </h2>
+          </h1>
           <AccordionContent className="mt-1 flex h-full flex-col pb-0 md:flex-row md:justify-center md:space-x-8 xl:mt-[34px] xl:px-[138px] 2xl:ml-[10px]">
             {/* instead of timer with livestream */}
             {/* <Video /> */}
