@@ -37,7 +37,7 @@ export function PreviewBlock() {
           {t("donate-page.preview-block.button-donate")}
         </Link> */}
 
-        <div className="z-10 mb-[50px] flex flex-wrap justify-center gap-[20px] lg:gap-[50px]">
+        {/* <div className="z-10 mb-[50px] flex flex-wrap justify-center gap-[20px] lg:gap-[50px]">
           <Link
             href="/donate/ministry"
             className="weight-[500] flex h-[100px] w-[248px] items-center justify-center text-wrap rounded-[20px] bg-[rgba(255,255,255,0.1)] px-[40px] text-center text-[20px] uppercase  text-white hover:bg-white hover:text-[#0E9398]"
@@ -56,7 +56,7 @@ export function PreviewBlock() {
           >
             {t("donate-page.preview-block.button-return-to-main-page")}
           </Link>
-        </div>
+        </div> */}
       </WrapperPreviewBlock>
 
       <div className="mx-auto mb-[100px] flex w-[calc(100%-40px)] flex-col items-center gap-[100px] xl:w-[1070px]">
