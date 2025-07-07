@@ -3,6 +3,9 @@
 import { Button } from "@components/ui/button";
 import { FC } from "react";
 
+
+
+import { DEFAULT_LIQPAY_DATA } from "./consts";
 import { generateLiqPayDescription } from "./helpers";
 import { DonationData } from "./types";
 
@@ -12,8 +15,8 @@ export const LiqPayButton: FC<{
   children: string;
   className: string;
   disabled?: boolean;
-  data: DonationData;
-}> = ({ children, className, disabled, data }) => {
+  data?: DonationData;
+}> = ({ children, className, disabled, data = DEFAULT_LIQPAY_DATA }) => {
   const requestData = LiqPay.getLiqPayRequestData({
     ...data,
     description: generateLiqPayDescription(data),

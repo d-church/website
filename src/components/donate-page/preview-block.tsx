@@ -1,6 +1,9 @@
 import { WrapperPreviewBlock } from "@components/wrapper-preview-block/wrapper-preview-block";
 import { useTranslations } from "next-intl";
 
+
+
+import { LiqPayButton } from "../donation-ministry/liq-pay-button";
 import { Icons } from "../ui/icons";
 import { Offer } from "./offer";
 import { OtherDonateMethods } from "./other-donate-methods";
@@ -24,12 +27,15 @@ export function PreviewBlock() {
             <Icons.textWelcome className="w-full xl:mt-[15px]" />
           </div>
         </div>
-        <Link
+        <LiqPayButton className="relative z-10 flex h-auto items-center justify-center rounded-[42px] border border-white bg-transparent px-[20px] py-[10px] text-center text-[24px] uppercase text-white hover:bg-white hover:text-[#0E9398] lg:mb-[170px] lg:px-[40px] lg:py-[20px] lg:text-[38px]">
+          {t("donate-page.preview-block.button-donate")}
+        </LiqPayButton>
+        {/* <Link
           href="/donate/ministry"
           className="z-10 mb-[190px] flex items-center justify-center rounded-[42px] border border-white bg-transparent px-[20px] py-[10px] text-[24px] uppercase text-white hover:bg-white hover:text-[#0E9398] lg:mb-[170px] lg:px-[40px] lg:py-[20px] lg:text-[38px] "
         >
           {t("donate-page.preview-block.button-donate")}
-        </Link>
+        </Link> */}
 
         <div className="z-10 mb-[50px] flex flex-wrap justify-center gap-[20px] lg:gap-[50px]">
           <Link

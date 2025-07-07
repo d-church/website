@@ -9,17 +9,15 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+
+
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Textarea } from "../ui/textarea";
+import { DEFAULT_LIQPAY_DATA } from "./consts";
 import { LiqPayButton } from "./liq-pay-button";
 import { DonationData } from "./types";
+
+
 
 import { Currency } from "@/constants";
 import { MINISTRIES } from "@/constants/ministries";
@@ -30,13 +28,7 @@ export function DonateFormBlock() {
 
   const form = useForm<DonationData>({
     resolver: zodResolver(donateMinistrySchema),
-    defaultValues: {
-      action: "paydonate",
-      ministry: MINISTRIES.destiny.name,
-      amount: 100,
-      currency: Currency.UAH,
-      description: "",
-    },
+    defaultValues: DEFAULT_LIQPAY_DATA,
   });
 
   return (
