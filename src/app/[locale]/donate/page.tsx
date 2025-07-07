@@ -1,9 +1,8 @@
 import { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-
-
 import { MainHeaderBlock, PreviewBlock } from "@/components/donate-page";
+import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 
 export const metadata: Metadata = {
@@ -22,6 +21,7 @@ export default function DonatePage({
       <MainHeaderBlock />
       <Header />
       <PreviewBlock />
+      <Footer />
     </>
   );
 }

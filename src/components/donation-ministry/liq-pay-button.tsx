@@ -3,8 +3,6 @@
 import { Button } from "@components/ui/button";
 import { FC } from "react";
 
-
-
 import { DEFAULT_LIQPAY_DATA } from "./consts";
 import { generateLiqPayDescription } from "./helpers";
 import { DonationData } from "./types";
