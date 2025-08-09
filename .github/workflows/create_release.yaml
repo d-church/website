@@ -25,4 +25,5 @@ jobs:
           script: |
             cd /var/www/frontend-dc-church/
             git pull origin main
+            docker system prune -a -f
             docker-compose up -d --build
