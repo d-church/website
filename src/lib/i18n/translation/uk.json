@@ -21,7 +21,7 @@
       "jesus": "Ісус",
       "about": "Церква",
       "ministry": "Служіння",
-      "video-and-stream": "Проповіді та Служіння",
+      "video-and-stream": "Наживо",
       "contact": "Контакти",
       "events-and-blog": "Події та Блог"
     },
@@ -33,7 +33,7 @@
       "jesus": "Ісус",
       "about": "Церква",
       "ministry": "Служіння",
-      "video-and-stream": "Проповіді та Служіння",
+      "video-and-stream": "Наживо",
       "contact": "Контакти",
       "events-and-blog": "Події та Блог"
     },
@@ -50,8 +50,8 @@
       "title": "Важлива інформація"
     },
     "video-block": {
-      "title": "Проповіді та служіння",
-      "button-go-to-chanel": "Перейти на канал",
+      "title": "Наживо",
+      "button-go-to-chanel": "Перейти на Youtube канал",
       "start-stream": "До початку трансляції",
       "button-watch": "Дивитись наживо"
     },
