@@ -180,6 +180,7 @@
       "liqpay-label": "Платіжна система LiqPay",
       "liqpay-desc": "Підтримка карт Visa та Mastercard.",
       "ministries-desc": "Підтримайте конкретні служіння та проекти церкви.",
+      "paypal-desc": "Ви можете зробити пожертву на PayPal рахунок церкви.",
       "privat-iban": {
         "title": "За реквізитами банку",
         "receiver-label": "Отримувач",
