@@ -1,7 +1,5 @@
 import { unstable_setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 
-import Loading from "@/components/common/loading";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
@@ -10,26 +8,25 @@ import {
   MinistryTypesBlock,
   PreviewBlock,
 } from "@/components/ministry-page";
+import { loadMinistryPageData } from "@/components/ministry-page/loadMinistryPageData";
 
 export const revalidate = 300;
 
-export default function MinistryPage({
+export default async function MinistryPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
+
+  const { previewBlockData, ministryCards } = await loadMinistryPageData();
+
   return (
     <>
       <MainHeaderBlock />
       <Header />
-      <Suspense fallback={<Loading />}>
-        {/* <LoadingBackdrop /> */}
-        <PreviewBlock />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <MinistryTypesBlock />
-      </Suspense>
+      <PreviewBlock {...previewBlockData} />
+      <MinistryTypesBlock ministryCards={ministryCards} />
       <WriteUsBlock />
       <Footer />
     </>
