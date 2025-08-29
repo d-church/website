@@ -8,6 +8,7 @@ import {
   PaginationBlock,
   PreviewBlock,
 } from "@/components/events-and-blog-page";
+import { loadEventsAndBlogPageData } from "@/components/events-and-blog-page/loadPageData";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
@@ -18,18 +19,21 @@ const PaginationProvider = dynamic(
 );
 
 export const revalidate = 300;
-export default function EventsAndBlogPage({
+export default async function EventsAndBlogPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
+
+  const { previewBlockCarouselItems } = await loadEventsAndBlogPageData();
+
   return (
     <>
       <MainHeaderBlock />
       <Header />
       <div className="relative min-h-[600px] w-full max-lg:min-h-[400px]">
-        <PreviewBlock />
+        <PreviewBlock carouselItems={previewBlockCarouselItems} />
       </div>
       <div className="relative min-h-[324px] w-full max-md:flex max-md:flex-col max-md:justify-center ">
         <PaginationProvider>

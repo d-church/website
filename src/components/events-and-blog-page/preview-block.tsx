@@ -19,25 +19,13 @@ import {
 import { cn } from "@/lib/utils";
 import { fetchProducts } from "@/oneentry/fetch-products";
 
-export function PreviewBlock() {
+type PreviewBlockProps = {
+  carouselItems: IProductsEntity[];
+};
+
+export function PreviewBlock({ carouselItems }: PreviewBlockProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [carouselItems, setCarouselItems] = useState<IProductsEntity[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchProducts("BlogsCarousel");
-        setCarouselItems(response);
-      } catch (error) {
-        console.error(
-          "Failed to fetch products in preview-block on events-and-blogs-page:",
-          error
-        );
-      }
-    };
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (!api) {
