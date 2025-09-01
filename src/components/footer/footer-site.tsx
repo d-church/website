@@ -11,9 +11,9 @@ import { clientUrl } from "@/utils/clientUrl";
 export function Footer() {
   const t = useTranslations("footer");
   return (
-    <footer className="bg-[#232323] py-[100px] text-white xl:py-[62px]">
-      <div className="container flex flex-col items-center justify-between space-y-[100px] xl:flex-row xl:space-y-0 2xl:justify-normal">
-        <div className="flex flex-col items-center space-y-6 xl:ml-[3rem] xl:ml-[2rem] ml-[0.0rem] mr-[0.0rem]">
+    <footer className="bg-[#232323] py-[30px] text-white xl:py-[60px]">
+      <div className="container flex flex-col items-center justify-between space-y-7 xl:flex-row xl:space-y-0 2xl:justify-normal">
+        <div className="ml-[0.0rem] mr-[0.0rem] flex flex-col items-center space-y-6 xl:ml-[2rem] xl:ml-[3rem]">
           <Image
             src="/static/logo-footer.webp"
             alt="Logo of the footer"
@@ -25,8 +25,8 @@ export function Footer() {
             {t("address")}
           </p>
         </div>
-        <div className="flex flex-col justify-between space-y-7 xl:flex-row xl:space-x-[8rem] xl:space-y-0 2xl:ml-[10rem] xl:ml-[2rem] ml-[0.0rem] mr-[0.0rem]">
-          <div className="flex flex-col items-center justify-between space-y-[1.875rem] xl:items-start">
+        <div className="ml-[0.0rem] mr-[0.0rem] flex flex-col justify-between space-y-7 md:flex-row md:space-x-[8rem] md:space-y-0 xl:ml-[2rem] 2xl:ml-[10rem]">
+          <div className="flex flex-col items-center justify-between space-y-[1.875rem] md:items-start">
             {footersLink.firstBlock.map(({ href, key }, i) => (
               <Button
                 key={`${href}_${i}`}
@@ -43,7 +43,7 @@ export function Footer() {
               </Button>
             ))}
           </div>
-          <div className="flex flex-col items-center justify-between space-y-[1.875rem] xl:items-start">
+          <div className="flex flex-col items-center justify-between space-y-[1.875rem] md:items-start">
             {footersLink.secondBlock.map(({ href, key }, i) => (
               <Button
                 key={`${href}_${i}`}
@@ -62,7 +62,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-center space-y-12 2xl:ml-[9.5rem] xl:mr-[7.5rem] ml-[0.0rem] mr-[0.0rem] xl:mr-[7.5rem]">
+        <div className="ml-[0.0rem] mr-[0.0rem] flex flex-col items-center space-y-12 xl:mr-[7.5rem] xl:mr-[7.5rem] 2xl:ml-[9.5rem]">
           <div className="flex justify-center gap-[40px]">
             <Button
               className="group flex h-12 w-12 items-center justify-center rounded-full border border-white bg-white p-0 hover:bg-graphite"
@@ -90,7 +90,7 @@ export function Footer() {
             </Button>
           </div>
           <Button
-            className="rounded-lg border border-white bg-inherit p-[0.625rem] text-[1.25rem]/[1.5rem]"
+            className="rounded-lg border border-white bg-inherit p-[0.625rem] lg:text-[1.25rem]/[1.5rem]"
             asChild
           >
             <Link
