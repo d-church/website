@@ -21,7 +21,7 @@ export function Footer() {
             width={80}
             height={80}
           />
-          <p className="whitespace-pre-wrap text-center text-[1rem]/[1.25rem] lg:text-[1.25rem]/[1.5rem] font-medium uppercase">
+          <p className="whitespace-pre-wrap text-center text-[1rem]/[1.5rem] lg:text-[1.25rem]/[1.5rem] font-medium uppercase">
             {t("address")}
           </p>
         </div>
