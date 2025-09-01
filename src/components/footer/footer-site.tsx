@@ -11,8 +11,8 @@ import { clientUrl } from "@/utils/clientUrl";
 export function Footer() {
   const t = useTranslations("footer");
   return (
-    <footer className="bg-[#232323] py-[100px] text-white xl:py-[62px]">
-      <div className="container flex flex-col items-center justify-between space-y-[100px] xl:flex-row xl:space-y-0 2xl:justify-normal">
+    <footer className="bg-[#232323] xl:py-[60px] py-[30px] text-white">
+      <div className="container flex flex-col items-center justify-between space-y-7 xl:flex-row xl:space-y-0 2xl:justify-normal">
         <div className="flex flex-col items-center space-y-6 xl:ml-[3rem] xl:ml-[2rem] ml-[0.0rem] mr-[0.0rem]">
           <Image
             src="/static/logo-footer.webp"
@@ -21,7 +21,7 @@ export function Footer() {
             width={80}
             height={80}
           />
-          <p className="whitespace-pre-wrap text-center text-[1.25rem]/[1.5rem] font-medium uppercase">
+          <p className="whitespace-pre-wrap text-center text-[1rem]/[1.25rem] lg:text-[1.25rem]/[1.5rem] font-medium uppercase">
             {t("address")}
           </p>
         </div>
