@@ -21,12 +21,12 @@ export function Footer() {
             width={80}
             height={80}
           />
-          <p className="whitespace-pre-wrap text-center text-[1rem]/[1.5rem] lg:text-[1.25rem]/[1.5rem] font-medium uppercase">
+          <p className="whitespace-pre-wrap text-center text-[1.25rem]/[1.5rem] font-medium uppercase">
             {t("address")}
           </p>
         </div>
-        <div className="flex flex-col justify-between space-y-7 xl:flex-row xl:space-x-[8rem] xl:space-y-0 2xl:ml-[10rem] xl:ml-[2rem] ml-[0.0rem] mr-[0.0rem]">
-          <div className="flex flex-col items-center justify-between space-y-[1.875rem] xl:items-start">
+        <div className="flex flex-col justify-between space-y-7 md:flex-row md:space-x-[8rem] md:space-y-0 2xl:ml-[10rem] xl:ml-[2rem] ml-[0.0rem] mr-[0.0rem]">
+          <div className="flex flex-col items-center justify-between space-y-[1.875rem] md:items-start">
             {footersLink.firstBlock.map(({ href, key }, i) => (
               <Button
                 key={`${href}_${i}`}
@@ -43,7 +43,7 @@ export function Footer() {
               </Button>
             ))}
           </div>
-          <div className="flex flex-col items-center justify-between space-y-[1.875rem] xl:items-start">
+          <div className="flex flex-col items-center justify-between space-y-[1.875rem] md:items-start">
             {footersLink.secondBlock.map(({ href, key }, i) => (
               <Button
                 key={`${href}_${i}`}
@@ -90,7 +90,7 @@ export function Footer() {
             </Button>
           </div>
           <Button
-            className="rounded-lg border border-white bg-inherit p-[0.625rem] text-[1.25rem]/[1.5rem]"
+            className="rounded-lg border border-white bg-inherit p-[0.625rem] lg:text-[1.25rem]/[1.5rem]"
             asChild
           >
             <Link
