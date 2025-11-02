@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 
 import background from "./kairos-logos/backgroundchanged.svg";
 import logo from "./kairos-logos/logo.svg";
+import RegisterButton from "./register-button";
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -35,14 +36,7 @@ export default function Kairos2025Page({
               alt="Kairos logo"
               className="my-2 h-auto w-auto max-w-[40%] flex-shrink object-contain md:my-0 md:h-[70px] md:w-auto md:max-w-[200px] md:flex-shrink-0"
             />
-            <button
-              onClick={() =>
-                window.open("https://kairos2025.com/register", "_blank")
-              }
-              className={`${poppins.className} mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base`}
-            >
-              Реєстрація
-            </button>
+            <RegisterButton className="mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base" />
           </div>
 
           <div className="mb-6 text-center text-white md:hidden">
@@ -113,14 +107,7 @@ export default function Kairos2025Page({
             </p>
           </div>
 
-          <button
-            onClick={() =>
-              window.open("https://kairos2025.com/register", "_blank")
-            }
-            className={`${poppins.className} mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base`}
-          >
-            Реєстрація
-          </button>
+          <RegisterButton className="mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base" />
 
           <div className="mt-auto text-left md:text-right">
             <h2
