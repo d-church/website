@@ -1,7 +1,13 @@
 import { unstable_setRequestLocale } from "next-intl/server";
+import { Poppins } from "next/font/google";
 
 import background from "./kairos-logos/Background.svg";
-import Logo from "./kairos-logos/logo.svg";
+import logo from "./kairos-logos/logo.svg";
+
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600", "700"],
+});
 
 export default function Kairos2025Page({
   params: { locale },
@@ -10,9 +16,9 @@ export default function Kairos2025Page({
 }) {
   unstable_setRequestLocale(locale);
   return (
-    <main className="w-full md:w-[1200px] mx-auto">
+    <main className="mx-auto w-full md:w-[1200px]">
       <header
-        className="relative w-full min-h-[500px] md:h-[500px] overflow-hidden flex flex-col md:flex-row items-stretch bg-[#C16161] md:bg-transparent"
+        className="relative flex min-h-[500px] w-full flex-col items-stretch overflow-hidden bg-[#C16161] md:h-[500px] md:flex-row md:bg-transparent"
         style={{
           backgroundImage: `url(${background.src})`,
           backgroundSize: "cover",
@@ -20,123 +26,177 @@ export default function Kairos2025Page({
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-[#C16161] md:hidden z-[1]"></div>
-        <div className="relative z-[2] flex-1 py-10 px-5 md:px-[60px] flex flex-col justify-start text-white">
+        <div className="absolute inset-0 z-[1] bg-[#C16161] md:hidden"></div>
+
+        {/* Ліва частина */}
+        <div className="relative z-[2] flex flex-1 flex-col justify-start px-5 py-10 text-white md:px-[60px]">
           <div className="mb-5">
-            <h1 className="text-[24px] md:text-[32px] font-light m-0 text-white/90 tracking-[0.5px]">
-              Кайрос
-            </h1>
-            <p className="text-sm md:text-base font-light mt-2 text-white/90">
-              Бог, Церква і Світ
-            </p>
+            <img
+              src={logo.src}
+              alt="Kairos logo"
+              className="w-auto md:h-[100px]"
+            />
           </div>
 
-          <div className="mt-auto mb-10">
-            <h2 className="text-[36px] md:text-[48px] font-bold m-0 leading-[1.2]">
+          <div className="mb-10 mt-auto">
+            <h2
+              className={`${poppins.className} m-0 text-[36px] font-medium leading-[2.5] md:translate-x-[60px] md:text-[75px]`}
+            >
               Курс
             </h2>
-            <h2 className="text-[36px] md:text-[48px] font-bold mt-2 leading-[1.2]">
+            <h2
+              className={`${poppins.className} mt-2 -translate-y-[50px] text-[36px] font-medium md:translate-x-[50px] md:text-[75px]`}
+            >
               Бог,
             </h2>
           </div>
         </div>
 
-        <div className="relative z-[2] flex-1 py-10 px-5 md:px-[60px] flex flex-col justify-start text-white items-start md:items-end text-left md:text-right">
-          <div className="mb-5">
-            <p className="text-sm md:text-base font-light m-0 text-white/90">
+        {/* Права частина */}
+        <div className="relative z-[2] flex flex-1 flex-col items-start justify-start px-5 py-10 text-left text-white md:items-end md:px-[60px] md:text-right">
+          <div className="absolute -left-[65px] top-[10%] z-[3] text-center text-white">
+            <p
+              className={`${poppins.className} m-0 text-[25px] font-medium leading-[1] text-white/90 md:text-[35px]`}
+            >
               листопад
             </p>
-            <p className="text-[28px] md:text-[36px] font-bold mt-2 text-white/95">
+            <p
+              className={`${poppins.className} mt-2 text-[34px] font-medium leading-[1] text-white/95 md:text-[40px]`}
+            >
               2025
             </p>
           </div>
 
-          <button className="mt-5 py-3 px-6 bg-white text-[#333] border-none rounded-lg text-sm md:text-base font-semibold cursor-pointer mb-auto">
+          <button
+            className={`${poppins.className} mb-auto mt-5 cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:text-base`}
+          >
             Реєстрація
           </button>
 
           <div className="mt-auto text-left md:text-right">
-            <h2 className="text-[36px] md:text-[48px] font-bold m-0 leading-[1.2]">
+            <h2
+              className={`${poppins.className} absolute right-[90%] top-[44%] m-0 text-[36px] font-medium leading-[1.2] md:text-[70px]`}
+            >
               Кайрос
             </h2>
-            <h2 className="text-[36px] md:text-[48px] font-bold mt-2 mb-5 leading-[1.2]">
+            <h2
+              className={`${poppins.className} absolute right-[73%] top-[63%] mb-5 mt-2 whitespace-nowrap text-[36px] font-medium leading-[1.2] md:text-[60px]`}
+            >
               Церква і Світ
             </h2>
 
-            <div className="text-white md:text-[#333] mt-[30px]">
-              <div className="flex items-center gap-2 mb-2 justify-start md:justify-end">
-                <span className="text-base">📍</span>
-                <span className="text-sm md:text-base font-semibold">Локація</span>
+            <div className="absolute bottom-[90px] left-[67%] text-left text-white md:text-[#333]">
+              <div className="mb-2 flex items-center justify-start gap-2">
+                <span className={`${poppins.className} text-base`}>📍</span>
+                <span
+                  className={`${poppins.className} text-sm font-semibold md:text-base`}
+                >
+                  Локація
+                </span>
               </div>
-              <p className="text-xs md:text-sm my-1">м. Львів,</p>
-              <p className="text-xs md:text-sm my-1">вул. Замарстинівська 37</p>
+              <p className={`${poppins.className} my-1 text-xs md:text-sm`}>
+                м. Львів,
+              </p>
+              <p className={`${poppins.className} my-1 text-xs md:text-sm`}>
+                вул. Замарстинівська 37
+              </p>
             </div>
           </div>
         </div>
       </header>
 
-      <section className="py-10 md:py-[60px] px-5 md:px-[40px] text-[#333] bg-white">
-        <p className="text-lg leading-[1.6] mb-5">
-          Курс «Кайрос» — більше, ніж просто навчання.
-        </p>
-
-        <p className="text-base leading-[1.6] mb-[30px]">
-          Курс «Кайрос» — це інтерактивний курс, у якому ми вчимося розуміти Божу
-          волю для цього світу та бачити, як кожен із нас може долучитися до її
-          виконання.
-        </p>
-
-        <p className="text-base leading-[1.6] mb-5 font-semibold">
-          Курс складається з чотирьох частин:
-        </p>
-
-        <ul className="list-none p-0 m-0 mb-10">
-          <li className="flex items-center gap-2.5 mb-3 text-base">
-            <span className="text-xs">◆</span>
-            <span>Біблійна частина</span>
-          </li>
-          <li className="flex items-center gap-2.5 mb-3 text-base">
-            <span className="text-xs">◆</span>
-            <span>Культурна частина</span>
-          </li>
-          <li className="flex items-center gap-2.5 mb-3 text-base">
-            <span className="text-xs">◆</span>
-            <span>Історична частина</span>
-          </li>
-          <li className="flex items-center gap-2.5 mb-3 text-base">
-            <span className="text-xs">◆</span>
-            <span>Стратегічна частина</span>
-          </li>
-        </ul>
-
-        <div className="mb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-base">📅</span>
-            <span className="text-base font-semibold">Дата</span>
-          </div>
-          <p className="text-base my-1">21.11-23.11</p>
-          <p className="text-base my-1">28.11-29.11</p>
-        </div>
-
-        <div className="mb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-base">📍</span>
-            <span className="text-base font-semibold">Локація</span>
-          </div>
-          <p className="text-base my-1">
-            «Джерело життя», вул. Замарстинівська, 37.
-          </p>
-        </div>
-
-        <p className="text-base leading-[1.6] mt-[30px]">
-          Реєстрація за посиланням:{" "}
-          <a
-            href="#"
-            className="underline text-[#8B2E2E] cursor-pointer"
+      {/* Основна секція */}
+      <section className="bg-gradient-to-b from-[#fff] to-[#f8f4f4] px-6 py-14 text-[#333] md:px-[60px] md:py-[80px]">
+        <div className="mx-auto max-w-[900px]">
+          {/* Заголовок */}
+          <h2
+            className={`${poppins.className} mb-6 text-3xl font-semibold text-[#8B2E2E] md:text-4xl`}
           >
-            Реєстрація
-          </a>
-        </p>
+            Курс «Кайрос» — більше, ніж просто навчання.
+          </h2>
+
+          <p
+            className={`${poppins.className} mb-10 text-lg leading-relaxed text-[#444] md:text-xl`}
+          >
+            Курс «Кайрос» — це інтерактивний курс, у якому ми вчимося розуміти
+            Божу волю для цього світу та бачити, як кожен із нас може долучитися
+            до її виконання.
+          </p>
+
+          {/* Список частин */}
+          <h3
+            className={`${poppins.className} mb-6 text-xl font-semibold text-[#8B2E2E]`}
+          >
+            Курс складається з чотирьох частин:
+          </h3>
+
+          <ul className="mb-12 grid gap-3 md:grid-cols-2">
+            {[
+              "Біблійна частина",
+              "Культурна частина",
+              "Історична частина",
+              "Стратегічна частина",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className={`${poppins.className} flex items-center gap-3 rounded-lg bg-[#f9eaea] px-4 py-3 text-base shadow-sm transition hover:bg-[#f5d9d9]`}
+              >
+                <span className="text-[#8B2E2E]">◆</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Дата */}
+          <div className="mb-8">
+            <div className="mb-3 flex items-center gap-2 text-[#8B2E2E]">
+              <span className="text-lg">📅</span>
+              <span
+                className={`${poppins.className} text-lg font-semibold tracking-wide`}
+              >
+                Дата
+              </span>
+            </div>
+            <div
+              className={`${poppins.className} text-base leading-relaxed text-[#333]`}
+            >
+              <p>21.11–23.11</p>
+              <p>28.11–29.11</p>
+            </div>
+          </div>
+
+          {/* Локація */}
+          <div className="mb-10">
+            <div className="mb-3 flex items-center gap-2 text-[#8B2E2E]">
+              <span className="text-lg">📍</span>
+              <span
+                className={`${poppins.className} text-lg font-semibold tracking-wide`}
+              >
+                Локація
+              </span>
+            </div>
+            <p
+              className={`${poppins.className} text-base leading-relaxed text-[#333]`}
+            >
+              «Джерело життя», вул. Замарстинівська, 37.
+            </p>
+          </div>
+
+          {/* Реєстрація */}
+          <div
+            className={`${poppins.className} mt-10 flex flex-col items-start md:flex-row md:items-center md:gap-3`}
+          >
+            <span className="text-base md:text-lg">
+              Реєстрація за посиланням:
+            </span>
+            <a
+              href="#"
+              className="mt-2 rounded-full bg-[#8B2E2E] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#a94444] md:mt-0 md:text-base"
+            >
+              Реєстрація
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );
