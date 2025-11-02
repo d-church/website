@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Poppins } from "next/font/google";
 
-import background from "./kairos-logos/Background.svg";
+import background from "./kairos-logos/backgroundchanged.svg";
 import logo from "./kairos-logos/logo.svg";
 
 const poppins = Poppins({
@@ -28,22 +28,23 @@ export default function Kairos2025Page({
       >
         <div className="absolute inset-0 z-[1] bg-[#C16161] md:hidden"></div>
 
-        {/* Ліва частина */}
         <div className="relative z-[2] flex flex-1 flex-col justify-start px-5 py-10 text-white md:px-[60px]">
           <div className="mb-5 flex min-w-0 items-center justify-between gap-4 overflow-hidden md:block md:gap-0 md:overflow-visible">
             <img
               src={logo.src}
               alt="Kairos logo"
-              className="my-2 h-auto w-auto max-w-[60%] flex-shrink object-contain md:my-0 md:h-[100px] md:w-auto md:max-w-none md:flex-shrink-0"
+              className="my-2 h-auto w-auto max-w-[40%] flex-shrink object-contain md:my-0 md:h-[70px] md:w-auto md:max-w-[200px] md:flex-shrink-0"
             />
             <button
-              className={`${poppins.className} flex-shrink-0 cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-4 py-3 text-xs font-semibold text-[#333] sm:px-6 sm:text-sm md:hidden`}
+              onClick={() =>
+                window.open("https://kairos2025.com/register", "_blank")
+              }
+              className={`${poppins.className} mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base`}
             >
               Реєстрація
             </button>
           </div>
 
-          {/* листопад 2025 - тільки для мобільних */}
           <div className="mb-6 text-center text-white md:hidden">
             <p
               className={`${poppins.className} m-0 text-[25px] font-medium leading-[1] text-white/90`}
@@ -57,7 +58,6 @@ export default function Kairos2025Page({
             </p>
           </div>
 
-          {/* Весь текст під листопад 2025 для мобільних */}
           <div className="mb-10 flex flex-col gap-4 md:hidden">
             <div className="flex items-center gap-4">
               <h2
@@ -85,7 +85,6 @@ export default function Kairos2025Page({
             </div>
           </div>
 
-          {/* Для десктопу */}
           <div className="mb-10 mt-auto hidden md:block">
             <h2
               className={`${poppins.className} m-0 text-[36px] font-medium leading-[2.5] md:translate-x-[60px] md:text-[75px]`}
@@ -100,7 +99,6 @@ export default function Kairos2025Page({
           </div>
         </div>
 
-        {/* Права частина */}
         <div className="relative z-[2] flex flex-1 flex-col items-start justify-start px-5 py-10 text-left text-white md:items-end md:px-[60px] md:text-right">
           <div className="absolute -left-[65px] top-[10%] z-[3] hidden text-center text-white md:block">
             <p
@@ -116,6 +114,9 @@ export default function Kairos2025Page({
           </div>
 
           <button
+            onClick={() =>
+              window.open("https://kairos2025.com/register", "_blank")
+            }
             className={`${poppins.className} mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base`}
           >
             Реєстрація
@@ -153,10 +154,8 @@ export default function Kairos2025Page({
         </div>
       </header>
 
-      {/* Основна секція */}
       <section className="bg-gradient-to-b from-[#fff] to-[#f8f4f4] px-6 py-14 text-[#333] md:px-[60px] md:py-[80px]">
         <div className="mx-auto max-w-[900px]">
-          {/* Заголовок */}
           <h2
             className={`${poppins.className} mb-6 text-3xl font-semibold text-[#8B2E2E] md:text-4xl`}
           >
@@ -171,7 +170,6 @@ export default function Kairos2025Page({
             до її виконання.
           </p>
 
-          {/* Список частин */}
           <h3
             className={`${poppins.className} mb-6 text-xl font-semibold text-[#8B2E2E]`}
           >
@@ -195,7 +193,6 @@ export default function Kairos2025Page({
             ))}
           </ul>
 
-          {/* Дата */}
           <div className="mb-8">
             <div className="mb-3 flex items-center gap-2 text-[#8B2E2E]">
               <span className="text-lg">📅</span>
@@ -213,7 +210,6 @@ export default function Kairos2025Page({
             </div>
           </div>
 
-          {/* Локація */}
           <div className="mb-10">
             <div className="mb-3 flex items-center gap-2 text-[#8B2E2E]">
               <span className="text-lg">📍</span>
@@ -230,7 +226,6 @@ export default function Kairos2025Page({
             </p>
           </div>
 
-          {/* Реєстрація */}
           <div
             className={`${poppins.className} mt-10 flex flex-col items-start md:flex-row md:items-center md:gap-3`}
           >
