@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     "Церква - Джерело життя | Вітаємо! Ви знайшли церкву, яку шукали! Ласкаво просимо!",
   description:
     "Церква належить до євангельського харизматичного руху, протестанської гілки християнства. Est.1990",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export async function generateStaticParams() {
