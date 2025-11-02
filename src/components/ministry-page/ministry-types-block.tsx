@@ -15,8 +15,8 @@ export function MinistryTypesBlock({ ministryCards }: MinistryTypesBlockProps) {
             <MinistryTypeBlock
               key={`${card.attributeValues.title}_${i}`}
               title={card.attributeValues.title.value}
-              subtitle={card.attributeValues.subtitle.value.htmlValue}
-              textModal={card.attributeValues.description.value.htmlValue}
+              subtitle={card.attributeValues.subtitle?.value?.htmlValue || ""}
+              textModal={card.attributeValues.description?.value?.htmlValue || ""}
               src={card.attributeValues.previevImage.value.downloadLink}
               carouselImages={card.attributeValues.imgs.value}
             />

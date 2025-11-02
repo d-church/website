@@ -15,7 +15,7 @@ export const loadMinistryPageData = async () => {
     imageSrc: ministryHero?.attributeValues.image?.value.downloadLink,
     title: ministryHero?.attributeValues.title.value,
     parsedText: parse(
-      ministryHero?.attributeValues.description.value.htmlValue
+      ministryHero?.attributeValues.description?.value?.htmlValue || ""
     ),
   };
 

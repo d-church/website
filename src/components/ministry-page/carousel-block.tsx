@@ -134,7 +134,7 @@ export default function CarouselBlock({
           }
         )}
       >
-        <div className="px-4" dangerouslySetInnerHTML={{ __html: textModal }}></div>
+        <div className="px-4" dangerouslySetInnerHTML={{ __html: textModal || "" }}></div>
       </div>
     </>
   );
