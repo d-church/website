@@ -13,7 +13,7 @@ interface RegisterButtonProps {
 
 export default function RegisterButton({ className }: RegisterButtonProps) {
   const handleClick = () => {
-    window.open("https://kairos2025.com/register", "_blank");
+    window.open("https://forms.gle/s1c49NvTEBwVkoz88", "_blank");
   };
 
   return (

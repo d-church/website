@@ -219,7 +219,8 @@ export default function Kairos2025Page({
               Реєстрація за посиланням:
             </span>
             <a
-              href="#"
+              href="https://forms.gle/s1c49NvTEBwVkoz88"
+              target="_blank"
               className="mt-2 rounded-full bg-[#8B2E2E] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#a94444] md:mt-0 md:text-base"
             >
               Реєстрація
