@@ -30,15 +30,63 @@ export default function Kairos2025Page({
 
         {/* Ліва частина */}
         <div className="relative z-[2] flex flex-1 flex-col justify-start px-5 py-10 text-white md:px-[60px]">
-          <div className="mb-5">
+          <div className="mb-5 flex min-w-0 items-center justify-between gap-4 overflow-hidden md:block md:gap-0 md:overflow-visible">
             <img
               src={logo.src}
               alt="Kairos logo"
-              className="w-auto md:h-[100px]"
+              className="my-2 h-auto w-auto max-w-[60%] flex-shrink object-contain md:my-0 md:h-[100px] md:w-auto md:max-w-none md:flex-shrink-0"
             />
+            <button
+              className={`${poppins.className} flex-shrink-0 cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-4 py-3 text-xs font-semibold text-[#333] sm:px-6 sm:text-sm md:hidden`}
+            >
+              Реєстрація
+            </button>
           </div>
 
-          <div className="mb-10 mt-auto">
+          {/* листопад 2025 - тільки для мобільних */}
+          <div className="mb-6 text-center text-white md:hidden">
+            <p
+              className={`${poppins.className} m-0 text-[25px] font-medium leading-[1] text-white/90`}
+            >
+              листопад
+            </p>
+            <p
+              className={`${poppins.className} mt-[4.8px] text-[34px] font-medium leading-[1] text-white/95`}
+            >
+              2025
+            </p>
+          </div>
+
+          {/* Весь текст під листопад 2025 для мобільних */}
+          <div className="mb-10 flex flex-col gap-4 md:hidden">
+            <div className="flex items-center gap-4">
+              <h2
+                className={`${poppins.className} m-0 text-[36px] font-medium leading-[2.5]`}
+              >
+                Курс
+              </h2>
+              <h2
+                className={`${poppins.className} m-0 text-[36px] font-medium leading-[1.2]`}
+              >
+                Кайрос
+              </h2>
+            </div>
+            <div className="flex items-center gap-4">
+              <h2
+                className={`${poppins.className} m-0 text-[36px] font-medium leading-[2.5]`}
+              >
+                Бог,
+              </h2>
+              <h2
+                className={`${poppins.className} m-0 whitespace-nowrap text-[36px] font-medium leading-[1.2]`}
+              >
+                Церква і Світ
+              </h2>
+            </div>
+          </div>
+
+          {/* Для десктопу */}
+          <div className="mb-10 mt-auto hidden md:block">
             <h2
               className={`${poppins.className} m-0 text-[36px] font-medium leading-[2.5] md:translate-x-[60px] md:text-[75px]`}
             >
@@ -54,7 +102,7 @@ export default function Kairos2025Page({
 
         {/* Права частина */}
         <div className="relative z-[2] flex flex-1 flex-col items-start justify-start px-5 py-10 text-left text-white md:items-end md:px-[60px] md:text-right">
-          <div className="absolute -left-[65px] top-[10%] z-[3] text-center text-white">
+          <div className="absolute -left-[65px] top-[10%] z-[3] hidden text-center text-white md:block">
             <p
               className={`${poppins.className} m-0 text-[25px] font-medium leading-[1] text-white/90 md:text-[35px]`}
             >
@@ -68,24 +116,24 @@ export default function Kairos2025Page({
           </div>
 
           <button
-            className={`${poppins.className} mb-auto mt-5 cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:text-base`}
+            className={`${poppins.className} mb-auto mt-5 hidden cursor-pointer rounded-3xl border-none bg-[rgb(243,232,232)] px-6 py-3 text-sm font-semibold text-[#333] md:block md:text-base`}
           >
             Реєстрація
           </button>
 
           <div className="mt-auto text-left md:text-right">
             <h2
-              className={`${poppins.className} absolute right-[90%] top-[44%] m-0 text-[36px] font-medium leading-[1.2] md:text-[70px]`}
+              className={`${poppins.className} absolute right-[90%] top-[44%] m-0 hidden text-[36px] font-medium leading-[1.2] md:block md:text-[70px]`}
             >
               Кайрос
             </h2>
             <h2
-              className={`${poppins.className} absolute right-[73%] top-[63%] mb-5 mt-2 whitespace-nowrap text-[36px] font-medium leading-[1.2] md:text-[60px]`}
+              className={`${poppins.className} absolute right-[73%] top-[63%] mb-5 mt-2 hidden whitespace-nowrap text-[36px] font-medium leading-[1.2] md:block md:text-[60px]`}
             >
               Церква і Світ
             </h2>
 
-            <div className="absolute bottom-[90px] left-[67%] text-left text-white md:text-[#333]">
+            <div className="absolute bottom-5 right-5 z-[3] text-left text-white md:absolute md:bottom-[126px] md:right-[30px] md:text-left md:text-[#333]">
               <div className="mb-2 flex items-center justify-start gap-2">
                 <span className={`${poppins.className} text-base`}>📍</span>
                 <span
