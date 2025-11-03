@@ -110,12 +110,12 @@ export default function Kairos2025Page({
 
           <div className="mt-auto text-left md:text-right">
             <h2
-              className={`${poppins.className} absolute right-[90%] top-[44%] m-0 hidden text-[36px] font-medium leading-[1.2] md:block md:text-[70px]`}
+              className={`${poppins.className} absolute right-[90%] top-[38%] m-0 hidden text-[36px] font-medium leading-[1.2] md:block md:text-[70px]`}
             >
               Кайрос
             </h2>
             <h2
-              className={`${poppins.className} absolute right-[73%] top-[63%] mb-5 mt-2 hidden whitespace-nowrap text-[36px] font-medium leading-[1.2] md:block md:text-[60px]`}
+              className={`${poppins.className} absolute right-[73%] top-[58%] mb-5 mt-2 hidden whitespace-nowrap text-[36px] font-medium leading-[1.2] md:block md:text-[60px]`}
             >
               Церква і Світ
             </h2>
