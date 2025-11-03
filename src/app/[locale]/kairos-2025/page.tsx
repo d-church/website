@@ -7,7 +7,7 @@ import RegisterButton from "./register-button";
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600", "700"] /*SemiBold*/,
 });
 
 export default function Kairos2025Page({
