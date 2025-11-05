@@ -1,12 +1,12 @@
 import { WrapperPreviewBlock } from "@components/wrapper-preview-block/wrapper-preview-block";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/app/navigation";
-
 import { LiqPayButton } from "../donation-ministry/liq-pay-button";
 import { Icons } from "../ui/icons";
 import { Offer } from "./offer";
 import { PaymentMethodsBlock } from "./payment-methods-block";
+
+import { Link } from "@/app/navigation";
 
 export function PreviewBlock() {
   const t = useTranslations();
@@ -30,7 +30,7 @@ export function PreviewBlock() {
           </LiqPayButton>
           <Link
             href="/donate-building"
-            className="flex h-auto items-center justify-center rounded-[42px] border border-white bg-transparent px-[20px] py-[10px] text-center text-[24px] uppercase text-white transition-colors hover:bg-white hover:text-[#0E9398] lg:px-[40px] lg:py-[20px] lg:text-[38px]"
+            className="inline-flex h-auto shrink-0 items-center justify-center rounded-[42px] border border-white bg-transparent px-[20px] py-[10px] text-center text-[24px] font-medium uppercase text-white transition-colors hover:bg-white hover:text-[#0E9398] max-[496px]:px-[16px] max-[496px]:py-[12px] max-[496px]:text-[22px] max-[448px]:px-[8px] max-[448px]:py-[12px] max-[448px]:text-[18px] min-[497px]:px-[20px] min-[497px]:py-[10px] lg:px-[40px] lg:py-[20px] lg:text-[38px]"
           >
             Пожертвувати на будівництво
           </Link>

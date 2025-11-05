@@ -26,7 +26,7 @@ export function BuildingPreviewBlock() {
           <source src={videoBackground} type="video/mp4" />
         </video>
       </div>
-      <div className="relative z-10 mb-[60px] mt-[50px] px-4 lg:mb-[100px] lg:mt-[150px] lg:px-0">
+      <div className="relative z-10 mb-[60px] mt-[50px] px-4 max-[480px]:mt-[120px] min-[481px]:mt-[100px] lg:mb-[100px] lg:mt-[150px] lg:px-0">
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="mb-6 text-4xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] xl:text-5xl">
             {t("title")}
