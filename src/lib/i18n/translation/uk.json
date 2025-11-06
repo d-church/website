@@ -244,7 +244,10 @@
       "account-label": "Рахунок отримувача",
       "account-value": "UA333052990000026005031048170",
       "bank-label": "Назва банку",
-      "bank-value": "АТ КБ \"ПРИВАТБАНК\""
+      "bank-value": "АТ КБ \"ПРИВАТБАНК\"",
+      "paypal-desc": "Ви можете зробити пожертву на PayPal рахунок церкви.",
+      "paypal-email": "donate@dchurch.lviv.ua",
+      "paypal-button": "Пожертвувати"
     }
   },
   "donate-ministry-page": {

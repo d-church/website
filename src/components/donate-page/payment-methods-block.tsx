@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { Donate } from "@/constants";
+
 import { LiqPayButton } from "../donation-ministry/liq-pay-button";
 
 import { Link } from "@/app/navigation";
@@ -53,7 +55,7 @@ export function PaymentMethodsBlock() {
           </p>
           <div>
             <a
-              href="https://www.paypal.com/donate?business=d.church.lviv@gmail.com&currency_code=USD"
+              href={Donate.paypal.common}
               className="size-lg inline-flex h-10 items-center justify-center whitespace-nowrap rounded-2xl bg-[#232323] px-8 py-4 text-sm font-medium text-white ring-offset-background transition-all duration-200 hover:bg-[#0E9398] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-hover:scale-105"
               target="_blank"
             >
