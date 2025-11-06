@@ -33,10 +33,11 @@ export function BuildingPreviewBlock() {
         </video>
       </div>
       <div
-        className={cn(
-          "relative z-10 mb-[60px] mt-[50px] px-4",
-          "lg:mb-[100px] lg:mt-[150px] lg:px-0"
-        )}
+        className="
+    relative z-10 mb-14 px-4
+    pt-28 md:pt-32 lg:mb-24
+    lg:px-0 lg:pt-40
+  "
       >
         <div className="flex flex-col items-center justify-center text-center">
           <h1
