@@ -32,13 +32,7 @@ export function BuildingPreviewBlock() {
           <source src={videoBackground} type="video/mp4" />
         </video>
       </div>
-      <div
-        className="
-    relative z-10 mb-14 px-4
-    pt-28 md:pt-32 lg:mb-24
-    lg:px-0 lg:pt-40
-  "
-      >
+      <div className="relative z-10 mb-14 px-4 pt-28 md:pt-32 lg:mb-24 lg:px-0 lg:pt-40">
         <div className="flex flex-col items-center justify-center text-center">
           <h1
             className={cn(

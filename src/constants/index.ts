@@ -3,7 +3,7 @@ export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://dchurch.lvi
 export const Donate = {
   paypal: {
     common: "https://www.paypal.com/donate?business=d.church.lviv@gmail.com&currency_code=USD",
-    building: "https://www.paypal.com/donate?business=donate@dchurch.lviv.ua&currency_code=USD",
+    building: "https://www.paypal.com/donate?business=d.church.lviv@gmail.com&currency_code=USD",
   },
 };
 
