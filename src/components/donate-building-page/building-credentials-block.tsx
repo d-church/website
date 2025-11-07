@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { CopyToClipboard } from "../common/copy-to-clipboard";
 import mainImage from "./static-assets/main_image.webp";
 
 import { Donate } from "@/constants";
@@ -120,27 +121,33 @@ export function BuildingCredentialsBlock() {
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("receiver-label")}
                 </p>
-                <p className="font-bold text-gray-800">{t("receiver-value")}</p>
+                <div className="font-bold text-gray-800">
+                  <CopyToClipboard value={t("receiver-value")} />
+                </div>
               </div>
               <div className="group">
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("code-label")}
                 </p>
-                <p className="font-bold text-gray-800">{t("code-value")}</p>
+                <div className="font-bold text-gray-800">
+                  <CopyToClipboard value={t("code-value")} />
+                </div>
               </div>
               <div className="group">
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("account-label")}
                 </p>
-                <p className="break-all font-bold text-gray-800">
-                  {t("account-value")}
-                </p>
+                <div className="break-all font-bold text-gray-800">
+                  <CopyToClipboard value={t("account-value")} />
+                </div>
               </div>
               <div className="group">
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("bank-label")}
                 </p>
-                <p className="font-bold text-gray-800">{t("bank-value")}</p>
+                <div className="font-bold text-gray-800">
+                  <CopyToClipboard value={t("bank-value")} />
+                </div>
               </div>
             </div>
           </div>

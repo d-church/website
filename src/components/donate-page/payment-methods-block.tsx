@@ -1,11 +1,13 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { Donate } from "@/constants";
-
+import { CopyToClipboard } from "../common/copy-to-clipboard";
 import { LiqPayButton } from "../donation-ministry/liq-pay-button";
 
 import { Link } from "@/app/navigation";
+import { Donate } from "@/constants";
 
 export function PaymentMethodsBlock() {
   const t = useTranslations();
@@ -115,42 +117,58 @@ export function PaymentMethodsBlock() {
               <p className="uppercase tracking-wide text-gray-700">
                 {t("donate-page.payments-block.privat-iban.receiver-label")}
               </p>
-              <p className="font-bold text-gray-800">
-                {t("donate-page.payments-block.privat-iban.receiver-value")}
-              </p>
+              <div className="font-bold text-gray-800">
+                <CopyToClipboard
+                  value={t(
+                    "donate-page.payments-block.privat-iban.receiver-value"
+                  )}
+                />
+              </div>
             </div>
             <div className="group">
               <p className="uppercase tracking-wide text-gray-700">
                 {t("donate-page.payments-block.privat-iban.bank-label")}
               </p>
-              <p className="font-bold text-gray-800">
-                {t("donate-page.payments-block.privat-iban.bank-value")}
-              </p>
+              <div className="font-bold text-gray-800">
+                <CopyToClipboard
+                  value={t("donate-page.payments-block.privat-iban.bank-value")}
+                />
+              </div>
             </div>
             <div className="group">
               <p className="uppercase tracking-wide text-gray-700">
                 {t("donate-page.payments-block.privat-iban.iban-label")}
               </p>
-              <p className="font-bold text-gray-800">
-                {t("donate-page.payments-block.privat-iban.iban-value")}
-              </p>
+              <div className="font-bold text-gray-800">
+                <CopyToClipboard
+                  value={t("donate-page.payments-block.privat-iban.iban-value")}
+                />
+              </div>
             </div>
             <div className="group">
               <p className="uppercase tracking-wide text-gray-700">
                 {t("donate-page.payments-block.privat-iban.edrpou-label")}
               </p>
-              <p className="font-bold text-gray-800">
-                {t("donate-page.payments-block.privat-iban.edrpou-value")}
-              </p>
+              <div className="font-bold text-gray-800">
+                <CopyToClipboard
+                  value={t(
+                    "donate-page.payments-block.privat-iban.edrpou-value"
+                  )}
+                />
+              </div>
             </div>
 
             <div className="group">
               <p className="uppercase tracking-wide text-gray-700">
                 {t("donate-page.payments-block.privat-iban.purpose-label")}
               </p>
-              <p className="font-bold text-gray-800">
-                {t("donate-page.payments-block.privat-iban.purpose-value")}
-              </p>
+              <div className="font-bold text-gray-800">
+                <CopyToClipboard
+                  value={t(
+                    "donate-page.payments-block.privat-iban.purpose-value"
+                  )}
+                />
+              </div>
             </div>
           </div>
         </div>
