@@ -32,8 +32,8 @@ export function BuildingPreviewBlock() {
           <source src={videoBackground} type="video/mp4" />
         </video>
       </div>
-      <div className="relative z-10 mb-14 px-4 pt-28 md:pt-32 lg:mb-24 lg:px-0 lg:pt-40">
-        <div className="flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 mb-14 flex justify-start px-4 pt-28 md:pt-32 lg:mb-24 lg:px-0 lg:pt-40">
+        <div className="flex flex-col items-start justify-start">
           <h1
             className={cn(
               "mb-6 text-4xl font-bold text-white",
@@ -44,14 +44,14 @@ export function BuildingPreviewBlock() {
           </h1>
           <p
             className={cn(
-              "mb-8 text-xl text-white",
+              "mb-8 flex justify-start text-[20px] leading-[28px] text-white",
               "drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] xl:text-2xl"
             )}
           >
             {t("subtitle")}
           </p>
 
-          <div className="max-w-3xl space-y-6 px-4 text-white lg:px-0">
+          <div className="max-w-3xl space-y-6 text-white lg:px-0">
             <div>
               <h2
                 className={cn(

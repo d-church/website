@@ -3,31 +3,109 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import mainImage from "./static-assets/main_image.webp";
+
 import { Donate } from "@/constants";
 import { cn } from "@/lib/utils";
-
-import mainImage from "./static-assets/main_image.webp";
 
 export function BuildingCredentialsBlock() {
   const t = useTranslations("donate-building-page.credentials");
 
   return (
-    <div className="mx-auto mb-[70px] flex w-[calc(100%-40px)] flex-col gap-[70px] px-4 xl:w-[1070px] xl:px-0">
-      <div className="flex justify-center">
+    // весь блок
+    <div className="mx-auto mb-[20px] flex w-[80%] flex-col gap-[40px] px-0 md:mb-[20px] md:w-[70%] md:gap-[70px] md:px-4 lg:mb-[70px] lg:w-[70%] xl:w-[1070px] xl:px-0">
+      <div className="hidden justify-center md:flex ">
         <Image
           src={mainImage}
           alt="Main image"
           width={800}
           height={800}
-          className="object-contain"
+          className="w-[800px] object-contain xl:w-[950px] 2xl:w-[1100px]"
         />
       </div>
+      <div className="w-full gap-[70px] md:w-full xl:flex-row xl:gap-8">
+        <div className="mb-[20px] flex flex-col gap-[30px] md:mb-10 lg:flex-row">
+          <div
+            className={cn(
+              // privat
+              "group flex w-full flex-col justify-between rounded-sm border border-gray-200 p-5 shadow-md",
+              "transition-all duration-300 hover:shadow-lg xl:w-1/2"
+            )}
+          >
+            <div>
+              <Image
+                className="mb-3"
+                src="/static/logo_Privat24.png"
+                alt="PayPal"
+                width={160}
+                height={42}
+              />
+              <p className="mb-6 leading-relaxed text-gray-600">
+                {t("privat-desc")}
+              </p>
+            </div>
+            <div>
+              <a
+                href={Donate.privatbank.building}
+                className={cn(
+                  "size-lg inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-2xl",
+                  "bg-[#232323] px-8 py-4 text-sm font-medium text-white ring-offset-background",
+                  "transition-all duration-200 hover:bg-[#0E9398]",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                  "disabled:pointer-events-none disabled:opacity-50 group-hover:scale-105"
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("paypal-button")}
+              </a>
+            </div>
+          </div>
 
-      <div className="flex flex-col gap-[70px] xl:flex-row xl:gap-8">
-        <div className={cn(
-          "w-full rounded-sm border border-gray-200 p-5 shadow-md",
-          "transition-all duration-300 hover:shadow-lg xl:w-2/3"
-        )}>
+          <div
+            className={cn(
+              // paypal
+              "group flex w-full flex-col justify-between rounded-sm border border-gray-200 p-5 shadow-md",
+              "transition-all duration-300 hover:shadow-lg xl:w-1/2"
+            )}
+          >
+            <div>
+              <Image
+                className="mb-3"
+                src="/static/paypal_logo.png"
+                alt="PayPal"
+                width={160}
+                height={42}
+              />
+              <p className="mb-6 leading-relaxed text-gray-600">
+                {t("paypal-desc")}
+              </p>
+            </div>
+            <div>
+              <a
+                href={Donate.paypal.building}
+                className={cn(
+                  "size-lg inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-2xl",
+                  "bg-[#232323] px-8 py-4 text-sm font-medium text-white ring-offset-background",
+                  "transition-all duration-200 hover:bg-[#0E9398]",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                  "disabled:pointer-events-none disabled:opacity-50 group-hover:scale-105"
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("paypal-button")}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={cn(
+            "mb-5 w-full rounded-sm border border-gray-200 p-5 shadow-md lg:mb-[0]", // реквізити
+            "transition-all duration-300 hover:shadow-lg xl:w-full"
+          )}
+        >
           <div className="flex flex-col lg:items-start">
             <div className="mb-3 flex flex-1 items-center space-x-6">
               <div>
@@ -42,23 +120,19 @@ export function BuildingCredentialsBlock() {
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("receiver-label")}
                 </p>
-                <p className="font-bold text-gray-800">
-                  {t("receiver-value")}
-                </p>
+                <p className="font-bold text-gray-800">{t("receiver-value")}</p>
               </div>
               <div className="group">
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("code-label")}
                 </p>
-                <p className="font-bold text-gray-800">
-                  {t("code-value")}
-                </p>
+                <p className="font-bold text-gray-800">{t("code-value")}</p>
               </div>
               <div className="group">
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("account-label")}
                 </p>
-                <p className="font-bold text-gray-800 break-all">
+                <p className="break-all font-bold text-gray-800">
                   {t("account-value")}
                 </p>
               </div>
@@ -66,49 +140,12 @@ export function BuildingCredentialsBlock() {
                 <p className="uppercase tracking-wide text-gray-700">
                   {t("bank-label")}
                 </p>
-                <p className="font-bold text-gray-800">
-                  {t("bank-value")}
-                </p>
+                <p className="font-bold text-gray-800">{t("bank-value")}</p>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className={cn(
-          "group flex w-full flex-col justify-between rounded-sm border border-gray-200 p-5 shadow-md",
-          "transition-all duration-300 hover:shadow-lg xl:w-1/3"
-        )}>
-          <div>
-            <Image
-              className="mb-3"
-              src="/static/paypal_logo.png"
-              alt="PayPal"
-              width={160}
-              height={42}
-            />
-            <p className="mb-6 leading-relaxed text-gray-600">
-              {t("paypal-desc")}
-            </p>
-          </div>
-          <div>
-            <a
-              href={Donate.paypal.building}
-              className={cn(
-                "size-lg inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-2xl",
-                "bg-[#232323] px-8 py-4 text-sm font-medium text-white ring-offset-background",
-                "transition-all duration-200 hover:bg-[#0E9398]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                "disabled:pointer-events-none disabled:opacity-50 group-hover:scale-105"
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("paypal-button")}
-            </a>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
