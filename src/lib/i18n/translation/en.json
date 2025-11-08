@@ -1,0 +1,446 @@
+{
+  "common": {
+    "copy-to-clipboard": "Copy",
+    "copied-to-clipboard": "Copied!"
+  },
+  "head": {
+    "titles": {
+      "main": "Church - Source of Life | Welcome! You found the church you were looking for!"
+    },
+    "meta": {
+      "main": "Welcome!"
+    },
+    "h1": {
+      "main": "Church - Source of Life",
+      "jesus": "Jesus - Source of Life",
+      "about": "About Us - Source of Life",
+      "contacts": "Contacts - Source of Life",
+      "donate": "Donations - Source of Life",
+      "ministry": "Ministry - Source of Life",
+      "events-and-blog": "Events and Blog - Source of Life",
+      "d-youth-announcements": "D.Youth Announcements - Source of Life"
+    }
+  },
+  "header": {
+    "links": {
+      "jesus": "Jesus",
+      "about": "Church",
+      "ministry": "Ministry",
+      "video-and-stream": "Live",
+      "contact": "Contacts",
+      "events-and-blog": "Events and Blog"
+    },
+    "button-donate": "Donate"
+  },
+  "footer": {
+    "address": "Zamarstynivska St, 37,\nLviv, Ukraine",
+    "links": {
+      "jesus": "Jesus",
+      "about": "Church",
+      "ministry": "Ministry",
+      "video-and-stream": "Live",
+      "contact": "Contacts",
+      "events-and-blog": "Events and Blog"
+    },
+    "email": "d.church.lviv@gmail.com"
+  },
+  "main-page": {
+    "preview-block": {
+      "title": "D Source of Life",
+      "under-title": "Church Lviv",
+      "welcome-text": "Welcome",
+      "hash-tag": "#d.church"
+    },
+    "important-information": {
+      "title": "Important Information"
+    },
+    "video-block": {
+      "title": "Live",
+      "button-go-to-chanel": "Go to Youtube channel",
+      "start-stream": "Until the start of the broadcast",
+      "button-watch": "Watch live"
+    },
+    "about-block": {
+      "text-1": "about the church",
+      "text-2": "church mission",
+      "text-3": "offers",
+      "button-details": "More details"
+    },
+    "about-church-block": {
+      "church": "CHURCH",
+      "description": "Welcome! You found the church you were looking for! Welcome!",
+      "potoks": "SUNDAY SERVICE STREAMS:",
+      "morning": "Morning",
+      "day": "Day",
+      "youth": "Youth",
+      "time-1": "10:00 - 11:30",
+      "time-2": "12:00 - 13:30",
+      "time-3": "16:00 - 17:30"
+    },
+    "church-team-block": {
+      "text": "Church leadership is carried out by a team of dedicated ministers who work diligently for the development of God's Kingdom.",
+      "church-employees": {
+        "employee-1": {
+          "full-name": "Bilyk Volodymyr Dmytrovych"
+        },
+        "employee-2": {
+          "full-name": "Novoseltsev Ihor\nIhorovych"
+        },
+        "employee-3": {
+          "full-name": "Denysiuk Serhii\nStanislavovych"
+        },
+        "employee-4": {
+          "full-name": "Ronchkovskyi Andrii\nBohdanovych"
+        },
+        "employee-5": {
+          "full-name": "Kohut Oleh\nVolodymyrovych"
+        },
+        "employee-6": {
+          "full-name": "Motkaliuk Oleksandr\nStepanovych"
+        },
+        "employee-7": {
+          "full-name": "Dovha-Motkaliuk Vasylyna\nVasylyvna"
+        },
+        "employee-8": {
+          "full-name": "Kuzio Yurii\nYaroslavovych"
+        },
+        "employee-9": {
+          "full-name": "Bilyk Iryna\nYuriivna"
+        },
+        "employee-10": {
+          "full-name": "Vasylkiv Yurii\nVasyliovych"
+        },
+        "employee-11": {
+          "full-name": "Petryliak Robert"
+        },
+        "employee-12": {
+          "full-name": "Horshko Yurii\nYevhenovych"
+        },
+        "employee-13": {
+          "full-name": "Tuziak Svitlana\nYuriivna"
+        },
+        "employee-14": {
+          "full-name": "Havryshchyshyn Serhii\nYevhenovych"
+        }
+      },
+      "church-positions": {
+        "bishop": "Bishop.\n Senior Pastor",
+        "pastor": "Pastor",
+        "pastoress": "Pastor",
+        "presbyter": "Presbyter",
+        "deacon": "Deacon",
+        "deaconess": "Deaconess",
+        "missionary": "Missionary"
+      }
+    },
+    "serving-god-block": {
+      "title": "Ministry",
+      "text": "The importance of various ministries in our church is hard to overestimate. Each minister brings their talents and calling to the community, creating a diverse and multifaceted environment for spiritual growth and service to the community. From pastors and teachers who deeply reveal the Word of God, to the guest service and prayer team that monitors spiritual needs, each contribution is an integral part of our collective. Whether it's serving the community, raising a new generation of believers, or supporting those in need - all these ministries together form our united calling to serve God and people together.",
+      "button-details": "More details"
+    },
+    "share-block": {
+      "title": "Share",
+      "text": "Share joy and hope by supporting our ministry! Your donations help build a strong community where every soul finds its place. Bless and be blessed!",
+      "button-donate": "Donate"
+    },
+    "write-us-block": {
+      "text": "We are always here to provide you with support and answer your questions. Write to us if you need spiritual support, advice or prayer, or if you have any other questions. Your needs are our priority, and we are always ready to be here for you.",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message"
+      },
+      "button-send": "Send",
+      "statuses": {
+        "success": {
+          "title": "Sent!",
+          "text": "Thank you for writing to us. Expect\na response to your email. We will\nrespond to you soon. Blessings!"
+        },
+        "error": {
+          "title": "Failure!",
+          "text": "Unfortunately something went wrong.\nPlease try again later."
+        }
+      }
+    }
+  },
+  "church-page": {
+    "heading-block": "Church Team",
+    "description-block": {
+      "text-1": "The \"Source of Life\" Church is a growing community of believers who want to be an expression of Christ in this world and fulfill His mission for the spread of God's Kingdom. For this purpose, we conduct regular services, prayer meetings, and educational classes. Events are organized for children, youth, families, and seniors, where everyone can receive spiritual support, strengthen their faith, and find new friends.",
+      "text-2": "Our goal is to create a space for growth where every parishioner feels part of a large loving family. In all our activities, we strive to be a balanced and relevant community, building our beliefs on the authority of the Bible."
+    },
+    "preview-block": "Welcome! You found the church you were looking for! Welcome! ",
+    "show-full-team": "Full Team"
+  },
+  "donate-page": {
+    "preview-block": {
+      "button-donate": "Donate",
+      "button-donate-ministries": "Donate\nto ministries",
+      "button-donate-all": "All donation options",
+      "button-return-to-main-page": "Return\nto site"
+    },
+    "payments-block": {
+      "privat24-label": "Privat24",
+      "privat24-desc": "Scan the QR code in the app for instant transfer",
+      "liqpay-label": "LiqPay Payment System",
+      "liqpay-desc": "Support for Visa and Mastercard cards.",
+      "ministries-desc": "Support specific ministries and church projects.",
+      "paypal-desc": "You can make a donation to the church's PayPal account.",
+      "privat-iban": {
+        "title": "By bank details",
+        "receiver-label": "Receiver",
+        "receiver-value": "Religious Organization \"Source of Life, Lviv\"",
+        "bank-label": "Bank name",
+        "bank-value": "JSC CB \"PRIVATBANK\"",
+        "iban-label": "IBAN",
+        "iban-value": "UA133052990000026000001008576",
+        "edrpou-label": "EDRPOU",
+        "edrpou-value": "13806420",
+        "purpose-label": "Payment purpose",
+        "purpose-value": "Voluntary donations"
+      }
+    },
+    "qr-codes-block": {
+      "intro": "Share joy and hope by supporting our ministry! Your donations help build a strong community where every soul finds its place. Bless and be blessed!",
+      "ua-qr": "You can donate voluntarily by scanning the QR code in the Privat24 app or by clicking the \"Donate\" button on our website.",
+      "usa-qr": "You can make a voluntary donation using the QR code or by clicking the \"Donate\" button on our website."
+    },
+    "offer": {
+      "title": "public offer agreement",
+      "text": "Join us today and take the first step towards a better future for our church!",
+      "btn": "more details"
+    },
+    "other-donate-methods": {
+      "header": "Other donation methods",
+      "credentials": {
+        "header": "CREDENTIALS IN UAH",
+        "org-name": "Religious Organization \"Source of Life, Lviv\"",
+        "edrpou": "EDRPOU 13806420",
+        "bank-name": "Bank name: JSC CB \"PRIVATBANK\"",
+        "iban": "Account in IBAN format: UA133052990000026000001008576",
+        "payment-purpose": "Attention!!! Payment purpose: VOLUNTARY DONATIONS",
+        "inline": "Identification code EDRPOU 13806420\nRO «CHRISTIAN CHURCH «SOURCE OF LIFE» IN LVIV»\n37, Zamarstynivska St, Lviv\naccount UA133052990000026000001008576 MFO 325321\nJSC CB «PrivatBank»\nPayment purpose: VOLUNTARY DONATIONS",
+        "inline-mobile": "Identification code EDRPOU 13806420\nRO «CHRISTIAN CHURCH «SOURCE OF LIFE» IN LVIV»\n37, Zamarstynivska St,\nLviv\naccount UA133052990000026000001008576 MFO 325321\nJSC CB «PrivatBank»\nPayment purpose: VOLUNTARY DONATIONS"
+      }
+    }
+  },
+  "donate-building-page": {
+    "preview-block": {
+      "title": "Church building reconstruction",
+      "subtitle": "This is not just a renovation — it's a new stage of growth for our community!",
+      "changes-title": "What's changing",
+      "changes": {
+        "area": "Building area doubles",
+        "rooms": "New, spacious rooms for Sunday School",
+        "hall": "Multifunctional hall on the third floor",
+        "places": "More seats in the main hall",
+        "renovation": "Modern renovation and new level of comfort in all premises"
+      },
+      "together": "We build together — for growth, service and worship!",
+      "support": "Support the project!",
+      "donate": "Make a targeted donation and become part of big changes"
+    },
+    "credentials": {
+      "header": "Credentials:",
+      "receiver-label": "Receiver name",
+      "receiver-value": "RO CHURCH SOURCE OF LIFE",
+      "code-label": "Receiver code",
+      "code-value": "13806420",
+      "account-label": "Receiver account",
+      "account-value": "UA333052990000026005031048170",
+      "bank-label": "Bank name",
+      "bank-value": "JSC CB \"PRIVATBANK\"",
+      "paypal-desc": "You can make a donation to the church's PayPal account.",
+      "paypal-email": "donate@dchurch.lviv.ua",
+      "paypal-button": "Donate",
+      "privat-desc": "PrivatBank account for church building reconstruction"
+    }
+  },
+  "donate-ministry-page": {
+    "form-payment-block": {
+      "title": "Other donation methods",
+      "description": "If you want to make a donation to a specific ministry, select it from the list below",
+      "form": {
+        "inputs": {
+          "amount": {
+            "placeholder": " Enter amount"
+          },
+          "message": {
+            "placeholder": "Message/thanks"
+          },
+          "currencies": {
+            "UAH": "UAH",
+            "USD": "USD",
+            "EUR": "EUR"
+          },
+          "type-donates": {
+            "destiny": "Tithe",
+            "dworship": "D.Worship",
+            "dyouth": "D.Youth",
+            "dyoung": "D.Young",
+            "dfamily": "D.Family",
+            "dmoms": "D.Moms",
+            "dkids": "D.Kids",
+            "dgirls": "D.Girls",
+            "dspecials": "D.Specials",
+            "dseniors": "D.Seniors",
+            "fusion": "Fusion",
+            "alpha": "Alpha Course",
+            "dcafe": "D.Cafe"
+          }
+        },
+        "button-once-donate": "One-time\npayment",
+        "button-monthly-donate": "Monthly\ndonation",
+        "button-donate": "Donate"
+      }
+    },
+    "success-block": {
+      "title": "Thank you!",
+      "text": "Donation has been sent.\nThank you for your contribution.\nMay God bless you!",
+      "button-repeat-donate": "Donate again",
+      "button-return": "Return to site"
+    },
+    "error-block": {
+      "title": "Failure!",
+      "text": "Donation was not sent.\nPlease try again later.",
+      "button-repeat-donate": "retry",
+      "button-return": "Return to site"
+    }
+  },
+  "jesus-page": {
+    "prayer-1": "Jesus Christ is the Son of God who came to earth to die for our sins and rise again for our justification.",
+    "prayer-2": "By accepting Him as our Savior, we receive forgiveness of sins and the gift of eternal life.",
+    "prayer-3": "The path to salvation begins with acknowledging our sins, sincere repentance, and faith in Jesus Christ.",
+    "prayer-4": "Open your heart to God, accept His love, and you will find peace and joy that come only through Christ.",
+    "prayer-5": "Prayer of Repentance\n\nDear Jesus, I repent of all my sins, for I know that I have done wrong by living without You. I ask You for forgiveness, and I believe that You are the one who forgives. I accept Your love and grace to me and ask that You be my Lord and Savior. Help me to believe in You, love You, and live for You. In Jesus' name, amen.",
+    "prayer-6": "\"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.\"\nJohn 3:16",
+    "prayer-7": "\"If you declare with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him from the dead, you will be saved.\"\nRomans 10:9-10"
+  },
+  "ministry-page": {
+    "preview": {
+      "title": "Ministry",
+      "text": "The importance of various ministries in our church is hard to overestimate. Each minister brings their talents and calling to the community, creating a diverse and multifaceted environment for spiritual growth and service to the community. From pastors and teachers who deeply reveal the Word of God, to the guest service and prayer team that monitors spiritual needs, each contribution is an integral part of our collective. Whether it's serving the community, raising a new generation of believers, or supporting those in need - all these ministries together form our united calling to serve God and people together."
+    }
+  },
+  "events-and-blogs-page": {
+    "blogs": {
+      "button": "More"
+    },
+    "lazy-load": {
+      "button": "Show more"
+    },
+    "blog-page": {
+      "blog": {
+        "author": "Author:"
+      },
+      "recommendations": "Recommended"
+    },
+    "button": {
+      "button-main-page": "Go to Events and Blog section"
+    }
+  },
+  "contacts-page": {
+    "schedule": {
+      "header": "Sunday service streams:",
+      "morning": {
+        "time": "10:00 - 11:30",
+        "text": "Morning"
+      },
+      "day": {
+        "time": "12:00 - 13:30",
+        "text": "Day"
+      },
+      "evening": {
+        "time": "16:00 - 17:30",
+        "text": "Youth"
+      }
+    },
+    "adress": "\"Source of Life\" Lviv",
+    "street": "Zamarstynivska St, 37",
+    "phone-number": "+38 (073) 800 37 37",
+    "phone-number-call": "+380738003737",
+    "email": "d.church.lviv@gmail.com"
+  },
+  "d-youth-announcements": {
+    "title": "ANNOUNCEMENTS",
+    "homeGroups": {
+      "title": "Home Groups",
+      "text": "Information about home groups. Join the community, share life and grow together in faith!",
+      "botLink": "@dyouthhomegroups_bot"
+    },
+    "thanksgivingDay": {
+      "title": "Thanksgiving Day",
+      "date": "📅 November 29, 4:00 PM",
+      "text": "Join us for a special day of thanksgiving when we come together to thank God for all His blessings and support one another in community."
+    },
+    "kairos": {
+      "title": "Kairos Course 2025",
+      "text": "An interactive course for Christians who want to participate in God's work in the world. It covers biblical mission, history, strategy, and cultural barriers. Find your calling in God's global plan!",
+      "lastDay": "📅 Today, November 9 — last day to register!",
+      "register": "Register",
+      "moreInfo": "Detailed course information"
+    },
+    "prayer": {
+      "title": "Prayer",
+      "bot": "💬 Prayer Bot",
+      "botText": "Our chat has a prayer bot where you can leave your prayer request. The community will pray for you!",
+      "botLink": "@dchurch_prayer_bot",
+      "here": "🙏 Prayer Here",
+      "hereText": "This is a special time when ministers are waiting by the stage, ready to pray with you. You don't have to have a special need — you can come for a blessing prayer for the next week.",
+      "youth": "✨ Youth Prayer",
+      "schedule": "📅 Every last Tuesday of the month",
+      "location": "📍 Main Hall"
+    },
+    "membership": {
+      "title": "Membership/Water Baptism",
+      "text": "If you are not yet a member of our church or have not been water baptized as an adult, we encourage you to take this important step. Sign up by calling the church number, and we will be happy to guide you through this process.",
+      "phone": "+380738003737"
+    },
+    "donations": {
+      "title": "Donations & Tithes",
+      "text": "Tithes and donations are how church members support God's work. Guests and visitors are also welcome to contribute if they wish, but it is completely voluntary.",
+      "button": "Donate"
+    },
+    "heartForTheHouse": {
+      "title": "Heart for the House",
+      "essence": "💛 Essence",
+      "essenceText": "\"Heart for the House\" is a special act of generosity when church members come together for extraordinary donations for the development of the church and its ministries. This is an expression of love, gratitude and faith, not a regular tithe or regular donation.",
+      "goal": "🙌🏻 Goal",
+      "goalText": "Funds collected during \"Heart for the House\" will be directed as the first contribution to the Church Building Project fund!",
+      "idea": "Main Idea",
+      "ideaText": "\"It's not about money — it's about the heart.\" Heart for the House is an opportunity to show that our heart belongs to God's house, and we believe in its impact on this world.",
+      "when": "📅 When",
+      "whenText": "You can make your generous donations on Sunday (November 9) at the end of each of the 3 streams in cash, or by the details below.",
+      "credentials": "Building Project Account Details",
+      "receiver": "Receiver name: RO CHURCH SOURCE OF LIFE",
+      "code": "Receiver code: 13806420",
+      "account": "Receiver account: UA333052990000026005031048170",
+      "bank": "Bank name: JSC CB \"PRIVATBANK\"",
+      "paypal": "PayPal: d.church.lviv@gmail.com",
+      "contact": "Information and details in foreign currency by phone 0738003737.",
+      "buildingProject": "Church Building Reconstruction",
+      "buildingText": "This is not just a renovation — it's a new stage of growth for our community!",
+      "changes": "🏗️ What's changing:",
+      "change1": "• Building area doubles",
+      "change2": "• New, spacious rooms for Sunday School",
+      "change3": "• Multifunctional hall on the third floor",
+      "change4": "• More seats in the main hall",
+      "change5": "• Modern renovation and new level of comfort in all premises",
+      "together": "💛 We build together — for growth, service and worship!",
+      "support": "🙏🏻 Support the project!",
+      "supportText": "Make a targeted donation and become part of big changes 💒",
+      "link": "Learn more about the project",
+      "thanks": "Thank you for your active participation and support!"
+    },
+    "ministry": {
+      "title": "Ministry Here",
+      "text": "If you are a church member, one of your privileges is the opportunity to serve God in our community. Follow the link to learn more about current ministries, leave your contacts and get involved.",
+      "link": "Ministry Registration Form"
+    },
+    "cafe": {
+      "title": "Church Cafe",
+      "text": "After the service, we invite you to our church cafe. It's a great opportunity to chat, meet new people and spend time in the warm atmosphere of the community."
+    }
+  }
+}
+

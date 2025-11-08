@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Manrope } from "next/font/google";
 import "./globals.css";
 
 import { NextIntlClientProvider, useMessages } from "next-intl";
@@ -17,6 +17,12 @@ import { cn } from "@/lib/utils";
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +60,7 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale} className={cn("scroll-smooth", montserrat.className)}>
+    <html lang={locale} className={cn("scroll-smooth", montserrat.className, manrope.variable)}>
       <head>
         {/* Google Analytics */}
         <Script
