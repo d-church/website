@@ -19,7 +19,7 @@ export const LiqPayButton: FC<{
   const t = useTranslations();
   const requestData = LiqPay.getLiqPayRequestData({
     ...data,
-    description: generateLiqPayDescription(data, t),
+    description: generateLiqPayDescription(data, t as (key: string) => string),
   });
 
   return (
