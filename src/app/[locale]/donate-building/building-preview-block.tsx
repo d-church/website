@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 // @ts-ignore
-import videoBackground from "./static-assets/video_background.mp4";
+import videoBackground from "./static/video_background.mp4";
 
 import { cn } from "@/lib/utils";
 

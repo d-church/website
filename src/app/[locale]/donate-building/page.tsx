@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-import { BuildingPreviewBlock, BuildingCredentialsBlock, MainHeaderBlock } from "@/components/donate-building-page";
+import { ClientSideOnlyRender } from "@/components/common/client-side-only-render";
+import { BuildingCredentialsBlock } from "./building-credentials-block";
+import { BuildingPreviewBlock } from "./building-preview-block";
+import { MainHeaderBlock } from "./main-header-block";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 
@@ -21,7 +24,9 @@ export default function DonateBuildingPage({
       <MainHeaderBlock />
       <Header />
       <BuildingPreviewBlock />
-      <BuildingCredentialsBlock />
+      <ClientSideOnlyRender>
+        <BuildingCredentialsBlock />
+      </ClientSideOnlyRender>
       <Footer />
     </>
   );
