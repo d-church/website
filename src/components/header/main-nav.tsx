@@ -1,15 +1,17 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 
 import { Button } from "../ui/button";
 import { headersLinks } from "./links";
 
-import { usePathname } from "@/app/navigation";
+import { usePathname, Link as NavigationLink } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 export function MainNav() {
   const t = useTranslations();
   const pathname = usePathname();
+  const currentLocale = useLocale();
+  const newLocale = currentLocale === "uk" ? "en" : "uk";
 
   return (
     <>
@@ -35,9 +37,21 @@ export function MainNav() {
           </ul>
         </nav>
       </div>
-      <Button variant="standard" className="hidden uppercase xl:flex" asChild>
-        <Link href="/donate">{t("header.button-donate")}</Link>
-      </Button>
+      <div className="hidden items-center gap-4 xl:flex">
+        <Button variant="standard" className="uppercase" asChild>
+          <Link href="/donate">{t("header.button-donate")}</Link>
+        </Button>
+        <NavigationLink
+          href={pathname}
+          locale={newLocale}
+          className={cn(
+            "rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white",
+            "backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-105"
+          )}
+        >
+          {currentLocale === "uk" ? "EN" : "UA"}
+        </NavigationLink>
+      </div>
     </>
   );
 }

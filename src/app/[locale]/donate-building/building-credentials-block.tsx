@@ -15,7 +15,6 @@ export function BuildingCredentialsBlock() {
   const isMobile = isMobileDevice();
 
   return (
-    // весь блок
     <div className="mx-auto mb-[20px] flex w-[80%] flex-col gap-[40px] px-0 md:mb-[20px] md:w-[70%] md:gap-[70px] md:px-4 lg:mb-[70px] lg:w-[70%] xl:w-[1070px] xl:px-0">
       <div className="flex justify-center">
         <Image
@@ -30,7 +29,6 @@ export function BuildingCredentialsBlock() {
         <div className="mb-[20px] flex flex-col gap-[30px] md:mb-10 lg:flex-row">
           <div
             className={cn(
-              // privat
               "group flex w-full flex-col justify-between rounded-sm border border-gray-200 p-5 shadow-md",
               "transition-all duration-300 hover:shadow-lg xl:w-1/2"
             )}
@@ -95,7 +93,6 @@ export function BuildingCredentialsBlock() {
 
           <div
             className={cn(
-              // paypal
               "group flex w-full flex-col justify-between rounded-sm border border-gray-200 p-5 shadow-md",
               "transition-all duration-300 hover:shadow-lg xl:w-1/2"
             )}
@@ -133,7 +130,7 @@ export function BuildingCredentialsBlock() {
 
         <div
           className={cn(
-            "mb-5 w-full rounded-sm border border-gray-200 p-5 shadow-md lg:mb-[0]", // реквізити
+            "mb-5 w-full rounded-sm border border-gray-200 p-5 shadow-md lg:mb-[0]",
             "transition-all duration-300 hover:shadow-lg xl:w-full"
           )}
         >

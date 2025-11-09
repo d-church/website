@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,12 +15,14 @@ import {
 } from "../ui/sheet";
 import { headersLinks } from "./links";
 
-import { usePathname } from "@/app/navigation";
+import { usePathname, Link as NavigationLink } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
   const t = useTranslations();
   const pathname = usePathname();
+  const currentLocale = useLocale();
+  const newLocale = currentLocale === "uk" ? "en" : "uk";
   return (
     <div className=" text-white xl:hidden">
       <Sheet>
@@ -32,7 +34,7 @@ export function MobileNav() {
           </Button>
         </SheetTrigger>
         <SheetContent className="container flex w-full flex-col border-none bg-[#232323] p-0 pb-12">
-          <SheetHeader className="py-2.5"> 
+          <SheetHeader className="py-2.5">
             {/* border-b border-hover-blue  */}
             <div className="container flex items-center justify-between">
               <Link href="/">
@@ -69,13 +71,27 @@ export function MobileNav() {
                 </Link>
               ))}
             </div>
-            <Button
-              variant="standard"
-              className="w-fit self-center uppercase"
-              asChild
-            >
-              <Link href="/donate">{t("header.button-donate")}</Link>
-            </Button>
+            <div className="flex flex-col items-center gap-4">
+              <Button
+                variant="standard"
+                className="w-fit self-center uppercase"
+                asChild
+              >
+                <Link href="/donate">{t("header.button-donate")}</Link>
+              </Button>
+              <NavigationLink
+                href={pathname}
+                locale={newLocale}
+                className={cn(
+                  "rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white",
+                  "backdrop-blur-sm transition-all hover:bg-white/20"
+                )}
+              >
+                <SheetClose className="w-full">
+                  {currentLocale === "uk" ? "EN" : "UA"}
+                </SheetClose>
+              </NavigationLink>
+            </div>
           </div>
         </SheetContent>
       </Sheet>
