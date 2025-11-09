@@ -1,13 +1,19 @@
 import { DonationData } from "./types";
 
-export const generateLiqPayDescription = (data: DonationData): string => {
+export const generateLiqPayDescription = (
+  data: DonationData,
+  t: (key: string) => string
+): string => {
   let description = "";
 
   description +=
-    data.action === "subscribe" ? "Щомісячне пожертвування" : "Пожертвування";
+    data.action === "subscribe"
+      ? t("donate-ministry-page.liqpay-description.monthly-donation")
+      : t("donate-ministry-page.liqpay-description.donation");
 
   if (data.ministry !== "destiny") {
-    description += ` на ${data.ministry}`;
+    description += t("donate-ministry-page.liqpay-description.on");
+    description += data.ministry;
   }
 
   if (data.description) {

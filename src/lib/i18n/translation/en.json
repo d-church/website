@@ -5,10 +5,12 @@
   },
   "head": {
     "titles": {
-      "main": "Church - Source of Life | Welcome! You found the church you were looking for!"
+      "main": "Church - Source of Life | Welcome! You found the church you were looking for!",
+      "donate-building": "Church - Source of Life | Building Donation"
     },
     "meta": {
-      "main": "Welcome!"
+      "main": "Welcome!",
+      "donate-building": "Support the church building reconstruction project"
     },
     "h1": {
       "main": "Church - Source of Life",
@@ -16,6 +18,7 @@
       "about": "About Us - Source of Life",
       "contacts": "Contacts - Source of Life",
       "donate": "Donations - Source of Life",
+      "donate-building": "Building Donation",
       "ministry": "Ministry - Source of Life",
       "events-and-blog": "Events and Blog - Source of Life",
       "d-youth-announcements": "D.Youth Announcements - Source of Life"
@@ -175,6 +178,7 @@
   "donate-page": {
     "preview-block": {
       "button-donate": "Donate",
+      "button-donate-building": "Donate to Building",
       "button-donate-ministries": "Donate\nto ministries",
       "button-donate-all": "All donation options",
       "button-return-to-main-page": "Return\nto site"
@@ -204,6 +208,9 @@
       "intro": "Share joy and hope by supporting our ministry! Your donations help build a strong community where every soul finds its place. Bless and be blessed!",
       "ua-qr": "You can donate voluntarily by scanning the QR code in the Privat24 app or by clicking the \"Donate\" button on our website.",
       "usa-qr": "You can make a voluntary donation using the QR code or by clicking the \"Donate\" button on our website."
+    },
+    "payment-credentials": {
+      "title": "CREDENTIALS IN UAH"
     },
     "offer": {
       "title": "public offer agreement",
@@ -257,6 +264,11 @@
     }
   },
   "donate-ministry-page": {
+    "liqpay-description": {
+      "donation": "Donation",
+      "monthly-donation": "Monthly donation",
+      "on": " to "
+    },
     "form-payment-block": {
       "title": "Other donation methods",
       "description": "If you want to make a donation to a specific ministry, select it from the list below",

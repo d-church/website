@@ -18,7 +18,7 @@ export function PaymentCredentials({
       {currentPaymentMethod === payments[0].name ? (
         <>
           <p className="mb-[20px] text-xl/[1.5rem] font-bold">
-            {payments[0].text}
+            {t("donate-page.payment-credentials.title")}
           </p>
           <div className="text-lg/[1.75rem] lg:text-xl/[1.875rem]">
             <p>{t("donate-page.other-donate-methods.credentials.org-name")}</p>

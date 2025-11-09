@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 export function MainHeaderBlock() {
-  return <h1 className="sr-only">Пожертва на будівництво</h1>;
+  const t = useTranslations("head.h1");
+  return <h1 className="sr-only">{t("donate-building")}</h1>;
 }
 

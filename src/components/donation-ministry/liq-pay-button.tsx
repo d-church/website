@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Button } from "@components/ui/button";
 import { FC } from "react";
 
@@ -15,9 +16,10 @@ export const LiqPayButton: FC<{
   disabled?: boolean;
   data?: DonationData;
 }> = ({ children, className, disabled, data = DEFAULT_LIQPAY_DATA }) => {
+  const t = useTranslations();
   const requestData = LiqPay.getLiqPayRequestData({
     ...data,
-    description: generateLiqPayDescription(data),
+    description: generateLiqPayDescription(data, t),
   });
 
   return (
