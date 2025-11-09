@@ -17,13 +17,13 @@ export function BuildingCredentialsBlock() {
   return (
     // весь блок
     <div className="mx-auto mb-[20px] flex w-[80%] flex-col gap-[40px] px-0 md:mb-[20px] md:w-[70%] md:gap-[70px] md:px-4 lg:mb-[70px] lg:w-[70%] xl:w-[1070px] xl:px-0">
-      <div className="hidden justify-center md:flex ">
+      <div className="flex justify-center">
         <Image
           src={mainImage}
           alt="Main image"
           width={800}
           height={800}
-          className="w-[800px] object-contain xl:w-[950px] 2xl:w-[1100px]"
+          className="w-full max-w-[400px] object-contain md:max-w-[600px] lg:max-w-[800px] xl:max-w-[950px] 2xl:max-w-[1100px]"
         />
       </div>
       <div className="w-full gap-[70px] md:w-full xl:flex-row xl:gap-8">
