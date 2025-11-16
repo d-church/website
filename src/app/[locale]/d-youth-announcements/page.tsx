@@ -111,30 +111,6 @@ export default function DYouthAnnouncementsPage() {
             <p>{t("thanksgivingDay.text")}</p>
           </Accordion>
 
-          <Accordion title={t("kairos.title")}>
-            <p className="mb-4">{t("kairos.text")}</p>
-            <p className="mb-4 font-semibold text-purple-700">{t("kairos.lastDay")}</p>
-            <div className="space-y-3">
-              <a
-                href="https://forms.gle/L2duRuxSmgSXQdGf9"
-                className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("kairos.register")}
-              </a>
-              <br />
-              <a
-                href="https://drive.google.com/file/d/1irbfJ9yoCL49DqHWZQBSQYZjt2Nh1tuV/view?usp=drivesdk"
-                className="text-purple-600 hover:text-purple-700 font-medium underline inline-block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("kairos.moreInfo")} →
-              </a>
-            </div>
-          </Accordion>
-
           <Accordion title={t("prayer.title")}>
             <div className="space-y-4">
               <div>
