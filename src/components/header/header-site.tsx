@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,10 +8,14 @@ import { useEffect, useState } from "react";
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 
+import { Link as NavigationLink, usePathname } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const currentLocale = useLocale();
+  const newLocale = currentLocale === "uk" ? "en" : "uk";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +51,20 @@ export function Header() {
             )}
           />
         </Link>
-        <MobileNav />
+        <div className="flex items-center gap-4">
+          <NavigationLink
+            href={pathname}
+            locale={newLocale}
+            className={cn(
+              "rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white",
+              "backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20",
+              "sm:hidden"
+            )}
+          >
+            {currentLocale === "uk" ? "EN" : "UA"}
+          </NavigationLink>
+          <MobileNav />
+        </div>
         <MainNav />
       </div>
     </header>
