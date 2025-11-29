@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useTranslations, useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ import {
 } from "../ui/sheet";
 import { headersLinks } from "./links";
 
-import { usePathname, Link as NavigationLink } from "@/app/navigation";
+import { Link as NavigationLink, usePathname } from "@/app/navigation";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
@@ -46,7 +46,7 @@ export function MobileNav() {
                     height={80}
                     priority={true}
                     loading="eager"
-                    className="w-[130px] xl:w-[187.33px] pt-3"
+                    className="w-[130px] pt-3 xl:w-[187.33px]"
                   />
                 </SheetClose>
               </Link>
@@ -84,7 +84,8 @@ export function MobileNav() {
                 locale={newLocale}
                 className={cn(
                   "rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white",
-                  "backdrop-blur-sm transition-all hover:bg-white/20"
+                  "backdrop-blur-sm transition-all hover:bg-white/20",
+                  "hidden sm:flex xl:hidden"
                 )}
               >
                 <SheetClose className="w-full">
