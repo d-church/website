@@ -177,14 +177,27 @@ export default function DYouthAnnouncementsPage() {
             </a>
           </Accordion>
 
-          <Accordion title={t("donations.title")}>
-            <p className="mb-4">{t("donations.text")}</p>
-            <Link
-              href="/donate"
-              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
-            >
-              {t("donations.button")}
-            </Link>
+          <Accordion title={t("christmasHero.title")}>
+            <p className="mb-4">{t("christmasHero.text")}</p>
+            <div className="space-y-3">
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step1")}</p>
+                <p className="mb-2">{t("christmasHero.step1Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step2")}</p>
+                <p className="mb-2">{t("christmasHero.step2Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step3")}</p>
+                <p className="mb-2">{t("christmasHero.step3Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step4")}</p>
+                <p className="mb-2">{t("christmasHero.step4Text")}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm italic">{t("christmasHero.note")}</p>
           </Accordion>
 
           <Accordion title={t("skiTrip.title")}>
@@ -210,27 +223,14 @@ export default function DYouthAnnouncementsPage() {
             )}
           </Accordion>
 
-          <Accordion title={t("christmasHero.title")}>
-            <p className="mb-4">{t("christmasHero.text")}</p>
-            <div className="space-y-3">
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step1")}</p>
-                <p className="mb-2">{t("christmasHero.step1Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step2")}</p>
-                <p className="mb-2">{t("christmasHero.step2Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step3")}</p>
-                <p className="mb-2">{t("christmasHero.step3Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step4")}</p>
-                <p className="mb-2">{t("christmasHero.step4Text")}</p>
-              </div>
-            </div>
-            <p className="mt-4 text-sm italic">{t("christmasHero.note")}</p>
+          <Accordion title={t("donations.title")}>
+            <p className="mb-4">{t("donations.text")}</p>
+            <Link
+              href="/donate"
+              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
+            >
+              {t("donations.button")}
+            </Link>
           </Accordion>
 
           <Accordion title={t("heartForTheHouse.title")}>
