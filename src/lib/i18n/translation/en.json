@@ -385,12 +385,45 @@
       "date": "📅 November 29, 4:00 PM",
       "text": "Join us for a special day of thanksgiving when we come together to thank God for all His blessings and support one another in community."
     },
+    "jesusBirthday": {
+      "title": "Jesus' Birthday",
+      "date": "📅 December 20, 4:00 PM",
+      "text": "Join us for Jesus' Birthday! 🎉",
+      "details": "A real birthday celebration where Jesus is the birthday boy. Don't miss it! There will be a dress code and an awesome program, but more on that later 😉",
+      "register": "Register"
+    },
     "kairos": {
       "title": "Kairos Course 2025",
       "text": "An interactive course for Christians who want to participate in God's work in the world. It covers biblical mission, history, strategy, and cultural barriers. Find your calling in God's global plan!",
       "lastDay": "📅 Today, November 9 — last day to register!",
       "register": "Register",
       "moreInfo": "Detailed course information"
+    },
+    "skiTrip": {
+      "title": "Winter Ski Trip",
+      "date": "⌚️ February 19-21, 2026",
+      "location": "📍 Polyanytsia, Bukovel",
+      "price": "💸 Price - 3000 UAH",
+      "description": "Important! This is not a camp, but a great opportunity for those who want to spend time together, relax, ski, and socialize",
+      "important": "What you need to know:",
+      "noProgram": "• No program planned",
+      "noTransport": "• We do not organize transportation",
+      "whatWeDo": "From us - We book accommodation with meals.",
+      "registration": "",
+      "registerButton": "Register"
+    },
+    "christmasHero": {
+      "title": "Bring Christmas to a Fallen Hero's Family",
+      "text": "If you would like to join:",
+      "step1": "1.",
+      "step1Text": "Write in direct messages or put a «+» under this post.",
+      "step2": "2.",
+      "step2Text": "In response, you will receive all necessary information about the child's age, gender, wishes, and address",
+      "step3": "3.",
+      "step3Text": "Prepare a gift",
+      "step4": "4.",
+      "step4Text": "Send it to the specified address before Christmas",
+      "note": "P.S. If you are abroad, you can send funds, and we will prepare and send the gift on your behalf."
     },
     "prayer": {
       "title": "Prayer",

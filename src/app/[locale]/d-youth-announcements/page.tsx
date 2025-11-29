@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link, usePathname } from "@/app/navigation";
 import { Accordion } from "./accordion";
 import { InstagramIcon } from "./instagram-icon";
+import { YouTubeIcon } from "./youtube-icon";
 import backgroundImage from "./static/background.jpg";
 import telegramIcon from "./static/telegram.png";
 import logoIcon from "./static/logo.svg";
@@ -111,6 +112,32 @@ export default function DYouthAnnouncementsPage() {
             <p>{t("thanksgivingDay.text")}</p>
           </Accordion>
 
+          <Accordion title={t("jesusBirthday.title")}>
+            <p className="mb-2 font-semibold">{t("jesusBirthday.date")}</p>
+            <p className="mb-4">{t("jesusBirthday.text")}</p>
+            <p className="mb-4">{t("jesusBirthday.details")}</p>
+            <a
+              href="https://forms.gle/vKZNRR4v7PSH4kZ89"
+              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("jesusBirthday.register")}
+            </a>
+          </Accordion>
+
+          <Accordion title={t("ministry.title")}>
+            <p className="mb-4">{t("ministry.text")}</p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSefJM3KrINTP-_dE8LPBtq_zdAQ9REVzLKu7rxrI3VVq3Te0A/viewform"
+              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("ministry.link")}
+            </a>
+          </Accordion>
+
           <Accordion title={t("prayer.title")}>
             <div className="space-y-4">
               <div>
@@ -163,6 +190,52 @@ export default function DYouthAnnouncementsPage() {
             >
               {t("donations.button")}
             </Link>
+          </Accordion>
+
+          <Accordion title={t("skiTrip.title")}>
+            <p className="mb-2 font-semibold">{t("skiTrip.date")}</p>
+            <p className="mb-2">{t("skiTrip.location")}</p>
+            <p className="mb-4 font-semibold text-purple-700">{t("skiTrip.price")}</p>
+            <p className="mb-4">{t("skiTrip.description")}</p>
+            <div className="space-y-2 mb-4">
+              <p className="font-semibold">{t("skiTrip.important")}</p>
+              <p>{t("skiTrip.noProgram")}</p>
+              <p>{t("skiTrip.noTransport")}</p>
+              <p>{t("skiTrip.whatWeDo")}</p>
+            </div>
+            {t("skiTrip.registration") && (
+              <a
+                href={t("skiTrip.registration")}
+                className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("skiTrip.registerButton")}
+              </a>
+            )}
+          </Accordion>
+
+          <Accordion title={t("christmasHero.title")}>
+            <p className="mb-4">{t("christmasHero.text")}</p>
+            <div className="space-y-3">
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step1")}</p>
+                <p className="mb-2">{t("christmasHero.step1Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step2")}</p>
+                <p className="mb-2">{t("christmasHero.step2Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step3")}</p>
+                <p className="mb-2">{t("christmasHero.step3Text")}</p>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold">{t("christmasHero.step4")}</p>
+                <p className="mb-2">{t("christmasHero.step4Text")}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm italic">{t("christmasHero.note")}</p>
           </Accordion>
 
           <Accordion title={t("heartForTheHouse.title")}>
@@ -238,18 +311,6 @@ export default function DYouthAnnouncementsPage() {
             </div>
           </Accordion>
 
-          <Accordion title={t("ministry.title")}>
-            <p className="mb-4">{t("ministry.text")}</p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSefJM3KrINTP-_dE8LPBtq_zdAQ9REVzLKu7rxrI3VVq3Te0A/viewform"
-              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("ministry.link")}
-            </a>
-          </Accordion>
-
           <Accordion title={t("cafe.title")}>
             <p>{t("cafe.text")}</p>
           </Accordion>
@@ -264,6 +325,19 @@ export default function DYouthAnnouncementsPage() {
             className="transition-transform hover:scale-110"
           >
             <InstagramIcon
+              size={48}
+              color="white"
+              className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10"
+            />
+          </a>
+
+          <a
+            href="https://youtube.com/@dyouthlviv?si=MvQVUCMYPeVx2zOT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <YouTubeIcon
               size={48}
               color="white"
               className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10"
