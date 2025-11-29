@@ -107,11 +107,6 @@ export default function DYouthAnnouncementsPage() {
             </a>
           </Accordion>
 
-          <Accordion title={t("thanksgivingDay.title")}>
-            <p className="mb-2 font-semibold">{t("thanksgivingDay.date")}</p>
-            <p>{t("thanksgivingDay.text")}</p>
-          </Accordion>
-
           <Accordion title={t("jesusBirthday.title")}>
             <p className="mb-2 font-semibold">{t("jesusBirthday.date")}</p>
             <p className="mb-4">{t("jesusBirthday.text")}</p>
