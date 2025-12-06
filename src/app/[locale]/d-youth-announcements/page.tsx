@@ -137,8 +137,16 @@ export default function DYouthAnnouncementsPage() {
             <p className="mb-4">{t("outreach.text")}</p>
             <p className="mb-2">{t("outreach.meeting")}</p>
             <p className="mb-4">{t("outreach.outreachDate")}</p>
-            <p className="text-purple-600 hover:text-purple-700 font-medium">
-              {t("outreach.contact")}
+            <p>
+              {t("outreach.contactLabel")}{" "}
+              <a
+                href="https://t.me/Sem_Yn"
+                className="text-purple-600 hover:text-purple-700 font-medium underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @Sem_Yn
+              </a>
             </p>
           </Accordion>
 
@@ -153,7 +161,7 @@ export default function DYouthAnnouncementsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("fusion.contact")}
+                @kyryl_ivakhnenko
               </a>
             </p>
           </Accordion>
