@@ -142,6 +142,22 @@ export default function DYouthAnnouncementsPage() {
             </p>
           </Accordion>
 
+          <Accordion title={t("fusion.title")}>
+            <p className="mb-2 font-semibold">{t("fusion.schedule")}</p>
+            <p className="mb-4">{t("fusion.description")}</p>
+            <p className="mb-2">
+              {t("fusion.text")}{" "}
+              <a
+                href="https://t.me/kyryl_ivakhnenko"
+                className="text-purple-600 hover:text-purple-700 font-medium underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("fusion.contact")}
+              </a>
+            </p>
+          </Accordion>
+
           <Accordion title={t("prayer.title")}>
             <div className="space-y-4">
               <div>

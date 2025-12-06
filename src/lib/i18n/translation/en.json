@@ -487,6 +487,13 @@
     "cafe": {
       "title": "Church Cafe",
       "text": "After the service, we invite you to our church cafe. It's a great opportunity to chat, meet new people and spend time in the warm atmosphere of the community."
+    },
+    "fusion": {
+      "title": "Fusion",
+      "schedule": "Every Wednesday at 18:00",
+      "description": "This is an evangelistic ministry, a rock-pop choir that uses music as a tool for building relationships",
+      "text": "We serve teenagers aged 13-19, so if you have non-church acquaintances of this age, or you are interested in becoming a minister (you don't have to be a musician), write to",
+      "contact": "@kyryl_ivakhnenko"
     }
   }
 }
