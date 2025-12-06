@@ -1,36 +1,216 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# D.Church Website
 
-## Getting Started
+Офіційний веб-сайт церкви D.Church у Львові.
 
-First, run the development server:
+## Про проєкт
+
+Це веб-сайт церкви D.Church, побудований на Next.js 14 з підтримкою багатомовності (українська та англійська мови). Сайт включає інформацію про церкву, події, блог, служіння, можливість пожертв та інші функції.
+
+### Основні функції
+
+- 🏠 Головна сторінка з інформацією про церкву
+- 📅 Події та блог
+- 🎯 Сторінки служінь
+- 💰 Система пожертв
+- 📺 Прямі трансляції
+- 📧 Форма зворотного зв'язку
+- 🌍 Багатомовність (українська/англійська)
+- 📱 Адаптивний дизайн
+
+## Технології
+
+- **Framework**: Next.js 14 (App Router)
+- **Мова**: TypeScript
+- **Стилізація**: Tailwind CSS
+- **Інтернаціоналізація**: next-intl
+- **UI компоненти**: Radix UI, shadcn/ui
+- **Форми**: React Hook Form + Zod
+- **Запити**: TanStack Query (React Query)
+- **Карти**: Google Maps API
+- **Платежі**: LiqPay
+- **Email**: Resend
+- **CMS**: OneEntry
+
+## Вимоги
+
+- Node.js 18+ (рекомендовано 18 або вище)
+- npm або yarn
+
+## Встановлення
+
+1. Клонуйте репозиторій:
+```bash
+git clone <repository-url>
+cd website
+```
+
+2. Встановіть залежності:
+```bash
+npm install
+# або
+yarn install
+```
+
+3. Налаштуйте змінні оточення (якщо потрібно):
+Створіть файл `.env.local` з необхідними змінними:
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_CLIENT_URL=your_client_url
+# інші змінні...
+```
+
+## Доступні команди
+
+### Розробка
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Запускає сервер розробки на [http://localhost:3000](http://localhost:3000)
+
+### Збірка
+
+```bash
+npm run build
+```
+Створює оптимізовану production збірку проєкту.
+
+### Запуск production версії
+
+```bash
+npm run start
+```
+Запускає production сервер (після виконання `npm run build`).
+
+### Лінтинг
+
+```bash
+npm run lint
+```
+Перевіряє код на помилки за допомогою ESLint.
+
+### Форматування коду
+
+```bash
+npm run prettier
+```
+Форматує код за допомогою Prettier.
+
+### Генерація типів для перекладів
+
+```bash
+npm run interface-toc
+```
+Генерує TypeScript типи для файлів перекладів.
+
+## Використання Makefile
+
+Проєкт також підтримує команди через Makefile:
+
+```bash
+make install    # Встановити залежності
+make build      # Зібрати проєкт
+make start      # Запустити production сервер
+make dev        # Запустити dev сервер
+make lint       # Перевірити код
+make prettier   # Відформатувати код
+make all        # install + build + start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Структура проєкту
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+website/
+├── src/
+│   ├── app/                    # Next.js App Router сторінки
+│   │   ├── [locale]/          # Локалізовані маршрути
+│   │   └── api/               # API routes
+│   ├── components/            # React компоненти
+│   │   ├── main-page/        # Компоненти головної сторінки
+│   │   ├── blog-page/        # Компоненти сторінки блогу
+│   │   ├── donate-page/      # Компоненти сторінки пожертв
+│   │   ├── ministry-page/    # Компоненти сторінок служінь
+│   │   └── ui/               # UI компоненти (shadcn/ui)
+│   ├── lib/
+│   │   └── i18n/             # Конфігурація інтернаціоналізації
+│   ├── hooks/                # React хуки
+│   ├── utils/                # Утиліти
+│   └── types/                # TypeScript типи
+├── public/                    # Статичні файли
+├── Dockerfile                 # Docker конфігурація
+├── Makefile                   # Make команди
+└── package.json
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Інтернаціоналізація
 
-## Learn More
+Проєкт використовує `next-intl` для багатомовності. Переклади знаходяться в:
+- `src/lib/i18n/translation/uk.json` - українська мова
+- `src/lib/i18n/translation/en.json` - англійська мова
 
-To learn more about Next.js, take a look at the following resources:
+Підтримувані локалі: `uk`, `en`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Проєкт включає Dockerfile для контейнеризації:
 
-## Deploy on Vercel
+```bash
+# Збірка образу
+docker build -t d-church-website .
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Запуск контейнера
+docker run -p 3000:3000 d-church-website
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Або використовуйте docker-compose (якщо налаштовано):
+```bash
+docker-compose up
+```
+
+## Розгортання
+
+### Vercel (рекомендовано)
+
+Найпростіший спосіб розгорнути Next.js додаток - використовувати [Vercel Platform](https://vercel.com):
+
+1. Підключіть ваш GitHub репозиторій до Vercel
+2. Vercel автоматично визначить Next.js проєкт
+3. Налаштуйте змінні оточення в панелі Vercel
+4. Розгортання відбувається автоматично при кожному push
+
+### Інші платформи
+
+Проєкт підтримує `standalone` output режим, що дозволяє розгортати його на будь-якій платформі, що підтримує Node.js.
+
+## Розробка
+
+### Додавання нових компонентів UI
+
+Для додавання компонентів з shadcn/ui:
+
+```bash
+make add comp=button
+# або
+npx shadcn-ui@latest add button
+```
+
+### Додавання нових перекладів
+
+1. Додайте ключі перекладів у `src/lib/i18n/translation/uk.json` та `src/lib/i18n/translation/en.json`
+2. Запустіть `npm run interface-toc` для оновлення TypeScript типів
+3. Використовуйте переклади через `useTranslations()` хук
+
+### Створення нових сторінок
+
+Створюйте нові сторінки в `src/app/[locale]/` для автоматичної локалізації.
+
+## Документація Next.js
+
+Для додаткової інформації про Next.js:
+
+- [Документація Next.js](https://nextjs.org/docs) - дізнайтеся про функції та API Next.js
+- [Learn Next.js](https://nextjs.org/learn) - інтерактивний туторіал Next.js
+
+## Ліцензія
+
+Приватний проєкт церкви D.Church.
