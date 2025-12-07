@@ -425,7 +425,7 @@
       "text": "We believe that evangelism is not for special people, but for everyone who loves Jesus, because our words can change someone's life for eternity. And if you've never shared about Christ on the street, you'll have the opportunity to do it together with the Citylight team",
       "meeting": "• Team meeting December 10 - 6:30 PM (coworking)",
       "outreachDate": "• Outreach - December 12, 5:30 PM (meet at the church)",
-      "contact": "For questions: @Sem_Yn"
+      "contactLabel": "For questions:"
     },
     "prayer": {
       "title": "Prayer",
@@ -492,8 +492,7 @@
       "title": "Fusion",
       "schedule": "Every Wednesday at 18:00",
       "description": "This is an evangelistic ministry, a rock-pop choir that uses music as a tool for building relationships",
-      "text": "We serve teenagers aged 13-19, so if you have non-church acquaintances of this age, or you are interested in becoming a minister (you don't have to be a musician), write to",
-      "contact": "@kyryl_ivakhnenko"
+      "text": "We serve teenagers aged 13-19, so if you have non-church acquaintances of this age, or you are interested in becoming a minister (you don't have to be a musician), write to"
     }
   }
 }
