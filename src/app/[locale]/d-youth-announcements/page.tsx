@@ -1,42 +1,53 @@
-"use client";
-
-import { useTranslations, useLocale } from "next-intl";
+import parse from "html-react-parser";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { Link, usePathname } from "@/app/navigation";
+
+import type { Language } from "@/types";
 import { Accordion } from "./accordion";
 import { InstagramIcon } from "./instagram-icon";
-import { YouTubeIcon } from "./youtube-icon";
+import { LanguageToggle } from "./language-toggle";
 import backgroundImage from "./static/background.jpg";
-import telegramIcon from "./static/telegram.png";
 import logoIcon from "./static/logo.svg";
+import telegramIcon from "./static/telegram.png";
+import { YouTubeIcon } from "./youtube-icon";
 
-export default function DYouthAnnouncementsPage() {
-  const t = useTranslations("d-youth-announcements");
-  const currentLocale = useLocale();
-  const pathname = usePathname();
-  const newLocale = currentLocale === "uk" ? "en" : "uk";
+import { Link } from "@/app/navigation";
+import DYouthAnnouncementsService, {
+  type AnnouncementItem,
+} from "@/services/d-youth-announcements.service";
+
+export default async function DYouthAnnouncementsPage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
+
+  const announcementData = await DYouthAnnouncementsService.getAnnouncements({
+    language: locale as Language,
+  });
 
   return (
     <div
-      className="min-h-screen relative overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
       style={{
-        background: "#1a1a1a"
+        background: "#1a1a1a",
       }}
     >
       {/* Background */}
       <div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 h-full w-full"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
         }}
       />
 
       {/* Верхня права смуга (хедер) */}
       <div
-        className="absolute ribbon-unfold-top"
+        className="ribbon-unfold-top absolute"
         style={{
           width: "16.67vw",
           height: "0",
@@ -45,37 +56,24 @@ export default function DYouthAnnouncementsPage() {
           transform: "rotate(-25deg)",
           transformOrigin: "center",
           backgroundColor: "#741dff",
-          opacity: 0
+          opacity: 0,
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-12 sm:px-12 lg:px-16 xl:px-20 py-8 md:py-12 max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+      <div className="container relative z-10 mx-auto max-w-4xl px-12 py-8 sm:px-12 md:py-12 lg:max-w-5xl lg:px-16 xl:max-w-6xl xl:px-20">
         {/* Language Toggle Button */}
-        <div className="absolute top-6 right-6 sm:top-8 sm:right-8 lg:top-10 lg:right-10 z-20">
-          <Link
-            href={pathname}
-            locale={newLocale}
-            className="w-8 h-8 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all hover:scale-110 shadow-lg"
-          >
-            <span
-              className="text-white font-bold text-md sm:text-sm lg:text-base"
-              style={{ fontFamily: "var(--font-manrope), 'Manrope', sans-serif" }}
-            >
-              {currentLocale === "uk" ? "EN" : "UA"}
-            </span>
-          </Link>
-        </div>
+        <LanguageToggle />
 
         {/* Header */}
         <div className="mb-10 px-3">
           <h1
-            className="text-7xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-4 tracking-tight leading-none"
+            className="mb-4 text-7xl font-bold leading-none tracking-tight text-white md:text-7xl lg:text-8xl xl:text-9xl"
             style={{
               fontFamily: "var(--font-manrope), 'Manrope', sans-serif",
-              fontWeight: 600
+              fontWeight: 600,
             }}
           >
-            {currentLocale === "uk" ? (
+            {(locale as Language) === "uk" ? (
               <>
                 ОГОЛО
                 <br className="sm:hidden" />
@@ -95,257 +93,43 @@ export default function DYouthAnnouncementsPage() {
 
         {/* Accordions */}
         <div className="space-y-3 sm:space-y-4 lg:space-y-5 xl:space-y-6">
-          <Accordion title={t("homeGroups.title")}>
-            <p className="mb-4">{t("homeGroups.text")}</p>
-            <a
-              href="https://t.me/dyouthhomegroups_bot"
-              className="text-purple-600 hover:text-purple-700 font-medium underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("homeGroups.botLink")}
-            </a>
-          </Accordion>
-
-          <Accordion title={t("jesusBirthday.title")}>
-            <p className="mb-2 font-semibold">{t("jesusBirthday.date")}</p>
-            <p className="mb-4">{t("jesusBirthday.text")}</p>
-            <p className="mb-4">{t("jesusBirthday.details")}</p>
-            <a
-              href="https://forms.gle/vKZNRR4v7PSH4kZ89"
-              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("jesusBirthday.register")}
-            </a>
-          </Accordion>
-
-          <Accordion title={t("ministry.title")}>
-            <p className="mb-4">{t("ministry.text")}</p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSefJM3KrINTP-_dE8LPBtq_zdAQ9REVzLKu7rxrI3VVq3Te0A/viewform"
-              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("ministry.link")}
-            </a>
-          </Accordion>
-
-          <Accordion title={t("outreach.title")}>
-            <p className="mb-4">{t("outreach.text")}</p>
-            <p className="mb-2">{t("outreach.meeting")}</p>
-            <p className="mb-4">{t("outreach.outreachDate")}</p>
-            <p>
-              {t("outreach.contactLabel")}{" "}
-              <a
-                href="https://t.me/Sem_Yn"
-                className="text-purple-600 hover:text-purple-700 font-medium underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @Sem_Yn
-              </a>
-            </p>
-          </Accordion>
-
-          <Accordion title={t("fusion.title")}>
-            <p className="mb-2 font-semibold">{t("fusion.schedule")}</p>
-            <p className="mb-4">{t("fusion.description")}</p>
-            <p className="mb-2">
-              {t("fusion.text")}{" "}
-              <a
-                href="https://t.me/kyryl_ivakhnenko"
-                className="text-purple-600 hover:text-purple-700 font-medium underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @kyryl_ivakhnenko
-              </a>
-            </p>
-          </Accordion>
-
-          <Accordion title={t("prayer.title")}>
-            <div className="space-y-4">
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("prayer.bot")}
-                </p>
-                <p className="mb-3">{t("prayer.botText")}</p>
-                <a
-                  href="https://t.me/dchurch_prayer_bot"
-                  className="text-purple-600 hover:text-purple-700 font-medium underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t("prayer.botLink")}
-                </a>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("prayer.here")}
-                </p>
-                <p>{t("prayer.hereText")}</p>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("prayer.youth")}
-                </p>
-                <p className="mb-1">{t("prayer.schedule")}</p>
-                <p>{t("prayer.location")}</p>
-              </div>
+          {announcementData?.announcements?.length > 0 ? (
+            announcementData.announcements.map(
+              (announcement: AnnouncementItem) => (
+                <Accordion key={announcement.id} title={announcement.title}>
+                  <div className="space-y-4">
+                    <div className="prose prose-sm max-w-none">
+                      {parse(announcement.body || "")}
+                    </div>
+                    {announcement.button &&
+                      announcement.button.title &&
+                      announcement.button.url && (
+                        <a
+                          href={announcement.button.url}
+                          className="inline-block rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white transition-all hover:bg-purple-700"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {announcement.button.title}
+                        </a>
+                      )}
+                  </div>
+                </Accordion>
+              )
+            )
+          ) : (
+            <div className="py-8 text-center text-white">
+              <p>
+                {(locale as Language) === "uk"
+                  ? "Немає анонсів"
+                  : "No announcements"}
+              </p>
             </div>
-          </Accordion>
-
-          <Accordion title={t("membership.title")}>
-            <p className="mb-4">{t("membership.text")}</p>
-            <a
-              href={`tel:${t("membership.phone")}`}
-              className="text-purple-600 hover:text-purple-700 font-medium underline"
-            >
-              {t("membership.phone")}
-            </a>
-          </Accordion>
-
-          <Accordion title={t("christmasHero.title")}>
-            <p className="mb-4">{t("christmasHero.text")}</p>
-            <div className="space-y-3">
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step1")}</p>
-                <p className="mb-2">{t("christmasHero.step1Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step2")}</p>
-                <p className="mb-2">{t("christmasHero.step2Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step3")}</p>
-                <p className="mb-2">{t("christmasHero.step3Text")}</p>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold">{t("christmasHero.step4")}</p>
-                <p className="mb-2">{t("christmasHero.step4Text")}</p>
-              </div>
-            </div>
-            <p className="mt-4 text-sm italic">{t("christmasHero.note")}</p>
-          </Accordion>
-
-          <Accordion title={t("skiTrip.title")}>
-            <p className="mb-2 font-semibold">{t("skiTrip.date")}</p>
-            <p className="mb-2">{t("skiTrip.location")}</p>
-            <p className="mb-4 font-semibold text-purple-700">{t("skiTrip.price")}</p>
-            <p className="mb-4">{t("skiTrip.description")}</p>
-            <div className="space-y-2 mb-4">
-              <p className="font-semibold">{t("skiTrip.important")}</p>
-              <p>{t("skiTrip.noProgram")}</p>
-              <p>{t("skiTrip.noTransport")}</p>
-              <p>{t("skiTrip.whatWeDo")}</p>
-            </div>
-            {t("skiTrip.registration") && (
-              <a
-                href={t("skiTrip.registration")}
-                className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("skiTrip.registerButton")}
-              </a>
-            )}
-          </Accordion>
-
-          <Accordion title={t("donations.title")}>
-            <p className="mb-4">{t("donations.text")}</p>
-            <Link
-              href="/donate"
-              className="text-purple-600 hover:text-purple-700 break-all underline inline-block"
-            >
-              {t("donations.button")}
-            </Link>
-          </Accordion>
-
-          <Accordion title={t("heartForTheHouse.title")}>
-            <div className="space-y-4">
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.essence")}
-                </p>
-                <p className="mb-4">{t("heartForTheHouse.essenceText")}</p>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.goal")}
-                </p>
-                <p className="mb-4">{t("heartForTheHouse.goalText")}</p>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.idea")}
-                </p>
-                <p className="mb-4">{t("heartForTheHouse.ideaText")}</p>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.when")}
-                </p>
-                <p className="mb-4">{t("heartForTheHouse.whenText")}</p>
-              </div>
-
-              <div>
-                <p className="mb-3 font-semibold text-black-700">
-                  {t("heartForTheHouse.credentials")}
-                </p>
-                <p className="mb-1">{t("heartForTheHouse.receiver")}</p>
-                <p className="mb-1">{t("heartForTheHouse.code")}</p>
-                <p className="mb-1 break-all">{t("heartForTheHouse.account")}</p>
-                <p className="mb-1">{t("heartForTheHouse.bank")}</p>
-                <p className="mb-1">{t("heartForTheHouse.paypal")}</p>
-                <p className="mb-4">{t("heartForTheHouse.contact")}</p>
-              </div>
-
-              <div>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.buildingProject")}
-                </p>
-                <p className="mb-3">{t("heartForTheHouse.buildingText")}</p>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.changes")}
-                </p>
-                <ul className="list-disc list-inside mb-3 space-y-1">
-                  <li>{t("heartForTheHouse.change1")}</li>
-                  <li>{t("heartForTheHouse.change2")}</li>
-                  <li>{t("heartForTheHouse.change3")}</li>
-                  <li>{t("heartForTheHouse.change4")}</li>
-                  <li>{t("heartForTheHouse.change5")}</li>
-                </ul>
-                <p className="mb-3">{t("heartForTheHouse.together")}</p>
-                <p className="mb-2 font-semibold text-black-700">
-                  {t("heartForTheHouse.support")}
-                </p>
-                <p className="mb-3">{t("heartForTheHouse.supportText")}</p>
-                <Link
-                  href="/donate-building"
-                  className="text-purple-600 hover:text-purple-700 font-medium underline inline-block mb-3"
-                >
-                  {t("heartForTheHouse.link")} →
-                </Link>
-                <p className="mt-4 font-semibold">{t("heartForTheHouse.thanks")}</p>
-              </div>
-            </div>
-          </Accordion>
-
-          <Accordion title={t("cafe.title")}>
-            <p>{t("cafe.text")}</p>
-          </Accordion>
+          )}
         </div>
 
         {/* Social Media Icons */}
-        <div className="mt-8 flex justify-center items-center gap-6 sm:gap-8 lg:gap-10">
+        <div className="mt-8 flex items-center justify-center gap-6 sm:gap-8 lg:gap-10">
           <a
             href="https://www.instagram.com/d.youth.lviv/"
             target="_blank"
@@ -355,7 +139,7 @@ export default function DYouthAnnouncementsPage() {
             <InstagramIcon
               size={48}
               color="white"
-              className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10"
+              className="h-10 w-10 sm:h-10 sm:w-10 lg:h-10 lg:w-10"
             />
           </a>
 
@@ -368,7 +152,7 @@ export default function DYouthAnnouncementsPage() {
             <YouTubeIcon
               size={48}
               color="white"
-              className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10"
+              className="h-10 w-10 sm:h-10 sm:w-10 lg:h-10 lg:w-10"
             />
           </a>
 
@@ -383,7 +167,7 @@ export default function DYouthAnnouncementsPage() {
               alt="Telegram"
               width={40}
               height={40}
-              className="w-10 h-10 sm:w-10 sm:h-10 lg:w-10 lg:h-10"
+              className="h-10 w-10 sm:h-10 sm:w-10 lg:h-10 lg:w-10"
             />
           </a>
 
@@ -397,7 +181,7 @@ export default function DYouthAnnouncementsPage() {
               alt="D.Church Website"
               width={120}
               height={32}
-              className="w-auto h-8 sm:h-8 lg:h-8"
+              className="h-8 w-auto sm:h-8 lg:h-8"
             />
           </Link>
         </div>
@@ -405,7 +189,7 @@ export default function DYouthAnnouncementsPage() {
 
       {/* Нижня ліва смуга (футер) */}
       <div
-        className="absolute ribbon-unfold-bottom"
+        className="ribbon-unfold-bottom absolute"
         style={{
           width: "16.67vw",
           height: "0",
@@ -414,10 +198,11 @@ export default function DYouthAnnouncementsPage() {
           transform: "rotate(-25deg)",
           transformOrigin: "center",
           backgroundColor: "#741dff",
-          opacity: 0
+          opacity: 0,
         }}
       />
     </div>
   );
 }
 
+export const revalidate = 300;
