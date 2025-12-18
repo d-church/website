@@ -1,0 +1,13 @@
+.content {
+  :global(a) {
+    color: #2563eb; // blue-600
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #1d4ed8; // blue-700
+    }
+  }
+}
+
