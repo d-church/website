@@ -1,23 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import parse from "html-react-parser";
 
+import type { AnnouncementItem } from "@/services/d-youth-announcements.service";
 import { StarCircleIcon, TriangleDown, TriangleUp } from "./icons";
 
-export const Accordion = ({
-  title,
-  children,
-  defaultOpen = false,
-}: {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-}) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+export function AnnounceItem({ data }: { data: AnnouncementItem }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="relative mb-2">
-      {/* Circle with star */}
       <div
         className="absolute left-0 top-0 z-10 transition-transform duration-500"
         style={{
@@ -28,6 +21,7 @@ export const Accordion = ({
       >
         <StarCircleIcon size={20} />
       </div>
+
       <div className="accordion-corner-cut relative w-full overflow-visible bg-white">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -38,7 +32,7 @@ export const Accordion = ({
             className="text-base font-semibold uppercase tracking-wide sm:text-lg lg:text-xl"
             style={{ fontWeight: 600, color: "#731cfe" }}
           >
-            {title}
+            {data.title}
           </span>
           {isOpen ? (
             <TriangleUp size={24} className="flex-shrink-0" />
@@ -54,10 +48,25 @@ export const Accordion = ({
               fontWeight: 400,
             }}
           >
-            {children}
+            <div className="space-y-4">
+              <div className="prose prose-sm max-w-none">
+                {parse(data.body || "")}
+              </div>
+              {data.button && data.button.title && data.button.url && (
+                <a
+                  href={data.button.url}
+                  className="inline-block rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white transition-all hover:bg-purple-700"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {data.button.title}
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>
     </div>
   );
-};
+}
+

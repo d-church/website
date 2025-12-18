@@ -1,9 +1,8 @@
-import parse from "html-react-parser";
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
 import type { Language } from "@/types";
-import { Accordion } from "./accordion";
+import { AnnounceItem } from "./announce-item";
 import { InstagramIcon, YouTubeIcon } from "./icons";
 import { LanguageToggle } from "./language-toggle";
 import backgroundImage from "./static/background.jpg";
@@ -18,12 +17,12 @@ import DYouthAnnouncementsService, {
 export default async function DYouthAnnouncementsPage({
   params: { locale },
 }: {
-  params: { locale: string };
+  params: { locale: Language };
 }) {
   unstable_setRequestLocale(locale);
 
   const announcementData = await DYouthAnnouncementsService.getAnnouncements({
-    language: locale as Language,
+    language: locale,
   });
 
   return (
@@ -95,25 +94,7 @@ export default async function DYouthAnnouncementsPage({
           {announcementData?.announcements?.length > 0 ? (
             announcementData.announcements.map(
               (announcement: AnnouncementItem) => (
-                <Accordion key={announcement.id} title={announcement.title}>
-                  <div className="space-y-4">
-                    <div className="prose prose-sm max-w-none">
-                      {parse(announcement.body || "")}
-                    </div>
-                    {announcement.button &&
-                      announcement.button.title &&
-                      announcement.button.url && (
-                        <a
-                          href={announcement.button.url}
-                          className="inline-block rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white transition-all hover:bg-purple-700"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {announcement.button.title}
-                        </a>
-                      )}
-                  </div>
-                </Accordion>
+                <AnnounceItem key={announcement.id} data={announcement} />
               )
             )
           ) : (
