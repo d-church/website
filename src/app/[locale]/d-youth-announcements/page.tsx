@@ -4,12 +4,11 @@ import Image from "next/image";
 
 import type { Language } from "@/types";
 import { Accordion } from "./accordion";
-import { InstagramIcon } from "./instagram-icon";
+import { InstagramIcon, YouTubeIcon } from "./icons";
 import { LanguageToggle } from "./language-toggle";
 import backgroundImage from "./static/background.jpg";
 import logoIcon from "./static/logo.svg";
 import telegramIcon from "./static/telegram.png";
-import { YouTubeIcon } from "./youtube-icon";
 
 import { Link } from "@/app/navigation";
 import DYouthAnnouncementsService, {

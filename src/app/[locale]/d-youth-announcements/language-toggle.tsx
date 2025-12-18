@@ -2,9 +2,10 @@
 
 import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/app/navigation";
+import { Language } from "@/types/global";
 
 export function LanguageToggle() {
-  const currentLocale = useLocale();
+  const currentLocale = useLocale() as Language;
   const pathname = usePathname();
   const newLocale = currentLocale === "uk" ? "en" : "uk";
 
