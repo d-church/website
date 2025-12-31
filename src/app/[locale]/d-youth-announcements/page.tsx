@@ -2,6 +2,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
 import type { Language } from "@/types";
+import { SeasonalSnowfall } from "@/components/common/seasonal-snowfall";
 import { AnnounceItem } from "./announce-item";
 import { InstagramIcon, YouTubeIcon } from "./icons";
 import { LanguageToggle } from "./language-toggle";
@@ -32,6 +33,7 @@ export default async function DYouthAnnouncementsPage({
         background: "#1a1a1a",
       }}
     >
+      <SeasonalSnowfall />
       {/* Background */}
       <div
         className="absolute inset-0 h-full w-full"
