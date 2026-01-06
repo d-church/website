@@ -78,7 +78,7 @@
       "youth": "Youth",
       "time-1": "10:00 - 11:30",
       "time-2": "12:00 - 13:30",
-      "time-3": "16:00 - 17:30"
+      "time-3": "15:00 - 16:30"
     },
     "church-team-block": {
       "text": "Church leadership is carried out by a team of dedicated ministers who work diligently for the development of God's Kingdom.",
@@ -363,7 +363,7 @@
         "text": "Day"
       },
       "evening": {
-        "time": "16:00 - 17:30",
+        "time": "15:00 - 16:30",
         "text": "Youth"
       }
     },
