@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #020817;
+
+    --card: #ffffff;
+    --card-foreground: #020817;
+
+    --popover: #ffffff;
+    --popover-foreground: #020817;
+
+    --primary: #0f172a;
+    --primary-foreground: #f8fafc;
+
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #020817;
+
+    --radius: 0.5rem;
+
+    --graphite: #232323;
+    --graphite-hsl: 0 0% 14%;
+    --hover-blue: #0e959a;
+    --hover-blue-300: #0e93984d;
+    --error-red: #ff6b6b;
+
+    --gray: #8a8a8a;
+    --gray-light: #d9d9d9;
+  }
+
+  .dark {
+    --background: #020817;
+    --foreground: #f8fafc;
+
+    --card: #020817;
+    --card-foreground: #f8fafc;
+
+    --popover: #020817;
+    --popover-foreground: #f8fafc;
+
+    --primary: #f8fafc;
+    --primary-foreground: #0f172a;
+
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+
+    --destructive: #7f1d1d;
+    --destructive-foreground: #f8fafc;
+
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #cbd5e1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Youth Announcements Styles */
+@keyframes ribbon-unfold {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    height: 150vh;
+    opacity: 0.9;
+  }
+}
+
+.ribbon-unfold-top {
+  animation: ribbon-unfold 2.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.ribbon-unfold-bottom {
+  animation: ribbon-unfold 2.2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.accordion-corner-cut {
+  position: relative;
+  -webkit-mask-image: radial-gradient(circle 10px at top left, transparent 10px, black 10px);
+  mask-image: radial-gradient(circle 10px at top left, transparent 10px, black 10px);
+}

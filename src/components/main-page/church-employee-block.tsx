@@ -1,0 +1,42 @@
+import Image from "next/image";
+
+import { cn } from "@/lib/utils";
+
+interface IChurchEmployeeBlockProps {
+  src: string;
+  fullName: string;
+  position: string;
+  className?: string;
+}
+
+export function ChurchEmployeeBlock({
+  src,
+  fullName,
+  position,
+  className,
+}: IChurchEmployeeBlockProps) {
+  return (
+    <div className="flex flex-col  items-center">
+      <div className="flex flex-col ml-50 mr-50 items-center">
+        <div className="relative flex size-[150px]  items-center justify-center overflow-hidden rounded-full border-4 bg-[#E8E8E8] xl:size-[190px]">
+          <Image
+            src={src}
+            width={160}
+            height={160}
+            alt="icon"
+            className={cn(
+              "size-[126px]  rounded-full object-cover object-[70%_30%] xl:size-[160px]",
+              className
+            )}
+          />
+        </div>
+        <p className="mt-[10px] whitespace-pre-wrap text-center text-base font-bold xl:mt-[20px] xl:text-[22px]">
+          {fullName}
+        </p>
+      </div>
+      <p className="mt-[10px] whitespace-pre-line text-center font-normal text-[#8A8A8A] xl:text-[22px]">
+        {position}
+      </p>
+    </div>
+  );
+}
