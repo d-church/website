@@ -26,7 +26,7 @@ export default async function EventsAndBlogPage({
 }) {
   unstable_setRequestLocale(locale);
 
-  const { previewBlockCarouselItems } = await loadEventsAndBlogPageData();
+  const { previewBlockCarouselItems } = await loadEventsAndBlogPageData(locale);
 
   return (
     <>

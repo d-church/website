@@ -10,6 +10,17 @@ const nextConfig = withNextIntl({
       {
         protocol: "https",
         hostname: "sourceoflife.oneentry.cloud",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "sourceoflife.api.cloud",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+        pathname: "/**",
       },
     ],
   },
