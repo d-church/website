@@ -17,7 +17,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { fetchProducts } from "@/oneentry/fetch-products";
+import { fetchProducts } from "@/api/fetch-products";
 
 type PreviewBlockProps = {
   carouselItems: IProductsEntity[];
@@ -67,11 +67,6 @@ export function PreviewBlock({ carouselItems }: PreviewBlockProps) {
                     <p className="mb-[34px] text-[2.5rem]/[3rem] font-medium max-lg:mb-[30px] max-lg:text-[1.875rem]/[2.25rem]">
                       {carouselItem.attributeValues.title.value}
                     </p>
-                    {/* <div className="text-[2.5rem]/[3rem] font-medium max-lg:text-[1.375rem]/[1.6rem]">
-                      {carouselItem.attributeValues.date.value.formattedValue
-                        .split("-")
-                        .join(".")}
-                    </div> */}
                   </div>
                 </CarouselItem>
               ))}

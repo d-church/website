@@ -898,13 +898,6 @@ export const Icons = {
         clipRule="evenodd"
         className="transition-colors group-hover:fill-hover-blue"
       />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="2"
-        d="m11 17 8 8-8 8"
-        className="opacity-0 transition-all group-hover:stroke-hover-blue group-hover:opacity-100"
-      />
     </svg>
   ),
   carouselPrevArrow: (props: IconProps) => (
@@ -916,13 +909,6 @@ export const Icons = {
         className="transition-colors group-hover:fill-hover-blue"
         clipRule="evenodd"
         {...props}
-      />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="2"
-        d="m15 17-8 8 8 8"
-        className="opacity-0 transition-all group-hover:stroke-hover-blue group-hover:opacity-100"
       />
     </svg>
   ),
