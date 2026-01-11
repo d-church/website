@@ -1,37 +1,29 @@
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import { Button } from "../ui/button";
 
 import {
   BlogsBlock,
-  LazyLoadBlock,
-  PaginationBlock,
 } from "@/components/events-and-blog-page";
-
-const PaginationProvider = dynamic(
-  () => import("@components/events-and-blog-page/pagination-provider"),
-  { ssr: false }
-);
+import { fetchPosts } from "@/api/fetch-posts";
 
 export const revalidate = 300;
-export default function EventsAndBlogPage({
+export default async function EventsAndBlogPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
+
+  const posts = await fetchPosts({ offset: 0, limit: 3 }, locale);
+
   return (
     <>
       <div className="relative min-h-[324px] w-full max-md:flex max-md:flex-col max-md:justify-center">
-        <PaginationProvider>
-          <BlogsBlock />
-          <PaginationBlock />
-          <LazyLoadBlock />
-        </PaginationProvider>
+        <BlogsBlock posts={posts} />
       </div>
       <div className="mb-16 flex justify-center">
         <Button
