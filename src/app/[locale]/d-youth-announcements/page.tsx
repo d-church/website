@@ -22,9 +22,19 @@ export default async function DYouthAnnouncementsPage({
 }) {
   unstable_setRequestLocale(locale);
 
-  const announcementData = await DYouthAnnouncementsService.getAnnouncements({
-    language: locale,
-  });
+  const announcementData = await (async () => {
+    try {
+      return await DYouthAnnouncementsService.getAnnouncements({
+        language: locale,
+      });
+    } catch (error: any) {
+      const status = error?.response?.status;
+      if (status === 404) {
+        return { language: locale, announcements: [], createdAt: "", updatedAt: "" };
+      }
+      throw error;
+    }
+  })();
 
   return (
     <div

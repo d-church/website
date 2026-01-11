@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat, Manrope } from "next/font/google";
 import "./globals.css";
 
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -48,7 +48,7 @@ type Props = {
   params: { locale: string };
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<Props>) {
@@ -57,7 +57,7 @@ export default function RootLayout({
     notFound();
   }
 
-  const messages = useMessages();
+  const messages = await getMessages();
 
   return (
     <html lang={locale} className={cn("scroll-smooth", montserrat.className, manrope.variable)}>

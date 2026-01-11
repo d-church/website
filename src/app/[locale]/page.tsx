@@ -14,6 +14,10 @@ import {
 } from "@/components/main-page";
 import { AboutChurch } from "@/components/main-page/about-church-block";
 
+// Workaround for React/Next prerender instability ("Expected a suspended thenable")
+// Render the home page dynamically instead of static prerendering.
+export const dynamic = "force-dynamic";
+
 export default function HomePage({
   params: { locale },
 }: {
