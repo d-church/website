@@ -1,36 +1,12 @@
-"use client";
-
-import { useLocale } from "next-intl";
-import { useEffect, useState } from "react";
-
+import { Post } from "@/types/posts.types";
 import { SkeletonCard } from "../common/skeleton-loader";
 import { BlogBlock } from "./blog-block";
-import { usePagination } from "./pagination-provider";
 
-import { fetchPosts } from "@/api/fetch-posts";
-import { Post } from "@/types/posts.types";
+type BlogsBlockProps = {
+  posts: Post[];
+};
 
-export function BlogsBlock() {
-  const locale = useLocale();
-  const [posts, setPosts] = useState<Post[]>([]);
-  const { currentPage, perPage } = usePagination();
-
-  useEffect(() => {
-    const loadPosts = async () => {
-      try {
-        const offset = (currentPage - 1) * perPage;
-        const fetchedPosts = await fetchPosts(
-          { offset, limit: perPage },
-          locale
-        );
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error("Failed to fetch posts:", error);
-      }
-    };
-    loadPosts();
-  }, [currentPage, perPage, locale]);
-
+export function BlogsBlock({ posts }: BlogsBlockProps) {
   if (posts.length === 0) {
     return <SkeletonCard />;
   }
