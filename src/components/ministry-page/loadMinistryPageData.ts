@@ -1,22 +1,19 @@
 import parse from "html-react-parser";
 
-import { fetchProducts } from "@/oneentry/fetch-products";
+import {
+  getMinistryCards,
+  getMinistryHero,
+  MinistryCard,
+} from "@/data/ministry";
 
 export const loadMinistryPageData = async () => {
-  const products = await fetchProducts();
-  const ministryHero = products.find(
-    (item) => item.attributeSetIdentifier === "MinistryHero"
-  );
-  const ministryCards = products.filter(
-    (item) => item.attributeSetIdentifier !== "MinistryHero"
-  );
+  const ministryHero = getMinistryHero();
+  const ministryCards = getMinistryCards();
 
   const previewBlockData = {
-    imageSrc: ministryHero?.attributeValues.image?.value.downloadLink,
-    title: ministryHero?.attributeValues.title.value,
-    parsedText: parse(
-      ministryHero?.attributeValues.description?.value?.htmlValue || ""
-    ),
+    imageSrc: ministryHero.image,
+    title: ministryHero.title,
+    parsedText: parse(ministryHero.description),
   };
 
   return {
@@ -24,3 +21,5 @@ export const loadMinistryPageData = async () => {
     ministryCards,
   };
 };
+
+export type { MinistryCard };

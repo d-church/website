@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
 
-import type { ICRMImage } from "@/types/crm-image.types";
 import {
   Sheet,
   SheetClose,
@@ -16,6 +15,7 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 
+import type { MinistryImage } from "@/data/ministry";
 import { cn } from "@/lib/utils";
 
 const CarouselBlock = dynamic(
@@ -29,7 +29,7 @@ interface IMinistryTypeBlockProps {
   src: string;
   textModal: string;
   imgPosition?: string;
-  carouselImages: ICRMImage[];
+  carouselImages: MinistryImage[];
 }
 
 export function MinistryTypeBlock({
@@ -60,7 +60,7 @@ export function MinistryTypeBlock({
                 <div className="after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-black after:opacity-40"></div>
               </div>
             </div>
-            <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium max-md:text-[1.25rem]/[1.5rem] group-hover:cursor-pointer">
+            <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium group-hover:cursor-pointer max-md:text-[1.25rem]/[1.5rem]">
               {parsedSubtitile}
             </div>
           </div>
@@ -76,7 +76,7 @@ export function MinistryTypeBlock({
         <div className="relative h-full w-full rounded-[21px] bg-gradient-to-b from-transparent to-hover-blue-300">
           <SheetHeader>
             <div className="rounded-t-[20px] bg-gradient-to-b from-white to-[#282e2edb]">
-            {/* p-[1px] */}
+              {/* p-[1px] */}
               <div className="relative z-[3] h-full w-full rounded-t-[20px] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:rounded-t-[20px] after:bg-[#232323CC]">
                 <div className="absolute top-0 z-[2] h-full w-full rounded-t-[20px]"></div>
                 <Image
