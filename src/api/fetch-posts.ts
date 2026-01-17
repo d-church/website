@@ -40,20 +40,23 @@ export async function fetchPosts(
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`Failed to fetch posts: ${response.status} ${response.statusText}`, {
-        url,
-        errorText,
-      });
-      throw new Error(`Failed to fetch posts: ${response.status} ${response.statusText} - ${errorText}`);
+      console.error(
+        `Failed to fetch posts: ${response.status} ${response.statusText}`,
+        {
+          url,
+          errorText,
+        }
+      );
+      return [];
     }
 
     const responseData = await response.json();
     return Array.isArray(responseData)
       ? responseData
-      : (responseData.data || responseData.posts || []);
+      : responseData.data || responseData.posts || [];
   } catch (error) {
     console.error("Error fetching posts:", error);
-    throw error;
+    return [];
   }
 }
 
@@ -84,11 +87,16 @@ export async function fetchPostById(
         return null;
       }
       const errorText = await response.text();
-      console.error(`Failed to fetch post: ${response.status} ${response.statusText}`, {
-        url,
-        errorText,
-      });
-      throw new Error(`Failed to fetch post: ${response.status} ${response.statusText} - ${errorText}`);
+      console.error(
+        `Failed to fetch post: ${response.status} ${response.statusText}`,
+        {
+          url,
+          errorText,
+        }
+      );
+      throw new Error(
+        `Failed to fetch post: ${response.status} ${response.statusText} - ${errorText}`
+      );
     }
 
     return response.json();
