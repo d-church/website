@@ -3,7 +3,6 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 
-import { ICRMImage } from "@/types/crm-image.types";
 import {
   Sheet,
   SheetClose,
@@ -14,10 +13,12 @@ import {
 } from "../ui/sheet";
 import { GalleryCarouselBlock } from "./gallery-carousel-block";
 
+import { MinistryImage } from "@/data/ministry";
+
 interface IGalleryBlockProps {
   children: React.ReactNode;
   initialIndex: number;
-  carouselImages: ICRMImage[];
+  carouselImages: MinistryImage[];
   setOpenFirstModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { ICRMImage } from "@/types/crm-image.types";
 import Loading from "../common/loading";
 import { Separator } from "../ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
@@ -16,11 +15,12 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { MinistryImage } from "@/data/ministry";
 import { cn } from "@/lib/utils";
 
 interface ICarouselBlockProps {
   textModal: string;
-  carouselImages: ICRMImage[];
+  carouselImages: MinistryImage[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -68,36 +68,51 @@ export default function CarouselBlock({
     <>
       {carouselImages.length > 0 && (
         <>
-          <div className="relative mx-auto w-full max-w-[795px] pointer-events-auto">
+          <div className="pointer-events-auto relative mx-auto w-full max-w-[795px]">
             <Carousel
               setApi={setApi}
               className="relative h-[160px]"
-              opts={{ loop: false, skipSnaps: false, containScroll: "trimSnaps" }}
+              opts={{
+                loop: false,
+                skipSnaps: false,
+                containScroll: "trimSnaps",
+              }}
             >
-              <CarouselContent className={cn(carouselImages.length < 3 && "justify-center")}>
+              <CarouselContent
+                className={cn(carouselImages.length < 3 && "justify-center")}
+              >
                 {carouselImages.map((carouselImage, index) => (
-                  <CarouselItem key={index} className="basis-1/1 relative w-[245px] lg:basis-1/3">
-                    {isCarouselItemsLoads[index] && <Loading className="absolute inset-0 h-full w-full" />}
+                  <CarouselItem
+                    key={index}
+                    className="basis-1/1 relative w-[245px] lg:basis-1/3"
+                  >
+                    {isCarouselItemsLoads[index] && (
+                      <Loading className="absolute inset-0 h-full w-full" />
+                    )}
                     <GalleryModalBlock
                       initialIndex={index}
                       carouselImages={carouselImages}
                       setOpenFirstModal={setOpen}
                     >
-                      <div className="relative h-full w-full overflow-hidden pointer-events-auto">
+                      <div className="pointer-events-auto relative h-full w-full overflow-hidden">
                         <Image
                           width={245}
                           height={160}
                           src={carouselImage.downloadLink}
-                          onLoadingComplete={() => onLoadingCompleteHandler(index)}
+                          onLoadingComplete={() =>
+                            onLoadingCompleteHandler(index)
+                          }
                           className={cn(
                             "h-[160px] w-full object-cover transition-opacity",
-                            isCarouselItemsLoads[index] ? "opacity-0" : "opacity-100"
+                            isCarouselItemsLoads[index]
+                              ? "opacity-0"
+                              : "opacity-100"
                           )}
                           alt="Gallery image"
                         />
                       </div>
                       {/* Click Area Limited to Image */}
-                      <div className="absolute inset-0 pointer-events-none hover:pointer-events-auto hover:cursor-pointer hover:bg-white/15"></div>
+                      <div className="pointer-events-none absolute inset-0 hover:pointer-events-auto hover:cursor-pointer hover:bg-white/15"></div>
                     </GalleryModalBlock>
                   </CarouselItem>
                 ))}
@@ -115,7 +130,9 @@ export default function CarouselBlock({
                 key={index}
                 className={cn(
                   "w-[25px] sm:w-[40px]",
-                  current === index + 1 ? "bg-graphite" : "bg-graphite opacity-20"
+                  current === index + 1
+                    ? "bg-graphite"
+                    : "bg-graphite opacity-20"
                 )}
               />
             ))}
@@ -127,14 +144,18 @@ export default function CarouselBlock({
       <div
         className={cn(
           "mx-auto mt-[20px] max-w-[1070px] text-center text-lg font-medium",
-          "max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px] lg:pr-[20px] custom-scrollbar",
+          "custom-scrollbar max-xl:w-[90%] max-lg:pb-[50px] lg:mt-[50px] lg:pr-[20px]",
           {
             "overflow-auto": windowWidth !== null && windowWidth < 600,
-            "max-h-[300px] overflow-auto": windowWidth !== null && windowWidth >= 600,
+            "max-h-[300px] overflow-auto":
+              windowWidth !== null && windowWidth >= 600,
           }
         )}
       >
-        <div className="px-4" dangerouslySetInnerHTML={{ __html: textModal || "" }}></div>
+        <div
+          className="px-4"
+          dangerouslySetInnerHTML={{ __html: textModal || "" }}
+        ></div>
       </div>
     </>
   );

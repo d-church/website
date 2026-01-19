@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { ICRMImage } from "@/types/crm-image.types";
 import { Separator } from "../ui/separator";
 
 import {
@@ -14,10 +13,11 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { MinistryImage } from "@/data/ministry";
 import { cn } from "@/lib/utils";
 
 interface IGalleryBlockProps {
-  carouselImages: ICRMImage[];
+  carouselImages: MinistryImage[];
   initialIndex: number;
 }
 
