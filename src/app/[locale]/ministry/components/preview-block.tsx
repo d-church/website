@@ -1,7 +1,7 @@
 import parse from "html-react-parser";
 import Image from "next/image";
 
-import { ministryHeroData } from "./data";
+import { ministryHeroData } from "../data";
 
 export function PreviewBlock() {
   const parsedText = parse(ministryHeroData.description);

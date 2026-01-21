@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-export default function CarouselBlock({
+export function CarouselBlock({
   textModal,
   carouselImages,
   setOpen,

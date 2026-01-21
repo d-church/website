@@ -3,11 +3,12 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
+
 import {
   MainHeaderBlock,
-  MinistryTypesBlock,
   PreviewBlock,
-} from "./";
+  MinistryTypesBlock,
+} from "./components";
 
 export default async function MinistryPage({
   params: { locale },

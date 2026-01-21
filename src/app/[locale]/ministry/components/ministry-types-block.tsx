@@ -1,6 +1,6 @@
 import { MinistryTypeBlock } from "./ministry-type-block";
 
-import { ministryCardsData } from "./data";
+import { ministryCardsData } from "../data";
 
 export function MinistryTypesBlock() {
   return (
