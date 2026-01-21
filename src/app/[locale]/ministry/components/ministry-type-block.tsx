@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useState } from "react";
 
+import type { Language, TranslatedString } from "@/types/global";
+
 import {
   Sheet,
   SheetClose,
@@ -19,7 +21,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const CarouselBlock = dynamic(
-  () => import("./carousel-block"),
+  () => import("./carousel-block").then(mod => ({ default: mod.CarouselBlock })),
   { ssr: false }
 );
 
@@ -32,15 +34,16 @@ export function MinistryTypeBlock({
   carouselImages,
 }: {
   title: string;
-  subtitle: { uk: string; en: string };
+  subtitle: TranslatedString;
   src: string;
-  textModal: { uk: string; en: string };
+  textModal: TranslatedString;
   imgPosition?: string;
   carouselImages: string[];
 }) {
-  const locale = useLocale() as "uk" | "en";
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const parsedSubtitile = parse(subtitle[locale]);
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <div className="h-full">

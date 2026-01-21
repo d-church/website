@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { ministryHeroData } from "../data";
 
 export function PreviewBlock() {
-  const locale = useLocale() as "uk" | "en";
+  const locale = useLocale() as Language;
   const parsedText = parse(ministryHeroData.description[locale]);
 
   return (

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
+import type { Language, TranslatedString } from "@/types/global";
+
 import Loading from "@/components/common/loading";
 import { Separator } from "@/components/ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
@@ -23,11 +25,11 @@ export function CarouselBlock({
   carouselImages,
   setOpen,
 }: {
-  textModal: { uk: string; en: string };
+  textModal: TranslatedString;
   carouselImages: string[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const locale = useLocale() as "uk" | "en";
+  const locale = useLocale() as Language;
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [isCarouselItemsLoads, setIsCarouselItemsLoads] = useState(
