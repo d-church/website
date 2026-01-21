@@ -10,24 +10,20 @@ import {
   SheetOverlay,
   SheetPortal,
   SheetTrigger,
-} from "../ui/sheet";
+} from "@/components/ui/sheet";
 import { GalleryCarouselBlock } from "./gallery-carousel-block";
-
-import { MinistryImage } from "@/data/ministry";
-
-interface IGalleryBlockProps {
-  children: React.ReactNode;
-  initialIndex: number;
-  carouselImages: MinistryImage[];
-  setOpenFirstModal: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 export function GalleryModalBlock({
   children,
   initialIndex,
   carouselImages,
   setOpenFirstModal,
-}: IGalleryBlockProps) {
+}: {
+  children: React.ReactNode;
+  initialIndex: number;
+  carouselImages: string[];
+  setOpenFirstModal: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   function closeOnClickOnBackdrop() {
     if (isOpen) {

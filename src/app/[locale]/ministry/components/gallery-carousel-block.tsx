@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { Separator } from "../ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 import {
   Carousel,
@@ -13,18 +13,15 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { MinistryImage } from "@/data/ministry";
 import { cn } from "@/lib/utils";
-
-interface IGalleryBlockProps {
-  carouselImages: MinistryImage[];
-  initialIndex: number;
-}
 
 export function GalleryCarouselBlock({
   carouselImages,
   initialIndex,
-}: IGalleryBlockProps) {
+}: {
+  carouselImages: string[];
+  initialIndex: number;
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(initialIndex + 1);
 
@@ -53,7 +50,7 @@ export function GalleryCarouselBlock({
               <Image
                 width={1070}
                 height={696}
-                src={carouselImage.downloadLink}
+                src={carouselImage}
                 className="h-[210px] object-cover min-[400px]:h-[300px] min-[500px]:h-[400px] sm:h-[600px] xl:h-[696px]"
                 alt="Gallery image"
               />

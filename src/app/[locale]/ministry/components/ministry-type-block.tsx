@@ -4,7 +4,9 @@ import parse from "html-react-parser";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+
+import type { Language, TranslatedString } from "@/types/global";
 
 import {
   Sheet,
@@ -13,24 +15,14 @@ import {
   SheetHeader,
   SheetOverlay,
   SheetTrigger,
-} from "../ui/sheet";
+} from "@/components/ui/sheet";
 
-import type { MinistryImage } from "@/data/ministry";
 import { cn } from "@/lib/utils";
 
 const CarouselBlock = dynamic(
-  () => import("@components/ministry-page/carousel-block"),
+  () => import("./carousel-block").then(mod => ({ default: mod.CarouselBlock })),
   { ssr: false }
 );
-
-interface IMinistryTypeBlockProps {
-  title: string;
-  subtitle: string;
-  src: string;
-  textModal: string;
-  imgPosition?: string;
-  carouselImages: MinistryImage[];
-}
 
 export function MinistryTypeBlock({
   title,
@@ -39,9 +31,18 @@ export function MinistryTypeBlock({
   src,
   imgPosition,
   carouselImages,
-}: IMinistryTypeBlockProps) {
+}: {
+  title: string;
+  subtitle: string;
+  src: string;
+  textModal: string;
+  imgPosition?: string;
+  carouselImages: string[];
+}) {
   const [open, setOpen] = useState(false);
-  const parsedSubtitile = parse(subtitle);
+  const parsedTitle = useMemo(() => parse(title), [title]);
+  const parsedSubtitle = useMemo(() => parse(subtitle), [subtitle]);
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <div className="h-full">
@@ -49,7 +50,7 @@ export function MinistryTypeBlock({
           <div className="group">
             <div className=" rounded-[20px]">
               <div className="relative inline-flex h-[270px] w-full items-center justify-center overflow-hidden rounded-[20px] px-[105px] py-[40px] text-center text-[1.5rem]/[1.875rem] font-medium hover:cursor-pointer max-sm:h-[160px]">
-                <p className="z-[1] text-white">{title}</p>
+                <p className="z-[1] text-white">{parsedTitle}</p>
                 <Image
                   fill
                   src={src}
@@ -61,7 +62,7 @@ export function MinistryTypeBlock({
               </div>
             </div>
             <div className="mt-[10px] w-full whitespace-pre-wrap text-center text-[1.5rem]/[1.875rem] font-medium group-hover:cursor-pointer max-md:text-[1.25rem]/[1.5rem]">
-              {parsedSubtitile}
+              {parsedSubtitle}
             </div>
           </div>
         </SheetTrigger>
@@ -70,7 +71,6 @@ export function MinistryTypeBlock({
       <SheetOverlay className="bg-black/50 backdrop-blur-sm" />
       <SheetContent
         className="max-lg:my-[50px]"
-        // shadow-custom-hover-blue
         side="center"
       >
         <div className="relative h-full w-full rounded-[21px] bg-gradient-to-b from-transparent to-hover-blue-300">
@@ -86,7 +86,7 @@ export function MinistryTypeBlock({
                   alt="Head picture"
                 />
                 <p className="relative z-[1] py-[58px] text-center text-[2.25rem]/[2.75rem] text-white lg:py-[96px] lg:text-[3.125rem]/[3.625rem]">
-                  {title}
+                  {parsedTitle}
                 </p>
                 <SheetClose className="absolute right-0 top-0 outline-none">
                   <X
