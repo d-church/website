@@ -1,11 +1,14 @@
+import { useMemo } from "react";
 import parse from "html-react-parser";
 import Image from "next/image";
-import { useLocale, useMemo } from "next-intl";
+import { useLocale } from "next-intl";
 
 import { ministryHeroData } from "../data";
 
-export function PreviewBlock() {
-  const locale = useLocale() as Language;
+
+export async function PreviewBlock() {
+  const locale = useLocale();
+
   const parsedText = useMemo(() => parse(ministryHeroData.description[locale]), [locale]);
 
   return (
