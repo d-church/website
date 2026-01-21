@@ -9,7 +9,6 @@ export const ministryHeroData: MinistryHero = {
 
 export const ministryCardsData: MinistryCard[] = [
   {
-    id: 83,
     title: "D.Family",
     subtitle: "<p>Сімейне служіння</p>",
     description:
@@ -22,10 +21,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-family/4.jpg").default.src,
       require("./assets/d-family/5.jpg").default.src,
     ],
-    position: 1,
   },
   {
-    id: 82,
     title: "D.Moms",
     subtitle: "<p>Служіння для мам</p>",
     description:
@@ -37,10 +34,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-moms/3.jpg").default.src,
       require("./assets/d-moms/4.jpg").default.src,
     ],
-    position: 2,
   },
   {
-    id: 81,
     title: "D.Kids",
     subtitle: "<p>Дитяче служіння<br></p>",
     description:
@@ -52,10 +47,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-kids/3.jpg").default.src,
       require("./assets/d-kids/4.jpg").default.src,
     ],
-    position: 3,
   },
   {
-    id: 76,
     title: "D.Specials",
     subtitle: "<p>Cлужіння для сімей з дітьми з ментальними порушеннями</p>",
     description:
@@ -66,10 +59,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-specials/2.jpg").default.src,
       require("./assets/d-specials/3.jpg").default.src,
     ],
-    position: 4,
   },
   {
-    id: 74,
     title: "D.Girls",
     subtitle: "<p>Служіння для дівчат</p>",
     description:
@@ -80,10 +71,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-girls/2.jpg").default.src,
       require("./assets/d-girls/3.jpg").default.src,
     ],
-    position: 5,
   },
   {
-    id: 70,
     title: "D.Young",
     subtitle: "<p>Підліткове служіння</p>",
     description:
@@ -94,10 +83,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-young/2.jpg").default.src,
       require("./assets/d-young/3.jpg").default.src,
     ],
-    position: 6,
   },
   {
-    id: 68,
     title: "D.Worship",
     subtitle: "<p>Музичне служіння</p>",
     description:
@@ -108,10 +95,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-worship/2.jpg").default.src,
       require("./assets/d-worship/3.jpg").default.src,
     ],
-    position: 7,
   },
   {
-    id: 72,
     title: "D.Youth",
     subtitle: "<p>Молодіжне служіння<br></p>",
     description:
@@ -122,10 +107,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-youth/2.jpg").default.src,
       require("./assets/d-youth/3.jpg").default.src,
     ],
-    position: 8,
   },
   {
-    id: 131,
     title: "Капеланське служіння",
     subtitle: "<p>Капеланське служіння</p>",
     description:
@@ -136,10 +119,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/chaplain/2.jpg").default.src,
       require("./assets/chaplain/3.jpg").default.src,
     ],
-    position: 9,
   },
   {
-    id: 128,
     title: "D.Friends",
     subtitle: "<p>Платформа для друзів<br></p>",
     description:
@@ -150,10 +131,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-friends/2.jpg").default.src,
       require("./assets/d-friends/3.jpg").default.src,
     ],
-    position: 10,
   },
   {
-    id: 125,
     title: "D.Nations",
     subtitle: "<p>Місійне служіння</p>",
     description:
@@ -164,10 +143,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-nations/2.jpg").default.src,
       require("./assets/d-nations/3.jpg").default.src,
     ],
-    position: 11,
   },
   {
-    id: 80,
     title: "D.Cafe",
     subtitle: "<p>Служіння в кафе</p>",
     description:
@@ -178,10 +155,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-cafe/2.jpg").default.src,
       require("./assets/d-cafe/3.jpg").default.src,
     ],
-    position: 12,
   },
   {
-    id: 79,
     title: "Альфа курс",
     subtitle: "<p>Курс основ християнства</p>",
     description:
@@ -192,10 +167,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/alpha/2.jpg").default.src,
       require("./assets/alpha/3.jpg").default.src,
     ],
-    position: 13,
   },
   {
-    id: 78,
     title: "Fusion",
     subtitle: "<p>Музичний проект</p>",
     description:
@@ -206,10 +179,8 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/fusion/2.jpg").default.src,
       require("./assets/fusion/3.jpg").default.src,
     ],
-    position: 14,
   },
   {
-    id: 77,
     title: "D.Seniors",
     subtitle: "<p>Служіння старшим людям</p>",
     description:
@@ -220,6 +191,5 @@ export const ministryCardsData: MinistryCard[] = [
       require("./assets/d-seniors/2.jpg").default.src,
       require("./assets/d-seniors/3.jpg").default.src,
     ],
-    position: 15,
   },
-].sort((a, b) => a.position - b.position);
+];
