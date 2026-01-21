@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
-import type { Language, TranslatedString } from "@/types/global";
-
 import Loading from "@/components/common/loading";
 import { Separator } from "@/components/ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
@@ -25,11 +23,11 @@ export function CarouselBlock({
   carouselImages,
   setOpen,
 }: {
-  textModal: TranslatedString;
+  textModal: string;
   carouselImages: string[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const locale = useLocale() as Language;
+  const locale = useLocale();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [isCarouselItemsLoads, setIsCarouselItemsLoads] = useState(
@@ -155,7 +153,7 @@ export function CarouselBlock({
       >
         <div
           className="px-4"
-          dangerouslySetInnerHTML={{ __html: textModal[locale] || "" }}
+          dangerouslySetInnerHTML={{ __html: textModal }}
         ></div>
       </div>
     </>
