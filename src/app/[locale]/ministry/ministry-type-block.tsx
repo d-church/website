@@ -15,7 +15,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import type { MinistryImage } from "./types";
 import { cn } from "@/lib/utils";
 
 const CarouselBlock = dynamic(
@@ -36,7 +35,7 @@ export function MinistryTypeBlock({
   src: string;
   textModal: string;
   imgPosition?: string;
-  carouselImages: MinistryImage[];
+  carouselImages: string[];
 }) {
   const [open, setOpen] = useState(false);
   const parsedSubtitile = parse(subtitle);

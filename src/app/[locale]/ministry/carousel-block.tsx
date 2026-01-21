@@ -15,7 +15,6 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import type { MinistryImage } from "./types";
 import { cn } from "@/lib/utils";
 
 export default function CarouselBlock({
@@ -24,7 +23,7 @@ export default function CarouselBlock({
   setOpen,
 }: {
   textModal: string;
-  carouselImages: MinistryImage[];
+  carouselImages: string[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [api, setApi] = useState<CarouselApi>();
@@ -96,7 +95,7 @@ export default function CarouselBlock({
                         <Image
                           width={245}
                           height={160}
-                          src={carouselImage.downloadLink}
+                          src={carouselImage}
                           onLoadingComplete={() =>
                             onLoadingCompleteHandler(index)
                           }

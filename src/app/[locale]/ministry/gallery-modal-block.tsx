@@ -13,8 +13,6 @@ import {
 } from "@/components/ui/sheet";
 import { GalleryCarouselBlock } from "./gallery-carousel-block";
 
-import type { MinistryImage } from "./types";
-
 export function GalleryModalBlock({
   children,
   initialIndex,
@@ -23,7 +21,7 @@ export function GalleryModalBlock({
 }: {
   children: React.ReactNode;
   initialIndex: number;
-  carouselImages: MinistryImage[];
+  carouselImages: string[];
   setOpenFirstModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [isOpen, setIsOpen] = useState(false);

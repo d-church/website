@@ -13,14 +13,13 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import type { MinistryImage } from "./types";
 import { cn } from "@/lib/utils";
 
 export function GalleryCarouselBlock({
   carouselImages,
   initialIndex,
 }: {
-  carouselImages: MinistryImage[];
+  carouselImages: string[];
   initialIndex: number;
 }) {
   const [api, setApi] = useState<CarouselApi>();
@@ -51,7 +50,7 @@ export function GalleryCarouselBlock({
               <Image
                 width={1070}
                 height={696}
-                src={carouselImage.downloadLink}
+                src={carouselImage}
                 className="h-[210px] object-cover min-[400px]:h-[300px] min-[500px]:h-[400px] sm:h-[600px] xl:h-[696px]"
                 alt="Gallery image"
               />
