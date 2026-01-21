@@ -1,7 +1,7 @@
 import type { TranslatedString } from "@/types/global";
 
 export interface MinistryCard {
-  title: string;
+  title: TranslatedString;
   subtitle: TranslatedString;
   description: TranslatedString;
   previewImage: string;

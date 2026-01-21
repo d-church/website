@@ -10,8 +10,8 @@ export function MinistryTypesBlock() {
     <div className="container grid grid-cols-2 gap-[30px] whitespace-pre py-[50px] max-sm:grid-cols-1 lg:py-[100px] xl:grid-cols-[repeat(3,minmax(0,520px))]">
       {ministryCardsData.map((card) => (
         <MinistryTypeBlock
-          key={card.title}
-          title={card.title}
+          key={card.title[locale]}
+          title={card.title[locale]}
           subtitle={card.subtitle[locale]}
           textModal={card.description[locale]}
           src={card.previewImage}

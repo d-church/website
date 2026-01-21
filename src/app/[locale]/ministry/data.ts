@@ -14,7 +14,10 @@ export const ministryHeroData: MinistryHero = {
 
 export const ministryCardsData: MinistryCard[] = [
   {
-    title: "D.Family",
+    title: {
+      uk: "D.Family",
+      en: "D.Family"
+    },
     subtitle: {
       uk: "<p>Сімейне служіння</p>",
       en: "<p>Family Ministry</p>"
@@ -33,7 +36,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Moms",
+    title: {
+      uk: "D.Moms",
+      en: "D.Moms"
+    },
     subtitle: {
       uk: "<p>Служіння для мам</p>",
       en: "<p>Ministry for Moms</p>"
@@ -51,7 +57,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Kids",
+    title: {
+      uk: "D.Kids",
+      en: "D.Kids"
+    },
     subtitle: {
       uk: "<p>Дитяче служіння<br></p>",
       en: "<p>Children's Ministry</p>"
@@ -69,7 +78,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Specials",
+    title: {
+      uk: "D.Specials",
+      en: "D.Specials"
+    },
     subtitle: {
       uk: "<p>Cлужіння для сімей з дітьми з ментальними порушеннями</p>",
       en: "<p>Ministry for families with children with mental disabilities</p>"
@@ -86,7 +98,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Girls",
+    title: {
+      uk: "D.Girls",
+      en: "D.Girls"
+    },
     subtitle: {
       uk: "<p>Служіння для дівчат</p>",
       en: "<p>Ministry for Girls</p>"
@@ -103,7 +118,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Young",
+    title: {
+      uk: "D.Young",
+      en: "D.Young"
+    },
     subtitle: {
       uk: "<p>Підліткове служіння</p>",
       en: "<p>Teen Ministry</p>"
@@ -120,7 +138,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Worship",
+    title: {
+      uk: "D.Worship",
+      en: "D.Worship"
+    },
     subtitle: {
       uk: "<p>Музичне служіння</p>",
       en: "<p>Worship Ministry</p>"
@@ -137,7 +158,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Youth",
+    title: {
+      uk: "D.Youth",
+      en: "D.Youth"
+    },
     subtitle: {
       uk: "<p>Молодіжне служіння<br></p>",
       en: "<p>Youth Ministry</p>"
@@ -154,7 +178,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "Капеланське служіння",
+    title: {
+      uk: "Капеланське служіння",
+      en: "Chaplain Ministry"
+    },
     subtitle: {
       uk: "<p>Капеланське служіння</p>",
       en: "<p>Chaplain Ministry</p>"
@@ -171,7 +198,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Friends",
+    title: {
+      uk: "D.Friends",
+      en: "D.Friends"
+    },
     subtitle: {
       uk: "<p>Платформа для друзів<br></p>",
       en: "<p>Friends Platform</p>"
@@ -188,7 +218,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Nations",
+    title: {
+      uk: "D.Nations",
+      en: "D.Nations"
+    },
     subtitle: {
       uk: "<p>Місійне служіння</p>",
       en: "<p>Mission Ministry</p>"
@@ -205,7 +238,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Cafe",
+    title: {
+      uk: "D.Cafe",
+      en: "D.Cafe"
+    },
     subtitle: {
       uk: "<p>Служіння в кафе</p>",
       en: "<p>Cafe Ministry</p>"
@@ -222,7 +258,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "Альфа курс",
+    title: {
+      uk: "Альфа курс",
+      en: "Alpha Course"
+    },
     subtitle: {
       uk: "<p>Курс основ християнства</p>",
       en: "<p>Christian Basics Course</p>"
@@ -239,7 +278,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "Fusion",
+    title: {
+      uk: "Fusion",
+      en: "Fusion"
+    },
     subtitle: {
       uk: "<p>Музичний проект</p>",
       en: "<p>Music Project</p>"
@@ -256,7 +298,10 @@ export const ministryCardsData: MinistryCard[] = [
     ],
   },
   {
-    title: "D.Seniors",
+    title: {
+      uk: "D.Seniors",
+      en: "D.Seniors"
+    },
     subtitle: {
       uk: "<p>Служіння старшим людям</p>",
       en: "<p>Ministry for Seniors</p>"
