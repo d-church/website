@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import Loading from "../common/loading";
-import { Separator } from "../ui/separator";
+import Loading from "@/components/common/loading";
+import { Separator } from "@/components/ui/separator";
 import { GalleryModalBlock } from "./gallery-modal-block";
 
 import {
@@ -15,20 +15,18 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { MinistryImage } from "@/data/ministry";
+import type { MinistryImage } from "./types";
 import { cn } from "@/lib/utils";
-
-interface ICarouselBlockProps {
-  textModal: string;
-  carouselImages: MinistryImage[];
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 export default function CarouselBlock({
   textModal,
   carouselImages,
   setOpen,
-}: ICarouselBlockProps) {
+}: {
+  textModal: string;
+  carouselImages: MinistryImage[];
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [isCarouselItemsLoads, setIsCarouselItemsLoads] = useState(

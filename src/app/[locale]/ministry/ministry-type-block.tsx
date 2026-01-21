@@ -13,24 +13,15 @@ import {
   SheetHeader,
   SheetOverlay,
   SheetTrigger,
-} from "../ui/sheet";
+} from "@/components/ui/sheet";
 
-import type { MinistryImage } from "@/data/ministry";
+import type { MinistryImage } from "./types";
 import { cn } from "@/lib/utils";
 
 const CarouselBlock = dynamic(
-  () => import("@components/ministry-page/carousel-block"),
+  () => import("./carousel-block"),
   { ssr: false }
 );
-
-interface IMinistryTypeBlockProps {
-  title: string;
-  subtitle: string;
-  src: string;
-  textModal: string;
-  imgPosition?: string;
-  carouselImages: MinistryImage[];
-}
 
 export function MinistryTypeBlock({
   title,
@@ -39,7 +30,14 @@ export function MinistryTypeBlock({
   src,
   imgPosition,
   carouselImages,
-}: IMinistryTypeBlockProps) {
+}: {
+  title: string;
+  subtitle: string;
+  src: string;
+  textModal: string;
+  imgPosition?: string;
+  carouselImages: MinistryImage[];
+}) {
   const [open, setOpen] = useState(false);
   const parsedSubtitile = parse(subtitle);
   return (
