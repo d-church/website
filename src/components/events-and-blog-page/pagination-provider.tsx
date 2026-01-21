@@ -7,11 +7,10 @@ import {
   useEffect,
   useState,
 } from "react";
-import { useLocale } from "next-intl";
 
 import { SkeletonCard } from "../common/skeleton-loader";
 
-import { fetchPosts } from "@/api/fetch-posts";
+import { fetchProducts } from "@/oneentry/fetch-products";
 
 interface PaginationContextProps {
   currentPage: number;
@@ -31,7 +30,6 @@ export default function PaginationProvider({
 }: {
   children: ReactNode;
 }) {
-  const locale = useLocale();
   const windowSize = window.innerWidth;
   const mdWindowWidth = 768;
   const firstPage = 1;
@@ -41,17 +39,20 @@ export default function PaginationProvider({
   const [lastPage, setLastPage] = useState(0);
 
   useEffect(() => {
-    const loadPostsCount = async () => {
+    const fetchData = async () => {
       try {
-        const posts = await fetchPosts({ offset: 0, limit: 1000 }, locale);
-        setAllElements(posts.length);
-        setLastPage(Math.ceil(posts.length / perPage));
+        const result = await fetchProducts("Blogs");
+        setAllElements(result.length);
+        setLastPage(Math.ceil(result.length / perPage));
       } catch (error) {
-        console.error("Failed to fetch posts:", error);
+        console.error(
+          "Failed to fetch products in pagination-provider:",
+          error
+        );
       }
     };
-    loadPostsCount();
-  }, [perPage, locale]);
+    fetchData();
+  });
 
   if (lastPage === 0) {
     return <SkeletonCard />;
