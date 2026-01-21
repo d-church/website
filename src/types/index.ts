@@ -1,2 +1,2 @@
-export type { Language } from "./global";
+export type * from "./global";
 

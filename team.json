@@ -1,0 +1,722 @@
+{
+  "items": [
+    {
+      "id": 123,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Рончковський (copy)"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 9,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Рончковський Андрій",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 62910,
+                "filename": "files/project/product/123/image/c5bd6dcc-7d33-4a4a-8f09-33f4d5e970e8.jpeg",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/product/123/image/c5bd6dcc-7d33-4a4a-8f09-33f4d5e970e8.jpeg"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякон. Адміністрування",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 122,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Новосельцев Ігор (copy) (copy)"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 10,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Новосельцев Ігор",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 19592,
+                "filename": "files/project/product/122/image/6da1e031-97fd-4471-ad8e-8d156d028716.jpeg",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/product/122/image/6da1e031-97fd-4471-ad8e-8d156d028716.jpeg"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Пастор. Молодіжне служіння",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 120,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Білик Володимир Дмитрович (copy)"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 11,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Володимир та Ірина Білик",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 55400,
+                "filename": "files/project/product/120/image/f40631a7-f596-4a2a-bf79-2e3c311e0b97.jpeg",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/product/120/image/f40631a7-f596-4a2a-bf79-2e3c311e0b97.jpeg"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Старші пастори",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 92,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Горошко Є (copy)"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 1,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Горошко Юрій Євгенович",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1775362,
+                "filename": "files/project/page/92/image/Горошко-Юрій.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/92/image/Горошко-Юрій.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякон. Молитовне служіння",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 63,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Сергій Денисюк"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 2,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Сергій Денисюк",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1816466,
+                "filename": "files/project/page/63/image/Денисюк-Сергій.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/63/image/Денисюк-Сергій.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Пресвітер. Альфа-курс, спільнота  D.Seniors",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 56,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Моткалюки"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 3,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Олександр та Василина Моткалюк",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 321410,
+                "filename": "files/project/page/56/image/Олександр-та-Василина-Моткалюки.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/56/image/Олександр-та-Василина-Моткалюки.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякони. Сімейне служіння",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 54,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Когут Олег"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 4,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Олег Когут",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 906594,
+                "filename": "files/project/page/54/image/Когут-Олег.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/54/image/Когут-Олег.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякон. Прославлення",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 53,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Петриляк Роберт"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 5,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Роберт Петриляк",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1669253,
+                "filename": "files/project/page/53/image/Петриляк-Роберт.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/53/image/Петриляк-Роберт.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Місіонер. Міжкультурна місія.",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 52,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Васильків Юрій"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 6,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Юрій Васильків",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1709474,
+                "filename": "files/project/page/52/image/Васильків-Юрій.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/52/image/Васильків-Юрій.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Керівник ревізійної комісії, нові ініціативи",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 51,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Кузьо Юрій"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 12,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Юрій Кузьо",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1219528,
+                "filename": "files/project/page/51/image/Кузьо-Юрій.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/51/image/Кузьо-Юрій.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Менеджер недільного служіння",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 50,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Тузяк Світлана"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 7,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Світлана Тузяк",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1077858,
+                "filename": "files/project/page/50/image/Тузяк-Світлана.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/50/image/Тузяк-Світлана.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякониса. Недільна школа",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    },
+    {
+      "id": 49,
+      "attributeSetIdentifier": "ChuchTeam",
+      "localizeInfos": {
+        "en_US": {
+          "title": "Гаврищишин Сергій"
+        }
+      },
+      "statusLocalizeInfos": {},
+      "isVisible": true,
+      "statusIdentifier": null,
+      "position": 8,
+      "templateIdentifier": null,
+      "shortDescTemplateIdentifier": null,
+      "price": null,
+      "additional": {
+        "prices": {
+          "min": null,
+          "max": null
+        }
+      },
+      "sku": null,
+      "isSync": true,
+      "categories": ["churchteam"],
+      "attributeValues": {
+        "en_US": {
+          "fio": {
+            "type": "string",
+            "value": "Сергій Гаврищишин",
+            "isIcon": false,
+            "position": 0,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "photo": {
+            "type": "image",
+            "value": [
+              {
+                "size": 1392846,
+                "filename": "files/project/page/49/image/Гаврищишин-Сергій.webp",
+                "previewLink": "",
+                "downloadLink": "https://sourceoflife.oneentry.cloud/cloud-static/files/project/page/49/image/Гаврищишин-Сергій.webp"
+              }
+            ],
+            "isIcon": false,
+            "position": 2,
+            "additionalFields": [],
+            "isProductPreview": false
+          },
+          "position": {
+            "type": "string",
+            "value": "Диякон. Служіння милосердя",
+            "isIcon": false,
+            "position": 1,
+            "additionalFields": [],
+            "isProductPreview": false
+          }
+        }
+      }
+    }
+  ],
+  "total": 12
+}

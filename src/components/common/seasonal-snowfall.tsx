@@ -1,24 +1,24 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import type { SnowfallProps } from 'react-snowfall';
 
 export function SeasonalSnowfall() {
-  const [shouldShow, setShouldShow] = useState(false);
-  const [SnowfallComponent, setSnowfallComponent] = useState<React.ComponentType<any> | null>(null);
+  const currentMonth = new Date().getMonth() + 1;
+  // December (12), January (1), February (2)
+  const isWinter = currentMonth === 12 || currentMonth === 1 || currentMonth === 2;
+
+  const [SnowfallComponent, setSnowfallComponent] = useState<React.ComponentType<SnowfallProps> | null>(null);
 
   useEffect(() => {
-    const currentMonth = new Date().getMonth() + 1;
-    // December (12), January (1), February (2)
-    if (currentMonth === 12 || currentMonth === 1 || currentMonth === 2) {
-      setShouldShow(true);
-
+    if (isWinter) {
       import(/* webpackChunkName: "react-snowfall" */ 'react-snowfall').then((module) => {
         setSnowfallComponent(() => module.default);
       });
     }
   }, []);
 
-  if (!shouldShow || !SnowfallComponent) {
+  if (!isWinter || !SnowfallComponent) {
     return null;
   }
 
