@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import type { Language, TranslatedString } from "@/types/global";
 
@@ -40,8 +40,8 @@ export function MinistryTypeBlock({
   carouselImages: string[];
 }) {
   const [open, setOpen] = useState(false);
-  const parsedTitle = parse(title);
-  const parsedSubtitle = parse(subtitle);
+  const parsedTitle = useMemo(() => parse(title), [title]);
+  const parsedSubtitle = useMemo(() => parse(subtitle), [subtitle]);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>

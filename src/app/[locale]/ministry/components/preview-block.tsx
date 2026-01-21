@@ -1,12 +1,12 @@
 import parse from "html-react-parser";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useMemo } from "next-intl";
 
 import { ministryHeroData } from "../data";
 
 export function PreviewBlock() {
   const locale = useLocale() as Language;
-  const parsedText = parse(ministryHeroData.description[locale]);
+  const parsedText = useMemo(() => parse(ministryHeroData.description[locale]), [locale]);
 
   return (
     <div className="lg:justify-baseline relative flex h-full max-h-[700px] min-h-[50vh] items-center justify-center bg-slate-200">
