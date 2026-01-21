@@ -42,7 +42,6 @@ export function MinistryTypeBlock({
 }) {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
-  console.log(locale, subtitle);
   const parsedSubtitile = parse(subtitle[locale]);
 
   return (
