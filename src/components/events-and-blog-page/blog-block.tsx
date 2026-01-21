@@ -6,14 +6,14 @@ import { Button } from "../ui/button";
 import { Link } from "@/app/navigation";
 import s from './blog-block.module.css';
 
-interface IBlogBlockProps {
+interface PostBlockProps {
   title: string;
   date: string;
   imgSrc: string;
-  id: number;
+  id: string | number;
 }
 
-export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
+export function BlogBlock({ title, date, imgSrc, id }: PostBlockProps) {
   const href = `/events-and-blog/${id}`;
   const t = useTranslations("events-and-blogs-page.blogs");
   return (
@@ -21,7 +21,7 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
       <Link href={href} className={s.link}>
         <Image
           src={imgSrc}
-          alt="Blog preview image"
+          alt="Post preview image"
           className={`rounded-[20px] max-2xl:h-[188px] max-2xl:w-[320px] max-xl:rounded-[12px] 2xl:h-[300px] 2xl:w-[520px] object-cover`}
           width={320}
           height={160}
@@ -45,7 +45,6 @@ export function BlogBlock({ title, date, imgSrc, id }: IBlogBlockProps) {
           <p className="text-[1rem]/[1.21rem] 2xl:text-[1.125rem]/[1.375rem]">
             {date}
           </p>
-          {/* <Separator className="w-full min-w-full max-w-full" /> */}
         </div>
       </div>
     </div>
