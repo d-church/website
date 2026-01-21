@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 
 import Loading from "@/components/common/loading";
@@ -22,10 +23,11 @@ export function CarouselBlock({
   carouselImages,
   setOpen,
 }: {
-  textModal: string;
+  textModal: { uk: string; en: string };
   carouselImages: string[];
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const locale = useLocale() as "uk" | "en";
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [isCarouselItemsLoads, setIsCarouselItemsLoads] = useState(
@@ -151,7 +153,7 @@ export function CarouselBlock({
       >
         <div
           className="px-4"
-          dangerouslySetInnerHTML={{ __html: textModal || "" }}
+          dangerouslySetInnerHTML={{ __html: textModal[locale] || "" }}
         ></div>
       </div>
     </>

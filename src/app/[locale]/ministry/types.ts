@@ -1,13 +1,15 @@
+import type { TranslatedString } from "@/types/global";
+
 export interface MinistryCard {
   title: string;
-  subtitle: string;
-  description: string;
+  subtitle: TranslatedString;
+  description: TranslatedString;
   previewImage: string;
   carouselImages: string[];
 }
 
 export interface MinistryHero {
-  title: string;
-  description: string;
+  title: TranslatedString;
+  description: TranslatedString;
   image: string;
 }

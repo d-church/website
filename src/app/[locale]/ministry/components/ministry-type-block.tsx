@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import { useState } from "react";
 
 import {
@@ -31,14 +32,15 @@ export function MinistryTypeBlock({
   carouselImages,
 }: {
   title: string;
-  subtitle: string;
+  subtitle: { uk: string; en: string };
   src: string;
-  textModal: string;
+  textModal: { uk: string; en: string };
   imgPosition?: string;
   carouselImages: string[];
 }) {
+  const locale = useLocale() as "uk" | "en";
   const [open, setOpen] = useState(false);
-  const parsedSubtitile = parse(subtitle);
+  const parsedSubtitile = parse(subtitle[locale]);
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <div className="h-full">
