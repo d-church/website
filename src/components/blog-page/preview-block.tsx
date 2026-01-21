@@ -1,28 +1,26 @@
 import Image from "next/image";
-import { Post } from "@/types/posts.types";
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
 
-interface PreviewBlockProps {
-  data: Post;
+interface Props {
+  data: IProductsEntity;
 }
 
-export async function PreviewBlock({ data: post }: PreviewBlockProps) {
-  const title = post?.title || "";
-  const imageUrl =
-    post?.files?.[0]?.url ||
-    post?.imageUrl ||
-    post?.images?.[0] ||
-    post?.previewImage ||
-    "/static/preview-block-picture.webp";
+export async function PreviewBlock({ data: block }: Props) {
+  const title = block?.attributeValues.title.value;
+  const images = block?.attributeValues.images.value;
+  const imageSrc =
+    images.length === 1 ? images[0].downloadLink : images[1]?.downloadLink;
 
   return (
     <div>
       <div className="pointer-events-none relative bg-slate-200">
         <div className="relative flex aspect-[16/9] max-h-[1200px] w-full items-center justify-center mt-[4rem] lg:mt-[7rem]">
+          {/* Background Image */}
           <Image
             fill
-            src={imageUrl}
+            src={imageSrc}
             className="object-cover"
-            alt="Post preview image"
+            alt="Gallery image"
           />
         </div>
       </div>

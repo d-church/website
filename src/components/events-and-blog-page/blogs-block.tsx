@@ -1,42 +1,51 @@
-import { Post } from "@/types/posts.types";
+"use client";
+
+import { IProductsEntity } from "oneentry/dist/products/productsInterfaces";
+import { useEffect, useState } from "react";
+
 import { SkeletonCard } from "../common/skeleton-loader";
 import { BlogBlock } from "./blog-block";
+import { usePagination } from "./pagination-provider";
 
-type BlogsBlockProps = {
-  posts: Post[];
-};
+import { fetchProducts } from "@/oneentry/fetch-products";
 
-export function BlogsBlock({ posts }: BlogsBlockProps) {
-  if (posts.length === 0) {
+export function BlogsBlock() {
+  const [blogs, setBlogs] = useState<IProductsEntity[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchProducts("Blogs");
+        setBlogs(response);
+      } catch (error) {
+        console.error("Failed to fetch products in blogs-block:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const { currentPage, perPage } = usePagination();
+
+  const currentSliceStart = (currentPage - 1) * perPage;
+  const currentSliceEnd = currentSliceStart + perPage;
+
+  if (blogs.length === 0) {
     return <SkeletonCard />;
-  }
-
-  return (
-    <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px]  max-lg:pb-[0px] max-lg:pt-[30px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:grid-cols-[repeat(3,_minmax(0,_320px))]  2xl:grid-cols-[repeat(3,_minmax(0,_520px))]">
-      {posts.map((post) => {
-        const imageUrl =
-          post.files?.[0]?.url ||
-          post.imageUrl ||
-          post.images?.[0] ||
-          post.previewImage ||
-          "/static/preview-block-picture.webp";
-
-        const formattedDate = post.date
-          ? post.date.split("-").join(".")
-          : post.createdAt
-          ? new Date(post.createdAt).toISOString().split("T")[0].split("-").join(".")
-          : "";
-
-        return (
+  } else {
+    return (
+      <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px]  max-lg:pb-[0px] max-lg:pt-[30px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:grid-cols-[repeat(3,_minmax(0_,320px))]  2xl:grid-cols-[repeat(3,_minmax(0_,520px))]">
+        {blogs.slice(currentSliceStart, currentSliceEnd).map((blog) => (
           <BlogBlock
-            key={post.id}
-            title={post.title}
-            date={formattedDate}
-            id={post.id}
-            imgSrc={imageUrl}
+            key={blog.id}
+            title={blog.attributeValues.title.value}
+            date={blog.attributeValues.date.value.formattedValue
+              .split("-")
+              .join(".")}
+            id={blog.id}
+            imgSrc={blog.attributeValues.images.value[0].downloadLink}
           />
-        );
-      })}
-    </div>
-  );
+        ))}
+      </div>
+    );
+  }
 }

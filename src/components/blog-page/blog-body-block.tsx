@@ -6,25 +6,27 @@ import parse, {
 } from "html-react-parser";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import {
+  IProductsEntity,
+} from "oneentry/dist/products/productsInterfaces";
 import { useMemo } from "react";
-import { Post } from "@/types/posts.types";
 
-interface BlogBodyBlockProps {
-  data: Post;
+interface IBlogBodyBlockProps {
+  data: IProductsEntity;
 }
 
-export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
+export async function BlogBodyBlock({ data }: IBlogBodyBlockProps) {
   const t = useTranslations();
 
-  const parsedHtml = useMemo(
-    () => parse(post.html || "", options),
-    [post]
+  const mainBlogBody = useMemo(
+    () => parse(data.attributeValues.description.value.htmlValue, options),
+    [data]
   );
 
   return (
     <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-6 py-6 sm:px-8 sm:py-8 md:px-6 md:py-12">
       <div className="flex w-full flex-col gap-6 text-base leading-relaxed sm:text-lg md:gap-10 md:text-[1.25rem]">
-        {parsedHtml}
+        {mainBlogBody}
       </div>
     </div>
   );
@@ -53,7 +55,7 @@ const options: HTMLReactParserOptions = {
         <Image
           width={800}
           height={300}
-          alt="Post image"
+          alt="Blog Image"
           className="h-auto w-full max-w-full object-contain md:object-cover"
           // @ts-ignore
           src={domNode.attribs.src}

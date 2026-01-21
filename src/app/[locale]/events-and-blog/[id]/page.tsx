@@ -9,35 +9,23 @@ import Loading from "@/components/common/loading";
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
-import { fetchPostById } from "@/api/fetch-posts";
+import { fetchBlogById } from "@/oneentry/fetch-products";
 
 export const revalidate = 300;
 export default async function EventsAndBlogPage({
   params: { locale, id },
 }: {
-  params: { locale: string; id: string };
+  params: { locale: string; id: number };
 }) {
   unstable_setRequestLocale(locale);
 
-  const post = await fetchPostById(id, locale);
-  if (!post) {
-    return (
-      <>
-        <Header />
-        <div className="flex items-center justify-center min-h-[400px]">
-          <p>Post not found</p>
-        </div>
-        <Footer />
-      </>
-    );
-  }
-
+  const blog = await fetchBlogById(id);
   return (
     <>
       <Header />
       <Suspense fallback={<Loading className="h-full overflow-hidden top-0 bottom-0" />}>
-        <PreviewBlock data={post} />
-        <BlogBodyBlock data={post} />
+        <PreviewBlock data={blog!} />
+        <BlogBodyBlock data={blog!} />
       </Suspense>
       <WriteUsBlock />
       <Footer />
