@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { Post } from "@/types/posts.types";
 
 interface PreviewBlockProps {
@@ -17,7 +18,7 @@ export async function PreviewBlock({ data: post }: PreviewBlockProps) {
   return (
     <div>
       <div className="pointer-events-none relative bg-slate-200">
-        <div className="relative flex aspect-[16/9] max-h-[1200px] w-full items-center justify-center mt-[4rem] lg:mt-[7rem]">
+        <div className="relative mt-[4rem] flex aspect-[16/9] max-h-[1200px] w-full items-center justify-center lg:mt-[7rem]">
           <Image
             fill
             src={imageUrl}
@@ -27,10 +28,8 @@ export async function PreviewBlock({ data: post }: PreviewBlockProps) {
         </div>
       </div>
 
-      <div className="relative z-[2] w-[100%] space-y-4 text-center pt-16">
-        <p className="text-[2.5rem]/[3rem] font-medium">
-          {title}
-        </p>
+      <div className="relative z-[2] w-[100%] space-y-4 pt-16 text-center">
+        <p className="text-[2.5rem]/[3rem] font-medium">{title}</p>
       </div>
     </div>
   );
