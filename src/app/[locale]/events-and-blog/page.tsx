@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
+import { fetchPosts } from "@/api/fetch-posts";
 import {
   BlogsBlock,
   MainHeaderBlock,
@@ -9,23 +10,13 @@ import {
 import { Footer } from "@/components/footer/footer-site";
 import { Header } from "@/components/header/header-site";
 import { WriteUsBlock } from "@/components/main-page";
-import { fetchPosts } from "@/api/fetch-posts";
-import { Post } from "@/types/posts.types";
 
 export const revalidate = 300;
 
 const PER_PAGE = 6;
 const MAX_COUNT_LIMIT = 1000;
 
-function getPostImageUrl(post: Post | undefined): string {
-  return (
-    post?.files?.[0]?.url ||
-    post?.imageUrl ||
-    post?.images?.[0] ||
-    post?.previewImage ||
-    "/static/preview-block-picture.webp"
-  );
-}
+const HERO_IMAGE_URL = "/static/post-page-hero.webp";
 
 export default async function EventsAndBlogPage({
   params: { locale },
@@ -39,13 +30,11 @@ export default async function EventsAndBlogPage({
   const currentPage = Math.max(1, Number(searchParams?.page ?? "1") || 1);
   const offset = (currentPage - 1) * PER_PAGE;
 
-  const [latestPosts, pagePosts, allPostsForCount] = await Promise.all([
-    fetchPosts({ offset: 0, limit: 1 }, locale),
+  const [pagePosts, allPostsForCount] = await Promise.all([
     fetchPosts({ offset, limit: PER_PAGE }, locale),
     fetchPosts({ offset: 0, limit: MAX_COUNT_LIMIT }, locale),
   ]);
 
-  const latestPostImageUrl = getPostImageUrl(latestPosts[0]);
   const lastPage = Math.max(1, Math.ceil(allPostsForCount.length / PER_PAGE));
 
   return (
@@ -54,7 +43,7 @@ export default async function EventsAndBlogPage({
       <Header />
       <div className="relative min-h-[600px] w-full max-lg:min-h-[400px]">
         <Image
-          src={latestPostImageUrl}
+          src={HERO_IMAGE_URL}
           alt="Latest post image"
           fill
           className="object-cover"
