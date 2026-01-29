@@ -11,9 +11,12 @@ import logoIcon from "./static/logo.svg";
 import telegramIcon from "./static/telegram.png";
 
 import { Link } from "@/app/navigation";
-import DYouthAnnouncementsService, {
+import {
+  DYouthAnnouncementsService,
   type AnnouncementItem,
 } from "@/services/d-youth-announcements.service";
+
+import "./style.scss";
 
 export default async function DYouthAnnouncementsPage({
   params: { locale },
