@@ -1,3 +1,2 @@
-export { default as ApiService } from "./ApiService";
-export { default as RestService } from "./RestService";
-
+export { ApiService, type ApiConfig } from "./api.service";
+export { RestService } from "./rest.service";

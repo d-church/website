@@ -1,13 +1,9 @@
-import ApiService, { type ApiConfig } from "./abstracts/ApiService";
+import { ApiService, type ApiConfig } from "./abstracts";
 import type { Language } from "@/types";
 
 class DYouthAnnouncementsService extends ApiService {
   public async getAnnouncements(config: ApiConfig): Promise<Announcement> {
-    const response = await this.api.get<Announcement>("/announcements", {
-      language: config.language,
-    } as ApiConfig);
-
-    return response.data;
+    return this.get<Announcement>("/announcements", config);
   }
 }
 
@@ -29,5 +25,7 @@ export interface Announcement {
   updatedAt: string;
 }
 
-export default new DYouthAnnouncementsService();
-
+const instance = new DYouthAnnouncementsService();
+export {
+  instance as DYouthAnnouncementsService,
+}
