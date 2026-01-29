@@ -7,8 +7,6 @@ import { cn } from "@/lib/utils";
 import type { AnnouncementItem } from "@/services/d-youth-announcements.service";
 import { StarCircleIcon, TriangleDown, TriangleUp } from "./icons";
 
-import style from "./style.module.scss";
-
 export function AnnounceItem({ data }: { data: AnnouncementItem }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -52,7 +50,7 @@ export function AnnounceItem({ data }: { data: AnnouncementItem }) {
             }}
           >
             <div className="space-y-4">
-              <div className={cn("prose prose-sm max-w-none", style.content)}>
+              <div className="prose prose-sm max-w-none dyouth-announcement-content">
                 {parse(data.body)}
               </div>
               {data.button && data.button.title && data.button.url && (

@@ -15,6 +15,8 @@ import DYouthAnnouncementsService, {
   type AnnouncementItem,
 } from "@/services/d-youth-announcements.service";
 
+import "./style.scss";
+
 export default async function DYouthAnnouncementsPage({
   params: { locale },
 }: {
