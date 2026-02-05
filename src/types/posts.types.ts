@@ -18,7 +18,7 @@ export interface Post {
   authorId: string;
   html: string;
   title: string;
-  date?: string;
+  publishDate?: string | null;
   createdAt?: string;
   updatedAt?: string;
   langCode?: string;

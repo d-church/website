@@ -21,10 +21,13 @@ export function BlogsBlock({ posts }: BlogsBlockProps) {
           post.previewImage ||
           "/static/preview-block-picture.webp";
 
-        const formattedDate = post.date
-          ? post.date.split("-").join(".")
-          : post.createdAt
-          ? new Date(post.createdAt).toISOString().split("T")[0].split("-").join(".")
+        const dateSource = post.publishDate ?? post.createdAt;
+        const formattedDate = dateSource
+          ? new Date(dateSource)
+              .toISOString()
+              .split("T")[0]
+              .split("-")
+              .join(".")
           : "";
 
         return (
