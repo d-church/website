@@ -1,9 +1,5 @@
 import type { MinistryCard, MinistryHero } from "./types";
 
-
-
-
-
 export const ministryHeroData: MinistryHero = {
   title: {
     uk: "Служіння",
