@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Post } from "@/types/posts.types";
+import { getPostPreviewImageSrc } from "./utils";
 
 interface PreviewBlockProps {
   data: Post;
@@ -8,12 +9,7 @@ interface PreviewBlockProps {
 
 export async function PreviewBlock({ data: post }: PreviewBlockProps) {
   const title = post?.title || "";
-  const imageUrl =
-    post?.files?.[0]?.url ||
-    post?.imageUrl ||
-    post?.images?.[0] ||
-    post?.previewImage ||
-    "/static/preview-block-picture.webp";
+  const imageUrl = getPostPreviewImageSrc(post);
 
   return (
     <div>
