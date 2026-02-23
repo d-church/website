@@ -1,13 +1,18 @@
 "use client";
 
-import parse, {
-  attributesToProps,
-  HTMLReactParserOptions,
-} from "html-react-parser";
+import parse, { attributesToProps, Element, HTMLReactParserOptions } from "html-react-parser";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useMemo } from "react";
+
+
+
 import { Post } from "@/types/posts.types";
+import { getPostPreviewImageSrc } from "./utils";
+
+
+
+
 
 interface BlogBodyBlockProps {
   data: Post;
@@ -17,7 +22,7 @@ export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
   const t = useTranslations();
 
   const parsedHtml = useMemo(
-    () => parse(post.html || "", options),
+    () => parse(post.html || "", getOptions(post)),
     [post]
   );
 
@@ -30,7 +35,7 @@ export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
   );
 }
 
-const options: HTMLReactParserOptions = {
+const getOptions = (post: Post): HTMLReactParserOptions => ({
   replace(domNode) {
     if (domNode.type === "text" && domNode.data.trim() === "") return null;
 
@@ -47,18 +52,19 @@ const options: HTMLReactParserOptions = {
         });
       }
     }
-    // @ts-ignore
-    if (domNode.name === "img") {
+
+    if (domNode instanceof Element && domNode.name === "img") {
+      if (domNode.attribs?.src === getPostPreviewImageSrc(post)) return <></>;
+
       return (
         <Image
           width={800}
           height={300}
           alt="Post image"
           className="h-auto w-full max-w-full object-contain md:object-cover"
-          // @ts-ignore
           src={domNode.attribs.src}
         />
       );
     }
   },
-};
+});
