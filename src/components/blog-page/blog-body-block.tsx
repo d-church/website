@@ -1,18 +1,16 @@
 "use client";
 
-import parse, { attributesToProps, Element, HTMLReactParserOptions } from "html-react-parser";
+import parse, {
+  attributesToProps,
+  Element,
+  HTMLReactParserOptions,
+} from "html-react-parser";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useMemo } from "react";
 
-
-
 import { Post } from "@/types/posts.types";
 import { getPostPreviewImageSrc } from "./utils";
-
-
-
-
 
 interface BlogBodyBlockProps {
   data: Post;
