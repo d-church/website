@@ -1,0 +1,9 @@
+/* OBS Helper — star rotation keyframe (used in HostNameBar and ControlPanel preview) */
+@keyframes starRotate {
+  from {
+    transform: rotate(7deg);
+  }
+  to {
+    transform: rotate(367deg);
+  }
+}

@@ -1,0 +1,1034 @@
+/* Power Place — стилі сторінки + інтро (feature: power-place) */
+
+/* Шрифт Namu — тільки в папці фічі */
+@font-face {
+  font-family: "Namu";
+  src: url("./fonts/Namu-1850.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Namu";
+  src: url("./fonts/Namu-1850.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Namu";
+  src: url("./fonts/Namu-1990.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Інтро конференції === */
+@keyframes intro-star-move {
+  from { transform: translate(50%, calc(-50% + 45px)) rotate(0deg); }
+  to { transform: translate(calc(-100vw + 160px), -110px) rotate(-900deg); }
+}
+
+@keyframes intro-slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes intro-slide-up-from-bottom {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes intro-slide-down {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100%); opacity: 1; }
+}
+
+@keyframes intro-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes intro-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes intro-overlay-out {
+  to { opacity: 0; pointer-events: none; }
+}
+
+/* Ізоляція: корінь і скидання кнопок/посилань (перебивають Tailwind) */
+.power-place-root {
+  color: #ffffff;
+}
+.power-place-root button,
+.power-place-root a {
+  font-family: inherit !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+.power-place-root a {
+  cursor: pointer;
+}
+.power-place-root button {
+  cursor: pointer;
+}
+.power-place-root button:focus,
+.power-place-root a:focus {
+  outline: none !important;
+}
+
+.power-place-root .intro-star-move {
+  animation: intro-star-move 1.1s ease-in-out forwards;
+}
+
+.power-place-root .intro-star-final {
+  transform: translate(calc(-100vw + 160px), -110px) rotate(-900deg);
+}
+
+.power-place-root .conference-star-spin-transition {
+  transition: transform 0.6s ease-out;
+}
+
+@keyframes intro-star-roll-to-right {
+  from { transform: translate(calc(-100vw + 160px), -110px) rotate(calc(var(--star-roll-from, -900) * 1deg)); }
+  to { transform: translate(140px, -110px) rotate(calc((var(--star-roll-from, -900) + 720) * 1deg)); }
+}
+@keyframes intro-star-roll-to-left {
+  from { transform: translate(140px, -110px) rotate(calc(var(--star-roll-from, -1080) * 1deg)); }
+  to { transform: translate(calc(-100vw + 160px), -110px) rotate(calc((var(--star-roll-from, -1080) - 720) * 1deg)); }
+}
+
+.power-place-root .intro-star-roll-to-right {
+  animation: intro-star-roll-to-right 1.2s ease-in-out forwards;
+}
+.power-place-root .intro-star-roll-to-left {
+  animation: intro-star-roll-to-left 1.2s ease-in-out forwards;
+}
+
+.power-place-root .intro-slide-up {
+  animation: intro-slide-up 0.8s ease-out forwards;
+}
+
+.power-place-root .intro-slide-up-from-bottom {
+  animation: intro-slide-up-from-bottom 0.9s ease-out forwards;
+}
+
+.power-place-root .intro-slide-down {
+  animation: intro-slide-down 0.9s ease-out forwards;
+}
+
+.power-place-root .intro-jesus-img {
+  max-width: 100vw;
+  height: auto;
+  max-height: 85vh;
+  object-position: right bottom;
+}
+
+.power-place-root .intro-flame-wrap {
+  min-height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.power-place-root .intro-flame-img {
+  width: 165%;
+  max-width: none;
+  min-height: 70vh;
+  object-fit: cover;
+  object-position: center bottom;
+  margin-left: -32.5%;
+}
+
+.power-place-root .intro-head-wrap {
+  min-height: 55vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.power-place-root .intro-head-img {
+  width: 140%;
+  min-width: 140vw;
+  max-width: none;
+  min-height: 55vh;
+  object-fit: cover;
+  object-position: center bottom;
+  margin-left: -20%;
+}
+
+.power-place-root .intro-head-slide-down {
+  animation: intro-slide-down 0.84s ease-out forwards;
+}
+
+.power-place-root .intro-fade-in {
+  animation: intro-fade-in 0.6s ease-out forwards;
+}
+
+.power-place-root .intro-pp-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  transition: top 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.power-place-root .intro-pp-title.intro-pp-in-place {
+  top: 18%;
+  transform: translateY(0);
+}
+
+.power-place-root .intro-pp-title.intro-pp-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.power-place-root .intro-fade-out {
+  animation: intro-fade-out 0.5s ease-out forwards;
+}
+
+.power-place-root .intro-overlay-exit {
+  animation: intro-overlay-out 0.6s ease-out forwards;
+}
+
+/* === Сторінка (Figma Version-2, 390px) === */
+
+/* Обгортка сторінки — заповнює висоту в flex-контейнері layout */
+.power-place-root .conference-page-wrap {
+  width: 100%;
+  min-height: 100vh;
+  flex: 1 1 auto;
+  background: #202020;
+  display: flex;
+  justify-content: center;
+}
+
+.power-place-root .conference-page {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 240px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  height: 100vh;
+}
+@supports (height: 100svh) {
+  .conference-page {
+    min-height: 100svh;
+    height: 100svh;
+  }
+}
+
+@media (min-width: 768px) {
+  .power-place-root .conference-page {
+    max-width: 430px;
+  }
+}
+
+/* Герой: трохи місця знизу під навбар + safe-area (Safari, svh) */
+/* Текст на задньому плані */
+.power-place-root .conference-main-content {
+  position: relative;
+  z-index: 1;
+}
+/* Зірка завжди на передньому плані */
+.power-place-root .conference-star-btn {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+.power-place-root .conference-hero-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6.5rem;
+}
+.power-place-root .conference-hero {
+  min-height: calc(100vh - 72px - env(safe-area-inset-bottom, 0px));
+}
+@supports (height: 100svh) {
+  .power-place-root .conference-hero {
+    min-height: calc(100svh - 72px - env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Блок з кнопкою «Зареєструватись» — невеликий відступ знизу, щоб навбар не закривав (svh + Safari) */
+.power-place-root .conference-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: calc(42px + env(safe-area-inset-bottom, 0px));
+}
+
+.power-place-root .conference-content {
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 240px;
+}
+
+.power-place-root .conference-font-namu {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.power-place-root .conference-font-inter {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.power-place-root .conference-hero-title {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 84px;
+  line-height: 80%;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.07em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.power-place-root .conference-hero-place {
+  letter-spacing: 0.08em;
+}
+
+.power-place-root .conference-hero-sub {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 41px;
+  color: #ffffff;
+}
+
+.power-place-root .conference-btn-text {
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 24px !important;
+  line-height: 29px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
+/* Кнопка «Зареєструватись» — тільки наші стилі, без Tailwind */
+.power-place-root .conference-register-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+  height: 57px;
+  padding: 0;
+  border: none;
+  border-radius: 147px;
+  background-color: #7926FF !important;
+  color: #ffffff !important;
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 24px !important;
+  line-height: 29px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.power-place-root .conference-register-btn:hover {
+  opacity: 0.95;
+}
+
+.power-place-root .conference-words-title {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 71px;
+  line-height: 95%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.power-place-root .conference-schedule-label {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.power-place-root .conference-schedule-time {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 104px;
+  line-height: 125px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.power-place-root .conference-schedule-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.power-place-root .conference-schedule-tab {
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em;
+  padding: 10px 20px !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.power-place-root .conference-schedule-tab:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.power-place-root .conference-schedule-tab.active {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+}
+
+/* Картка спікера: SVG ім'я зверху, кругле фото знизу (як у галереї) */
+.power-place-root .conference-speaker-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.power-place-root .conference-speaker-name-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -5rem;
+  min-height: 1.5rem;
+}
+
+.power-place-root .conference-speaker-photo {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.power-place-root .conference-speaker-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 480px) {
+  .power-place-root .conference-speaker-photo {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.power-place-root .conference-speaker-bio {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Опис спікера: всі рядки розтягнуті по ширині (включно з останнім) */
+.power-place-root .conference-speaker-bio-block {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: justify;
+}
+
+.power-place-root .conference-speaker-name {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: #ffffff;
+}
+
+.power-place-root .conference-form-label,
+.power-place-root .conference-form-input {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.power-place-root .conference-field {
+  position: relative;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 43px;
+  background: transparent;
+  padding: 14px 16px 12px;
+  box-sizing: border-box;
+}
+
+.power-place-root .conference-field-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: #202020;
+  pointer-events: none;
+}
+
+.power-place-root .conference-field input,
+.power-place-root .conference-field select {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  padding: 0;
+}
+
+.power-place-root .conference-field input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.power-place-root .conference-field select {
+  cursor: pointer;
+  appearance: none;
+}
+
+.power-place-root .conference-field select option {
+  background: #202020;
+  color: #fff;
+}
+
+.power-place-root .conference-field:focus-within {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.power-place-root .conference-field .relative input.pr-10,
+.power-place-root .conference-field .relative select,
+.power-place-root .conference-field .relative input.conference-date-input {
+  padding-right: 2.5rem;
+}
+
+.power-place-root .conference-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 2.5rem;
+  height: 100%;
+  cursor: pointer;
+}
+.power-place-root .conference-date-input::-moz-focus-inner {
+  border: 0;
+}
+
+.power-place-root .conference-form-btn-text {
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
+/* Кнопка відправки форми — тільки наші стилі */
+.power-place-root .conference-submit-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+  max-width: 350px;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  border-radius: 147px;
+  background-color: #7926FF !important;
+  color: #ffffff !important;
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.power-place-root .conference-submit-btn:hover {
+  opacity: 0.95;
+}
+
+.power-place-root .conference-faq-title {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.power-place-root .conference-faq-answer {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400 !important;
+}
+
+.power-place-root .conference-faq-answer .conference-faq-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.power-place-root .conference-faq-answer .conference-faq-link:hover {
+  color: #fff;
+}
+
+.power-place-root .conference-footer {
+  width: 100%;
+  min-height: 570px;
+  background: #7926ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 54px 20px 40px;
+  box-sizing: border-box;
+}
+
+.power-place-root .conference-footer-inner {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.power-place-root .conference-footer-logo {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 84px;
+  line-height: 80%;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.power-place-root .conference-footer-logo-place {
+  line-height: 90%;
+}
+
+.power-place-root .conference-footer-contact-name {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.power-place-root .conference-footer-phone {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 51px;
+  line-height: 61px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.power-place-root .conference-footer-address {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 23.6529px;
+  line-height: 28px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.power-place-root .conference-registration-title {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 71px;
+  line-height: 95%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.power-place-root .conference-input-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
+  min-height: 49px;
+  padding: 16px;
+  background: #202020;
+  border: 1px solid #ffffff;
+  border-radius: 43px;
+}
+
+.power-place-root .conference-input-wrap input,
+.power-place-root .conference-input-wrap select {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.power-place-root .conference-input-wrap input::placeholder,
+.power-place-root .conference-input-wrap select option {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.power-place-root .conference-nav-bar {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+/* Контейнер навбару — тільки наші стилі */
+.power-place-root .conference-nav-pill {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 77px;
+  max-width: calc(100vw - 2rem);
+  width: 100%;
+  padding: 0;
+  border-radius: 147px;
+  border: 2px solid #ffffff !important;
+  background-color: #202020 !important;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+/* Пілюлі навбару — базові та стани active/inactive */
+.power-place-root .conference-nav-pill-link {
+  white-space: nowrap;
+  padding: 0.625rem 1.25rem;
+  border-radius: 147px;
+  font-family: "Namu", "NAMU", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background: transparent;
+  color: #ffffff;
+}
+.power-place-root .conference-nav-pill-link.active {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+.power-place-root .conference-nav-pill-link:not(.active) {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+
+.power-place-root .conference-nav-carousel {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem 1rem;
+  z-index: 30;
+  transition: opacity 0.3s;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+.power-place-root .conference-nav-pill {
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+/* Внутрішній ряд пілюль — відступ першої/останньої через margin; min-width: 0 щоб була прокрутка */
+.power-place-root .conference-nav-carousel-inner {
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  min-width: 0;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+}
+.power-place-root .conference-nav-carousel-inner a:first-child {
+  margin-left: 0.75rem;
+}
+.power-place-root .conference-nav-carousel-inner a:last-child {
+  margin-right: 0.75rem;
+}
+.power-place-root .conference-nav-carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+.power-place-root .conference-nav-carousel-inner a {
+  scroll-snap-align: center;
+}
+
+.power-place-root .conference-footer-full {
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.power-place-root .conference-footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 40px;
+}
+
+.power-place-root .conference-footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 54px 16px 0;
+  gap: 20px;
+}
+
+.power-place-root .conference-footer-logo-img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+}
+
+.power-place-root .conference-footer-contacts {
+  margin-top: 0;
+}
+
+.power-place-root .conference-values-fullbleed {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.power-place-root .conference-gallery-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+  transform: translateY(20px);
+}
+
+.power-place-root .conference-gallery-track {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.power-place-root .conference-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.power-place-root .conference-gallery-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  align-items: center;
+  width: max-content;
+}
+
+.power-place-root .conference-gallery-item {
+  flex-shrink: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+}
+
+.power-place-root .conference-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 480px) {
+  .power-place-root .conference-gallery-item {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+.power-place-root .conference-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  animation: conference-success-fadeIn 0.25s ease-out;
+}
+
+@keyframes conference-success-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.power-place-root .conference-success-popup {
+  background: #7926ff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: conference-success-popIn 0.3s ease-out;
+}
+
+@keyframes conference-success-popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.power-place-root .conference-success-title {
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.power-place-root .conference-success-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+
+.power-place-root .conference-success-hint {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.power-place-root .conference-success-pay {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  margin-bottom: 0.5rem;
+  background: #7926ff;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.power-place-root .conference-success-pay:hover {
+  opacity: 0.95;
+  color: #fff;
+}
+
+.power-place-root .conference-success-close {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: #fff;
+  color: #7926ff;
+  font-family: "Namu", "NAMU", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.power-place-root .conference-success-close:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+
+.power-place-root .conference-success-close:active {
+  transform: scale(0.98);
+}
