@@ -28,6 +28,7 @@ export type OBSSettings = {
 
 export type OBSState = {
   version: number;
+  sessionActive: boolean;
   isShowing: boolean;
   text1: string;
   text2: string;
@@ -64,6 +65,7 @@ const defaultSettings: OBSSettings = {
 
 let state: OBSState = {
   version: 0,
+  sessionActive: false,
   isShowing: false,
   text1: "",
   text2: "",
@@ -118,4 +120,23 @@ export function applyCommand(command: { type: string; data?: Record<string, unkn
 export function subscribe(fn: (s: OBSState) => void): () => void {
   listeners.add(fn);
   return () => listeners.delete(fn);
+}
+
+export function startSession(): OBSState {
+  state = { ...state, version: state.version + 1, sessionActive: true };
+  notify();
+  return getState();
+}
+
+export function stopSession(): OBSState {
+  state = {
+    ...state,
+    version: state.version + 1,
+    sessionActive: false,
+    isShowing: false,
+    text1: "",
+    text2: "",
+  };
+  notify();
+  return getState();
 }

@@ -26,25 +26,15 @@ export default function OBSOverlayPage() {
     }).catch(() => {});
   }, []);
 
-  if (!state) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-transparent">
-        <span className="text-white/50">Підключення…</span>
-      </div>
-    );
-  }
-
-  const isShowing = state.isShowing;
-  const text1 = state.text1 ?? "";
-  const text2 = state.text2 ?? "";
-  const settings = state.settings;
+  const sessionActive = state?.sessionActive ?? false;
+  const isShowing = state?.isShowing ?? false;
+  const text1 = state?.text1 ?? "";
+  const text2 = state?.text2 ?? "";
+  const settings = state?.settings ?? null;
 
   return (
-    <div
-      className="min-h-screen w-full bg-transparent"
-      style={{ background: "transparent" }}
-    >
-      {isShowing && (text1 || text2) && settings && (
+    <div className="min-h-screen w-full" style={{ background: "transparent" }}>
+      {sessionActive && isShowing && (text1 || text2) && settings && (
         <HostNameBar
           text1={text1}
           text2={text2}

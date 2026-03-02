@@ -110,6 +110,8 @@ type ControlPanelProps = {
   onShowName: (finalSettings: OBSSettings) => void;
   isShowing: boolean;
   onPreview: (previewSettings: OBSSettings) => void;
+  onStopSession: () => void;
+  sessionStopping: boolean;
 };
 
 function loadPresets(): PresetSlot[] {
@@ -145,6 +147,8 @@ export default function ControlPanel({
   onShowName,
   isShowing,
   onPreview,
+  onStopSession,
+  sessionStopping,
 }: ControlPanelProps) {
   const [localSettings, setLocalSettings] = useState<Partial<OBSSettings>>(defaultLocal);
   const [tempWidth, setTempWidth] = useState("auto");
@@ -278,8 +282,23 @@ export default function ControlPanel({
   return (
     <div className="fixed inset-0 z-[1001] overflow-y-auto bg-[#0c0c0c] text-white">
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-        <h1 className="text-xl font-semibold tracking-tight text-white">OBS Helper</h1>
-        <p className="mt-0.5 text-sm text-white/50">Плашка для overlay у OBS</p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-semibold tracking-tight text-white">OBS Helper</h1>
+            <p className="mt-0.5 flex items-center gap-1.5 text-sm text-white/50">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Сесія активна
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onStopSession}
+            disabled={sessionStopping}
+            className="rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/50 transition hover:border-white/30 hover:text-white/80 disabled:opacity-40"
+          >
+            {sessionStopping ? "…" : "Завершити"}
+          </button>
+        </div>
 
         <section className="mt-8">
           <h2 className="text-xs font-medium uppercase tracking-wider text-white/40">Текст</h2>

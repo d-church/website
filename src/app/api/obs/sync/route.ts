@@ -14,6 +14,9 @@ export async function POST(request: Request) {
     if (!command || typeof command.type !== "string") {
       return NextResponse.json({ error: "Invalid command" }, { status: 400 });
     }
+    if (!getState().sessionActive) {
+      return NextResponse.json({ skipped: true, reason: "no active session" });
+    }
     const next = applyCommand(command);
     return NextResponse.json({
       success: true,

@@ -1167,20 +1167,10 @@ export default function ConferenceLanding() {
                   >
                     <option value="">Обери</option>
                     <option value="fri-sat-no">
-                      П'ятниця + Субота, без обідів - 500 грн
+                      П&apos;ятниця + Субота, без обідів - 500 грн
                     </option>
                     <option value="fri-sat-lunch">
-                      П'ятниця + Субота, з обідами - 1100 грн
-                    </option>
-                    <option value="fri-no">
-                      П'ятниця, без обіду - 300 грн
-                    </option>
-                    <option value="sat-no">Субота, без обіду - 300 грн</option>
-                    <option value="fri-lunch">
-                      П'ятниця, з обідом - 600 грн
-                    </option>
-                    <option value="sat-lunch">
-                      Субота, з обідом - 600 грн
+                      П&apos;ятниця + Субота, з обідами - 1100 грн
                     </option>
                   </select>
                   <ChevronDown className="pointer-events-none absolute right-0 top-1/2 h-5 w-5 -translate-y-1/2 text-white/50" />
