@@ -1,0 +1,10 @@
+<svg id="icon"
+            class="w-full h-full -z-1 [mask-image:radial-gradient(80%_90%_at_50%_87%,white_0%,transparent_100%)] absolute fill-foreground/20 inset-0 opacity-50 pointer-events-none stroke-foreground/20"
+            aria-hidden=true style=transform:translate(0,0)>
+            <defs>
+                <pattern height=60 id=_r34R_0_ patternUnits=userSpaceOnUse width=60 x=-1 y=-1>
+                    <path d="M.5 60V.5H60" stroke-dasharray="12 6" fill=none></path>
+                </pattern>
+            </defs>
+            <rect height=100% width=100% fill=url(#_r34R_0_) stroke-width=0></rect>
+        </svg>
