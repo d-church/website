@@ -1,4 +1,4 @@
-import PowerPlacePage from "@/features/power-place";
+import PowerPlacePage from "./PowerPlacePage";
 
 export default function PowerPlaceRoute() {
   return <PowerPlacePage />;
