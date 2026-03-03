@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getState, startSession, stopSession } from "@/features/obs-helper/store";
+import { getState, startSession, stopSession } from "@/app/[locale]/(obs)/_obs/store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

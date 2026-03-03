@@ -1,4 +1,4 @@
-import { getState, subscribe } from "@/features/obs-helper/store";
+import { getState, subscribe } from "@/app/[locale]/(obs)/_obs/store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

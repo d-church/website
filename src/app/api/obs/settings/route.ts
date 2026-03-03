@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { OBSSettings } from "@/features/obs-helper/store";
+import type { OBSSettings } from "@/app/[locale]/(obs)/_obs/store";
 
 let sharedSettings: OBSSettings = {
   backgroundColor: "#000000",

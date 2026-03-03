@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import type { OBSSettings } from "./store";
+import type { OBSSettings } from "../_obs/store";
 
 type PresetSlot = {
   text1: string;

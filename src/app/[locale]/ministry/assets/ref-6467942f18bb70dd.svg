@@ -1,0 +1,10 @@
+<svg id="icon" class="w-full h-full"
+                                                                        xmlns=http://www.w3.org/2000/svg fill=none
+                                                                        viewBox="0 0 56 56">
+                                                                        <path
+                                                                            d="M28 1C14.5 1 8.5 1 4.75 4.75C1 8.5 1 14.5 1 28C1 41.5 1 47.5 4.75 51.25C8.5 55 14.5 55 28 55C41.5 55 47.5 55 51.25 51.25C55 47.5 55 41.5 55 28C55 14.5 55 8.5 51.25 4.75C47.5 1 41.5 1 28 1Z"
+                                                                            class=stroke-badge-border
+                                                                            stroke-dasharray="6 3" stroke-width=2
+                                                                            style="animation:badge-dash-rotate .5s linear infinite">
+                                                                        </path>
+                                                                    </svg>

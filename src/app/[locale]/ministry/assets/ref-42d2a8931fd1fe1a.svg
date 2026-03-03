@@ -1,0 +1,8 @@
+<svg id="icon"
+                                                            class="lucide-mail lucide" xmlns=http://www.w3.org/2000/svg
+                                                            fill=none viewBox="0 0 24 24" aria-hidden=true height=16
+                                                            stroke=currentColor stroke-linecap=round
+                                                            stroke-linejoin=round stroke-width=2 width=16>
+                                                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                                            <rect height=16 width=20 x=2 y=4 rx=2></rect>
+                                                        </svg>

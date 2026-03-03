@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getState, applyCommand } from "@/features/obs-helper/store";
+import { getState, applyCommand } from "@/app/[locale]/(obs)/_obs/store";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
