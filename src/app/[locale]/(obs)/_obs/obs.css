@@ -1,0 +1,8 @@
+@keyframes starRotate {
+  from {
+    transform: rotate(7deg);
+  }
+  to {
+    transform: rotate(367deg);
+  }
+}

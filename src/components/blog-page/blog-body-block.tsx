@@ -26,7 +26,7 @@ export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
 
   return (
     <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-6 py-6 sm:px-8 sm:py-8 md:px-6 md:py-12">
-      <div className="flex w-full flex-col gap-6 text-base leading-relaxed sm:text-lg md:gap-10 md:text-[1.25rem]">
+      <div className="flex w-full flex-col gap-0 text-base leading-relaxed sm:text-lg md:text-[1.25rem] [&>div]:mb-4 [&>div:last-child]:mb-0 [&>p]:mb-2 sm:[&>p]:mb-3 [&>p:last-child]:mb-0">
         {parsedHtml}
       </div>
     </div>
