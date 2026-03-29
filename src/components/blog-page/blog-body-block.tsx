@@ -5,7 +5,6 @@ import parse, {
   Element,
   HTMLReactParserOptions,
 } from "html-react-parser";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useMemo } from "react";
 
@@ -17,8 +16,6 @@ interface BlogBodyBlockProps {
 }
 
 export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
-  const t = useTranslations();
-
   const parsedHtml = useMemo(
     () => parse(post.html || "", getOptions(post)),
     [post]
@@ -26,7 +23,7 @@ export function BlogBodyBlock({ data: post }: BlogBodyBlockProps) {
 
   return (
     <div className="mx-auto w-full max-w-7xl overflow-x-hidden px-6 py-6 sm:px-8 sm:py-8 md:px-6 md:py-12">
-      <div className="flex w-full flex-col gap-0 text-base leading-relaxed sm:text-lg md:text-[1.25rem] [&>div]:mb-4 [&>div:last-child]:mb-0 [&>p]:mb-2 sm:[&>p]:mb-3 [&>p:last-child]:mb-0">
+      <div className="flex w-full flex-col gap-0 text-base leading-snug text-foreground/95 sm:text-[1.0625rem] md:text-[1.125rem] [&>blockquote]:mb-2 [&>blockquote]:mt-0 [&>blockquote]:border-l-2 [&>blockquote]:border-muted-foreground/30 [&>blockquote]:pl-4 [&>div]:mb-3 [&>div:last-child]:mb-0 [&>h2]:mb-2 [&>h2]:mt-5 [&>h2]:text-xl [&>h2]:font-semibold [&>h2:first-child]:mt-0 [&>h3]:mb-1.5 [&>h3]:mt-4 [&>h3]:text-lg [&>h3]:font-semibold [&>h3:first-child]:mt-0 [&>ol]:mb-2 [&>ol]:mt-0 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:mb-1.5 [&>p:last-child]:mb-0 [&>p:empty]:mb-0 [&>p:empty]:hidden [&>p:has(>br:only-child)]:mb-0 [&>p:has(>br:only-child)]:mt-0 [&>p:has(>br:only-child)]:py-0 [&>p:has(>br:only-child)]:leading-none [&>ul]:mb-2 [&>ul]:mt-0 [&>ul]:list-disc [&>ul]:pl-6 [&_a]:text-primary [&_a]:underline-offset-2 hover:[&_a]:underline [&_br+br]:hidden">
         {parsedHtml}
       </div>
     </div>
