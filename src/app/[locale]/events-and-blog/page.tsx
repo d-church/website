@@ -41,7 +41,7 @@ export default async function EventsAndBlogPage({
     <>
       <MainHeaderBlock />
       <Header />
-      <div className="relative min-h-[600px] w-full max-lg:min-h-[400px]">
+      <div className="relative min-h-[600px] w-full max-lg:min-h-[400px] max-md:mb-6">
         <Image
           src={HERO_IMAGE_URL}
           alt="Latest post image"
@@ -50,7 +50,7 @@ export default async function EventsAndBlogPage({
           priority
         />
       </div>
-      <div className="relative min-h-[324px] w-full max-md:flex max-md:flex-col max-md:justify-center ">
+      <div className="relative w-full max-md:flex max-md:flex-col max-md:justify-start">
         <BlogsBlock posts={pagePosts} />
         <PaginationBlock currentPage={currentPage} lastPage={lastPage} />
       </div>
