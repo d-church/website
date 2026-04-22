@@ -17,7 +17,7 @@ export function BlogBlock({ title, date, imgSrc, id }: PostBlockProps) {
   const href = `/events-and-blog/${id}`;
   const t = useTranslations("events-and-blogs-page.blogs");
   return (
-    <div className="font-medium">
+    <div className="font-medium max-md:mb-[30px] flex flex-col gap-[10px] xl:gap-[20px]">
       <Link href={href} className={s.link}>
         <Image
           src={imgSrc}
@@ -27,8 +27,8 @@ export function BlogBlock({ title, date, imgSrc, id }: PostBlockProps) {
           height={160}
         />
       </Link>
-      <div className={s.container}>
-        <div className={`flex justify-between gap-[20px] pt-[10px] xl:gap-[30px] xl:pt-[20px] ${s.btnContainer}`}>
+      <div className={`${s.container} flex flex-col gap-[10px] xl:gap-[20px]`}>
+        <div className={`flex justify-between gap-[20px] xl:gap-[30px] ${s.btnContainer}`}>
           <Link href={href} className="peer">
             <p className="xl:text-[1rem]/[1.21rem] 2xl:text-[1.375rem]/[1.67rem] ">
               {title.length > 100 ? `${title.split('').slice(0, 99).join('')}...` : title}
@@ -41,7 +41,7 @@ export function BlogBlock({ title, date, imgSrc, id }: PostBlockProps) {
             <Link href={href}>{t("button")}</Link>
           </Button>
         </div>
-        <div className="text-gray-light flex items-center gap-[13px] overflow-hidden pt-[10px] max-xl:gap-[11px]">
+        <div className="text-gray-light flex items-center gap-[13px] overflow-hidden max-xl:gap-[11px]">
           <p className="text-[1rem]/[1.21rem] 2xl:text-[1.125rem]/[1.375rem]">
             {date}
           </p>

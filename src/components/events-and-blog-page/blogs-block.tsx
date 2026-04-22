@@ -12,7 +12,7 @@ export function BlogsBlock({ posts }: BlogsBlockProps) {
   }
 
   return (
-    <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-[30px]  max-lg:pb-[0px] max-lg:pt-[30px] md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:grid-cols-[repeat(3,_minmax(0,_320px))]  2xl:grid-cols-[repeat(3,_minmax(0,_520px))]">
+    <div className="container grid grid-cols-[minmax(0_,320px)] justify-center gap-y-0 max-md:pb-8 max-md:pt-0 md:grid-cols-[repeat(2,_minmax(0_,320px))] md:gap-x-[30px] md:gap-y-[50px] md:py-[50px] xl:grid-cols-[repeat(3,_minmax(0,_320px))] 2xl:grid-cols-[repeat(3,_minmax(0,_520px))]">
       {posts.map((post) => {
         const imageUrl =
           post.files?.[0]?.url ||
